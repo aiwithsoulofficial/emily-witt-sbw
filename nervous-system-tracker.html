@@ -117,11 +117,11 @@
     ===================== */
     .screen {
       display: none;
-      animation: fadeUp 0.45s var(--transition) both;
     }
 
     .screen.active {
       display: block;
+      animation: fadeUp 0.45s ease both;
     }
 
     @keyframes fadeUp {
@@ -849,14 +849,40 @@
       <div class="container">
 
         <!-- =====================
-             WELCOME SCREEN
+             IDENTITY SCREEN
         ===================== -->
-        <section id="screen-welcome" class="screen active" aria-label="Welcome">
+        <section id="screen-identity" class="screen active" aria-label="Sign in">
           <div class="card welcome-card">
             <div class="welcome-eyebrow">Free Daily Tool</div>
             <h1 class="welcome-title">Your Daily Nervous System Check-In</h1>
             <p class="welcome-body">
               Six gentle questions to help you understand where your nervous system is today - and what it needs. Takes about two minutes.
+            </p>
+            <div style="margin-bottom:16px;">
+              <label style="display:block;font-size:13px;font-weight:500;color:var(--earth);margin-bottom:6px;letter-spacing:0.5px;">First name</label>
+              <input type="text" id="id-name" placeholder="Your first name" autocomplete="given-name" style="width:100%;padding:14px 16px;border:2px solid var(--sand);border-radius:var(--radius-sm);font-family:var(--font-body);font-size:15px;color:var(--charcoal);background:white;outline:none;transition:border 0.3s;" onfocus="this.style.borderColor='var(--blush)'" onblur="this.style.borderColor='var(--sand)'" />
+            </div>
+            <div style="margin-bottom:24px;">
+              <label style="display:block;font-size:13px;font-weight:500;color:var(--earth);margin-bottom:6px;letter-spacing:0.5px;">Email</label>
+              <input type="email" id="id-email" placeholder="you@example.com" autocomplete="email" style="width:100%;padding:14px 16px;border:2px solid var(--sand);border-radius:var(--radius-sm);font-family:var(--font-body);font-size:15px;color:var(--charcoal);background:white;outline:none;transition:border 0.3s;" onfocus="this.style.borderColor='var(--blush)'" onblur="this.style.borderColor='var(--sand)'" />
+            </div>
+            <div id="id-error" style="color:var(--activation);font-size:13px;margin-bottom:12px;display:none;">Please enter your name and a valid email.</div>
+            <button class="btn-primary" id="btn-identify" aria-label="Continue to check-in">
+              Let's Check In
+            </button>
+            <p style="font-size:12px;color:var(--sand);margin-top:16px;text-align:center;">Your details are safe. This just lets us save your check-ins so you can track patterns over time.</p>
+          </div>
+        </section>
+
+        <!-- =====================
+             WELCOME SCREEN
+        ===================== -->
+        <section id="screen-welcome" class="screen" aria-label="Welcome">
+          <div class="card welcome-card">
+            <div class="welcome-eyebrow">Free Daily Tool</div>
+            <h1 class="welcome-title">Welcome back, <span id="welcome-name"></span></h1>
+            <p class="welcome-body">
+              Ready for your daily check-in? Six gentle questions - two minutes.
             </p>
             <button class="btn-primary" id="btn-start" aria-label="Start your daily check-in">
               Check In Now
@@ -866,6 +892,7 @@
                 View My History
               </a>
             </div>
+            <a class="link-subtle" id="link-logout" role="button" tabindex="0" style="margin-top:12px;font-size:12px;">Not you? Switch account</a>
           </div>
         </section>
 
@@ -1073,6 +1100,44 @@
 
     const STATE_ORDER = ['activation', 'fawn', 'freeze', 'regulated'];
     const STORAGE_KEY = 'nsTracker_entries';
+    const USER_KEY = 'nsTracker_user';
+    const SUPABASE_URL = 'https://jiquevvzrdavgqonvvug.supabase.co';
+    const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImppcXVldnZ6cmRhdmdxb252dnVnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE5NzIxNzIsImV4cCI6MjA4NzU0ODE3Mn0.e4mYjXj8TGTC0_UCm3QCKGSv8Cl-migIl7reYIKNcW4';
+
+    async function supabaseInsert(entry) {
+      try {
+        await fetch(SUPABASE_URL + '/rest/v1/ns_checkins', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'apikey': SUPABASE_ANON,
+            'Authorization': 'Bearer ' + SUPABASE_ANON,
+            'Prefer': 'return=minimal'
+          },
+          body: JSON.stringify(entry)
+        });
+      } catch (e) { console.log('Supabase sync failed:', e); }
+    }
+
+    async function supabaseFetch(email) {
+      try {
+        const res = await fetch(SUPABASE_URL + '/rest/v1/ns_checkins?email=eq.' + encodeURIComponent(email) + '&order=created_at.desc&limit=50', {
+          headers: { 'apikey': SUPABASE_ANON, 'Authorization': 'Bearer ' + SUPABASE_ANON }
+        });
+        return await res.json();
+      } catch (e) { console.log('Supabase fetch failed:', e); return []; }
+    }
+
+    function getUser() {
+      try { return JSON.parse(localStorage.getItem(USER_KEY)); } catch { return null; }
+    }
+    function setUser(name, email) {
+      localStorage.setItem(USER_KEY, JSON.stringify({ name, email }));
+    }
+    function clearUser() {
+      localStorage.removeItem(USER_KEY);
+      localStorage.removeItem(STORAGE_KEY);
+    }
 
     /* =====================================================================
        STATE
@@ -1099,6 +1164,22 @@
       const entries = getEntries();
       entries.unshift(entry);
       localStorage.setItem(STORAGE_KEY, JSON.stringify(entries));
+
+      // Push to Supabase
+      const user = getUser();
+      if (user) {
+        supabaseInsert({
+          email: user.email,
+          first_name: user.name,
+          sleep_state: answers.sleep ? answers.sleep.state : null,
+          body_state: answers.body ? answers.body.state : null,
+          energy_state: answers.energy ? answers.energy.state : null,
+          requests_state: answers.requests ? answers.requests.state : null,
+          thought_state: answers.thought ? answers.thought.state : null,
+          wellbeing_score: entry.score,
+          result_state: entry.state
+        });
+      }
     }
 
     function clearEntries() {
@@ -1485,10 +1566,56 @@
     });
 
     /* =====================================================================
+       IDENTITY + WELCOME WIRING
+    ===================================================================== */
+
+    document.getElementById('btn-identify').addEventListener('click', () => {
+      const name = document.getElementById('id-name').value.trim();
+      const email = document.getElementById('id-email').value.trim();
+      const errEl = document.getElementById('id-error');
+
+      if (!name || !email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        errEl.style.display = 'block';
+        return;
+      }
+      errEl.style.display = 'none';
+      setUser(name, email);
+      document.getElementById('welcome-name').textContent = name;
+      updateWelcomeHistoryLink();
+
+      // Load history from Supabase for returning users
+      supabaseFetch(email).then(rows => {
+        if (rows && rows.length > 0) {
+          const entries = rows.map(r => ({
+            date: r.created_at,
+            state: r.result_state,
+            score: r.wellbeing_score
+          }));
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(entries));
+          updateWelcomeHistoryLink();
+        }
+      });
+
+      showScreen('welcome');
+    });
+
+    document.getElementById('link-logout').addEventListener('click', () => {
+      clearUser();
+      showScreen('identity');
+    });
+
+    /* =====================================================================
        INIT
     ===================================================================== */
 
-    updateWelcomeHistoryLink();
+    const existingUser = getUser();
+    if (existingUser) {
+      document.getElementById('welcome-name').textContent = existingUser.name;
+      updateWelcomeHistoryLink();
+      showScreen('welcome');
+    } else {
+      showScreen('identity');
+    }
   </script>
 </body>
 </html>
