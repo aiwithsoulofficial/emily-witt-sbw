@@ -1,0 +1,1604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nervous System Assessment - Space Between Wellness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* =============================================
+       CUSTOM PROPERTIES
+    ============================================= */
+    :root {
+      --blush: #E8A87C;
+      --earth: #6B4F3D;
+      --earth-deep: #4A3728;
+      --sage: #8BA888;
+      --cream: #FFFAF5;
+      --charcoal: #3B3229;
+      --sand: #D4C4B0;
+
+      /* State colours */
+      --activation: #C97B5A;
+      --over-giving: #B87BA8;
+      --shut-down: #7B9BB8;
+      --regulated: #8BA888;
+
+      --transition-speed: 0.45s;
+      --radius: 16px;
+      --radius-sm: 10px;
+    }
+
+    /* =============================================
+       RESET & BASE
+    ============================================= */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 400;
+      color: var(--charcoal);
+      background: var(--cream);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* =============================================
+       ANIMATED GRADIENT BACKGROUND
+    ============================================= */
+    .bg-canvas {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background-color: #FFFAF5;
+      background-image: url('assets/pexels-freya-tienan-2150916098-36517512.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    /* Warm cream overlay to soften the flowers */
+    .bg-canvas::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        160deg,
+        rgba(255, 250, 245, 0.88) 0%,
+        rgba(255, 240, 232, 0.85) 30%,
+        rgba(245, 232, 216, 0.87) 60%,
+        rgba(237, 244, 235, 0.86) 80%,
+        rgba(255, 250, 245, 0.90) 100%
+      );
+    }
+
+    /* Soft radial accents on top */
+    .bg-canvas::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(ellipse at 20% 20%, rgba(232, 168, 124, 0.10) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 80%, rgba(139, 168, 136, 0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 60% 10%, rgba(212, 196, 176, 0.12) 0%, transparent 50%);
+    }
+
+    /* =============================================
+       LAYOUT WRAPPER
+    ============================================= */
+    .app {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px 48px;
+    }
+
+    /* =============================================
+       CARD / SCREEN CONTAINER
+    ============================================= */
+    .screen {
+      width: 100%;
+      max-width: 680px;
+      background: rgba(255, 250, 245, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(212, 196, 176, 0.5);
+      border-radius: 24px;
+      padding: 48px 40px;
+      box-shadow:
+        0 4px 24px rgba(74, 55, 40, 0.08),
+        0 1px 4px rgba(74, 55, 40, 0.04);
+      opacity: 0;
+      transform: translateY(20px);
+      transition:
+        opacity var(--transition-speed) ease,
+        transform var(--transition-speed) ease;
+      display: none;
+    }
+
+    .screen.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .screen.fade-in {
+      animation: screenIn var(--transition-speed) ease forwards;
+    }
+
+    .screen.fade-out {
+      animation: screenOut var(--transition-speed) ease forwards;
+    }
+
+    @keyframes screenIn {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes screenOut {
+      from { opacity: 1; transform: translateY(0); }
+      to   { opacity: 0; transform: translateY(-16px); }
+    }
+
+    /* =============================================
+       LOGO / BRAND MARK
+    ============================================= */
+    .brand-mark {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .brand-name {
+      font-family: 'Alex Brush', cursive;
+      font-size: 1.5rem;
+      color: var(--earth);
+      letter-spacing: 0.02em;
+      line-height: 1;
+    }
+
+    .brand-tagline {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sand);
+      margin-top: 4px;
+    }
+
+    .brand-divider {
+      width: 40px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--blush), transparent);
+      margin: 12px auto 0;
+    }
+
+    /* =============================================
+       TYPOGRAPHY
+    ============================================= */
+    .heading-xl {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.75rem, 5vw, 2.4rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--earth-deep);
+      text-align: center;
+    }
+
+    .heading-lg {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.4rem, 4vw, 1.9rem);
+      font-weight: 600;
+      line-height: 1.25;
+      color: var(--earth-deep);
+    }
+
+    .heading-md {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.1rem, 3vw, 1.35rem);
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--earth);
+    }
+
+    .body-text {
+      font-family: 'Work Sans', sans-serif;
+      font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+      font-weight: 400;
+      line-height: 1.7;
+      color: var(--charcoal);
+    }
+
+    .body-sm {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--earth);
+    }
+
+    .italic-accent {
+      font-style: italic;
+      color: var(--blush);
+    }
+
+    /* =============================================
+       WELCOME SCREEN
+    ============================================= */
+    #screen-welcome .headline {
+      margin-bottom: 16px;
+    }
+
+    #screen-welcome .subline {
+      text-align: center;
+      max-width: 480px;
+      margin: 0 auto 36px;
+    }
+
+    .leaf-row {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin: 20px 0 28px;
+    }
+
+    .leaf {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--blush);
+      opacity: 0.6;
+    }
+
+    .leaf:nth-child(2) { background: var(--sage); width: 8px; height: 8px; opacity: 0.7; }
+    .leaf:nth-child(3) { background: var(--sand); }
+
+    /* =============================================
+       EMAIL FORM
+    ============================================= */
+    .email-form {
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--earth);
+      margin-bottom: 8px;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 14px 18px;
+      font-family: 'Work Sans', sans-serif;
+      font-size: 1rem;
+      color: var(--charcoal);
+      background: rgba(255, 250, 245, 0.9);
+      border: 1.5px solid var(--sand);
+      border-radius: var(--radius-sm);
+      outline: none;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+      -webkit-appearance: none;
+    }
+
+    .form-input::placeholder {
+      color: var(--sand);
+    }
+
+    .form-input:focus {
+      border-color: var(--blush);
+      box-shadow: 0 0 0 3px rgba(232, 168, 124, 0.15);
+    }
+
+    .form-input.error {
+      border-color: #C97B5A;
+      box-shadow: 0 0 0 3px rgba(201, 123, 90, 0.12);
+    }
+
+    .form-error {
+      font-size: 0.82rem;
+      color: var(--activation);
+      margin-top: 6px;
+      display: none;
+    }
+
+    .form-error.visible {
+      display: block;
+    }
+
+    /* =============================================
+       BUTTONS
+    ============================================= */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 16px 28px;
+      font-family: 'Work Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--cream);
+      background: linear-gradient(135deg, var(--blush) 0%, var(--earth) 100%);
+      border: none;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+      box-shadow: 0 4px 16px rgba(107, 79, 61, 0.25);
+      -webkit-appearance: none;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(107, 79, 61, 0.3);
+    }
+
+    .btn-primary:active {
+      transform: translateY(0);
+    }
+
+    .btn-primary svg {
+      flex-shrink: 0;
+      transition: transform 0.2s ease;
+    }
+
+    .btn-primary:hover svg {
+      transform: translateX(3px);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 28px;
+      font-family: 'Work Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--earth);
+      background: transparent;
+      border: 1.5px solid var(--sand);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--blush);
+      color: var(--blush);
+      background: rgba(232, 168, 124, 0.06);
+    }
+
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 18px 36px;
+      font-family: 'Work Sans', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      color: var(--cream);
+      background: linear-gradient(135deg, var(--earth) 0%, var(--earth-deep) 100%);
+      border: none;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      text-decoration: none;
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+      box-shadow: 0 4px 20px rgba(74, 55, 40, 0.3);
+    }
+
+    .btn-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(74, 55, 40, 0.35);
+    }
+
+    /* =============================================
+       PRIVACY NOTE
+    ============================================= */
+    .privacy-note {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 14px;
+      font-size: 0.78rem;
+      color: var(--sand);
+    }
+
+    .privacy-note svg {
+      flex-shrink: 0;
+    }
+
+    /* =============================================
+       PROGRESS BAR
+    ============================================= */
+    .progress-container {
+      margin-bottom: 36px;
+    }
+
+    .progress-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .progress-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--earth);
+    }
+
+    .progress-count {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--sand);
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 6px;
+      background: rgba(212, 196, 176, 0.4);
+      border-radius: 100px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--blush) 0%, var(--earth) 100%);
+      border-radius: 100px;
+      transition: width 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      min-width: 6px;
+    }
+
+    /* =============================================
+       QUESTION SCREEN
+    ============================================= */
+    .question-number {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--blush);
+      margin-bottom: 10px;
+    }
+
+    .question-text {
+      margin-bottom: 28px;
+    }
+
+    /* =============================================
+       ANSWER CARDS
+    ============================================= */
+    .answers-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .answer-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 18px;
+      background: rgba(255, 250, 245, 0.7);
+      border: 1.5px solid rgba(212, 196, 176, 0.5);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        transform 0.15s ease,
+        box-shadow 0.2s ease;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+
+    .answer-card:hover {
+      border-color: var(--blush);
+      background: rgba(232, 168, 124, 0.06);
+      transform: translateX(4px);
+      box-shadow: 0 2px 12px rgba(232, 168, 124, 0.12);
+    }
+
+    .answer-card.selected {
+      border-color: var(--blush);
+      background: rgba(232, 168, 124, 0.1);
+      box-shadow: 0 2px 16px rgba(232, 168, 124, 0.18);
+    }
+
+    .answer-card.selected .answer-letter {
+      background: var(--blush);
+      color: white;
+      border-color: var(--blush);
+    }
+
+    .answer-card.locked {
+      pointer-events: none;
+    }
+
+    .answer-letter {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      border: 1.5px solid var(--sand);
+      font-family: 'Playfair Display', serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--earth);
+      transition: all 0.2s ease;
+      margin-top: 1px;
+    }
+
+    .answer-body {
+      flex: 1;
+    }
+
+    .answer-text {
+      font-size: 0.97rem;
+      line-height: 1.55;
+      color: var(--charcoal);
+    }
+
+    /* =============================================
+       RESULTS SCREEN
+    ============================================= */
+    #screen-results {
+      padding: 48px 40px 52px;
+    }
+
+    .results-intro {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .results-intro .body-text {
+      color: var(--earth);
+    }
+
+    /* State badge */
+    .state-badge {
+      position: relative;
+      text-align: center;
+      padding: 36px 28px;
+      border-radius: 18px;
+      margin-bottom: 28px;
+      overflow: hidden;
+    }
+
+    .state-badge::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.08;
+      border-radius: inherit;
+    }
+
+    .state-badge.activation { background: rgba(201, 123, 90, 0.08); border: 1.5px solid rgba(201, 123, 90, 0.3); }
+    .state-badge.activation::before { background: var(--activation); }
+    .state-badge.over-giving { background: rgba(184, 123, 168, 0.08); border: 1.5px solid rgba(184, 123, 168, 0.3); }
+    .state-badge.over-giving::before { background: var(--over-giving); }
+    .state-badge.shut-down { background: rgba(123, 155, 184, 0.08); border: 1.5px solid rgba(123, 155, 184, 0.3); }
+    .state-badge.shut-down::before { background: var(--shut-down); }
+    .state-badge.regulated { background: rgba(139, 168, 136, 0.08); border: 1.5px solid rgba(139, 168, 136, 0.3); }
+    .state-badge.regulated::before { background: var(--regulated); }
+
+    .state-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--earth);
+      margin-bottom: 10px;
+    }
+
+    .state-name {
+      font-family: 'Alex Brush', cursive;
+      font-size: clamp(3rem, 8vw, 4.5rem);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .state-name.activation  { color: var(--activation); }
+    .state-name.over-giving { color: var(--over-giving); }
+    .state-name.shut-down   { color: var(--shut-down); }
+    .state-name.regulated   { color: var(--regulated); }
+
+    .state-subtitle {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+      font-style: italic;
+      color: var(--earth);
+    }
+
+    /* Score dots */
+    .score-dots {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 16px;
+    }
+
+    .score-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--sand);
+      opacity: 0.4;
+    }
+
+    .score-dot.filled {
+      opacity: 1;
+    }
+
+    .score-dot.filled.activation  { background: var(--activation); }
+    .score-dot.filled.over-giving { background: var(--over-giving); }
+    .score-dot.filled.shut-down   { background: var(--shut-down); }
+    .score-dot.filled.regulated   { background: var(--regulated); }
+
+    /* Description block */
+    .result-description {
+      margin-bottom: 32px;
+    }
+
+    .result-description .heading-md {
+      margin-bottom: 12px;
+    }
+
+    /* Strategies */
+    .strategies {
+      margin-bottom: 36px;
+    }
+
+    .strategies-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--earth-deep);
+      margin-bottom: 16px;
+    }
+
+    .strategy-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .strategy-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 18px;
+      background: rgba(255, 250, 245, 0.8);
+      border: 1px solid rgba(212, 196, 176, 0.4);
+      border-radius: var(--radius-sm);
+    }
+
+    .strategy-icon {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+
+    .strategy-icon.activation  { background: rgba(201, 123, 90, 0.12); }
+    .strategy-icon.over-giving { background: rgba(184, 123, 168, 0.12); }
+    .strategy-icon.shut-down   { background: rgba(123, 155, 184, 0.12); }
+    .strategy-icon.regulated   { background: rgba(139, 168, 136, 0.12); }
+
+    .strategy-text {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--charcoal);
+    }
+
+    .strategy-text strong {
+      font-weight: 600;
+      display: block;
+      color: var(--earth-deep);
+      margin-bottom: 2px;
+    }
+
+    /* CTA block */
+    .cta-block {
+      text-align: center;
+      padding: 32px 24px;
+      background: linear-gradient(135deg, rgba(232, 168, 124, 0.08) 0%, rgba(139, 168, 136, 0.08) 100%);
+      border: 1px solid rgba(212, 196, 176, 0.4);
+      border-radius: var(--radius);
+      margin-bottom: 24px;
+    }
+
+    .cta-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 10px;
+    }
+
+    .cta-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.2rem, 3vw, 1.5rem);
+      font-weight: 600;
+      color: var(--earth-deep);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .cta-body {
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: var(--earth);
+      margin-bottom: 22px;
+    }
+
+    /* Footer brand */
+    .result-footer {
+      text-align: center;
+    }
+
+    .result-footer-brand {
+      font-family: 'Alex Brush', cursive;
+      font-size: 1.2rem;
+      color: var(--earth);
+    }
+
+    .result-footer-tagline {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--sand);
+      margin-top: 3px;
+    }
+
+    /* Retake link */
+    .retake-link {
+      display: inline-block;
+      margin-top: 16px;
+      font-size: 0.85rem;
+      color: var(--sand);
+      cursor: pointer;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.2s ease;
+      background: none;
+      border: none;
+      font-family: 'Work Sans', sans-serif;
+    }
+
+    .retake-link:hover {
+      color: var(--earth);
+    }
+
+    /* =============================================
+       REVEAL ANIMATIONS
+    ============================================= */
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =============================================
+       SEPARATOR
+    ============================================= */
+    .section-sep {
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--sand), transparent);
+      margin: 28px auto;
+    }
+
+    /* =============================================
+       RESPONSIVE
+    ============================================= */
+    @media (max-width: 560px) {
+      .screen {
+        padding: 36px 24px;
+        border-radius: 18px;
+      }
+
+      #screen-results {
+        padding: 36px 24px 44px;
+      }
+
+      .answer-card {
+        padding: 14px 14px;
+      }
+
+      .state-name {
+        font-size: 3rem;
+      }
+
+      .cta-block {
+        padding: 24px 18px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .screen {
+        padding: 28px 18px;
+      }
+    }
+
+    /* =============================================
+       LOADING SPINNER (between screens)
+    ============================================= */
+    .spinner-wrap {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 250, 245, 0.5);
+    }
+
+    .spinner-wrap.active {
+      display: flex;
+    }
+
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid var(--sand);
+      border-top-color: var(--blush);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Animated background -->
+  <div class="bg-canvas" aria-hidden="true"></div>
+
+  <main class="app" role="main">
+
+    <!-- ==========================================
+         SCREEN 1: WELCOME + EMAIL CAPTURE
+    =========================================== -->
+    <section
+      id="screen-welcome"
+      class="screen active fade-in"
+      aria-label="Welcome - Nervous System Assessment"
+    >
+      <div class="brand-mark" aria-label="Space Between Wellness">
+        <div class="brand-name">Space Between Wellness</div>
+        <div class="brand-tagline">with Emily Witt</div>
+        <div class="brand-divider"></div>
+      </div>
+
+      <div class="leaf-row" aria-hidden="true">
+        <span class="leaf"></span>
+        <span class="leaf"></span>
+        <span class="leaf"></span>
+      </div>
+
+      <h1 class="heading-xl headline">
+        What's your nervous system<br />
+        <span class="italic-accent" style="font-style: italic;">actually</span> telling you?
+      </h1>
+
+      <div class="section-sep"></div>
+
+      <p class="body-text subline" style="text-align:center; max-width:460px; margin:0 auto 36px;">
+        Take this 2-minute assessment and discover which state you're operating from right now - and what your body is asking for next.
+      </p>
+
+      <button type="button" class="btn-primary" id="start-btn" onclick="currentQuestion=0;answers=[];renderQuestion(0);showScreen('quiz');">
+        Let's Find Out
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <div class="privacy-note" role="note">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+          <rect x="1.5" y="5" width="9" height="6" rx="1" stroke="currentColor" stroke-width="1.2"/>
+          <path d="M4 5V3.5a2 2 0 1 1 4 0V5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+        Takes 2 minutes. No sign-up needed to start.
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SCREEN 2: QUESTIONS (rendered by JS)
+    =========================================== -->
+    <section
+      id="screen-quiz"
+      class="screen"
+      aria-label="Assessment questions"
+      aria-live="polite"
+    ></section>
+
+    <!-- ==========================================
+         SCREEN 3: CAPTURE (email + phone before results)
+    =========================================== -->
+    <section
+      id="screen-capture"
+      class="screen"
+      aria-label="Enter your details to see your results"
+    >
+      <div class="brand-mark" aria-label="Space Between Wellness">
+        <div class="brand-name">Space Between Wellness</div>
+        <div class="brand-divider"></div>
+      </div>
+
+      <h2 class="heading-lg" style="text-align:center;margin-bottom:8px;">Your results are ready</h2>
+
+      <p class="body-text" style="text-align:center;max-width:420px;margin:0 auto 12px;font-family:'Playfair Display',serif;font-style:italic;font-size:18px;color:var(--earth);">
+        We've mapped your nervous system state.
+      </p>
+      <p class="body-text" style="text-align:center;max-width:420px;margin:0 auto 32px;">
+        Enter your details below to unlock your personalised profile - plus receive regulation strategies tailored to your specific state.
+      </p>
+
+      <form class="email-form" id="capture-form" novalidate>
+        <div class="form-group">
+          <label class="form-label" for="first-name">First name</label>
+          <input
+            class="form-input"
+            type="text"
+            id="first-name"
+            name="first-name"
+            placeholder="Your first name"
+            autocomplete="given-name"
+            inputmode="text"
+          />
+          <div class="form-error" id="name-error">Please enter your first name.</div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="email">Email address</label>
+          <input
+            class="form-input"
+            type="email"
+            id="email"
+            name="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+            inputmode="email"
+          />
+          <div class="form-error" id="email-error">Please enter a valid email address.</div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="phone">Phone <span style="color:var(--sand);font-weight:400;">(for text support - optional)</span></label>
+          <input
+            class="form-input"
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="04XX XXX XXX"
+            autocomplete="tel"
+            inputmode="tel"
+          />
+        </div>
+
+        <button type="submit" class="btn-primary" id="reveal-btn">
+          Show My Results
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <div class="privacy-note" role="note">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <rect x="1.5" y="5" width="9" height="6" rx="1" stroke="currentColor" stroke-width="1.2"/>
+            <path d="M4 5V3.5a2 2 0 1 1 4 0V5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+          Your details are safe. No spam, ever. Just insight and support from Emily.
+        </div>
+      </form>
+    </section>
+
+    <!-- ==========================================
+         SCREEN 4: RESULTS (rendered by JS)
+    =========================================== -->
+    <section
+      id="screen-results"
+      class="screen"
+      aria-label="Your nervous system assessment results"
+      aria-live="polite"
+    ></section>
+
+  </main>
+
+  <!-- =============================================
+       JAVASCRIPT
+  ============================================= -->
+  <script>
+    'use strict';
+
+    /* --------------------------------------------------
+       DATA
+    -------------------------------------------------- */
+    const QUESTIONS = [
+      {
+        id: 1,
+        text: 'When you wake up in the morning, the first thing you feel is...',
+        answers: [
+          { letter: 'A', text: 'Already behind - my mind is racing before my eyes are even open.', state: 'activation' },
+          { letter: 'B', text: 'Thinking about what everyone else needs from me today.', state: 'over-giving' },
+          { letter: 'C', text: 'Not much, honestly. A kind of foggy flatness.', state: 'shut-down' },
+          { letter: 'D', text: 'Grounded and calm. Ready to see what the day brings.', state: 'regulated' },
+        ],
+      },
+      {
+        id: 2,
+        text: 'At the end of a long day, you usually...',
+        answers: [
+          { letter: 'A', text: 'Can\'t switch off. Still running through my mental to-do list at midnight.', state: 'activation' },
+          { letter: 'B', text: 'Feel quietly resentful that I gave so much and nobody noticed.', state: 'over-giving' },
+          { letter: 'C', text: 'Just want to disappear into my phone or couch. Zone out completely.', state: 'shut-down' },
+          { letter: 'D', text: 'Feel tired but satisfied. I can actually rest.', state: 'regulated' },
+        ],
+      },
+      {
+        id: 3,
+        text: 'When someone asks "how are you?", you...',
+        answers: [
+          { letter: 'A', text: 'Say "busy!" with a tight smile and keep moving.', state: 'activation' },
+          { letter: 'B', text: 'Say "fine!" while internally falling apart.', state: 'over-giving' },
+          { letter: 'C', text: 'Genuinely don\'t know how to answer. You\'re not sure what you feel.', state: 'shut-down' },
+          { letter: 'D', text: 'Actually pause and check in with yourself before answering.', state: 'regulated' },
+        ],
+      },
+      {
+        id: 4,
+        text: 'When you need to make a decision, you tend to...',
+        answers: [
+          { letter: 'A', text: 'Make it fast - waiting feels unbearable, even if it\'s the wrong call.', state: 'activation' },
+          { letter: 'B', text: 'Ask everyone else what they think. Your own wants get pushed to last.', state: 'over-giving' },
+          { letter: 'C', text: 'Freeze. Go blank. The simplest choice suddenly feels impossible.', state: 'shut-down' },
+          { letter: 'D', text: 'Tune in, sit with it, and trust what comes up.', state: 'regulated' },
+        ],
+      },
+      {
+        id: 5,
+        text: 'In your body right now, you most often notice...',
+        answers: [
+          { letter: 'A', text: 'Tension in my jaw, neck or shoulders. A constant hum of urgency.', state: 'activation' },
+          { letter: 'B', text: 'A tight chest. Like I\'m always bracing for something to go wrong.', state: 'over-giving' },
+          { letter: 'C', text: 'Heaviness. Numbness. A kind of disconnection from my own body.', state: 'shut-down' },
+          { letter: 'D', text: 'Ease. My breath is full. I feel at home in myself.', state: 'regulated' },
+        ],
+      },
+      {
+        id: 6,
+        text: 'When it comes to sleep, the most accurate description is...',
+        answers: [
+          { letter: 'A', text: 'I fall asleep exhausted then jolt awake at 3am with a spinning mind.', state: 'activation' },
+          { letter: 'B', text: 'I lie awake worrying about whether I\'ve done enough for everyone.', state: 'over-giving' },
+          { letter: 'C', text: 'I sleep a lot but still wake up feeling hollow and unrefreshed.', state: 'shut-down' },
+          { letter: 'D', text: 'I sleep deeply and wake feeling genuinely rested most days.', state: 'regulated' },
+        ],
+      },
+      {
+        id: 7,
+        text: 'When conflict or tension appears, your first instinct is to...',
+        answers: [
+          { letter: 'A', text: 'Fight back, defend, or control the situation before it controls me.', state: 'activation' },
+          { letter: 'B', text: 'Smooth it over. Say sorry. Make everyone comfortable - even if I\'m not.', state: 'over-giving' },
+          { letter: 'C', text: 'Disappear. Shut down. Become very still and very quiet.', state: 'shut-down' },
+          { letter: 'D', text: 'Stay present. Breathe. Respond rather than react.', state: 'regulated' },
+        ],
+      },
+      {
+        id: 8,
+        text: 'Resting - truly resting with no phone, no plan, no purpose - feels...',
+        answers: [
+          { letter: 'A', text: 'Impossible. Wasteful. Like something bad will happen if I stop.', state: 'activation' },
+          { letter: 'B', text: 'Selfish. Like I should be using the time to do something for someone.', state: 'over-giving' },
+          { letter: 'C', text: 'Like the only relief I get - but it doesn\'t actually restore me.', state: 'shut-down' },
+          { letter: 'D', text: 'Genuinely nourishing. I can actually receive rest.', state: 'regulated' },
+        ],
+      },
+      {
+        id: 9,
+        text: 'The voice in your head most often sounds like...',
+        answers: [
+          { letter: 'A', text: '"Go faster. Do more. You\'re already falling behind."', state: 'activation' },
+          { letter: 'B', text: '"Don\'t let them down. What do they need? Are they okay?"', state: 'over-giving' },
+          { letter: 'C', text: '"What\'s even the point... I don\'t know. I don\'t feel anything."', state: 'shut-down' },
+          { letter: 'D', text: '"You\'ve got this. You can handle whatever comes."', state: 'regulated' },
+        ],
+      },
+      {
+        id: 10,
+        text: 'When it comes to boundaries, you would honestly say...',
+        answers: [
+          { letter: 'A', text: 'I set hard lines but they come from fear, not from knowing myself.', state: 'activation' },
+          { letter: 'B', text: 'What boundaries? I don\'t know how to say no without feeling guilty.', state: 'over-giving' },
+          { letter: 'C', text: 'I don\'t even know what I want, so how could I possibly set a boundary.', state: 'shut-down' },
+          { letter: 'D', text: 'They feel natural. I can say no from a grounded place, not a reactive one.', state: 'regulated' },
+        ],
+      },
+    ];
+
+    const RESULTS = {
+      activation: {
+        name: 'Activation',
+        subtitle: 'Fight Mode',
+        cssClass: 'activation',
+        description:
+          'Your nervous system is living on high alert. You\'ve been running so fast for so long that stopping actually feels dangerous - like if you slow down, everything will fall apart. The drive you feel is real, but right now it\'s being powered by survival, not by choice. You are not broken. Your system is doing exactly what it was designed to do. It just needs to learn that it\'s safe to rest.',
+        strategies: [
+          {
+            icon: '🌬',
+            title: 'Slow the exhale',
+            text: 'Try a 4-7-8 breath: inhale for 4 counts, hold for 7, exhale slowly for 8. A long exhale directly signals your nervous system that the threat has passed. Do this 3 times before any big decision.',
+          },
+          {
+            icon: '🌿',
+            title: 'Scheduled stillness',
+            text: 'Set a 5-minute timer and do nothing - no phone, no task, nothing. Notice the discomfort without judging it. Over time, your system learns that stillness is safe. Start small, repeat daily.',
+          },
+          {
+            icon: '🫀',
+            title: 'Drop into your body',
+            text: 'Place one hand on your chest and one on your belly. Feel the warmth. Name 3 things you can physically sense right now. This grounds your awareness in the present moment instead of the future threat.',
+          },
+        ],
+        ctaText: 'You don\'t have to keep running on empty. There\'s another way.',
+      },
+      'over-giving': {
+        name: 'Over Giving',
+        subtitle: 'Fawn Mode',
+        cssClass: 'over-giving',
+        description:
+          'Your nervous system has learned that keeping others happy is the safest way to stay safe. You give and give until there\'s nothing left - then somehow find more to give. The resentment building underneath is not a character flaw. It\'s your body\'s way of saying "I matter too." You are not selfish for needing. You are someone who has been taught to disappear into service - and you can unlearn that.',
+        strategies: [
+          {
+            icon: '🛑',
+            title: 'Pause before you say yes',
+            text: 'When a request comes in, practice saying "let me check and come back to you" instead of an immediate yes. Even a 10-second pause gives your nervous system a chance to weigh in before your people-pleasing reflex kicks in.',
+          },
+          {
+            icon: '🌊',
+            title: 'Notice what you need first',
+            text: 'Three times a day - morning, lunch, evening - pause and ask: "What do I actually need right now?" You don\'t have to act on the answer immediately. Just get in the habit of asking.',
+          },
+          {
+            icon: '💬',
+            title: 'Practice small honest moments',
+            text: 'Start with low-stakes honesty. Choosing your own coffee order. Saying "actually, I\'d prefer..." in a gentle situation. Each tiny act of self-advocacy rebuilds the neural pathway that says your needs are valid.',
+          },
+        ],
+        ctaText: 'You give so much to everyone else. It\'s time to learn how to receive.',
+      },
+      'shut-down': {
+        name: 'Shut Down',
+        subtitle: 'Freeze Mode',
+        cssClass: 'shut-down',
+        description:
+          'Your nervous system has done something remarkably intelligent - it has gone offline to protect you from overwhelm. The flatness, the fog, the "going through the motions" feeling is not laziness. It is your system\'s emergency brake. You are not empty. You are protected. The path back isn\'t forcing yourself to feel more - it\'s creating tiny moments of safety so your nervous system slowly believes it can come back online.',
+        strategies: [
+          {
+            icon: '🐾',
+            title: 'Move, gently',
+            text: 'When freeze hits, your body needs gentle movement to discharge. Walk slowly and feel each footfall. Shake your hands out for 30 seconds. Roll your shoulders. Movement - not exercise - tells your nervous system the threat is over.',
+          },
+          {
+            icon: '🌡',
+            title: 'Temperature as an anchor',
+            text: 'Splash cold water on your wrists or hold a warm drink with both hands. Temperature sensation is fast and reliable at pulling the nervous system out of collapse and back into the present moment.',
+          },
+          {
+            icon: '🕯',
+            title: 'One tiny thing of beauty',
+            text: 'Name one thing in your environment that is pleasant or interesting - a colour, a texture, a sound. This isn\'t about forcing positivity. It\'s about gently activating the part of your brain that notices life again.',
+          },
+        ],
+        ctaText: 'The light is still in there. You just need the right conditions to let it back out.',
+      },
+      regulated: {
+        name: 'Regulated',
+        subtitle: 'Safety Mode',
+        cssClass: 'regulated',
+        description:
+          'You are home. Your nervous system is operating from a place of genuine safety - not suppression, not performance, but real grounded presence. This is the state from which you can think clearly, connect deeply, create fully, and respond with wisdom instead of reacting from fear. This is rare, and it deserves to be honoured. Your work now is to notice what keeps you here, and how to return when life pulls you away.',
+        strategies: [
+          {
+            icon: '📓',
+            title: 'Document what regulation feels like',
+            text: 'Write down what life looks and feels like right now - in your body, your relationships, your thinking. This becomes your compass when you drift. You\'ll know exactly what you\'re returning to.',
+          },
+          {
+            icon: '🌱',
+            title: 'Map your anchors',
+            text: 'Notice what practices, environments, relationships and rhythms keep you here. These are not luxuries - they are your foundation. Protect them with as much intention as you would anything else that matters.',
+          },
+          {
+            icon: '🤝',
+            title: 'Co-regulate with others',
+            text: 'A regulated nervous system is a gift to everyone around you. Be intentional about who you spend time with and notice how you feel during and after. Your system is a resource - tend it, share it wisely.',
+          },
+        ],
+        ctaText: 'You\'ve done the work to get here. Let\'s make sure you know how to stay.',
+      },
+    };
+
+    /* --------------------------------------------------
+       STATE
+    -------------------------------------------------- */
+    let currentQuestion = 0;
+    let answers = []; // array of state strings
+    let userName = '';
+    let userEmail = '';
+
+    /* --------------------------------------------------
+       UTILITIES
+    -------------------------------------------------- */
+    function $(selector) {
+      return document.querySelector(selector);
+    }
+
+    function showScreen(id) {
+      const screens = document.querySelectorAll('.screen');
+      screens.forEach(s => {
+        s.classList.remove('active', 'fade-in');
+      });
+      const target = document.getElementById('screen-' + id);
+      if (!target) return;
+      target.classList.add('active');
+      // Force reflow for animation
+      void target.offsetWidth;
+      target.classList.add('fade-in');
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function validateEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function getTopState(answersArr) {
+      const counts = { activation: 0, 'over-giving': 0, 'shut-down': 0, regulated: 0 };
+      answersArr.forEach(a => { if (counts[a] !== undefined) counts[a]++; });
+      return Object.entries(counts).sort((a, b) => b[1] - a[1])[0][0];
+    }
+
+    function getStateCounts(answersArr) {
+      const counts = { activation: 0, 'over-giving': 0, 'shut-down': 0, regulated: 0 };
+      answersArr.forEach(a => { if (counts[a] !== undefined) counts[a]++; });
+      return counts;
+    }
+
+    /* --------------------------------------------------
+       CAPTURE FORM (after quiz, before results)
+    -------------------------------------------------- */
+    const captureForm = document.getElementById('capture-form');
+
+    captureForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      let valid = true;
+
+      const nameInput = document.getElementById('first-name');
+      const emailInput = document.getElementById('email');
+      const phoneInput = document.getElementById('phone');
+      const nameError = document.getElementById('name-error');
+      const emailError = document.getElementById('email-error');
+
+      nameInput.classList.remove('error');
+      emailInput.classList.remove('error');
+      nameError.classList.remove('visible');
+      emailError.classList.remove('visible');
+
+      if (!nameInput.value.trim()) {
+        nameInput.classList.add('error');
+        nameError.classList.add('visible');
+        valid = false;
+      }
+
+      if (!validateEmail(emailInput.value.trim())) {
+        emailInput.classList.add('error');
+        emailError.classList.add('visible');
+        valid = false;
+      }
+
+      if (!valid) return;
+
+      userName = nameInput.value.trim().split(' ')[0];
+      userEmail = emailInput.value.trim();
+      const userPhone = phoneInput ? phoneInput.value.trim() : '';
+
+      console.log('Lead captured:', { name: userName, email: userEmail, phone: userPhone, answers, topState: getTopState(answers) });
+
+      renderResults();
+      showScreen('results');
+    });
+
+    /* --------------------------------------------------
+       QUIZ RENDERING
+    -------------------------------------------------- */
+    function renderQuestion(index) {
+      const q = QUESTIONS[index];
+      const total = QUESTIONS.length;
+      const progressPercent = Math.round((index / total) * 100);
+      const quizScreen = document.getElementById('screen-quiz');
+
+      quizScreen.innerHTML = `
+        <div class="progress-container" role="progressbar" aria-valuenow="${index}" aria-valuemin="0" aria-valuemax="${total}" aria-label="Question ${index + 1} of ${total}">
+          <div class="progress-meta">
+            <span class="progress-label">Your Assessment</span>
+            <span class="progress-count">${index + 1} / ${total}</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" id="progress-fill" style="width: ${progressPercent}%"></div>
+          </div>
+        </div>
+
+        <div class="question-number">Question ${index + 1}</div>
+        <h2 class="heading-lg question-text">${q.text}</h2>
+
+        <div class="answers-grid" id="answers-grid" role="list">
+          ${q.answers.map((a, i) => `
+            <button
+              class="answer-card"
+              data-state="${a.state}"
+              data-index="${i}"
+              role="listitem"
+              aria-label="Option ${a.letter}: ${a.text}"
+              type="button"
+            >
+              <span class="answer-letter" aria-hidden="true">${a.letter}</span>
+              <div class="answer-body">
+                <span class="answer-text">${a.text}</span>
+              </div>
+            </button>
+          `).join('')}
+        </div>
+      `;
+
+      // Attach click handlers
+      const cards = quizScreen.querySelectorAll('.answer-card');
+      cards.forEach(card => {
+        card.addEventListener('click', handleAnswerClick);
+        card.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            handleAnswerClick.call(card, e);
+          }
+        });
+        card.setAttribute('tabindex', '0');
+      });
+
+      // Animate progress fill
+      requestAnimationFrame(() => {
+        const fill = document.getElementById('progress-fill');
+        if (fill) fill.style.width = progressPercent + '%';
+      });
+    }
+
+    function handleAnswerClick(e) {
+      const card = e.currentTarget || this;
+      const grid = document.getElementById('answers-grid');
+      const state = card.dataset.state;
+
+      // Visual feedback - select this card
+      grid.querySelectorAll('.answer-card').forEach(c => {
+        c.classList.remove('selected');
+        c.classList.add('locked');
+        c.removeEventListener('click', handleAnswerClick);
+      });
+      card.classList.add('selected');
+
+      // Record the answer
+      answers.push(state);
+
+      // Delay before advancing (feels more considered)
+      setTimeout(() => {
+        const nextIndex = currentQuestion + 1;
+        currentQuestion = nextIndex;
+
+        if (nextIndex < QUESTIONS.length) {
+          renderQuestion(nextIndex);
+        } else {
+          showScreen('capture');
+        }
+      }, 520);
+    }
+
+    /* --------------------------------------------------
+       RESULTS RENDERING
+    -------------------------------------------------- */
+    function renderResults() {
+      const topState = getTopState(answers);
+      const counts = getStateCounts(answers);
+      const data = RESULTS[topState];
+      const maxDots = QUESTIONS.length;
+
+      // Build score dots for the result state
+      const dotsHtml = Array.from({ length: maxDots }, (_, i) => {
+        const filled = i < counts[topState];
+        return `<span class="score-dot${filled ? ' filled ' + data.cssClass : ''}" aria-hidden="true"></span>`;
+      }).join('');
+
+      // Build strategy items
+      const strategiesHtml = data.strategies.map(s => `
+        <div class="strategy-item reveal">
+          <div class="strategy-icon ${data.cssClass}" aria-hidden="true">${s.icon}</div>
+          <div class="strategy-text">
+            <strong>${s.title}</strong>
+            ${s.text}
+          </div>
+        </div>
+      `).join('');
+
+      const resultsScreen = document.getElementById('screen-results');
+
+      resultsScreen.innerHTML = `
+        <div class="brand-mark" aria-label="Space Between Wellness">
+          <div class="brand-name">Space Between Wellness</div>
+          <div class="brand-divider"></div>
+        </div>
+
+        <div class="results-intro reveal">
+          <p class="body-text">
+            ${userName ? `${userName}, ` : ''}based on your answers, your nervous system is primarily operating in...
+          </p>
+        </div>
+
+        <div class="state-badge ${data.cssClass} reveal" role="region" aria-label="Your primary nervous system state">
+          <div class="state-eyebrow">Your Primary State</div>
+          <div class="state-name ${data.cssClass}" aria-label="${data.name}">${data.name}</div>
+          <div class="state-subtitle">${data.subtitle}</div>
+          <div class="score-dots" aria-label="${counts[topState]} out of ${maxDots} answers pointed to this state">
+            ${dotsHtml}
+          </div>
+        </div>
+
+        <div class="result-description reveal">
+          <h2 class="heading-md" style="margin-bottom:12px;">What this means for you</h2>
+          <p class="body-text">${data.description}</p>
+        </div>
+
+        <div class="section-sep"></div>
+
+        <div class="strategies reveal">
+          <div class="strategies-heading">3 ways to support your nervous system right now</div>
+          <div class="strategy-list">
+            ${strategiesHtml}
+          </div>
+        </div>
+
+        <div class="section-sep"></div>
+
+        <div class="cta-block reveal">
+          <div class="cta-eyebrow">Ready to go deeper?</div>
+          <h3 class="cta-heading">Book a Breakthrough Session with Emily</h3>
+          <p class="cta-body">
+            ${data.ctaText}<br />
+            In a 1:1 Breakthrough Session, we go beneath the surface - into the patterns, the history, and the path home to yourself.
+          </p>
+          <a href="#" class="btn-cta" aria-label="Book a Breakthrough Session with Emily">
+            Book Your Session
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="result-footer">
+          <div class="result-footer-brand">Emily Witt</div>
+          <div class="result-footer-tagline">Space Between Wellness</div>
+        </div>
+
+        <div style="text-align:center; margin-top: 8px;">
+          <button class="retake-link" id="retake-btn" type="button" aria-label="Retake the assessment">
+            Retake the assessment
+          </button>
+        </div>
+      `;
+
+      // Retake handler
+      document.getElementById('retake-btn').addEventListener('click', function() {
+        currentQuestion = 0;
+        answers = [];
+        renderQuestion(0);
+        showScreen('welcome');
+      });
+
+      // Staggered reveal of result elements
+      const reveals = resultsScreen.querySelectorAll('.reveal');
+      reveals.forEach((el, i) => {
+        setTimeout(() => {
+          el.classList.add('visible');
+        }, 200 + i * 160);
+      });
+    }
+
+    /* --------------------------------------------------
+       ACCESSIBILITY - Focus management
+    -------------------------------------------------- */
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Tab') {
+        document.body.classList.add('keyboard-nav');
+      }
+    });
+
+    document.addEventListener('mousedown', function() {
+      document.body.classList.remove('keyboard-nav');
+    });
+
+  </script>
+
+  <style>
+    /* Focus styles - only shown on keyboard nav */
+    body.keyboard-nav .answer-card:focus,
+    body.keyboard-nav .btn-primary:focus,
+    body.keyboard-nav .btn-cta:focus,
+    body.keyboard-nav .btn-secondary:focus,
+    body.keyboard-nav .form-input:focus,
+    body.keyboard-nav .retake-link:focus {
+      outline: 2px solid var(--blush);
+      outline-offset: 3px;
+    }
+
+    body:not(.keyboard-nav) *:focus {
+      outline: none;
+    }
+  </style>
+
+</body>
+</html>
