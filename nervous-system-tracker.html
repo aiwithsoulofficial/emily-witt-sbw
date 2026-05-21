@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily Nervous System Check-In - Space Between Wellness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* =====================
+       CSS CUSTOM PROPERTIES
+    ===================== */
+    :root {
+      --blush:      #E8A87C;
+      --earth:      #6B4F3D;
+      --earth-deep: #4A3728;
+      --sage:       #8BA888;
+      --cream:      #FFFAF5;
+      --charcoal:   #3B3229;
+      --sand:       #D4C4B0;
+
+      /* State colours */
+      --activation: #C2614B;
+      --activation-bg: #FAF0ED;
+      --fawn:       #D4956A;
+      --fawn-bg:    #FDF5EE;
+      --freeze:     #7A8FA6;
+      --freeze-bg:  #EEF2F6;
+      --regulated:  #8BA888;
+      --regulated-bg: #EEF4EE;
+
+      --font-script:  'Alex Brush', cursive;
+      --font-heading: 'Playfair Display', Georgia, serif;
+      --font-body:    'Work Sans', system-ui, sans-serif;
+
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --shadow:    0 4px 24px rgba(59,50,41,0.10);
+      --shadow-lg: 0 8px 40px rgba(59,50,41,0.15);
+
+      --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* =====================
+       RESET & BASE
+    ===================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--cream);
+      color: var(--charcoal);
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Background image with warm overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url('assets/pexels-freya-tienan-2150916098-36517512.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0.05;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(
+        160deg,
+        rgba(255,250,245,0.92) 0%,
+        rgba(232,168,124,0.08) 50%,
+        rgba(255,250,245,0.95) 100%
+      );
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* =====================
+       LAYOUT WRAPPER
+    ===================== */
+    #app {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem 4rem;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 560px;
+    }
+
+    /* =====================
+       SCREEN TRANSITIONS
+    ===================== */
+    .screen {
+      display: none;
+      animation: fadeUp 0.45s var(--transition) both;
+    }
+
+    .screen.active {
+      display: block;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* =====================
+       LOGO / BRAND HEADER
+    ===================== */
+    .brand-header {
+      text-align: center;
+      padding: 2rem 0 1rem;
+    }
+
+    .brand-name {
+      font-family: var(--font-script);
+      font-size: clamp(1.6rem, 5vw, 2.2rem);
+      color: var(--earth);
+      letter-spacing: 0.02em;
+      line-height: 1.2;
+    }
+
+    .brand-sub {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--sand);
+      margin-top: 0.2rem;
+    }
+
+    /* =====================
+       DIVIDER
+    ===================== */
+    .divider {
+      width: 48px;
+      height: 1px;
+      background: var(--sand);
+      margin: 1.5rem auto;
+    }
+
+    /* =====================
+       CARDS
+    ===================== */
+    .card {
+      background: rgba(255,250,245,0.92);
+      border: 1px solid rgba(212,196,176,0.4);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.75rem;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+    }
+
+    /* =====================
+       WELCOME SCREEN
+    ===================== */
+    .welcome-card {
+      text-align: center;
+    }
+
+    .welcome-eyebrow {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--blush);
+      margin-bottom: 0.75rem;
+    }
+
+    .welcome-title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.6rem, 5vw, 2.2rem);
+      font-weight: 700;
+      color: var(--earth-deep);
+      line-height: 1.25;
+      margin-bottom: 1rem;
+    }
+
+    .welcome-body {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--earth);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--earth);
+      color: var(--cream);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      padding: 0.85rem 2.5rem;
+      border-radius: 100px;
+      border: none;
+      cursor: pointer;
+      transition: background var(--transition), transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      box-shadow: 0 4px 16px rgba(107,79,61,0.25);
+    }
+
+    .btn-primary:hover, .btn-primary:focus-visible {
+      background: var(--earth-deep);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(107,79,61,0.3);
+      outline: none;
+    }
+
+    .btn-primary:active { transform: translateY(0); }
+
+    .btn-ghost {
+      display: inline-block;
+      background: transparent;
+      color: var(--earth);
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      padding: 0.6rem 1.5rem;
+      border-radius: 100px;
+      border: 1.5px solid var(--sand);
+      cursor: pointer;
+      transition: all var(--transition);
+      text-decoration: none;
+    }
+
+    .btn-ghost:hover, .btn-ghost:focus-visible {
+      border-color: var(--earth);
+      background: rgba(107,79,61,0.05);
+      outline: none;
+    }
+
+    .btn-danger {
+      background: transparent;
+      color: #b05c5c;
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 500;
+      border: 1.5px solid #d49090;
+      border-radius: 100px;
+      padding: 0.5rem 1.25rem;
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+
+    .btn-danger:hover {
+      background: #b05c5c;
+      color: white;
+    }
+
+    .link-subtle {
+      display: inline-block;
+      margin-top: 1.25rem;
+      font-size: 0.82rem;
+      color: var(--earth);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: opacity var(--transition);
+    }
+
+    .link-subtle:hover { opacity: 1; }
+
+    /* =====================
+       PROGRESS BAR
+    ===================== */
+    .progress-wrap {
+      margin-bottom: 1.75rem;
+    }
+
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--sand);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .progress-bar-track {
+      height: 4px;
+      background: rgba(212,196,176,0.4);
+      border-radius: 100px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--blush), var(--earth));
+      border-radius: 100px;
+      transition: width 0.5s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    /* =====================
+       QUESTION SCREEN
+    ===================== */
+    .question-screen-inner {
+      animation: fadeUp 0.35s ease both;
+    }
+
+    .question-text {
+      font-family: var(--font-heading);
+      font-size: clamp(1.1rem, 4vw, 1.35rem);
+      font-weight: 600;
+      color: var(--earth-deep);
+      line-height: 1.4;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Answer options grid */
+    .options-grid {
+      display: grid;
+      gap: 0.65rem;
+    }
+
+    .option-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      padding: 0.9rem 1rem;
+      border: 1.5px solid rgba(212,196,176,0.5);
+      border-radius: var(--radius-md);
+      background: rgba(255,250,245,0.7);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: left;
+      width: 100%;
+      font-family: var(--font-body);
+    }
+
+    .option-card:hover {
+      border-color: var(--blush);
+      background: rgba(232,168,124,0.07);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(232,168,124,0.15);
+    }
+
+    .option-card:focus-visible {
+      outline: 2px solid var(--blush);
+      outline-offset: 2px;
+    }
+
+    .option-card.selected {
+      border-color: var(--earth);
+      background: rgba(107,79,61,0.06);
+      box-shadow: 0 4px 16px rgba(107,79,61,0.12);
+    }
+
+    .option-icon {
+      font-size: 1.2rem;
+      line-height: 1;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .option-content {}
+
+    .option-label {
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--earth-deep);
+      display: block;
+      margin-bottom: 0.1rem;
+    }
+
+    .option-desc {
+      font-size: 0.78rem;
+      font-weight: 300;
+      color: var(--earth);
+      opacity: 0.8;
+    }
+
+    /* =====================
+       SLIDER QUESTION
+    ===================== */
+    .slider-wrap {
+      padding: 0.5rem 0 1rem;
+    }
+
+    .slider-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--sand);
+      margin-bottom: 0.6rem;
+    }
+
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 100px;
+      background: linear-gradient(90deg, var(--blush) 0%, var(--earth) 100%);
+      outline: none;
+      cursor: pointer;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--earth);
+      border: 3px solid var(--cream);
+      box-shadow: 0 2px 8px rgba(107,79,61,0.3);
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    input[type="range"]::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+      box-shadow: 0 4px 12px rgba(107,79,61,0.4);
+    }
+
+    input[type="range"]::-moz-range-thumb {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--earth);
+      border: 3px solid var(--cream);
+      box-shadow: 0 2px 8px rgba(107,79,61,0.3);
+      cursor: pointer;
+    }
+
+    .slider-value {
+      text-align: center;
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--earth-deep);
+      margin-top: 0.75rem;
+    }
+
+    .slider-value span {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--sand);
+    }
+
+    /* =====================
+       NAVIGATION BUTTONS
+    ===================== */
+    .nav-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1.75rem;
+      gap: 1rem;
+    }
+
+    .btn-back {
+      background: transparent;
+      border: none;
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      color: var(--sand);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.4rem 0;
+      transition: color var(--transition);
+    }
+
+    .btn-back:hover { color: var(--earth); }
+
+    .btn-next {
+      margin-left: auto;
+    }
+
+    /* =====================
+       RESULT SCREEN
+    ===================== */
+    .result-state-label {
+      font-family: var(--font-script);
+      font-size: clamp(2.2rem, 8vw, 3rem);
+      line-height: 1.1;
+      margin-bottom: 0.25rem;
+    }
+
+    .result-state-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.9rem;
+      border-radius: 100px;
+      margin-bottom: 1rem;
+    }
+
+    .result-description {
+      font-size: 0.93rem;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--earth);
+      margin-bottom: 1.5rem;
+    }
+
+    .score-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.85rem 1rem;
+      background: rgba(212,196,176,0.2);
+      border-radius: var(--radius-sm);
+      margin-bottom: 1.5rem;
+    }
+
+    .score-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--sand);
+    }
+
+    .score-value {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--earth-deep);
+    }
+
+    .score-sub {
+      font-size: 0.78rem;
+      color: var(--earth);
+      opacity: 0.7;
+    }
+
+    /* Strategies */
+    .strategies-heading {
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--earth-deep);
+      margin-bottom: 0.85rem;
+      letter-spacing: 0.01em;
+    }
+
+    .strategy-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .strategy-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-sm);
+      background: rgba(255,250,245,0.8);
+      border: 1px solid rgba(212,196,176,0.35);
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--earth);
+      line-height: 1.5;
+    }
+
+    .strategy-icon {
+      font-size: 1.05rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .result-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    /* State colour themes */
+    .state-activation .result-state-label { color: var(--activation); }
+    .state-activation .result-state-tag   { background: rgba(194,97,75,0.12); color: var(--activation); }
+    .state-activation                      { background: var(--activation-bg); }
+
+    .state-fawn .result-state-label { color: var(--fawn); }
+    .state-fawn .result-state-tag   { background: rgba(212,149,106,0.12); color: var(--fawn); }
+    .state-fawn                      { background: var(--fawn-bg); }
+
+    .state-freeze .result-state-label { color: var(--freeze); }
+    .state-freeze .result-state-tag   { background: rgba(122,143,166,0.12); color: var(--freeze); }
+    .state-freeze                      { background: var(--freeze-bg); }
+
+    .state-regulated .result-state-label { color: var(--regulated); }
+    .state-regulated .result-state-tag   { background: rgba(139,168,136,0.15); color: var(--regulated); }
+    .state-regulated                      { background: var(--regulated-bg); }
+
+    /* =====================
+       HISTORY SCREEN
+    ===================== */
+    .history-heading {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--earth-deep);
+      margin-bottom: 0.3rem;
+    }
+
+    .history-sub {
+      font-size: 0.82rem;
+      color: var(--earth);
+      opacity: 0.7;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Pattern insight */
+    .insight-card {
+      background: linear-gradient(135deg, rgba(232,168,124,0.12), rgba(139,168,136,0.08));
+      border: 1px solid rgba(232,168,124,0.3);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .insight-eyebrow {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--blush);
+      margin-bottom: 0.3rem;
+    }
+
+    .insight-text {
+      font-size: 0.87rem;
+      color: var(--earth);
+      line-height: 1.6;
+    }
+
+    /* Timeline */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .timeline-entry {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1rem;
+      background: rgba(255,250,245,0.85);
+      border: 1px solid rgba(212,196,176,0.35);
+      border-radius: var(--radius-md);
+      box-shadow: 0 2px 8px rgba(59,50,41,0.05);
+    }
+
+    .timeline-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .timeline-dot.activation { background: var(--activation); }
+    .timeline-dot.fawn       { background: var(--fawn); }
+    .timeline-dot.freeze     { background: var(--freeze); }
+    .timeline-dot.regulated  { background: var(--regulated); }
+
+    .timeline-date {
+      font-size: 0.72rem;
+      color: var(--sand);
+      font-weight: 500;
+      min-width: 80px;
+    }
+
+    .timeline-state {
+      font-family: var(--font-script);
+      font-size: 1.15rem;
+      color: var(--earth-deep);
+      flex: 1;
+    }
+
+    .timeline-score {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--earth);
+      background: rgba(212,196,176,0.25);
+      padding: 0.2rem 0.5rem;
+      border-radius: 100px;
+    }
+
+    .history-empty {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      color: var(--sand);
+      font-size: 0.88rem;
+      line-height: 1.7;
+    }
+
+    .history-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 0.5rem;
+    }
+
+    /* =====================
+       FOOTER
+    ===================== */
+    footer {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 2rem 1.5rem 2.5rem;
+      border-top: 1px solid rgba(212,196,176,0.3);
+      background: rgba(255,250,245,0.6);
+      backdrop-filter: blur(4px);
+    }
+
+    .footer-brand {
+      font-family: var(--font-script);
+      font-size: 1.3rem;
+      color: var(--earth);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-disclaimer {
+      font-size: 0.72rem;
+      color: var(--sand);
+      line-height: 1.6;
+      max-width: 420px;
+      margin: 0 auto 0.85rem;
+    }
+
+    .footer-cta {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--earth);
+      text-decoration: none;
+      border-bottom: 1px solid var(--blush);
+      padding-bottom: 1px;
+      transition: color var(--transition), border-color var(--transition);
+    }
+
+    .footer-cta:hover {
+      color: var(--blush);
+    }
+
+    /* =====================
+       TOAST NOTIFICATION
+    ===================== */
+    #toast {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: var(--earth-deep);
+      color: var(--cream);
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 100px;
+      z-index: 100;
+      opacity: 0;
+      transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+      white-space: nowrap;
+      box-shadow: var(--shadow-lg);
+    }
+
+    #toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* =====================
+       RESPONSIVE
+    ===================== */
+    @media (min-width: 640px) {
+      main { padding: 2.5rem 1.5rem 5rem; }
+      .card { padding: 2.5rem 2.25rem; }
+      .nav-row { margin-top: 2rem; }
+    }
+
+    @media (max-width: 360px) {
+      .card { padding: 1.5rem 1.25rem; }
+      .option-card { padding: 0.75rem 0.85rem; }
+    }
+
+    /* =====================
+       FOCUS VISIBLE STYLES
+    ===================== */
+    :focus-visible {
+      outline: 2px solid var(--blush);
+      outline-offset: 3px;
+      border-radius: var(--radius-sm);
+    }
+
+    /* =====================
+       UTILITY
+    ===================== */
+    .hidden { display: none !important; }
+    .text-center { text-align: center; }
+    .mt-1 { margin-top: 0.5rem; }
+    .mt-2 { margin-top: 1rem; }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <header class="brand-header" role="banner">
+      <div class="brand-name">Space Between Wellness</div>
+      <div class="brand-sub">Emily Witt</div>
+    </header>
+
+    <main role="main">
+      <div class="container">
+
+        <!-- =====================
+             WELCOME SCREEN
+        ===================== -->
+        <section id="screen-welcome" class="screen active" aria-label="Welcome">
+          <div class="card welcome-card">
+            <div class="welcome-eyebrow">Free Daily Tool</div>
+            <h1 class="welcome-title">Your Daily Nervous System Check-In</h1>
+            <p class="welcome-body">
+              Six gentle questions to help you understand where your nervous system is today - and what it needs. Takes about two minutes.
+            </p>
+            <button class="btn-primary" id="btn-start" aria-label="Start your daily check-in">
+              Check In Now
+            </button>
+            <div id="history-link-wrap" class="hidden">
+              <a class="link-subtle" id="link-history" role="button" tabindex="0" aria-label="View past check-in history">
+                View My History
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- =====================
+             QUESTION SCREEN
+        ===================== -->
+        <section id="screen-questions" class="screen" aria-label="Check-in questions">
+          <div class="card">
+            <div class="progress-wrap" role="group" aria-label="Progress">
+              <div class="progress-label">
+                <span id="progress-text">Question 1 of 6</span>
+                <span id="progress-pct">17%</span>
+              </div>
+              <div class="progress-bar-track" role="progressbar" aria-valuenow="17" aria-valuemin="0" aria-valuemax="100" aria-label="Progress">
+                <div class="progress-bar-fill" id="progress-fill" style="width: 17%"></div>
+              </div>
+            </div>
+
+            <div id="question-area" aria-live="polite">
+              <!-- Injected by JS -->
+            </div>
+
+            <div class="nav-row">
+              <button class="btn-back" id="btn-back" aria-label="Go to previous question">
+                &#8592; Back
+              </button>
+              <button class="btn-primary btn-next" id="btn-next" aria-label="Continue to next question">
+                Continue
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- =====================
+             RESULT SCREEN
+        ===================== -->
+        <section id="screen-result" class="screen" aria-label="Your result">
+          <div class="card" id="result-card">
+            <!-- Injected by JS -->
+          </div>
+        </section>
+
+        <!-- =====================
+             HISTORY SCREEN
+        ===================== -->
+        <section id="screen-history" class="screen" aria-label="Check-in history">
+          <div class="card">
+            <h2 class="history-heading">Your Check-In History</h2>
+            <p class="history-sub">Tracking patterns helps your nervous system feel seen.</p>
+
+            <div id="pattern-insight" class="insight-card hidden" aria-live="polite">
+              <div class="insight-eyebrow">Pattern Insight</div>
+              <p class="insight-text" id="insight-text"></p>
+            </div>
+
+            <div id="timeline-list" class="timeline" role="list" aria-label="Past check-ins">
+              <!-- Injected by JS -->
+            </div>
+
+            <div class="history-actions">
+              <button class="btn-primary" id="btn-history-checkin" aria-label="Start a new check-in">
+                New Check-In
+              </button>
+              <button class="btn-danger" id="btn-clear-history" aria-label="Clear all history">
+                Clear History
+              </button>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+    <footer role="contentinfo">
+      <div class="footer-brand">Space Between Wellness</div>
+      <p class="footer-disclaimer">
+        This tool is for self-awareness and reflection only. It is not a clinical assessment or medical advice. If you are in crisis, please contact a qualified mental health professional.
+      </p>
+      <a class="footer-cta" href="https://spacebetweenwellness.com.au" target="_blank" rel="noopener">
+        Want to go deeper? Book a Breakthrough Session
+      </a>
+    </footer>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <script>
+    /* =====================================================================
+       DATA
+    ===================================================================== */
+
+    const QUESTIONS = [
+      {
+        id: 'sleep',
+        text: 'How did you sleep last night?',
+        type: 'options',
+        options: [
+          { icon: '🌀', label: 'Restless', desc: 'Tossing, turning, mind busy all night', state: 'activation' },
+          { icon: '🌫️', label: 'Light',    desc: 'On alert, woke easily, not fully rested', state: 'fawn' },
+          { icon: '🪨', label: 'Heavy',    desc: 'Hard to wake, still exhausted, foggy', state: 'freeze' },
+          { icon: '🌿', label: 'Restful',  desc: 'Woke feeling rested and ready', state: 'regulated' },
+        ]
+      },
+      {
+        id: 'body',
+        text: 'What does your body feel like right now?',
+        type: 'options',
+        options: [
+          { icon: '⚡', label: 'Tense',   desc: 'Jaw tight, shoulders up, chest constricted', state: 'activation' },
+          { icon: '🪫', label: 'Heavy',   desc: 'Weighed down, exhausted, carrying too much', state: 'fawn' },
+          { icon: '🧊', label: 'Numb',    desc: 'Disconnected, hard to feel anything clearly', state: 'freeze' },
+          { icon: '🌊', label: 'Settled', desc: 'Relaxed, at home in my skin', state: 'regulated' },
+        ]
+      },
+      {
+        id: 'energy',
+        text: 'How would you describe your energy today?',
+        type: 'options',
+        options: [
+          { icon: '🔥', label: 'Wired',   desc: 'Restless, can\'t switch off, scattered', state: 'activation' },
+          { icon: '💧', label: 'Drained', desc: 'Running on empty from giving too much', state: 'fawn' },
+          { icon: '🌑', label: 'Flat',    desc: 'Low, foggy, barely getting through', state: 'freeze' },
+          { icon: '☀️', label: 'Steady',  desc: 'Grounded, clear, present energy', state: 'regulated' },
+        ]
+      },
+      {
+        id: 'requests',
+        text: 'When someone asks something of you today, you...?',
+        type: 'options',
+        options: [
+          { icon: '😤', label: 'React sharply',          desc: 'Snap, feel irritated, can\'t help it', state: 'activation' },
+          { icon: '🤲', label: 'Say yes immediately',     desc: 'Before thinking, even if you\'re exhausted', state: 'fawn' },
+          { icon: '😶', label: 'Can\'t process it',      desc: 'Brain goes blank, shut down', state: 'freeze' },
+          { icon: '🤔', label: 'Consider calmly',        desc: 'Pause, check in, respond thoughtfully', state: 'regulated' },
+        ]
+      },
+      {
+        id: 'thought',
+        text: 'What is the loudest thought in your head right now?',
+        type: 'options',
+        options: [
+          { icon: '🏃', label: '"I need to do more"',         desc: 'Urgency, not enough, must keep going', state: 'activation' },
+          { icon: '🤝', label: '"Everyone needs me"',         desc: 'Responsibility for others, can\'t disappoint', state: 'fawn' },
+          { icon: '💭', label: '"What\'s the point?"',        desc: 'Flat, stuck, nothing seems to matter', state: 'freeze' },
+          { icon: '🍃', label: '"I\'m okay, I\'ve got this"', desc: 'Grounded, confident, present', state: 'regulated' },
+        ]
+      },
+      {
+        id: 'wellbeing',
+        text: 'Overall, how are you honestly feeling today?',
+        type: 'slider',
+        min: 1,
+        max: 10,
+        default: 5,
+      }
+    ];
+
+    const STATES = {
+      activation: {
+        key: 'activation',
+        name: 'Activation',
+        subtitle: 'Fight Response',
+        description: 'Your nervous system is in high alert. It\'s protecting you - but right now it may be burning through your energy, making it hard to rest, connect, or feel safe. This is not a character flaw. It is biology doing its job.',
+        strategies: [
+          { icon: '🫁', text: 'Slow exhale reset - breathe in for 4 counts, exhale for 8. Repeat 5 times to activate your parasympathetic system.' },
+          { icon: '🧊', text: 'Cold water on your wrists and back of neck for 30 seconds - signals safety to your brainstem directly.' },
+          { icon: '🚶', text: 'Walk slowly for 5 minutes with eyes wide and scanning - this tells your nervous system the threat has passed.' },
+        ]
+      },
+      fawn: {
+        key: 'fawn',
+        name: 'Over Giving',
+        subtitle: 'Fawn Response',
+        description: 'You are in people-pleasing mode, scanning for others\' needs before your own. Your nervous system has learned that keeping others happy keeps you safe. The cost is you - your energy, your boundaries, your quiet self.',
+        strategies: [
+          { icon: '🛑', text: 'Practice one small no today. "I can\'t do that right now" said quietly is a nervous system retraining exercise.' },
+          { icon: '🫶', text: 'Place a hand on your chest, close your eyes and ask "What do I actually need right now?" Stay with the answer for 60 seconds.' },
+          { icon: '🍵', text: 'Do one thing just for you in the next hour - not productive, not for anyone else. Even 5 minutes counts.' },
+        ]
+      },
+      freeze: {
+        key: 'freeze',
+        name: 'Shut Down',
+        subtitle: 'Freeze Response',
+        description: 'Your nervous system has gone quiet to protect you. Numbness, fog, and flatness are signs of overwhelm, not weakness. Your body chose the most energy-conserving response it knows. Gentle movement back is the path forward.',
+        strategies: [
+          { icon: '🌡️', text: 'Warmth activates the ventral vagal nerve - hold a warm mug, take a warm shower, or sit in sunlight for 5 minutes.' },
+          { icon: '👣', text: 'Stamp your feet gently on the floor 10 times. Feel the contact. This reconnects you to your body and the present moment.' },
+          { icon: '🎵', text: 'Put on one song you love and let your body move however it wants - even just swaying. Sound and rhythm are direct nervous system medicine.' },
+        ]
+      },
+      regulated: {
+        key: 'regulated',
+        name: 'Regulated',
+        subtitle: 'Window of Safety',
+        description: 'You are in your window of tolerance. Your nervous system is online, connected, and capable. This is the state where healing, growth, creativity, and real connection all happen. Notice this - it is worth celebrating.',
+        strategies: [
+          { icon: '📝', text: 'Journal for 5 minutes on what helped you feel this way - so you can return here intentionally when things shift.' },
+          { icon: '🤝', text: 'Reach out to someone you love just to connect. Regulated nervous systems co-regulate others around them.' },
+          { icon: '🌱', text: 'Use this window to do one thing that feels meaningful or nourishing. Your capacity right now is a resource - use it well.' },
+        ]
+      }
+    };
+
+    const STATE_ORDER = ['activation', 'fawn', 'freeze', 'regulated'];
+    const STORAGE_KEY = 'nsTracker_entries';
+
+    /* =====================================================================
+       STATE
+    ===================================================================== */
+
+    let currentScreen = 'welcome';
+    let currentQuestion = 0;
+    let answers = {}; // { questionId: { state, value } }
+    let sliderValue = 5;
+
+    /* =====================================================================
+       UTILS
+    ===================================================================== */
+
+    function getEntries() {
+      try {
+        return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+      } catch {
+        return [];
+      }
+    }
+
+    function saveEntry(entry) {
+      const entries = getEntries();
+      entries.unshift(entry);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(entries));
+    }
+
+    function clearEntries() {
+      localStorage.removeItem(STORAGE_KEY);
+    }
+
+    function formatDate(iso) {
+      const d = new Date(iso);
+      const today = new Date();
+      const yesterday = new Date();
+      yesterday.setDate(today.getDate() - 1);
+
+      if (d.toDateString() === today.toDateString()) return 'Today';
+      if (d.toDateString() === yesterday.toDateString()) return 'Yesterday';
+
+      return d.toLocaleDateString('en-AU', { day: 'numeric', month: 'short' });
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2800);
+    }
+
+    function showScreen(id) {
+      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+      const target = document.getElementById('screen-' + id);
+      target.classList.add('active');
+      currentScreen = id;
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    /* =====================================================================
+       SCORING LOGIC
+    ===================================================================== */
+
+    function calculateResult() {
+      const stateCounts = { activation: 0, fawn: 0, freeze: 0, regulated: 0 };
+
+      // Count state votes from option questions
+      ['sleep', 'body', 'energy', 'requests', 'thought'].forEach(qid => {
+        const a = answers[qid];
+        if (a && a.state) stateCounts[a.state]++;
+      });
+
+      // Find winning state (most votes wins)
+      let winningState = 'regulated';
+      let maxCount = -1;
+      STATE_ORDER.forEach(s => {
+        if (stateCounts[s] > maxCount) {
+          maxCount = stateCounts[s];
+          winningState = s;
+        }
+      });
+
+      return {
+        state: winningState,
+        score: answers.wellbeing ? answers.wellbeing.value : sliderValue,
+        stateCounts,
+      };
+    }
+
+    /* =====================================================================
+       RENDER FUNCTIONS
+    ===================================================================== */
+
+    function renderQuestion(index) {
+      const q = QUESTIONS[index];
+      const area = document.getElementById('question-area');
+      const total = QUESTIONS.length;
+      const pct = Math.round(((index + 1) / total) * 100);
+
+      // Update progress
+      document.getElementById('progress-text').textContent = `Question ${index + 1} of ${total}`;
+      document.getElementById('progress-pct').textContent = pct + '%';
+      const fill = document.getElementById('progress-fill');
+      fill.style.width = pct + '%';
+      fill.parentElement.setAttribute('aria-valuenow', pct);
+
+      // Back button visibility
+      document.getElementById('btn-back').style.visibility = index === 0 ? 'hidden' : 'visible';
+
+      let html = '';
+
+      if (q.type === 'options') {
+        html = `
+          <h2 class="question-text">${q.text}</h2>
+          <div class="options-grid" role="group" aria-label="${q.text}">
+        `;
+        q.options.forEach((opt, i) => {
+          const isSelected = answers[q.id] && answers[q.id].state === opt.state;
+          html += `
+            <button
+              class="option-card${isSelected ? ' selected' : ''}"
+              data-qid="${q.id}"
+              data-state="${opt.state}"
+              data-index="${i}"
+              aria-pressed="${isSelected}"
+              aria-label="${opt.label}: ${opt.desc}"
+            >
+              <span class="option-icon" aria-hidden="true">${opt.icon}</span>
+              <span class="option-content">
+                <span class="option-label">${opt.label}</span>
+                <span class="option-desc">${opt.desc}</span>
+              </span>
+            </button>
+          `;
+        });
+        html += `</div>`;
+
+      } else if (q.type === 'slider') {
+        const currentVal = answers[q.id] ? answers[q.id].value : q.default;
+        sliderValue = currentVal;
+        html = `
+          <h2 class="question-text">${q.text}</h2>
+          <div class="slider-wrap">
+            <div class="slider-labels">
+              <span>Struggling (1)</span>
+              <span>Thriving (10)</span>
+            </div>
+            <input
+              type="range"
+              id="slider-wellbeing"
+              min="${q.min}"
+              max="${q.max}"
+              value="${currentVal}"
+              step="1"
+              aria-label="Wellbeing score from 1 to 10"
+              aria-valuenow="${currentVal}"
+              aria-valuemin="${q.min}"
+              aria-valuemax="${q.max}"
+            />
+            <div class="slider-value" id="slider-display">
+              ${currentVal} <span>/ 10</span>
+            </div>
+          </div>
+        `;
+      }
+
+      // Animate in
+      area.style.opacity = '0';
+      area.style.transform = 'translateY(12px)';
+      area.innerHTML = html;
+
+      requestAnimationFrame(() => {
+        area.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        area.style.opacity = '1';
+        area.style.transform = 'translateY(0)';
+      });
+
+      // Bind option clicks
+      if (q.type === 'options') {
+        area.querySelectorAll('.option-card').forEach(btn => {
+          btn.addEventListener('click', () => {
+            area.querySelectorAll('.option-card').forEach(b => {
+              b.classList.remove('selected');
+              b.setAttribute('aria-pressed', 'false');
+            });
+            btn.classList.add('selected');
+            btn.setAttribute('aria-pressed', 'true');
+            answers[q.id] = { state: btn.dataset.state };
+          });
+        });
+      }
+
+      // Bind slider
+      if (q.type === 'slider') {
+        const slider = document.getElementById('slider-wellbeing');
+        const display = document.getElementById('slider-display');
+        slider.addEventListener('input', () => {
+          const v = parseInt(slider.value);
+          sliderValue = v;
+          display.innerHTML = `${v} <span>/ 10</span>`;
+          slider.setAttribute('aria-valuenow', v);
+          answers[q.id] = { value: v };
+        });
+      }
+    }
+
+    function renderResult() {
+      const { state, score } = calculateResult();
+      const stateData = STATES[state];
+      const card = document.getElementById('result-card');
+
+      card.className = `card state-${state}`;
+
+      const strategiesHTML = stateData.strategies.map(s => `
+        <li class="strategy-item">
+          <span class="strategy-icon" aria-hidden="true">${s.icon}</span>
+          <span>${s.text}</span>
+        </li>
+      `).join('');
+
+      card.innerHTML = `
+        <div class="welcome-eyebrow">Your Nervous System State</div>
+        <div class="result-state-label" aria-label="State: ${stateData.name}">${stateData.name}</div>
+        <div class="result-state-tag">${stateData.subtitle}</div>
+        <p class="result-description">${stateData.description}</p>
+
+        <div class="score-row" aria-label="Wellbeing score: ${score} out of 10">
+          <span class="score-label">Wellbeing Score</span>
+          <span class="score-value">${score}</span>
+          <span class="score-sub">/ 10</span>
+        </div>
+
+        <p class="strategies-heading">Try one of these right now (5 minutes or less):</p>
+        <ul class="strategy-list" aria-label="Regulation strategies">
+          ${strategiesHTML}
+        </ul>
+
+        <div class="result-actions">
+          <button class="btn-primary" id="btn-save" aria-label="Save this check-in to your history">
+            Save Check-In
+          </button>
+          <button class="btn-ghost" id="btn-result-history" aria-label="View check-in history">
+            View History
+          </button>
+        </div>
+      `;
+
+      // Bind save button
+      document.getElementById('btn-save').addEventListener('click', () => {
+        const entry = {
+          date: new Date().toISOString(),
+          state,
+          score,
+        };
+        saveEntry(entry);
+        document.getElementById('btn-save').textContent = 'Saved!';
+        document.getElementById('btn-save').disabled = true;
+        showToast('Check-in saved to your history');
+        updateWelcomeHistoryLink();
+      });
+
+      document.getElementById('btn-result-history').addEventListener('click', () => {
+        renderHistory();
+        showScreen('history');
+      });
+    }
+
+    function renderHistory() {
+      const entries = getEntries();
+      const timeline = document.getElementById('timeline-list');
+      const insight = document.getElementById('pattern-insight');
+      const insightText = document.getElementById('insight-text');
+
+      if (entries.length === 0) {
+        timeline.innerHTML = `
+          <div class="history-empty" role="listitem">
+            <p>No check-ins yet.<br>Complete your first one to start tracking patterns.</p>
+          </div>
+        `;
+        insight.classList.add('hidden');
+        return;
+      }
+
+      // Timeline
+      timeline.innerHTML = entries.map(e => `
+        <div class="timeline-entry" role="listitem">
+          <span class="timeline-dot ${e.state}" aria-hidden="true"></span>
+          <span class="timeline-date">${formatDate(e.date)}</span>
+          <span class="timeline-state">${STATES[e.state].name}</span>
+          <span class="timeline-score" aria-label="Score ${e.score} out of 10">${e.score}/10</span>
+        </div>
+      `).join('');
+
+      // Pattern insight (3+ entries)
+      if (entries.length >= 3) {
+        const recent = entries.slice(0, Math.min(7, entries.length));
+        const counts = { activation: 0, fawn: 0, freeze: 0, regulated: 0 };
+        recent.forEach(e => counts[e.state]++);
+
+        const dominant = Object.entries(counts).sort((a, b) => b[1] - a[1])[0][0];
+        const avgScore = Math.round(recent.reduce((s, e) => s + e.score, 0) / recent.length);
+        const regulatedPct = Math.round((counts.regulated / recent.length) * 100);
+
+        const insightMessages = {
+          activation: `Your nervous system has been spending a lot of time in activation mode lately. High alert is exhausting. Even 10 minutes of intentional rest daily can begin to shift the pattern over time.`,
+          fawn: `Patterns show you have been in giving mode more often than not. Your needs matter too. Practising even small acts of self-prioritising signals safety to your nervous system.`,
+          freeze: `Your system has been shutting down to cope. This often follows a period of overwhelm. Gentle, warm, sensory experiences are your fastest route back to regulation.`,
+          regulated: `You have been spending good time in regulation. Your nervous system is doing well. Keep noticing what conditions support this - they are your regulation recipe.`,
+        };
+
+        insightText.textContent = `Over your last ${recent.length} check-ins, you have most often been in ${STATES[dominant].name} state (${dominantPercent(counts, dominant, recent.length)}% of the time). Your average wellbeing score is ${avgScore}/10. ${regulatedPct > 50 ? 'More than half your check-ins show regulation - that is real progress.' : 'You are building self-awareness, which is the first step to lasting regulation.'} ${insightMessages[dominant]}`;
+
+        insight.classList.remove('hidden');
+      } else {
+        insight.classList.add('hidden');
+      }
+    }
+
+    function dominantPercent(counts, state, total) {
+      return Math.round((counts[state] / total) * 100);
+    }
+
+    function updateWelcomeHistoryLink() {
+      const entries = getEntries();
+      const wrap = document.getElementById('history-link-wrap');
+      if (entries.length > 0) {
+        wrap.classList.remove('hidden');
+      } else {
+        wrap.classList.add('hidden');
+      }
+    }
+
+    /* =====================================================================
+       EVENT WIRING
+    ===================================================================== */
+
+    // Welcome - start
+    document.getElementById('btn-start').addEventListener('click', () => {
+      currentQuestion = 0;
+      answers = {};
+      renderQuestion(0);
+      showScreen('questions');
+    });
+
+    // Welcome - history link
+    document.getElementById('link-history').addEventListener('click', () => {
+      renderHistory();
+      showScreen('history');
+    });
+    document.getElementById('link-history').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        renderHistory();
+        showScreen('history');
+      }
+    });
+
+    // Questions - next
+    document.getElementById('btn-next').addEventListener('click', () => {
+      const q = QUESTIONS[currentQuestion];
+
+      // Validate
+      if (q.type === 'options' && !answers[q.id]) {
+        showToast('Please choose an option to continue');
+        return;
+      }
+
+      // Capture slider value if on last question
+      if (q.type === 'slider') {
+        if (!answers[q.id]) {
+          answers[q.id] = { value: sliderValue };
+        }
+      }
+
+      if (currentQuestion < QUESTIONS.length - 1) {
+        currentQuestion++;
+        renderQuestion(currentQuestion);
+      } else {
+        // All questions answered - show result
+        renderResult();
+        showScreen('result');
+      }
+    });
+
+    // Questions - back
+    document.getElementById('btn-back').addEventListener('click', () => {
+      if (currentQuestion > 0) {
+        currentQuestion--;
+        renderQuestion(currentQuestion);
+      }
+    });
+
+    // History - new check-in
+    document.getElementById('btn-history-checkin').addEventListener('click', () => {
+      currentQuestion = 0;
+      answers = {};
+      renderQuestion(0);
+      showScreen('questions');
+    });
+
+    // History - clear
+    document.getElementById('btn-clear-history').addEventListener('click', () => {
+      if (confirm('Are you sure you want to clear all your check-in history? This cannot be undone.')) {
+        clearEntries();
+        renderHistory();
+        updateWelcomeHistoryLink();
+        showToast('History cleared');
+      }
+    });
+
+    /* =====================================================================
+       INIT
+    ===================================================================== */
+
+    updateWelcomeHistoryLink();
+  </script>
+</body>
+</html>
