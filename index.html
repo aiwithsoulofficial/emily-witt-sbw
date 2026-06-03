@@ -1174,6 +1174,99 @@ h1, h2, h3, h4 {
 }
 
 /* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+#testimonials {
+  background: var(--warm-white);
+}
+
+.testimonials-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 56px;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.testimonial-card {
+  background: var(--cream);
+  border-radius: var(--radius);
+  padding: 40px 32px 32px;
+  border: 1px solid var(--sand-light);
+  border-top: 4px solid var(--blush);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.testimonial-card::before {
+  content: '"';
+  position: absolute;
+  top: 8px;
+  left: 24px;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 4.5rem;
+  line-height: 1;
+  color: var(--blush);
+  opacity: 0.6;
+}
+
+.testimonial-card blockquote {
+  margin: 0 0 24px;
+  flex: 1;
+}
+
+.testimonial-card blockquote p {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--charcoal-soft);
+  line-height: 1.75;
+  margin-bottom: 14px;
+}
+
+.testimonial-card blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.testimonial-card figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 18px;
+  border-top: 1px solid var(--sand-light);
+}
+
+.testimonial-source {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--earth);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.testimonial-via {
+  font-family: var(--font-script);
+  font-style: italic;
+  font-size: 0.9375rem;
+  color: var(--charcoal-soft);
+}
+
+@media (max-width: 960px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    max-width: 620px;
+    margin: 0 auto;
+  }
+}
+
+/* ============================================================
    CORPORATE
    ============================================================ */
 #corporate {
@@ -2543,6 +2636,53 @@ h1, h2, h3, h4 {
 </section>
 
 <!-- ============================================================
+     TESTIMONIALS - SOUND BATH CLIENT WORDS
+     ============================================================ -->
+<section id="testimonials" class="section-pad-lg" aria-labelledby="testimonials-heading">
+  <div class="container">
+    <div class="testimonials-header reveal">
+      <span class="section-label">In their words</span>
+      <h2 class="section-heading" id="testimonials-heading">From women who have actually been here.</h2>
+    </div>
+
+    <div class="testimonials-grid">
+      <figure class="testimonial-card reveal">
+        <blockquote>
+          <p>The most wonderful experience for anyone looking to feel grounded, calmer, more energised and in a peaceful, mindful state of being. The space has beautiful energy, and Emily is incredible - her ability to tune into one's energetic state is simply magical.</p>
+          <p>I will be adding Emily's sound bathing services to my regular somatic practices.</p>
+        </blockquote>
+        <figcaption>
+          <span class="testimonial-source">Sound bath client</span>
+          <span class="testimonial-via">via Instagram</span>
+        </figcaption>
+      </figure>
+
+      <figure class="testimonial-card reveal reveal-delay-1">
+        <blockquote>
+          <p>I'm not even sure how to describe the feeling, other than complete relaxation and like you're floating away into the clouds. It was like something drew me toward you, knowing I was in for a bad day even though I'd booked it in advance.</p>
+          <p>It was truly something special, like a reset and rest my body truly needed. I'll be back. I'm so glad I've found you.</p>
+        </blockquote>
+        <figcaption>
+          <span class="testimonial-source">Sound bath client</span>
+          <span class="testimonial-via">via Instagram</span>
+        </figcaption>
+      </figure>
+
+      <figure class="testimonial-card reveal reveal-delay-2">
+        <blockquote>
+          <p>I had my first sound bath today. I didn't read up on it - I wanted a completely unbiased experience.</p>
+          <p>For something to bring me calmness and a sense of peace and safety after losing my business page yesterday, it is well worth taking the time and investing a small portion of your day to yourself and the benefits that follow.</p>
+        </blockquote>
+        <figcaption>
+          <span class="testimonial-source">Sound bath client</span>
+          <span class="testimonial-via">via Instagram</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
      CORPORATE / ORGANISATIONS
      ============================================================ -->
 <section id="corporate" class="section-pad-lg" aria-labelledby="corp-heading">
@@ -2550,18 +2690,18 @@ h1, h2, h3, h4 {
     <div class="corporate-inner">
       <div class="corporate-content reveal">
         <span class="section-label">For Organisations</span>
-        <h2 class="section-heading" id="corp-heading">When your people are burning out, the whole organisation pays the price.</h2>
+        <h2 class="section-heading" id="corp-heading">When your people are running on empty, the whole organisation pays the price.</h2>
         <p class="lead">
-          Psychological hazards, vicarious trauma, and chronic stress don't disappear with a wellness day. Emily brings evidence-informed, trauma-aware wellbeing education directly into your organisation - designed for the teams operating under real pressure.
+          Psychological hazards, vicarious trauma, and chronic stress don't disappear with a wellness day. Emily brings evidence-informed, trauma-aware wellbeing education directly into your organisation - designed for executives, leadership teams, and value-aligned businesses where the people are the asset.
         </p>
 
         <ul class="corporate-list" aria-label="Organisational services">
+          <li>Executive and leadership team coaching for nervous system regulation under pressure</li>
+          <li>Burnout prevention programs grounded in nervous system science</li>
           <li>Trauma-informed practice workshops for frontline and leadership teams</li>
           <li>Workplace wellbeing consulting and program development</li>
-          <li>Burnout prevention programs grounded in nervous system science</li>
-          <li>Nervous system regulation for high-pressure and crisis-facing teams</li>
           <li>Reflective practice and emotional literacy for people leaders</li>
-          <li>Co-designed training aligned to your team's goals and values</li>
+          <li>Co-designed training aligned to your team's goals, culture, and values</li>
         </ul>
 
         <a href="#" class="btn btn-dark">Book a Consultation</a>
@@ -2569,14 +2709,16 @@ h1, h2, h3, h4 {
 
       <div class="reveal reveal-delay-2">
         <div class="corporate-sectors">
-          <h4>Sectors Emily works with</h4>
+          <h4>Who Emily works with</h4>
           <div class="sector-tags">
+            <span class="sector-tag">Executive Leadership</span>
+            <span class="sector-tag">Founder-Led Businesses</span>
+            <span class="sector-tag">Value-Aligned Organisations</span>
             <span class="sector-tag">Not-for-profits</span>
             <span class="sector-tag">Community Services</span>
             <span class="sector-tag">Crisis Services</span>
             <span class="sector-tag">Healthcare</span>
             <span class="sector-tag">Education</span>
-            <span class="sector-tag">Adult Shelters</span>
             <span class="sector-tag">Family Violence Services</span>
             <span class="sector-tag">Mental Health</span>
           </div>
