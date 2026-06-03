@@ -357,9 +357,9 @@ h1, h2, h3, h4 {
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(245, 241, 237, 0.55) 0%,
-    rgba(245, 241, 237, 0.35) 40%,
-    rgba(245, 241, 237, 0.65) 100%
+    rgba(245, 241, 237, 0.72) 0%,
+    rgba(245, 241, 237, 0.55) 35%,
+    rgba(245, 241, 237, 0.80) 100%
   );
 }
 
@@ -417,7 +417,7 @@ h1, h2, h3, h4 {
 
 .hero-script {
   font-size: 3rem;
-  color: var(--blush);
+  color: var(--earth);
   display: block;
   margin-bottom: 16px;
 }
@@ -782,9 +782,18 @@ h1, h2, h3, h4 {
 
 .ns-card {
   border-radius: var(--radius);
-  padding: 36px 24px;
   border: 1.5px solid var(--sand-light);
+  overflow: hidden;
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.ns-card-body {
+  padding: 28px 24px 32px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .ns-card:hover {
@@ -793,14 +802,15 @@ h1, h2, h3, h4 {
   border-color: transparent;
 }
 
-.ns-card.activation { border-top: 4px solid #E8A87C; }
-.ns-card.overgiving { border-top: 4px solid #B5CCAF; }
-.ns-card.shutdown { border-top: 4px solid #D4C4B0; }
-.ns-card.regulated { border-top: 4px solid #8BA888; }
+.ns-card.activation { border-top: 4px solid var(--earth); }
+.ns-card.overgiving { border-top: 4px solid var(--blush); }
+.ns-card.shutdown { border-top: 4px solid var(--sand); }
+.ns-card.regulated { border-top: 4px solid var(--accent-yellow); }
 
-.ns-emoji {
-  font-size: 2rem;
-  margin-bottom: 16px;
+.ns-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
   display: block;
 }
 
@@ -2312,31 +2322,39 @@ h1, h2, h3, h4 {
 
     <div class="ns-grid" role="list">
       <div class="ns-card activation reveal" role="listitem">
-        <span class="ns-emoji" aria-hidden="true">&#x26A1;</span>
-        <h3 class="ns-name">Activation</h3>
-        <span class="ns-clinical">Fight response</span>
-        <p class="ns-desc">Driven, restless, reactive. You're running on adrenaline and mistaking it for motivation. Everything feels urgent. Rest feels impossible.</p>
+        <img class="ns-image" src="assets/nature-states/activation-lava.jpg" alt="Glowing molten lava flowing through dark volcanic rock - the urgent, burning quality of activation" loading="lazy">
+        <div class="ns-card-body">
+          <h3 class="ns-name">Activation</h3>
+          <span class="ns-clinical">Fight response</span>
+          <p class="ns-desc">Driven, restless, reactive. You're running on adrenaline and mistaking it for motivation. Everything feels urgent. Rest feels impossible.</p>
+        </div>
       </div>
 
       <div class="ns-card overgiving reveal reveal-delay-1" role="listitem">
-        <span class="ns-emoji" aria-hidden="true">&#x1F90D;</span>
-        <h3 class="ns-name">Over Giving</h3>
-        <span class="ns-clinical">Fawn response</span>
-        <p class="ns-desc">People-pleasing, saying yes when your body is screaming no. You've made yourself so agreeable you've lost track of what you actually want.</p>
+        <img class="ns-image" src="assets/nature-states/overgiving-dunes.jpg" alt="Soft red dunes flowing beneath a pink sky - the yielding, shape-shifting quality of over-giving" loading="lazy">
+        <div class="ns-card-body">
+          <h3 class="ns-name">Over Giving</h3>
+          <span class="ns-clinical">Fawn response</span>
+          <p class="ns-desc">People-pleasing, saying yes when your body is screaming no. You've made yourself so agreeable you've lost track of what you actually want.</p>
+        </div>
       </div>
 
       <div class="ns-card shutdown reveal reveal-delay-2" role="listitem">
-        <span class="ns-emoji" aria-hidden="true">&#x1F32B;</span>
-        <h3 class="ns-name">Shut Down</h3>
-        <span class="ns-clinical">Freeze response</span>
-        <p class="ns-desc">Numb, foggy, disconnected. Going through the motions. The emotional dial has been turned down so low you feel like you're watching your life from behind glass.</p>
+        <img class="ns-image" src="assets/nature-states/shutdown-fog.jpg" alt="A warm sunrise seen through heavy fog, distant silhouettes - the watching-from-behind-glass quality of shut down" loading="lazy">
+        <div class="ns-card-body">
+          <h3 class="ns-name">Shut Down</h3>
+          <span class="ns-clinical">Freeze response</span>
+          <p class="ns-desc">Numb, foggy, disconnected. Going through the motions. The emotional dial has been turned down so low you feel like you're watching your life from behind glass.</p>
+        </div>
       </div>
 
       <div class="ns-card regulated reveal reveal-delay-3" role="listitem">
-        <span class="ns-emoji" aria-hidden="true">&#x1F331;</span>
-        <h3 class="ns-name">Regulated</h3>
-        <span class="ns-clinical">Safety response</span>
-        <p class="ns-desc">Present, grounded, clear. You can feel the full range of your emotions without being controlled by them. This is where growth, connection, and creativity live.</p>
+        <img class="ns-image" src="assets/nature-states/regulated-water.jpg" alt="Calm water at golden hour, soft rippling reflections - the grounded, present quality of regulation" loading="lazy">
+        <div class="ns-card-body">
+          <h3 class="ns-name">Regulated</h3>
+          <span class="ns-clinical">Safety response</span>
+          <p class="ns-desc">Present, grounded, clear. You can feel the full range of your emotions without being controlled by them. This is where growth, connection, and creativity live.</p>
+        </div>
       </div>
     </div>
 
