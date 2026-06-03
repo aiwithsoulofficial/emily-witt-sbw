@@ -25,27 +25,29 @@
 <meta name="twitter:description" content="Trauma-informed coaching for women ready to stop performing and start living. Evidence-informed guidance woven with spiritual wisdom. Hobart, Tasmania.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
    CSS CUSTOM PROPERTIES
    ============================================================ */
 :root {
-  --blush: #E8A87C;
-  --blush-light: #F5D5C3;
-  --blush-pale: #FFF0E8;
-  --earth: #6B4F3D;
-  --earth-deep: #4A3728;
-  --sage: #8BA888;
-  --sage-muted: #B5CCAF;
-  --sage-pale: #EDF4EB;
-  --cream: #FFFAF5;
-  --warm-white: #FFF8F0;
-  --charcoal: #3B3229;
-  --charcoal-soft: #5C4F43;
-  --sand: #D4C4B0;
-  --sand-light: #E8DDD0;
-  --font-script: 'Alex Brush', cursive;
+  --blush: #E4B5C1;
+  --blush-light: #EDD0D7;
+  --blush-pale: #F7E6D3;
+  --earth: #522C1F;
+  --earth-deep: #2B1E1E;
+  --sage: #522C1F;
+  --sage-muted: #D4C4B0;
+  --sage-pale: #F7E6D3;
+  --cream: #F5F1ED;
+  --warm-white: #F7F3EF;
+  --charcoal: #2B1E1E;
+  --charcoal-soft: #5C4033;
+  --sand: #C4B19E;
+  --sand-light: #E2D6CA;
+  --accent-yellow: #D4A24A;
+  --accent-yellow-soft: #E8C275;
+  --font-script: 'Playfair Display', serif;
   --font-serif: 'Playfair Display', serif;
   --font-body: 'Work Sans', sans-serif;
   --radius: 16px;
@@ -85,8 +87,10 @@ button { cursor: pointer; font-family: var(--font-body); border: none; outline: 
    ============================================================ */
 .script {
   font-family: var(--font-script);
+  font-style: italic;
   font-weight: 400;
   line-height: 1.2;
+  letter-spacing: 0.01em;
 }
 
 h1, h2, h3, h4 {
@@ -244,6 +248,7 @@ h1, h2, h3, h4 {
 
 .nav-brand {
   font-family: var(--font-script);
+  font-style: italic;
   font-size: 2rem;
   color: var(--earth);
   letter-spacing: 0.01em;
@@ -336,16 +341,26 @@ h1, h2, h3, h4 {
   padding-top: 72px;
 }
 
-/* Flower texture - static, very subtle */
+/* Hero base layer - warm outback aerial, palette-matched (pink + earth + cream) */
 .hero-texture {
   position: absolute;
   inset: 0;
-  background-image: url('assets/pexels-freya-tienan-2150916098-36517512.jpg');
+  background-image: url('assets/hero-banner-original.jpg');
   background-size: cover;
   background-position: center;
-  opacity: 0.08;
   z-index: 1;
   pointer-events: none;
+}
+.hero-texture::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(245, 241, 237, 0.55) 0%,
+    rgba(245, 241, 237, 0.35) 40%,
+    rgba(245, 241, 237, 0.65) 100%
+  );
 }
 
 /* Animated overlay that drifts over the static image */
@@ -505,6 +520,7 @@ h1, h2, h3, h4 {
 
 .split-content .script-label {
   font-family: var(--font-script);
+  font-style: italic;
   font-size: 1.75rem;
   color: var(--blush);
   display: block;
@@ -588,6 +604,7 @@ h1, h2, h3, h4 {
 
 .quote-attr {
   font-family: var(--font-script);
+  font-style: italic;
   font-size: 1.75rem;
   color: var(--blush);
 }
@@ -672,6 +689,7 @@ h1, h2, h3, h4 {
 
 .method-number {
   font-family: var(--font-script);
+  font-style: italic;
   font-size: 3rem;
   color: var(--blush-light);
   display: block;
@@ -843,6 +861,7 @@ h1, h2, h3, h4 {
 
 .ity-content .script-label {
   font-family: var(--font-script);
+  font-style: italic;
   font-size: 1.75rem;
   color: var(--blush);
   display: block;
@@ -1045,6 +1064,28 @@ h1, h2, h3, h4 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 28px;
+}
+
+.community-card.with-image {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.community-card.with-image .community-card-img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.community-card.with-image .community-card-body {
+  padding: 36px 36px 40px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .community-card {
@@ -1257,6 +1298,7 @@ h1, h2, h3, h4 {
 
 .about-content .script-accent {
   font-family: var(--font-script);
+  font-style: italic;
   font-size: 2.5rem;
   color: var(--blush);
   display: block;
@@ -1312,6 +1354,7 @@ h1, h2, h3, h4 {
 
 .brand-promise {
   font-family: var(--font-script);
+  font-style: italic;
   font-size: 2.75rem;
   color: var(--earth);
   text-align: center;
@@ -1455,6 +1498,7 @@ h1, h2, h3, h4 {
 
 .cta-script {
   font-family: var(--font-script);
+  font-style: italic;
   font-size: clamp(2.5rem, 5vw, 4rem);
   color: var(--blush-light);
   display: block;
@@ -1497,6 +1541,7 @@ h1, h2, h3, h4 {
 
 .footer-brand-name {
   font-family: var(--font-script);
+  font-style: italic;
   font-size: 2.25rem;
   color: var(--blush-light);
   display: block;
@@ -1512,6 +1557,7 @@ h1, h2, h3, h4 {
 
 .footer-promise {
   font-family: var(--font-script);
+  font-style: italic;
   font-size: 1.5rem;
   color: var(--blush);
 }
@@ -1850,6 +1896,7 @@ h1, h2, h3, h4 {
 
 .results-state-name {
   font-family: var(--font-script);
+  font-style: italic;
   font-size: 3.5rem;
   color: var(--earth);
   display: block;
@@ -2251,20 +2298,6 @@ h1, h2, h3, h4 {
 </section>
 
 <!-- ============================================================
-     IMAGE DIVIDER - PROTEA ARRANGEMENT
-     ============================================================ -->
-<div id="flower-divider" role="img" aria-label="Australian native flower arrangement with proteas, banksia and eucalyptus">
-  <img
-    src="assets/pexels-katetrifo-4057058.jpg"
-    alt=""
-    aria-hidden="true"
-    loading="lazy"
-  >
-  <div class="divider-overlay-top" aria-hidden="true"></div>
-  <div class="divider-overlay-bottom" aria-hidden="true"></div>
-</div>
-
-<!-- ============================================================
      NERVOUS SYSTEM STATES
      ============================================================ -->
 <section id="nervous-system" class="section-pad-lg" aria-labelledby="ns-heading">
@@ -2324,10 +2357,10 @@ h1, h2, h3, h4 {
   <div class="container">
     <div class="ity-grid">
       <div class="ity-content">
-        <span class="script-label" aria-hidden="true">Recognition</span>
+        <span class="script-label" aria-hidden="true">Honest truths</span>
         <h2 id="ity-heading">Does any of this sound familiar?</h2>
 
-        <ul class="ity-list" aria-label="Recognition statements">
+        <ul class="ity-list" aria-label="Honest truths">
           <li class="ity-item">
             <span class="ity-check" aria-hidden="true">
               <svg viewBox="0 0 12 9" aria-hidden="true"><polyline points="1,4.5 4,8 11,1"/></svg>
@@ -2424,8 +2457,8 @@ h1, h2, h3, h4 {
             <span class="meta-value">Online</span>
           </div>
           <div class="meta-item">
-            <span class="meta-label">Credit</span>
-            <span class="meta-value">Applied to Intensive</span>
+            <span class="meta-label">Next step</span>
+            <span class="meta-value">Personalised pathway</span>
           </div>
         </div>
 
@@ -2438,7 +2471,7 @@ h1, h2, h3, h4 {
 
       <div class="breakthrough-img" aria-hidden="true">
         <img
-          src="assets/flowervase-portrait.jpg"
+          src="assets/emily-photos/emily-13.jpg"
           alt=""
           loading="lazy"
           style="object-position: center center;"
@@ -2470,15 +2503,22 @@ h1, h2, h3, h4 {
         <a href="#" class="btn btn-ghost">Join the Waitlist</a>
       </div>
 
-      <div class="community-card secondary reveal reveal-delay-1">
-        <span class="community-tag">Group Coaching</span>
-        <span class="community-icon" aria-hidden="true">&#x1F33F;</span>
-        <h3>Group Coaching Circles</h3>
-        <p>
-          A structured 6-week intensive for women who are ready to go deeper together. The SBW framework delivered in a small-group container with real accountability, real nervous system work, and the lived experience of other women walking the same road.
-        </p>
-        <p>Limited spots. Application-based. Designed to be intimate and transformative.</p>
-        <a href="#" class="btn btn-outline">Apply for the Next Circle</a>
+      <div class="community-card secondary with-image reveal reveal-delay-1">
+        <img
+          src="assets/emily-photos/emily-12.jpg"
+          alt="Emily Witt facilitating a sound bath with brass singing bowls"
+          loading="lazy"
+          class="community-card-img"
+        >
+        <div class="community-card-body">
+          <span class="community-tag">Sound Bath</span>
+          <h3>In-Person Sound Baths</h3>
+          <p>
+            Held live in Hobart. A guided immersion in brass singing bowls and instrumental sound, designed to drop the nervous system out of doing and into actual rest. No spiritual bypassing, no performance - just a quiet hour your body has been waiting for.
+          </p>
+          <p>Small groups. Intentional space. Bookable individually or for private sessions.</p>
+          <a href="#contact" class="btn btn-outline" style="margin-top: auto;">Enquire about a session</a>
+        </div>
       </div>
     </div>
   </div>
@@ -2612,7 +2652,7 @@ h1, h2, h3, h4 {
         </button>
         <div class="faq-answer" id="faq-1" role="region">
           <div class="faq-answer-inner">
-            Emily offers trauma-informed coaching, consulting, and wellbeing education grounded in psychological science. Services include 1:1 breakthrough sessions, 6-week group coaching circles, an online community container, and organisational workshops and consulting for purpose-driven teams. All services are delivered through the Space Between Wellness framework: Recognise, Restore, Realign, Reclaim.
+            Emily offers trauma-informed coaching, consulting, and wellbeing education grounded in psychological science. Services include 1:1 breakthrough sessions, in-person sound baths in Hobart, an online community container, and organisational workshops and consulting for purpose-driven teams. All services are delivered through the Space Between Wellness framework: Recognise, Restore, Realign, Reclaim.
           </div>
         </div>
       </div>
@@ -3320,7 +3360,7 @@ overlay.addEventListener('keydown', (e) => {
         "Trauma-Informed Coaching",
         "Workplace Wellbeing Consulting",
         "Nervous System Regulation",
-        "Group Coaching",
+        "Sound Bath Facilitation",
         "Burnout Prevention Workshops"
       ],
       "sameAs": [
@@ -3347,10 +3387,10 @@ overlay.addEventListener('keydown', (e) => {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "6-Week Group Coaching Circles",
-              "description": "A structured 6-week intensive for women ready to go deeper. The Space Between Method framework delivered in a small-group container with real accountability, nervous system work, and lived experience of other women walking the same road.",
+              "name": "In-Person Sound Baths",
+              "description": "Live sound bath sessions in Hobart, Tasmania. Brass singing bowls and instrumental sound to support nervous system regulation, rest, and embodied stillness. Available individually, in small groups, or as private bookings.",
               "provider": { "@id": "#emily-witt" },
-              "serviceType": "Group Coaching"
+              "serviceType": "Sound Bath Facilitation"
             }
           },
           {
@@ -3421,7 +3461,7 @@ overlay.addEventListener('keydown', (e) => {
           "name": "What kind of nervous system coaching services does Space Between Wellness offer?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Emily offers trauma-informed coaching, consulting, and wellbeing education grounded in psychological science. Services include 1:1 breakthrough sessions, 6-week group coaching circles, an online community container, and organisational workshops and consulting for purpose-driven teams. All services are delivered through the Space Between Wellness framework: Recognise, Restore, Realign, Reclaim."
+            "text": "Emily offers trauma-informed coaching, consulting, and wellbeing education grounded in psychological science. Services include 1:1 breakthrough sessions, in-person sound baths in Hobart, an online community container, and organisational workshops and consulting for purpose-driven teams. All services are delivered through the Space Between Wellness framework: Recognise, Restore, Realign, Reclaim."
           }
         },
         {
