@@ -1,0 +1,1645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply to Work with Emily | Space Between Wellness</title>
+<meta name="description" content="Tell Emily where you are. She reads every application personally and responds within 48 hours. This is the first step of the work.">
+<link rel="canonical" href="https://spacebetweenwellness.com/apply.html">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Emily Witt">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Apply to Work with Emily | Space Between Wellness">
+<meta property="og:description" content="Tell Emily where you are. She reads every application personally and responds within 48 hours.">
+<meta property="og:url" content="https://spacebetweenwellness.com/apply.html">
+<meta property="og:site_name" content="Space Between Wellness">
+<meta property="og:locale" content="en_AU">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   CSS CUSTOM PROPERTIES
+   ============================================================ */
+:root {
+  --blush: #E4B5C1;
+  --blush-light: #EDD0D7;
+  --blush-pale: #F7E6D3;
+  --earth: #522C1F;
+  --earth-deep: #2B1E1E;
+  --sage: #522C1F;
+  --sage-muted: #D4C4B0;
+  --sage-pale: #F7E6D3;
+  --cream: #F5F1ED;
+  --warm-white: #F7F3EF;
+  --charcoal: #2B1E1E;
+  --charcoal-soft: #5C4033;
+  --sand: #C4B19E;
+  --sand-light: #E2D6CA;
+  --accent-yellow: #D4A24A;
+  --accent-yellow-soft: #E8C275;
+  --font-script: 'Playfair Display', serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-body: 'Work Sans', sans-serif;
+  --radius: 16px;
+  --radius-sm: 8px;
+  --shadow-soft: 0 4px 24px rgba(74, 55, 40, 0.08);
+  --shadow-card: 0 8px 40px rgba(74, 55, 40, 0.12);
+  --shadow-hover: 0 16px 56px rgba(74, 55, 40, 0.18);
+  --transition: 0.3s ease;
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--charcoal);
+  background: var(--cream);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+
+a { color: inherit; text-decoration: none; }
+
+ul { list-style: none; }
+
+button { cursor: pointer; font-family: var(--font-body); border: none; outline: none; }
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+.script {
+  font-family: var(--font-script);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+/* ============================================================
+   LAYOUT UTILITIES
+   ============================================================ */
+.container {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+  cursor: pointer;
+  border: none;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.btn-primary {
+  background: var(--blush);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #d4926a;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--earth);
+  border: 1.5px solid var(--earth);
+}
+
+.btn-outline:hover {
+  background: var(--earth);
+  color: #fff;
+}
+
+/* ============================================================
+   SCROLL REVEAL
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+
+/* ============================================================
+   FIXED NAVIGATION
+   ============================================================ */
+#nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255, 250, 245, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: box-shadow var(--transition);
+  border-bottom: 1px solid transparent;
+}
+
+#nav.scrolled {
+  box-shadow: 0 2px 24px rgba(74, 55, 40, 0.1);
+  border-bottom-color: rgba(212, 196, 176, 0.3);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  padding: 0 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-brand {
+  font-family: var(--font-script);
+  font-style: italic;
+  font-size: 2rem;
+  color: var(--earth);
+  letter-spacing: 0.01em;
+  flex-shrink: 0;
+}
+
+.nav-back {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--charcoal-soft);
+  letter-spacing: 0.03em;
+  transition: color var(--transition);
+  text-transform: uppercase;
+}
+
+.nav-back:hover {
+  color: var(--earth);
+}
+
+.nav-back svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ============================================================
+   PAGE HERO
+   ============================================================ */
+#page-hero {
+  padding-top: 72px;
+  background: var(--cream);
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero-inner {
+  padding: 80px 40px 64px;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.page-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--earth);
+}
+
+.page-hero-eyebrow::before,
+.page-hero-eyebrow::after {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--blush);
+}
+
+.page-hero-script {
+  font-family: var(--font-script);
+  font-style: italic;
+  font-size: 2.5rem;
+  color: var(--earth);
+  display: block;
+  margin-bottom: 16px;
+}
+
+.page-hero-h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 500;
+  color: var(--earth-deep);
+  line-height: 1.3;
+  margin-bottom: 24px;
+}
+
+.page-hero-intro {
+  font-size: 1.0625rem;
+  color: var(--charcoal-soft);
+  line-height: 1.85;
+  max-width: 600px;
+  margin: 0 auto 16px;
+}
+
+.page-hero-note {
+  font-family: var(--font-script);
+  font-style: italic;
+  font-size: 1.125rem;
+  color: var(--blush);
+  display: block;
+  margin-top: 24px;
+}
+
+/* Background accent circles */
+#page-hero::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(228, 181, 193, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+#page-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  left: -60px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 162, 74, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ============================================================
+   FORM WRAPPER
+   ============================================================ */
+#form-section {
+  background: var(--warm-white);
+  padding: 0 0 96px;
+}
+
+.form-wrap {
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  max-width: 760px;
+  margin: 0 auto;
+  border: 1px solid var(--sand-light);
+}
+
+/* ============================================================
+   SECTION DIVIDERS WITHIN FORM
+   ============================================================ */
+.form-section {
+  padding: 52px 56px;
+  border-bottom: 1px solid var(--sand-light);
+}
+
+.form-section:last-of-type {
+  border-bottom: none;
+}
+
+.form-section-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.form-section-number {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--blush-pale);
+  border: 1px solid var(--blush-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.form-section-number span {
+  font-family: var(--font-script);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--earth);
+  line-height: 1;
+}
+
+.form-section-tag {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--earth);
+}
+
+.form-section-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 2vw, 1.625rem);
+  color: var(--earth-deep);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.form-section-sub {
+  font-size: 0.9375rem;
+  color: var(--charcoal-soft);
+  line-height: 1.75;
+  margin-bottom: 40px;
+  max-width: 560px;
+}
+
+/* ============================================================
+   FORM FIELDS
+   ============================================================ */
+.field-group {
+  margin-bottom: 28px;
+}
+
+.field-group:last-child {
+  margin-bottom: 0;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--earth-deep);
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+label .optional {
+  font-weight: 400;
+  color: var(--sand);
+  font-size: 0.8125rem;
+  margin-left: 4px;
+}
+
+/* Question-style labels for screening questions */
+.question-label {
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  font-weight: 500;
+  color: var(--earth-deep);
+  line-height: 1.45;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.question-hint {
+  font-size: 0.875rem;
+  color: var(--sand);
+  line-height: 1.55;
+  margin-bottom: 16px;
+  display: block;
+  font-style: italic;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1.5px solid var(--sand-light);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--charcoal);
+  background: var(--cream);
+  transition: border-color var(--transition), background var(--transition), box-shadow var(--transition);
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus {
+  border-color: var(--blush);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(228, 181, 193, 0.18);
+}
+
+input::placeholder {
+  color: var(--sand);
+}
+
+select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23C4B19E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 44px;
+  cursor: pointer;
+}
+
+select option {
+  color: var(--charcoal);
+}
+
+textarea {
+  width: 100%;
+  padding: 16px 18px;
+  border: 1.5px solid var(--sand-light);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--charcoal);
+  background: var(--cream);
+  resize: vertical;
+  min-height: 140px;
+  line-height: 1.7;
+  outline: none;
+  transition: border-color var(--transition), background var(--transition), box-shadow var(--transition);
+}
+
+textarea:focus {
+  border-color: var(--blush);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(228, 181, 193, 0.18);
+}
+
+textarea::placeholder {
+  color: var(--sand);
+}
+
+/* ============================================================
+   RADIO / CHECKBOX CARD OPTIONS
+   ============================================================ */
+.option-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.option-grid.three-col {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.option-grid.single-col {
+  grid-template-columns: 1fr;
+}
+
+.radio-option,
+.checkbox-option {
+  position: relative;
+}
+
+.radio-option input[type="radio"],
+.checkbox-option input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.radio-option label,
+.checkbox-option label {
+  display: block;
+  padding: 14px 18px;
+  border: 1.5px solid var(--sand-light);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--charcoal-soft);
+  line-height: 1.5;
+  background: var(--cream);
+  transition: border-color var(--transition), background var(--transition), color var(--transition);
+  margin-bottom: 0;
+  font-weight: 400;
+}
+
+.radio-option label:hover,
+.checkbox-option label:hover {
+  border-color: var(--blush);
+  background: var(--blush-pale);
+}
+
+.radio-option input[type="radio"]:checked + label,
+.checkbox-option input[type="checkbox"]:checked + label {
+  border-color: var(--blush);
+  background: var(--blush-pale);
+  color: var(--earth);
+  font-weight: 500;
+}
+
+.radio-option input[type="radio"]:focus-visible + label,
+.checkbox-option input[type="checkbox"]:focus-visible + label {
+  outline: 2px solid var(--blush);
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   FIELD ERRORS - gentle, not alarming
+   ============================================================ */
+.field-error {
+  display: none;
+  font-size: 0.8125rem;
+  color: var(--charcoal-soft);
+  font-style: italic;
+  margin-top: 6px;
+  padding-left: 2px;
+}
+
+.field-error.visible {
+  display: block;
+}
+
+.field-group.has-error input,
+.field-group.has-error textarea,
+.field-group.has-error select {
+  border-color: var(--blush);
+}
+
+/* ============================================================
+   SUBMIT SECTION
+   ============================================================ */
+.submit-section {
+  padding: 48px 56px 56px;
+  text-align: center;
+  background: var(--cream);
+  border-top: 1px solid var(--sand-light);
+}
+
+.submit-promise {
+  font-family: var(--font-script);
+  font-style: italic;
+  font-size: 1.875rem;
+  color: var(--earth);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.submit-body {
+  font-size: 0.9375rem;
+  color: var(--charcoal-soft);
+  line-height: 1.8;
+  max-width: 460px;
+  margin: 0 auto 32px;
+}
+
+.submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 18px 48px;
+  border-radius: 50px;
+  background: var(--earth-deep);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.submit-btn:hover {
+  background: #3a2a1e;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.submit-btn:focus-visible {
+  outline: 2px solid var(--blush);
+  outline-offset: 3px;
+}
+
+.submit-note {
+  font-size: 0.8125rem;
+  color: var(--sand);
+  font-style: italic;
+  margin-top: 20px;
+}
+
+/* ============================================================
+   SUCCESS STATE
+   ============================================================ */
+#success-message {
+  display: none;
+  padding: 80px 56px;
+  text-align: center;
+}
+
+#success-message.visible {
+  display: block;
+}
+
+.success-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--blush-pale);
+  border: 2px solid var(--blush-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 28px;
+}
+
+.success-icon svg {
+  width: 28px;
+  height: 28px;
+  fill: none;
+  stroke: var(--blush);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.success-script {
+  font-family: var(--font-script);
+  font-style: italic;
+  font-size: 2.25rem;
+  color: var(--earth);
+  display: block;
+  margin-bottom: 16px;
+}
+
+.success-body {
+  font-size: 1rem;
+  color: var(--charcoal-soft);
+  line-height: 1.85;
+  max-width: 460px;
+  margin: 0 auto 36px;
+}
+
+/* ============================================================
+   SIDE NOTE / ASIDE BOX
+   ============================================================ */
+.form-aside {
+  background: var(--blush-pale);
+  border-left: 3px solid var(--blush);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 20px 24px;
+  margin-top: 32px;
+  font-size: 0.875rem;
+  color: var(--charcoal-soft);
+  line-height: 1.75;
+  font-style: italic;
+}
+
+.form-aside strong {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--earth-deep);
+}
+
+/* ============================================================
+   FOOTER (minimal)
+   ============================================================ */
+#footer-mini {
+  background: #3a2a1e;
+  padding: 40px 40px;
+  text-align: center;
+}
+
+.footer-mini-brand {
+  font-family: var(--font-script);
+  font-style: italic;
+  font-size: 1.75rem;
+  color: var(--blush-light);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.footer-mini-copy {
+  font-size: 0.8125rem;
+  color: rgba(232, 221, 208, 0.4);
+}
+
+.footer-mini-link {
+  color: rgba(232, 221, 208, 0.55);
+  font-size: 0.8125rem;
+  transition: color var(--transition);
+}
+
+.footer-mini-link:hover {
+  color: var(--blush-light);
+}
+
+/* ============================================================
+   RESPONSIVE - 700px
+   ============================================================ */
+@media (max-width: 700px) {
+  .container { padding: 0 20px; }
+
+  .nav-inner { padding: 0 20px; }
+
+  .page-hero-inner {
+    padding: 64px 20px 48px;
+  }
+
+  .form-section {
+    padding: 40px 28px;
+  }
+
+  .form-section:first-child {
+    padding-top: 40px;
+  }
+
+  .field-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .option-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .option-grid.three-col {
+    grid-template-columns: 1fr;
+  }
+
+  .submit-section {
+    padding: 40px 28px 48px;
+  }
+
+  #success-message {
+    padding: 56px 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero-script {
+    font-size: 2rem;
+  }
+
+  .form-section-heading {
+    font-size: 1.25rem;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<nav id="nav" role="navigation" aria-label="Page navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand" aria-label="Space Between Wellness - Home">Emily Witt</a>
+    <a href="index.html" class="nav-back" aria-label="Back to main site">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+      Back
+    </a>
+  </div>
+</nav>
+
+<!-- ============================================================
+     PAGE HERO
+     ============================================================ -->
+<section id="page-hero" aria-label="Application introduction">
+  <div class="page-hero-inner">
+    <div class="page-hero-eyebrow reveal" aria-hidden="true">Space Between Wellness</div>
+
+    <span class="page-hero-script reveal reveal-delay-1" aria-hidden="true">You found your way here</span>
+
+    <h1 class="page-hero-h1 reveal reveal-delay-1">
+      Before we meet, I'd love to understand where you actually are.
+    </h1>
+
+    <p class="page-hero-intro reveal reveal-delay-2">
+      This form replaces the usual intro call. Not because I'm trying to save time - but because answering these questions quietly, at your own pace, often tells you (and me) more than an hour of talking does.
+    </p>
+
+    <p class="page-hero-intro reveal reveal-delay-2">
+      There are no right answers. I'm not screening for impressive - I'm listening for real. Take your time. Come back to it if you need to.
+    </p>
+
+    <span class="page-hero-note reveal reveal-delay-2">I read every application personally. - Emily</span>
+  </div>
+</section>
+
+<!-- ============================================================
+     FORM
+     FORM ACTION: Replace the Formspree URL below with the correct
+     endpoint once Kelly has set up the form handler (GHL or Formspree).
+     Example Formspree endpoint: https://formspree.io/f/YOUR_FORM_ID
+     Example GHL webhook: https://services.leadconnectorhq.com/hooks/YOUR_WEBHOOK_ID/webhook-trigger/YOUR_ID
+     ============================================================ -->
+<section id="form-section" aria-label="Application form">
+  <div class="container">
+
+    <div class="form-wrap reveal" role="main" aria-label="Application form">
+
+      <!-- ======================================================
+           SUCCESS MESSAGE (shown after submit)
+           ====================================================== -->
+      <div id="success-message" role="status" aria-live="polite">
+        <div class="success-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <span class="success-script">Your words landed safely.</span>
+        <p class="success-body">
+          Thank you for taking the time to fill this out honestly - I know that takes something. I'll read your application carefully and be back in touch within 48 hours. In the meantime, be gentle with yourself.
+        </p>
+        <a href="index.html" class="btn btn-outline">Back to the main site</a>
+      </div>
+
+      <!-- ======================================================
+           THE ACTUAL FORM
+           ====================================================== -->
+      <form
+        id="apply-form"
+        action="https://formspree.io/f/REPLACE"
+        method="POST"
+        novalidate
+        aria-label="Apply to work with Emily"
+      >
+
+        <!-- ====================================================
+             SECTION 1 - BASICS
+             ==================================================== -->
+        <div class="form-section">
+          <div class="form-section-label">
+            <div class="form-section-number" aria-hidden="true"><span>1</span></div>
+            <span class="form-section-tag">The basics</span>
+          </div>
+          <h2 class="form-section-heading">Let's start with who you are.</h2>
+          <p class="form-section-sub">Just the essentials - I'll get to know the rest through your answers below.</p>
+
+          <div class="field-row">
+            <div class="field-group" id="fg-first-name">
+              <label for="first_name">First name</label>
+              <input
+                type="text"
+                id="first_name"
+                name="first_name"
+                autocomplete="given-name"
+                placeholder="Your first name"
+                required
+                aria-required="true"
+                aria-describedby="err-first-name"
+              >
+              <span class="field-error" id="err-first-name" role="alert">What would you like Emily to call you?</span>
+            </div>
+
+            <div class="field-group" id="fg-last-name">
+              <label for="last_name">Last name</label>
+              <input
+                type="text"
+                id="last_name"
+                name="last_name"
+                autocomplete="family-name"
+                placeholder="Your last name"
+                required
+                aria-required="true"
+                aria-describedby="err-last-name"
+              >
+              <span class="field-error" id="err-last-name" role="alert">Please add your last name.</span>
+            </div>
+          </div>
+
+          <div class="field-group" id="fg-email">
+            <label for="email">Email address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              placeholder="your@email.com"
+              required
+              aria-required="true"
+              aria-describedby="err-email"
+            >
+            <span class="field-error" id="err-email" role="alert">A valid email address helps Emily reach you.</span>
+          </div>
+
+          <div class="field-group">
+            <label for="phone">Phone number <span class="optional">(optional - for a quick SMS follow-up)</span></label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              autocomplete="tel"
+              placeholder="+61 4xx xxx xxx"
+            >
+          </div>
+
+          <div class="field-row">
+            <div class="field-group" id="fg-location">
+              <label for="location">Where in the world are you?</label>
+              <input
+                type="text"
+                id="location"
+                name="location"
+                placeholder="City, State, Country"
+                required
+                aria-required="true"
+                aria-describedby="err-location"
+              >
+              <span class="field-error" id="err-location" role="alert">A rough location helps Emily understand your context.</span>
+            </div>
+
+            <div class="field-group" id="fg-age-range">
+              <label for="age_range">Age range</label>
+              <select
+                id="age_range"
+                name="age_range"
+                required
+                aria-required="true"
+                aria-describedby="err-age-range"
+              >
+                <option value="" disabled selected>Select your range</option>
+                <option value="25-30">25 - 30</option>
+                <option value="31-37">31 - 37</option>
+                <option value="38-44">38 - 44</option>
+                <option value="45-52">45 - 52</option>
+                <option value="53+">53 and beyond</option>
+              </select>
+              <span class="field-error" id="err-age-range" role="alert">Please select your age range.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ====================================================
+             SECTION 2 - WHERE YOU ARE
+             ==================================================== -->
+        <div class="form-section">
+          <div class="form-section-label">
+            <div class="form-section-number" aria-hidden="true"><span>2</span></div>
+            <span class="form-section-tag">Where you are</span>
+          </div>
+          <h2 class="form-section-heading">Not in your calendar - in your body.</h2>
+          <p class="form-section-sub">There are no right answers here. The honest ones are the useful ones.</p>
+
+          <!-- Q1 -->
+          <div class="field-group" id="fg-body-feel">
+            <label class="question-label" id="q1-label">
+              What does a typical week feel like in your body right now?
+            </label>
+            <span class="question-hint" id="q1-hint">Not your schedule - the actual physical and emotional texture of your days.</span>
+            <div class="option-grid" role="group" aria-labelledby="q1-label" aria-describedby="q1-hint">
+              <div class="radio-option">
+                <input type="radio" id="body_wired" name="body_feel" value="Wired and relentless - I can't seem to slow down" aria-required="true">
+                <label for="body_wired">Wired and relentless - I can't seem to slow down</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="body_running_empty" name="body_feel" value="Running on empty but still pushing through">
+                <label for="body_running_empty">Running on empty but still pushing through</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="body_flat" name="body_feel" value="Flat and foggy - going through the motions">
+                <label for="body_flat">Flat and foggy - going through the motions</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="body_tense" name="body_feel" value="Tense and braced - like I'm waiting for something bad to happen">
+                <label for="body_tense">Tense and braced - like I'm waiting for something bad</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="body_numb" name="body_feel" value="Numb - I can't quite feel much at all">
+                <label for="body_numb">Numb - I can't quite feel much at all</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="body_okay" name="body_feel" value="Okay mostly, but something still feels off">
+                <label for="body_okay">Okay mostly, but something still feels off</label>
+              </div>
+            </div>
+            <span class="field-error" id="err-body-feel" role="alert">Take a breath and pick the one that's closest to true right now.</span>
+          </div>
+
+          <!-- Q2 -->
+          <div class="field-group" id="fg-hard-response">
+            <label class="question-label" id="q2-label">
+              When something hard happens, what's your default response?
+            </label>
+            <span class="question-hint" id="q2-hint">The honest first reaction - not the one you'd like to have.</span>
+            <div class="option-grid" role="group" aria-labelledby="q2-label" aria-describedby="q2-hint">
+              <div class="radio-option">
+                <input type="radio" id="hard_push" name="hard_response" value="Push through - I don't stop" aria-required="true">
+                <label for="hard_push">Push through - I don't stop</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="hard_everyone" name="hard_response" value="Take care of everyone else first">
+                <label for="hard_everyone">Take care of everyone else first</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="hard_shutdown" name="hard_response" value="Shut down or withdraw">
+                <label for="hard_shutdown">Shut down or withdraw</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="hard_anxious" name="hard_response" value="Spiral into anxiety or over-analysis">
+                <label for="hard_anxious">Spiral into anxiety or over-analysis</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="hard_keep_peace" name="hard_response" value="Keep the peace - smooth it over for everyone">
+                <label for="hard_keep_peace">Keep the peace - smooth it over for everyone</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="hard_breathe" name="hard_response" value="Feel it, breathe through it, respond when ready">
+                <label for="hard_breathe">Feel it, breathe through it, respond when ready</label>
+              </div>
+            </div>
+            <span class="field-error" id="err-hard-response" role="alert">Please choose the one that feels most true.</span>
+          </div>
+
+          <!-- Q3 -->
+          <div class="field-group" id="fg-rest-feel">
+            <label class="question-label" id="q3-label">
+              When you imagine a full day with nothing that needs doing - how does that land in your body?
+            </label>
+            <span class="question-hint" id="q3-hint">Not what you think you should feel. The actual first sensation.</span>
+            <div class="option-grid" role="group" aria-labelledby="q3-label" aria-describedby="q3-hint">
+              <div class="radio-option">
+                <input type="radio" id="rest_relief" name="rest_feel" value="Relief - I ache for it" aria-required="true">
+                <label for="rest_relief">Relief - I ache for it</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="rest_guilt" name="rest_feel" value="Guilt - I'd feel like I was wasting time">
+                <label for="rest_guilt">Guilt - I'd feel like I was wasting time</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="rest_anxious" name="rest_feel" value="Anxious - I wouldn't know what to do with myself">
+                <label for="rest_anxious">Anxious - I wouldn't know what to do with myself</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="rest_unfamiliar" name="rest_feel" value="Unfamiliar - I'm not sure what rest even feels like anymore">
+                <label for="rest_unfamiliar">Unfamiliar - I'm not sure what rest feels like</label>
+              </div>
+            </div>
+            <span class="field-error" id="err-rest-feel" role="alert">Please choose the one that's closest to honest.</span>
+          </div>
+
+          <!-- Q4 -->
+          <div class="field-group" id="fg-relationship-self">
+            <label class="question-label" id="q4-label">
+              How would you honestly describe your relationship with yourself right now?
+            </label>
+            <div class="option-grid" role="group" aria-labelledby="q4-label">
+              <div class="radio-option">
+                <input type="radio" id="self_critical" name="relationship_self" value="Critical - I rarely let myself off the hook" aria-required="true">
+                <label for="self_critical">Critical - I rarely let myself off the hook</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="self_strangers" name="relationship_self" value="Strangers - I've lost track of who I actually am">
+                <label for="self_strangers">Strangers - I've lost track of who I actually am</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="self_productive" name="relationship_self" value="Conditional - I'm kind to myself when I'm productive">
+                <label for="self_productive">Conditional - I'm kind when I'm being productive</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="self_rebuilding" name="relationship_self" value="Rebuilding - I'm trying to come back to myself">
+                <label for="self_rebuilding">Rebuilding - I'm trying to come back to myself</label>
+              </div>
+            </div>
+            <span class="field-error" id="err-relationship-self" role="alert">Please choose the one that resonates.</span>
+          </div>
+
+          <!-- Q5 -->
+          <div class="field-group" id="fg-tried-already">
+            <label class="question-label" for="tried_already">
+              What have you already tried that didn't quite move the needle?
+            </label>
+            <span class="question-hint">Coaching, therapy, self-help, retreats, books, podcasts - whatever you've reached for. No judgment. This helps me understand what hasn't worked and why.</span>
+            <textarea
+              id="tried_already"
+              name="tried_already"
+              placeholder="Be honest - even if it sounds like you should have 'gotten more' from something..."
+              rows="4"
+              required
+              aria-required="true"
+              aria-describedby="err-tried-already"
+            ></textarea>
+            <span class="field-error" id="err-tried-already" role="alert">This one really helps Emily - even a few words is enough.</span>
+          </div>
+
+          <!-- Q6 -->
+          <div class="field-group" id="fg-readiness">
+            <label class="question-label" id="q6-label">
+              Where are you with readiness right now?
+            </label>
+            <span class="question-hint" id="q6-hint">Honest is more useful than impressive here.</span>
+            <div class="option-grid single-col" role="group" aria-labelledby="q6-label" aria-describedby="q6-hint">
+              <div class="radio-option">
+                <input type="radio" id="ready_yes" name="readiness" value="I'm ready - I've been waiting for something like this" aria-required="true">
+                <label for="ready_yes">I'm ready - I've been waiting for something like this</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="ready_almost" name="readiness" value="Almost - I'm scared but I know it's time">
+                <label for="ready_almost">Almost - I'm scared but I know it's time</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="ready_researching" name="readiness" value="Still researching - I wanted to understand more before committing">
+                <label for="ready_researching">Still researching - I wanted to understand more first</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="ready_pushed" name="readiness" value="Something pushed me here - I'm not sure if I'm ready but something had to change">
+                <label for="ready_pushed">Something pushed me here - not sure if I'm ready but something had to change</label>
+              </div>
+            </div>
+            <span class="field-error" id="err-readiness" role="alert">No wrong answer - please just pick the one that feels true.</span>
+          </div>
+        </div>
+
+        <!-- ====================================================
+             SECTION 3 - YOUR STORY
+             ==================================================== -->
+        <div class="form-section">
+          <div class="form-section-label">
+            <div class="form-section-number" aria-hidden="true"><span>3</span></div>
+            <span class="form-section-tag">Your story</span>
+          </div>
+          <h2 class="form-section-heading">The part that's harder to say out loud.</h2>
+          <p class="form-section-sub">You don't need to get this perfect. Write like you're texting a friend who actually gets it.</p>
+
+          <!-- Q7 -->
+          <div class="field-group" id="fg-actual-ache">
+            <label class="question-label" for="actual_ache">
+              Underneath the busyness and the managing and the achieving - what's the ache?
+            </label>
+            <span class="question-hint">Not what you think the problem is. The feeling underneath the problem. The thing you haven't quite said yet.</span>
+            <textarea
+              id="actual_ache"
+              name="actual_ache"
+              placeholder="This is the most important question on this form. Take your time."
+              rows="5"
+              required
+              aria-required="true"
+              aria-describedby="err-actual-ache"
+            ></textarea>
+            <span class="field-error" id="err-actual-ache" role="alert">This is the most valuable question - even a few honest sentences is enough.</span>
+          </div>
+
+          <!-- Q8 -->
+          <div class="field-group" id="fg-six-months">
+            <label class="question-label" for="six_months">
+              If you imagine yourself 6 months from now, fully resourced and back in your own body - what's different?
+            </label>
+            <span class="question-hint">Not the accolades or the goals. What does it feel like to be you? What are you doing that you're not doing now?</span>
+            <textarea
+              id="six_months"
+              name="six_months"
+              placeholder="Let yourself actually imagine it. What's different about the texture of your days?"
+              rows="5"
+              required
+              aria-required="true"
+              aria-describedby="err-six-months"
+            ></textarea>
+            <span class="field-error" id="err-six-months" role="alert">Please share a little of what you're hoping for.</span>
+          </div>
+
+          <!-- Q9 -->
+          <div class="field-group" id="fg-hesitation">
+            <label class="question-label" for="hesitation">
+              What, if anything, makes you hesitate about reaching out for support?
+            </label>
+            <span class="question-hint">Worry about cost, time, whether you're "bad enough" to need this, whether it'll actually help - whatever's there. You can say it.</span>
+            <textarea
+              id="hesitation"
+              name="hesitation"
+              placeholder="Whatever's in the way - I want to know about it."
+              rows="4"
+            ></textarea>
+          </div>
+        </div>
+
+        <!-- ====================================================
+             SECTION 4 - LOGISTICS
+             ==================================================== -->
+        <div class="form-section">
+          <div class="form-section-label">
+            <div class="form-section-number" aria-hidden="true"><span>4</span></div>
+            <span class="form-section-tag">Practicalities</span>
+          </div>
+          <h2 class="form-section-heading">A few logistics so Emily can plan ahead.</h2>
+          <p class="form-section-sub">Nothing binding - just helpful context.</p>
+
+          <!-- Q10 -->
+          <div class="field-group" id="fg-timing">
+            <label class="question-label" id="q10-label">
+              If we were to work together, when would timing make sense for you?
+            </label>
+            <div class="option-grid" role="group" aria-labelledby="q10-label">
+              <div class="radio-option">
+                <input type="radio" id="timing_now" name="timing" value="I'm ready to start soon" aria-required="true">
+                <label for="timing_now">I'm ready to start soon</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="timing_month" name="timing" value="Within the next month or two">
+                <label for="timing_month">Within the next month or two</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="timing_exploring" name="timing" value="Still exploring - no clear timeline yet">
+                <label for="timing_exploring">Still exploring - no clear timeline yet</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="timing_depends" name="timing" value="It depends on what you offer and what it costs">
+                <label for="timing_depends">It depends on what you offer and the investment</label>
+              </div>
+            </div>
+            <span class="field-error" id="err-timing" role="alert">Please select a timing option.</span>
+          </div>
+
+          <!-- Q11 -->
+          <div class="field-group" id="fg-session-format">
+            <label class="question-label" id="q11-label">
+              Do you have a preference for how we'd work together?
+            </label>
+            <span class="question-hint" id="q11-hint">Select all that feel relevant - this isn't a commitment, just useful context.</span>
+            <div class="option-grid three-col" role="group" aria-labelledby="q11-label" aria-describedby="q11-hint">
+              <div class="checkbox-option">
+                <input type="checkbox" id="format_1to1" name="session_format" value="1:1 coaching">
+                <label for="format_1to1">1:1 coaching</label>
+              </div>
+              <div class="checkbox-option">
+                <input type="checkbox" id="format_single" name="session_format" value="Single deep-dive session">
+                <label for="format_single">Single deep-dive session</label>
+              </div>
+              <div class="checkbox-option">
+                <input type="checkbox" id="format_ongoing" name="session_format" value="Ongoing container">
+                <label for="format_ongoing">Ongoing container</label>
+              </div>
+              <div class="checkbox-option">
+                <input type="checkbox" id="format_online" name="session_format" value="Online works for me">
+                <label for="format_online">Online works for me</label>
+              </div>
+              <div class="checkbox-option">
+                <input type="checkbox" id="format_in_person" name="session_format" value="I'd love in-person (Hobart)">
+                <label for="format_in_person">In-person (Hobart)</label>
+              </div>
+              <div class="checkbox-option">
+                <input type="checkbox" id="format_open" name="session_format" value="I'm open - show me what you offer">
+                <label for="format_open">I'm open - show me what you offer</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q12 -->
+          <div class="field-group">
+            <label class="question-label" for="anything_else">
+              Is there anything else you'd like Emily to know before she reads your application?
+            </label>
+            <span class="question-hint">Context, nuance, the thing you almost didn't include - this is the space for it.</span>
+            <textarea
+              id="anything_else"
+              name="anything_else"
+              placeholder="Nothing is too small or too much."
+              rows="4"
+            ></textarea>
+          </div>
+
+          <div class="form-aside" role="note">
+            <strong>A note on privacy:</strong> Everything you share here is read only by Emily. It's treated with the same care and confidentiality as anything you'd say in a session. Your answers won't be shared or used for marketing.
+          </div>
+        </div>
+
+        <!-- ====================================================
+             SUBMIT
+             ==================================================== -->
+        <div class="submit-section">
+          <span class="submit-promise">You've done the hard part.</span>
+          <p class="submit-body">
+            Emily reads every application herself and responds within 48 hours. If there's alignment, she'll reach out to arrange a time to connect - no pressure, no pushy sales call. Just a real conversation.
+          </p>
+
+          <div id="form-error-summary" role="alert" aria-live="polite" style="display:none; margin-bottom:20px; font-size:0.875rem; color:var(--charcoal-soft); font-style:italic;">
+            A few questions need your attention - scroll up and they'll be gently highlighted.
+          </div>
+
+          <button type="submit" class="submit-btn" id="submit-btn">
+            Send my application to Emily
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+
+          <p class="submit-note">Emily responds personally within 48 hours.</p>
+        </div>
+
+      </form><!-- /apply-form -->
+
+    </div><!-- /form-wrap -->
+
+  </div><!-- /container -->
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer id="footer-mini" role="contentinfo">
+  <span class="footer-mini-brand">Emily Witt</span>
+  <p class="footer-mini-copy">
+    &copy; 2025 Space Between Wellness &nbsp;&middot;&nbsp;
+    <a href="index.html" class="footer-mini-link">Back to main site</a>
+  </p>
+</footer>
+
+<script>
+/* ============================================================
+   SCROLL REVEAL
+   ============================================================ */
+(function() {
+  const revealEls = document.querySelectorAll('.reveal');
+  if (!revealEls.length) return;
+
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  revealEls.forEach(function(el) { observer.observe(el); });
+})();
+
+/* ============================================================
+   NAV SCROLL STATE
+   ============================================================ */
+(function() {
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 20) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  }, { passive: true });
+})();
+
+/* ============================================================
+   FORM VALIDATION & SUBMISSION
+   Gentle validation - highlights fields softly without
+   alarming red text. Errors use the brand's sand/charcoal palette.
+   ============================================================ */
+(function() {
+  var form = document.getElementById('apply-form');
+  var successMessage = document.getElementById('success-message');
+  var submitBtn = document.getElementById('submit-btn');
+  var errorSummary = document.getElementById('form-error-summary');
+
+  if (!form) return;
+
+  /* ---- Field validators ---- */
+  var rules = [
+    {
+      fieldId: 'first_name',
+      groupId: 'fg-first-name',
+      errorId: 'err-first-name',
+      test: function(v) { return v.trim().length > 0; }
+    },
+    {
+      fieldId: 'last_name',
+      groupId: 'fg-last-name',
+      errorId: 'err-last-name',
+      test: function(v) { return v.trim().length > 0; }
+    },
+    {
+      fieldId: 'email',
+      groupId: 'fg-email',
+      errorId: 'err-email',
+      test: function(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()); }
+    },
+    {
+      fieldId: 'location',
+      groupId: 'fg-location',
+      errorId: 'err-location',
+      test: function(v) { return v.trim().length > 0; }
+    },
+    {
+      fieldId: 'age_range',
+      groupId: 'fg-age-range',
+      errorId: 'err-age-range',
+      test: function(v) { return v.trim().length > 0; }
+    },
+    {
+      fieldId: 'tried_already',
+      groupId: 'fg-tried-already',
+      errorId: 'err-tried-already',
+      test: function(v) { return v.trim().length > 0; }
+    },
+    {
+      fieldId: 'actual_ache',
+      groupId: 'fg-actual-ache',
+      errorId: 'err-actual-ache',
+      test: function(v) { return v.trim().length > 0; }
+    },
+    {
+      fieldId: 'six_months',
+      groupId: 'fg-six-months',
+      errorId: 'err-six-months',
+      test: function(v) { return v.trim().length > 0; }
+    }
+  ];
+
+  /* Radio group validators */
+  var radioRules = [
+    { name: 'body_feel',        groupId: 'fg-body-feel',        errorId: 'err-body-feel' },
+    { name: 'hard_response',    groupId: 'fg-hard-response',    errorId: 'err-hard-response' },
+    { name: 'rest_feel',        groupId: 'fg-rest-feel',        errorId: 'err-rest-feel' },
+    { name: 'relationship_self',groupId: 'fg-relationship-self',errorId: 'err-relationship-self' },
+    { name: 'readiness',        groupId: 'fg-readiness',        errorId: 'err-readiness' },
+    { name: 'timing',           groupId: 'fg-timing',           errorId: 'err-timing' }
+  ];
+
+  function getRadioValue(name) {
+    var selected = form.querySelector('input[name="' + name + '"]:checked');
+    return selected ? selected.value : '';
+  }
+
+  function setFieldState(groupId, errorId, isValid) {
+    var group = document.getElementById(groupId);
+    var error = document.getElementById(errorId);
+    if (!group || !error) return;
+
+    if (isValid) {
+      group.classList.remove('has-error');
+      error.classList.remove('visible');
+    } else {
+      group.classList.add('has-error');
+      error.classList.add('visible');
+    }
+  }
+
+  function validateAll() {
+    var allValid = true;
+    var firstInvalid = null;
+
+    /* Text / select fields */
+    rules.forEach(function(rule) {
+      var el = document.getElementById(rule.fieldId);
+      if (!el) return;
+      var valid = rule.test(el.value);
+      setFieldState(rule.groupId, rule.errorId, valid);
+      if (!valid) {
+        allValid = false;
+        if (!firstInvalid) firstInvalid = el;
+      }
+    });
+
+    /* Radio groups */
+    radioRules.forEach(function(rule) {
+      var val = getRadioValue(rule.name);
+      var valid = val.length > 0;
+      setFieldState(rule.groupId, rule.errorId, valid);
+      if (!valid) {
+        allValid = false;
+        if (!firstInvalid) {
+          firstInvalid = form.querySelector('input[name="' + rule.name + '"]');
+        }
+      }
+    });
+
+    return { allValid: allValid, firstInvalid: firstInvalid };
+  }
+
+  /* Clear individual error on interaction */
+  rules.forEach(function(rule) {
+    var el = document.getElementById(rule.fieldId);
+    if (!el) return;
+    el.addEventListener('input', function() {
+      if (rule.test(el.value)) {
+        setFieldState(rule.groupId, rule.errorId, true);
+      }
+    });
+    el.addEventListener('change', function() {
+      if (rule.test(el.value)) {
+        setFieldState(rule.groupId, rule.errorId, true);
+      }
+    });
+  });
+
+  radioRules.forEach(function(rule) {
+    var inputs = form.querySelectorAll('input[name="' + rule.name + '"]');
+    inputs.forEach(function(input) {
+      input.addEventListener('change', function() {
+        setFieldState(rule.groupId, rule.errorId, true);
+      });
+    });
+  });
+
+  /* Handle submission */
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    var result = validateAll();
+
+    if (!result.allValid) {
+      errorSummary.style.display = 'block';
+      if (result.firstInvalid) {
+        /* Scroll to first problem with a little breathing room */
+        var topOffset = result.firstInvalid.getBoundingClientRect().top + window.scrollY - 120;
+        window.scrollTo({ top: topOffset, behavior: 'smooth' });
+      }
+      return;
+    }
+
+    errorSummary.style.display = 'none';
+
+    /* Disable submit while sending */
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+
+    /* Submit to Formspree (or GHL webhook) via fetch */
+    var formData = new FormData(form);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(function(response) {
+      if (response.ok) {
+        /* Show success state */
+        form.style.display = 'none';
+        successMessage.style.display = 'block';
+        successMessage.classList.add('visible');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        /* Show a soft error inline */
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Send my application to Emily <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
+        errorSummary.textContent = 'Something didn\'t quite go through - please try again, or email Emily directly at hello@spacebetweenwellness.com';
+        errorSummary.style.display = 'block';
+      }
+    })
+    .catch(function() {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = 'Send my application to Emily <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
+      errorSummary.textContent = 'It looks like something went wrong on our end. You\'re welcome to email Emily directly at hello@spacebetweenwellness.com';
+      errorSummary.style.display = 'block';
+    });
+  });
+
+})();
+</script>
+
+</body>
+</html>
