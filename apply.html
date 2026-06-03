@@ -242,6 +242,124 @@ h1, h2, h3, h4 {
   overflow: hidden;
 }
 
+/* Emily intro card - between hero and form */
+#emily-card {
+  background: var(--warm-white);
+  padding: 64px 24px 80px;
+}
+
+.emily-card-inner {
+  max-width: 940px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.emily-card-photo {
+  width: 280px;
+  height: 360px;
+  overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+}
+
+.emily-card-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.emily-card-note {
+  font-family: var(--font-body);
+}
+
+.emily-card-script {
+  font-family: var(--font-script);
+  font-style: italic;
+  font-size: 1.75rem;
+  color: var(--earth);
+  display: block;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.emily-card-note p {
+  font-size: 1.0625rem;
+  color: var(--charcoal-soft);
+  line-height: 1.85;
+  margin-bottom: 12px;
+}
+
+.emily-card-sign {
+  font-family: var(--font-script);
+  font-style: italic;
+  font-size: 1.125rem;
+  color: var(--blush);
+  margin-top: 16px !important;
+}
+
+/* Breath break - mid-form visual rest */
+.breath-break {
+  position: relative;
+  margin: 24px 0 64px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  height: 200px;
+}
+
+.breath-break img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.breath-break::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(43, 30, 30, 0.15) 0%, rgba(43, 30, 30, 0.55) 100%);
+}
+
+.breath-break-text {
+  position: absolute;
+  bottom: 28px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: var(--font-script);
+  font-style: italic;
+  font-size: 1.5rem;
+  color: var(--warm-white);
+  z-index: 1;
+  letter-spacing: 0.01em;
+  padding: 0 20px;
+}
+
+@media (max-width: 720px) {
+  .emily-card-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+  }
+  .emily-card-photo {
+    width: 220px;
+    height: 280px;
+    margin: 0 auto;
+  }
+  .breath-break {
+    height: 160px;
+  }
+  .breath-break-text {
+    font-size: 1.2rem;
+    bottom: 20px;
+  }
+}
+
 .page-hero-inner {
   padding: 80px 40px 64px;
   max-width: 760px;
@@ -883,7 +1001,22 @@ textarea::placeholder {
       There are no right answers. I'm not screening for impressive - I'm listening for real. Take your time. Come back to it if you need to.
     </p>
 
-    <span class="page-hero-note reveal reveal-delay-2">I read every application personally. - Emily</span>
+  </div>
+</section>
+
+<!-- ============================================================
+     EMILY INTRO CARD - the "who's reading this" moment
+     ============================================================ -->
+<section id="emily-card" aria-label="From Emily">
+  <div class="emily-card-inner">
+    <div class="emily-card-photo reveal">
+      <img src="assets/emily-photos/emily-14.jpg" alt="Emily Witt, warm portrait" loading="lazy">
+    </div>
+    <div class="emily-card-note reveal reveal-delay-2">
+      <span class="emily-card-script">I read every application personally.</span>
+      <p>Take your time. There's no scoring, no algorithm, no rush. When you submit, your words land in my inbox. I sit with them.</p>
+      <p class="emily-card-sign">- Emily</p>
+    </div>
   </div>
 </section>
 
@@ -1207,6 +1340,14 @@ textarea::placeholder {
             </div>
             <span class="field-error" id="err-readiness" role="alert">No wrong answer - please just pick the one that feels true.</span>
           </div>
+        </div>
+
+        <!-- ====================================================
+             BREATH BREAK - calming visual between sections 2 and 3
+             ==================================================== -->
+        <div class="breath-break" aria-hidden="true">
+          <img src="assets/nature-states/regulated-water.jpg" alt="" loading="lazy">
+          <span class="breath-break-text">Pause. Breathe. The next part is the deepest.</span>
         </div>
 
         <!-- ====================================================
