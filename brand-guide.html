@@ -1,0 +1,1937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Space Between Wellness — Brand Guide v1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+/* ============================================================
+   CSS CUSTOM PROPERTIES — locked brand palette
+   ============================================================ */
+:root {
+  --blush:              #E4B5C1;
+  --blush-light:        #EDD0D7;
+  --blush-pale:         #F7E6D3;
+  --earth:              #522C1F;
+  --earth-deep:         #2B1E1E;
+  --cream:              #F5F1ED;
+  --warm-white:         #F7F3EF;
+  --charcoal:           #2B1E1E;
+  --charcoal-soft:      #5C4033;
+  --sand:               #C4B19E;
+  --sand-light:         #E2D6CA;
+  --accent-yellow:      #D4A24A;
+  --accent-yellow-soft: #E8C275;
+
+  --font-serif:  'Playfair Display', serif;
+  --font-body:   'Work Sans', sans-serif;
+
+  --radius:    16px;
+  --radius-sm:  8px;
+  --shadow:     0 4px 24px rgba(74, 55, 40, 0.10);
+  --shadow-lg:  0 12px 48px rgba(74, 55, 40, 0.14);
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; }
+body {
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--charcoal);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; height: auto; }
+a  { color: var(--earth); }
+
+/* ============================================================
+   LAYOUT
+   ============================================================ */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+.container-wide {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+/* ============================================================
+   SECTION WRAPPER
+   ============================================================ */
+.guide-section {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--sand-light);
+}
+.guide-section:last-of-type {
+  border-bottom: none;
+}
+
+/* ============================================================
+   COVER
+   ============================================================ */
+#cover {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  border-bottom: none;
+  padding: 0;
+}
+.cover-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/hero-banner-original.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+.cover-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(43, 30, 30, 0.58) 0%,
+    rgba(43, 30, 30, 0.45) 40%,
+    rgba(43, 30, 30, 0.65) 100%
+  );
+}
+.cover-content {
+  position: relative;
+  z-index: 2;
+  padding: 80px 48px;
+  max-width: 720px;
+}
+.cover-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sand-light);
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.cover-eyebrow::before,
+.cover-eyebrow::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 1px;
+  background: var(--blush);
+}
+.cover-script {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(3.5rem, 7vw, 5.5rem);
+  color: #fff;
+  display: block;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  letter-spacing: 0.01em;
+}
+.cover-title {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sand-light);
+  margin-bottom: 40px;
+}
+.cover-tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.375rem;
+  color: var(--blush-light);
+  line-height: 1.5;
+  margin-bottom: 48px;
+}
+.cover-meta {
+  font-size: 0.8125rem;
+  color: rgba(232, 221, 208, 0.6);
+  letter-spacing: 0.06em;
+}
+.cover-divider {
+  width: 48px;
+  height: 1px;
+  background: var(--blush);
+  margin: 32px auto;
+}
+
+/* ============================================================
+   SECTION LABELS & HEADINGS
+   ============================================================ */
+.section-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--earth);
+  display: block;
+  margin-bottom: 10px;
+}
+.section-script {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 2.25rem;
+  color: var(--blush);
+  display: block;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+.section-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 3vw, 2.375rem);
+  font-weight: 500;
+  color: var(--earth-deep);
+  line-height: 1.25;
+  margin-bottom: 20px;
+}
+.section-intro {
+  font-size: 1.0625rem;
+  color: var(--charcoal-soft);
+  line-height: 1.85;
+  max-width: 640px;
+  margin-bottom: 48px;
+}
+
+/* ============================================================
+   DIVIDER ORNAMENT
+   ============================================================ */
+.ornament {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 56px 0;
+  color: var(--sand);
+}
+.ornament::before,
+.ornament::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--sand-light);
+}
+.ornament-script {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.5rem;
+  color: var(--blush);
+  white-space: nowrap;
+}
+
+/* ============================================================
+   BRAND ESSENCE
+   ============================================================ */
+.essence-pull {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.5rem;
+  color: var(--earth);
+  line-height: 1.6;
+  border-left: 3px solid var(--blush);
+  padding: 20px 32px;
+  margin: 40px 0;
+  background: var(--warm-white);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+.essence-body p {
+  font-size: 1.0625rem;
+  color: var(--charcoal-soft);
+  line-height: 1.9;
+  margin-bottom: 18px;
+}
+.essence-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================================
+   VOICE & TONE
+   ============================================================ */
+.voice-trait-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+.voice-trait {
+  background: var(--warm-white);
+  border: 1.5px solid var(--sand-light);
+  border-radius: 40px;
+  padding: 8px 20px;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--earth);
+  letter-spacing: 0.03em;
+}
+.voice-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 48px;
+}
+.voice-block {
+  border-radius: var(--radius);
+  padding: 32px 28px;
+}
+.voice-block.do-block {
+  background: #fff;
+  border: 1.5px solid var(--sand-light);
+  border-top: 4px solid var(--accent-yellow);
+}
+.voice-block.dont-block {
+  background: #fff;
+  border: 1.5px solid var(--sand-light);
+  border-top: 4px solid var(--blush);
+}
+.voice-block-heading {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.do-block .voice-block-heading { color: var(--accent-yellow); }
+.dont-block .voice-block-heading { color: var(--blush); }
+.voice-example {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--sand-light);
+  font-size: 0.9375rem;
+  color: var(--charcoal-soft);
+  line-height: 1.6;
+}
+.voice-example:last-child { border-bottom: none; }
+.voice-example-marker {
+  flex-shrink: 0;
+  margin-top: 2px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+.do-block .voice-example-marker { color: var(--accent-yellow); }
+.dont-block .voice-example-marker { color: var(--blush); }
+
+.voice-rules {
+  background: var(--earth-deep);
+  border-radius: var(--radius);
+  padding: 40px;
+  margin-top: 48px;
+}
+.voice-rules-heading {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--blush-light);
+  margin-bottom: 24px;
+}
+.voice-rule-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  font-size: 0.9375rem;
+  color: var(--sand-light);
+  line-height: 1.6;
+}
+.voice-rule-item:last-child { border-bottom: none; }
+.voice-rule-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--blush);
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+
+/* ============================================================
+   COLOUR PALETTE
+   ============================================================ */
+.palette-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 32px;
+}
+.swatch-card {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--sand-light);
+  background: #fff;
+}
+.swatch-block {
+  height: 88px;
+  width: 100%;
+}
+.swatch-info {
+  padding: 14px 16px;
+}
+.swatch-hex {
+  font-family: 'Courier New', monospace;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--earth-deep);
+  display: block;
+  margin-bottom: 2px;
+}
+.swatch-var {
+  font-family: 'Courier New', monospace;
+  font-size: 0.75rem;
+  color: var(--sand);
+  display: block;
+  margin-bottom: 6px;
+}
+.swatch-label {
+  font-size: 0.8125rem;
+  color: var(--charcoal-soft);
+  line-height: 1.5;
+}
+.palette-note {
+  background: var(--warm-white);
+  border: 1.5px solid var(--sand-light);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  font-size: 0.875rem;
+  color: var(--charcoal-soft);
+  font-style: italic;
+  margin-top: 8px;
+}
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+.type-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--sand-light);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+.type-row {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  border-bottom: 1px solid var(--sand-light);
+  background: #fff;
+}
+.type-row:last-child { border-bottom: none; }
+.type-row:nth-child(even) { background: var(--warm-white); }
+.type-meta {
+  padding: 24px 24px;
+  border-right: 1px solid var(--sand-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+.type-role {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--earth);
+}
+.type-spec {
+  font-size: 0.75rem;
+  color: var(--sand);
+  font-family: 'Courier New', monospace;
+  line-height: 1.5;
+}
+.type-sample {
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+}
+.type-h1 {
+  font-family: var(--font-serif);
+  font-size: 2.25rem;
+  font-weight: 500;
+  color: var(--earth-deep);
+  line-height: 1.2;
+}
+.type-h2 {
+  font-family: var(--font-serif);
+  font-size: 1.625rem;
+  font-weight: 500;
+  color: var(--earth-deep);
+  line-height: 1.25;
+}
+.type-h3 {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--earth-deep);
+  line-height: 1.3;
+}
+.type-body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--charcoal-soft);
+  line-height: 1.8;
+}
+.type-script {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.875rem;
+  color: var(--blush);
+  line-height: 1.2;
+}
+.type-small {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--earth);
+}
+.font-block-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+.font-block {
+  background: #fff;
+  border: 1px solid var(--sand-light);
+  border-radius: var(--radius);
+  padding: 32px;
+}
+.font-block-name {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--earth);
+  margin-bottom: 8px;
+  display: block;
+}
+.font-block-sample-serif {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--earth-deep);
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+.font-block-sample-body {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  color: var(--charcoal-soft);
+  line-height: 1.5;
+  font-weight: 300;
+  margin-bottom: 8px;
+}
+.font-block-usage {
+  font-size: 0.8125rem;
+  color: var(--sand);
+  line-height: 1.6;
+}
+
+/* ============================================================
+   THE METHOD
+   ============================================================ */
+.method-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.method-card {
+  background: #fff;
+  border: 1px solid var(--sand-light);
+  border-radius: var(--radius);
+  padding: 32px 24px;
+  text-align: center;
+  position: relative;
+}
+.method-arrow-col {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 4px;
+}
+.method-number {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 2.25rem;
+  color: var(--blush-light);
+  display: block;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.method-stage-badge {
+  position: absolute;
+  top: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--blush);
+  color: #fff;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.method-name {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  color: var(--earth-deep);
+  margin-bottom: 12px;
+}
+.method-desc {
+  font-size: 0.875rem;
+  color: var(--charcoal-soft);
+  line-height: 1.7;
+}
+.method-connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+}
+.method-arrow-row {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  margin: 40px 0 0;
+}
+.method-flow {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+  gap: 0;
+  align-items: center;
+  margin: 40px 0 0;
+}
+.method-arrow-icon {
+  font-size: 1.25rem;
+  color: var(--sand);
+  padding: 0 6px;
+  line-height: 1;
+}
+
+/* ============================================================
+   NERVOUS SYSTEM STATES
+   ============================================================ */
+.ns-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.ns-card {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1.5px solid var(--sand-light);
+  background: #fff;
+}
+.ns-card.activation { border-top: 4px solid var(--earth); }
+.ns-card.overgiving  { border-top: 4px solid var(--blush); }
+.ns-card.shutdown    { border-top: 4px solid var(--sand); }
+.ns-card.regulated   { border-top: 4px solid var(--accent-yellow); }
+.ns-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+}
+.ns-body { padding: 20px 18px 24px; }
+.ns-name {
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  color: var(--earth-deep);
+  margin-bottom: 4px;
+}
+.ns-clinical {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sand);
+  display: block;
+  margin-bottom: 10px;
+}
+.ns-desc {
+  font-size: 0.875rem;
+  color: var(--charcoal-soft);
+  line-height: 1.65;
+}
+.ns-note {
+  background: var(--warm-white);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--accent-yellow);
+  padding: 16px 20px;
+  font-size: 0.875rem;
+  color: var(--charcoal-soft);
+  line-height: 1.7;
+  margin-top: 24px;
+  font-style: italic;
+}
+
+/* ============================================================
+   IMAGERY
+   ============================================================ */
+.imagery-section-label {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--earth);
+  margin: 0 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--sand-light);
+}
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 40px;
+}
+.photo-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 40px;
+}
+.photo-item {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--sand-light);
+}
+.photo-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.photo-item-wide img {
+  height: 240px;
+}
+.photo-caption {
+  padding: 10px 14px;
+  font-size: 0.8rem;
+  color: var(--charcoal-soft);
+  font-style: italic;
+  background: var(--warm-white);
+  line-height: 1.5;
+}
+.nature-states-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.ns-photo-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--earth);
+  padding: 8px 12px 6px;
+  background: var(--warm-white);
+}
+.imagery-rules {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 40px;
+}
+.imagery-rule-block {
+  background: #fff;
+  border: 1px solid var(--sand-light);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+.imagery-rule-heading {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--earth);
+  margin-bottom: 12px;
+}
+.imagery-rule-list {
+  list-style: none;
+}
+.imagery-rule-list li {
+  font-size: 0.875rem;
+  color: var(--charcoal-soft);
+  line-height: 1.6;
+  padding: 6px 0;
+  padding-left: 16px;
+  position: relative;
+  border-bottom: 1px solid var(--sand-light);
+}
+.imagery-rule-list li:last-child { border-bottom: none; }
+.imagery-rule-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 13px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--blush);
+}
+
+/* ============================================================
+   LOGO / WORDMARK
+   ============================================================ */
+.logo-placeholder {
+  border: 2px dashed var(--sand-light);
+  border-radius: var(--radius);
+  padding: 60px 40px;
+  text-align: center;
+  background: #fff;
+  margin-bottom: 32px;
+}
+.logo-wordmark {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 2.75rem;
+  color: var(--earth);
+  display: block;
+  margin-bottom: 8px;
+}
+.logo-sub {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sand);
+}
+.logo-placeholder-label {
+  font-size: 0.75rem;
+  color: var(--sand);
+  font-style: italic;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px dashed var(--sand-light);
+}
+.logo-vars {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.logo-var-block {
+  border: 1px solid var(--sand-light);
+  border-radius: var(--radius-sm);
+  padding: 28px 24px;
+  text-align: center;
+  background: #fff;
+}
+.logo-var-block.dark {
+  background: var(--earth-deep);
+}
+.logo-var-sample {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.75rem;
+  color: var(--earth);
+  display: block;
+  margin-bottom: 8px;
+}
+.logo-var-block.dark .logo-var-sample {
+  color: var(--blush-light);
+}
+.logo-var-note {
+  font-size: 0.75rem;
+  color: var(--sand);
+  font-style: italic;
+}
+.logo-var-block.dark .logo-var-note {
+  color: rgba(232,221,208,0.5);
+}
+
+/* ============================================================
+   SAMPLE APPLICATIONS
+   ============================================================ */
+.applications-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.app-card {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--sand-light);
+  background: #fff;
+}
+.app-preview {
+  padding: 32px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+.app-preview.hero-preview {
+  background: linear-gradient(
+    160deg,
+    rgba(82, 44, 31, 0.82) 0%,
+    rgba(82, 44, 31, 0.65) 100%
+  ),
+  linear-gradient(135deg, #c4a882 0%, #8c6b52 100%);
+  min-height: 240px;
+}
+.app-preview.instagram-preview {
+  background: var(--warm-white);
+  border: 4px solid #fff;
+  outline: 1px solid var(--sand-light);
+}
+.app-preview.email-preview {
+  background: var(--cream);
+  align-items: flex-start;
+  text-align: left;
+}
+.app-preview.card-preview {
+  background: var(--earth-deep);
+  min-height: 160px;
+}
+.app-info {
+  padding: 20px 24px 24px;
+  border-top: 1px solid var(--sand-light);
+}
+.app-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--earth);
+  display: block;
+  margin-bottom: 6px;
+}
+.app-desc {
+  font-size: 0.875rem;
+  color: var(--charcoal-soft);
+  line-height: 1.6;
+}
+
+/* hero preview content */
+.hp-eyebrow {
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sand-light);
+  margin-bottom: 12px;
+  font-family: var(--font-body);
+  font-weight: 500;
+}
+.hp-script {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.375rem;
+  color: #fff;
+  display: block;
+  margin-bottom: 10px;
+}
+.hp-h1 {
+  font-family: var(--font-serif);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+.hp-sub {
+  font-size: 0.75rem;
+  color: var(--sand-light);
+  opacity: 0.85;
+  margin-bottom: 16px;
+  font-family: var(--font-body);
+}
+.hp-btn {
+  display: inline-block;
+  background: var(--blush);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 8px 20px;
+  border-radius: 40px;
+}
+
+/* instagram preview */
+.ig-frame {
+  width: 100%;
+  max-width: 200px;
+  aspect-ratio: 1;
+  background: var(--earth-deep);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+}
+.ig-script {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--blush-light);
+  font-size: 1.125rem;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+.ig-body {
+  font-size: 0.6875rem;
+  color: var(--sand-light);
+  line-height: 1.5;
+  font-family: var(--font-body);
+}
+.ig-handle {
+  font-size: 0.625rem;
+  letter-spacing: 0.08em;
+  color: var(--blush);
+  margin-top: 10px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* email preview */
+.ep-header {
+  width: 100%;
+  border-bottom: 2px solid var(--blush-light);
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+}
+.ep-brand {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--earth);
+}
+.ep-from {
+  font-size: 0.7rem;
+  color: var(--sand);
+  font-family: var(--font-body);
+  margin-top: 4px;
+}
+.ep-body p {
+  font-size: 0.75rem;
+  color: var(--charcoal-soft);
+  line-height: 1.65;
+  margin-bottom: 8px;
+  font-family: var(--font-body);
+}
+.ep-sig {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.125rem;
+  color: var(--earth);
+  margin-top: 10px;
+}
+.ep-sig-note {
+  font-size: 0.7rem;
+  color: var(--sand);
+  font-family: var(--font-body);
+}
+
+/* card preview */
+.bc-front {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.bc-name {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--blush-light);
+  line-height: 1.2;
+}
+.bc-title {
+  font-size: 0.625rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sand);
+  font-family: var(--font-body);
+  font-weight: 500;
+}
+.bc-divider {
+  width: 32px;
+  height: 1px;
+  background: var(--blush);
+  margin: 4px 0;
+}
+.bc-brand {
+  font-size: 0.6875rem;
+  color: rgba(232,221,208,0.5);
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ============================================================
+   FOOTER BAR
+   ============================================================ */
+#guide-footer {
+  background: var(--earth-deep);
+  padding: 40px 0;
+  text-align: center;
+}
+.guide-footer-brand {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 2rem;
+  color: var(--blush-light);
+  display: block;
+  margin-bottom: 8px;
+}
+.guide-footer-meta {
+  font-size: 0.8125rem;
+  color: rgba(232,221,208,0.45);
+  letter-spacing: 0.06em;
+}
+
+/* ============================================================
+   PRINT STYLES — A4 portrait
+   ============================================================ */
+@media print {
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+
+  body {
+    font-size: 13px;
+    background: #fff;
+  }
+
+  #cover {
+    min-height: 100vh;
+    page-break-after: always;
+    break-after: page;
+  }
+
+  .guide-section {
+    page-break-before: always;
+    break-before: page;
+  }
+
+  /* Don't page-break on the very first section after cover */
+  .guide-section:nth-of-type(2) {
+    page-break-before: avoid;
+    break-before: avoid;
+  }
+
+  .container, .container-wide {
+    padding: 0 24px;
+    max-width: 100%;
+  }
+
+  #guide-footer {
+    page-break-before: always;
+    break-before: page;
+  }
+
+  /* Avoid orphaned cards */
+  .method-card, .ns-card, .swatch-card,
+  .app-card, .voice-block {
+    break-inside: avoid;
+  }
+
+  .photo-item img, .ns-img { height: 120px !important; }
+
+  a { text-decoration: none; }
+}
+
+/* ============================================================
+   RESPONSIVE — narrow screens
+   ============================================================ */
+@media (max-width: 720px) {
+  .voice-cols      { grid-template-columns: 1fr; }
+  .palette-grid    { grid-template-columns: repeat(2, 1fr); }
+  .method-flow     { grid-template-columns: 1fr 1fr; }
+  .ns-grid         { grid-template-columns: 1fr 1fr; }
+  .photo-grid      { grid-template-columns: 1fr 1fr; }
+  .nature-states-grid { grid-template-columns: 1fr 1fr; }
+  .applications-grid  { grid-template-columns: 1fr; }
+  .font-block-row  { grid-template-columns: 1fr; }
+  .logo-vars       { grid-template-columns: 1fr; }
+  .imagery-rules   { grid-template-columns: 1fr; }
+  .container, .container-wide { padding: 0 24px; }
+  .cover-content   { padding: 60px 24px; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     SECTION 1 — COVER
+     ============================================================ -->
+<section id="cover">
+  <div class="cover-bg" aria-hidden="true"></div>
+  <div class="cover-content">
+    <div class="cover-eyebrow">Brand Guide</div>
+    <span class="cover-script">Space Between Wellness</span>
+    <div class="cover-title">Emily Witt &nbsp;&middot;&nbsp; Brand Guide v1</div>
+    <div class="cover-divider"></div>
+    <p class="cover-tagline">The pathway back to you</p>
+    <p class="cover-meta">Prepared 4 June 2026</p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SECTION 2 — BRAND ESSENCE
+     ============================================================ -->
+<section class="guide-section">
+  <div class="container">
+    <span class="section-eyebrow">01 — Brand Essence</span>
+    <span class="section-script">What we stand for</span>
+    <h2 class="section-heading">Who Emily is. Who this is for. Why it exists.</h2>
+
+    <blockquote class="essence-pull">
+      "I want to stop women from building these empires that they are miserable in - fueled by feeling unworthy, fueled by expectations."
+      <footer style="font-family: var(--font-body); font-size: 0.875rem; font-style: normal; color: var(--earth); margin-top: 10px; font-weight: 500; letter-spacing: 0.04em;">Emily Witt</footer>
+    </blockquote>
+
+    <div class="essence-body">
+      <p>Space Between Wellness is a nervous system coaching and wellbeing education practice founded by Emily Witt in Hobart, Tasmania. Emily works with high-achieving women who built the life they were told to want and somehow lost themselves along the way - women who are exhausted in a way that sleep doesn't fix, who have a spiritual side they've been told isn't professional, and who know something needs to change even when everything looks fine from the outside.</p>
+
+      <p>The work is grounded in psychological science - eight years working in trauma and complex trauma in the community sector, a Bachelor of Psychological Science, and training in trauma-informed practice. And it is woven openly with genuine spiritual wisdom. Not as decoration. As the point. Emily stopped studying further psychology because it kept excluding the parts that actually mattered - the intuitive, the embodied, the parts of human experience that science alone can't hold. So she built something that bridges both.</p>
+
+      <p>Space Between Wellness exists because high-capacity women deserve a container that holds all of them - the capable and the worn out, the spiritual and the evidence-driven, the version performing okayness and the one who's fed up. Emily's signature phrase - "evidence-informed guidance woven with spiritual wisdom" - is the truest description of the brand. The nervous system is the entry point. Coming home to yourself is the destination.</p>
+    </div>
+
+    <div class="ornament">
+      <span class="ornament-script">The pathway back to you</span>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px;">
+      <div style="background: var(--warm-white); border-radius: var(--radius); padding: 28px 24px; border: 1px solid var(--sand-light);">
+        <div style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--earth); margin-bottom: 10px;">Who she serves</div>
+        <p style="font-size: 0.9rem; color: var(--charcoal-soft); line-height: 1.7;">High-achieving women - navigating burnout, identity shifts, life transitions, or the quiet sense that they've done everything right and it still doesn't feel like enough.</p>
+      </div>
+      <div style="background: var(--warm-white); border-radius: var(--radius); padding: 28px 24px; border: 1px solid var(--sand-light);">
+        <div style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--earth); margin-bottom: 10px;">What she offers</div>
+        <p style="font-size: 0.9rem; color: var(--charcoal-soft); line-height: 1.7;">1:1 breakthrough sessions, in-person sound baths, an online community container, and organisational wellbeing education for purpose-driven teams. All through the Space Between Method.</p>
+      </div>
+      <div style="background: var(--warm-white); border-radius: var(--radius); padding: 28px 24px; border: 1px solid var(--sand-light);">
+        <div style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--earth); margin-bottom: 10px;">The differentiator</div>
+        <p style="font-size: 0.9rem; color: var(--charcoal-soft); line-height: 1.7;">Spirituality is not a bolt-on. It is the differentiator. This is psychological science and spiritual wisdom together - for the whole person, not the performing version of her.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SECTION 3 — VOICE & TONE
+     ============================================================ -->
+<section class="guide-section" style="background: var(--warm-white);">
+  <div class="container">
+    <span class="section-eyebrow">02 — Voice &amp; Tone</span>
+    <span class="section-script">How Emily sounds</span>
+    <h2 class="section-heading">Locked May 2026</h2>
+    <p class="section-intro">Emily's voice is her voice - not a brand filter. Warm and professional in the same breath. Spirituality woven openly. Honest enough to name what nobody else will. Every piece of copy should sound like Emily talking, not like a wellness brand.</p>
+
+    <div class="voice-trait-row">
+      <span class="voice-trait">Warm</span>
+      <span class="voice-trait">Professional</span>
+      <span class="voice-trait">Spiritual</span>
+      <span class="voice-trait">Evidence-informed</span>
+      <span class="voice-trait">Honest</span>
+      <span class="voice-trait">Direct</span>
+      <span class="voice-trait">Supportive</span>
+      <span class="voice-trait">Challenging</span>
+    </div>
+
+    <div class="voice-cols">
+      <div class="voice-block do-block">
+        <div class="voice-block-heading">Do say</div>
+        <div class="voice-example">
+          <span class="voice-example-marker">DO</span>
+          <span>"You're not burned out. You're just... fed up." - names the real thing without clinical distancing</span>
+        </div>
+        <div class="voice-example">
+          <span class="voice-example-marker">DO</span>
+          <span>"Your fire didn't go out. It's buried under years of doing everything for everyone else." - honest, emotionally true, no gloss</span>
+        </div>
+        <div class="voice-example">
+          <span class="voice-example-marker">DO</span>
+          <span>"Evidence-informed guidance woven with spiritual wisdom." - names both pillars with equal weight</span>
+        </div>
+        <div class="voice-example">
+          <span class="voice-example-marker">DO</span>
+          <span>"Build from desire, not from wound." - poetic but grounded, distinctly Emily</span>
+        </div>
+      </div>
+
+      <div class="voice-block dont-block">
+        <div class="voice-block-heading">Don't say</div>
+        <div class="voice-example">
+          <span class="voice-example-marker">DON'T</span>
+          <span>"Burnout is an epidemic affecting high performers..." - stat-hook, clinical distance, generic opener</span>
+        </div>
+        <div class="voice-example">
+          <span class="voice-example-marker">DON'T</span>
+          <span>"This isn't therapy - it's coaching." - the "not X, it's Y" contrast pattern. Just say what it IS.</span>
+        </div>
+        <div class="voice-example">
+          <span class="voice-example-marker">DON'T</span>
+          <span>"90% of high-achieving women report..." - tech/stat hooks are an AI tell and strip intimacy</span>
+        </div>
+        <div class="voice-example">
+          <span class="voice-example-marker">DON'T</span>
+          <span>"Unlock your potential and transform your mindset." - corporate wellness language. No.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="voice-rules">
+      <div class="voice-rules-heading">Locked copy rules</div>
+
+      <div class="voice-rule-item">
+        <div class="voice-rule-dot"></div>
+        <div><span style="color: var(--blush-light); font-weight: 500;">"Fed up" not "burnout"</span> - Emily's clients are fed up with performing a version of their life. "Burnout" is overused and clinically flattened. Use "fed up", "exhausted", "quietly relentless", "done."</div>
+      </div>
+      <div class="voice-rule-item">
+        <div class="voice-rule-dot"></div>
+        <div><span style="color: var(--blush-light); font-weight: 500;">Nervous system states have names</span> - Activation, Over Giving, Shut Down, Regulated. Never use fight/flight/fawn/freeze in client-facing copy. Those are clinical terms Emily has translated into language that lands.</div>
+      </div>
+      <div class="voice-rule-item">
+        <div class="voice-rule-dot"></div>
+        <div><span style="color: var(--blush-light); font-weight: 500;">Spirituality is the differentiator - weave it openly</span> - never footnote or apologise for the spiritual dimension. It is equal footing with the science. Clients who want both have been waiting for this.</div>
+      </div>
+      <div class="voice-rule-item">
+        <div class="voice-rule-dot"></div>
+        <div><span style="color: var(--blush-light); font-weight: 500;">The signature line is locked</span> - "Evidence-informed guidance woven with spiritual wisdom." Use it as written, not paraphrased.</div>
+      </div>
+      <div class="voice-rule-item">
+        <div class="voice-rule-dot"></div>
+        <div><span style="color: var(--blush-light); font-weight: 500;">No emdashes in copy</span> - use a hyphen with spaces ( - ) or rewrite. Emdashes read as corporate.</div>
+      </div>
+      <div class="voice-rule-item">
+        <div class="voice-rule-dot"></div>
+        <div><span style="color: var(--blush-light); font-weight: 500;">No "not X, it's Y" contrast pattern</span> - it is an AI tell and weakens the message. State what it IS with confidence.</div>
+      </div>
+      <div class="voice-rule-item">
+        <div class="voice-rule-dot"></div>
+        <div><span style="color: var(--blush-light); font-weight: 500;">No stat or tech hooks</span> - never lead with data points or counts. Lead with the emotional truth of what the client is living in right now.</div>
+      </div>
+      <div class="voice-rule-item">
+        <div class="voice-rule-dot"></div>
+        <div><span style="color: var(--blush-light); font-weight: 500;">Voice = Emily talking</span> - every piece of copy should pass the test: does this sound like Emily speaking to a woman she genuinely cares about? Corporate framing, wellness cliches, and motivational language all fail this test.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SECTION 4 — COLOUR PALETTE
+     ============================================================ -->
+<section class="guide-section">
+  <div class="container-wide">
+    <span class="section-eyebrow">03 — Colour Palette</span>
+    <span class="section-script">Warm. Earth. Honest.</span>
+    <h2 class="section-heading">The full locked palette</h2>
+    <p class="section-intro">Every colour is grounded in the warm earth and blush spectrum. Sage green has been deliberately removed from the brand - Emily does not use green.</p>
+
+    <p style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--earth); margin-bottom: 16px;">Primary colours</p>
+    <div class="palette-grid" style="grid-template-columns: repeat(4, 1fr);">
+      <div class="swatch-card">
+        <div class="swatch-block" style="background: #F5F1ED;"></div>
+        <div class="swatch-info">
+          <span class="swatch-hex">#F5F1ED</span>
+          <span class="swatch-var">--cream</span>
+          <span class="swatch-label">Primary background. The base layer for all screens and print.</span>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-block" style="background: #F7F3EF;"></div>
+        <div class="swatch-info">
+          <span class="swatch-hex">#F7F3EF</span>
+          <span class="swatch-var">--warm-white</span>
+          <span class="swatch-label">Secondary background. Section alternates, card fills.</span>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-block" style="background: #522C1F;"></div>
+        <div class="swatch-info">
+          <span class="swatch-hex">#522C1F</span>
+          <span class="swatch-var">--earth</span>
+          <span class="swatch-label">Espresso. Primary text on light backgrounds, borders, labels.</span>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-block" style="background: #2B1E1E;"></div>
+        <div class="swatch-info">
+          <span class="swatch-hex">#2B1E1E</span>
+          <span class="swatch-var">--earth-deep / --charcoal</span>
+          <span class="swatch-label">Headlines, dark sections, footer background.</span>
+        </div>
+      </div>
+    </div>
+
+    <p style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--earth); margin-bottom: 16px; margin-top: 32px;">Blush family</p>
+    <div class="palette-grid" style="grid-template-columns: repeat(3, 1fr);">
+      <div class="swatch-card">
+        <div class="swatch-block" style="background: #E4B5C1;"></div>
+        <div class="swatch-info">
+          <span class="swatch-hex">#E4B5C1</span>
+          <span class="swatch-var">--blush</span>
+          <span class="swatch-label">Dusty pink. Primary accent. CTAs, icons, borders. Used sparingly - can get lost on busy backgrounds.</span>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-block" style="background: #EDD0D7;"></div>
+        <div class="swatch-info">
+          <span class="swatch-hex">#EDD0D7</span>
+          <span class="swatch-var">--blush-light</span>
+          <span class="swatch-label">Softer blush. Script text on dark backgrounds. Hover states.</span>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-block" style="background: #F7E6D3;"></div>
+        <div class="swatch-info">
+          <span class="swatch-hex">#F7E6D3</span>
+          <span class="swatch-var">--blush-pale</span>
+          <span class="swatch-label">Blush wash. Card backgrounds, qualification blocks, soft fills.</span>
+        </div>
+      </div>
+    </div>
+
+    <p style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--earth); margin-bottom: 16px; margin-top: 32px;">Sand &amp; charcoal</p>
+    <div class="palette-grid" style="grid-template-columns: repeat(4, 1fr);">
+      <div class="swatch-card">
+        <div class="swatch-block" style="background: #C4B19E;"></div>
+        <div class="swatch-info">
+          <span class="swatch-hex">#C4B19E</span>
+          <span class="swatch-var">--sand</span>
+          <span class="swatch-label">Warm beige. Supporting backgrounds, neutral borders, subtext.</span>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-block" style="background: #E2D6CA;"></div>
+        <div class="swatch-info">
+          <span class="swatch-hex">#E2D6CA</span>
+          <span class="swatch-var">--sand-light</span>
+          <span class="swatch-label">Light warm beige. Dividers, card borders, subtle separators.</span>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-block" style="background: #5C4033;"></div>
+        <div class="swatch-info">
+          <span class="swatch-hex">#5C4033</span>
+          <span class="swatch-var">--charcoal-soft</span>
+          <span class="swatch-label">Body copy on light backgrounds. Secondary headings.</span>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-block" style="background: #2B1E1E; border: 1px solid #3a2a1e;"></div>
+        <div class="swatch-info">
+          <span class="swatch-hex">#2B1E1E</span>
+          <span class="swatch-var">--charcoal</span>
+          <span class="swatch-label">Alias for --earth-deep. Dark UI text, footer.</span>
+        </div>
+      </div>
+    </div>
+
+    <p style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--earth); margin-bottom: 16px; margin-top: 32px;">Accent - warm honey</p>
+    <div class="palette-grid" style="grid-template-columns: 1fr 1fr 2fr;">
+      <div class="swatch-card">
+        <div class="swatch-block" style="background: #D4A24A;"></div>
+        <div class="swatch-info">
+          <span class="swatch-hex">#D4A24A</span>
+          <span class="swatch-var">--accent-yellow</span>
+          <span class="swatch-label">Warm honey. Sparingly for highlights, Regulated state, selected states.</span>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-block" style="background: #E8C275;"></div>
+        <div class="swatch-info">
+          <span class="swatch-hex">#E8C275</span>
+          <span class="swatch-var">--accent-yellow-soft</span>
+          <span class="swatch-label">Honey wash. Secondary highlight states.</span>
+        </div>
+      </div>
+      <div class="palette-note">
+        <strong style="color: var(--earth); font-weight: 600;">Sage green is deliberately absent from this palette.</strong> Emily does not use green in her brand. Any previous design work that included sage should be treated as retired. The warm earth, blush, and honey palette is the complete and locked colour system.
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SECTION 5 — TYPOGRAPHY
+     ============================================================ -->
+<section class="guide-section" style="background: var(--warm-white);">
+  <div class="container">
+    <span class="section-eyebrow">04 — Typography</span>
+    <span class="section-script">Two typefaces. One voice.</span>
+    <h2 class="section-heading">Playfair Display + Work Sans</h2>
+    <p class="section-intro">Playfair Display handles all headings and script-italic accents. Work Sans handles all body copy, labels, and navigation. Both are loaded from Google Fonts via the link below.</p>
+
+    <div style="background: var(--earth-deep); border-radius: var(--radius-sm); padding: 12px 20px; margin-bottom: 40px; font-family: 'Courier New', monospace; font-size: 0.8125rem; color: var(--sand-light); word-break: break-all;">
+      https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&amp;family=Work+Sans:wght@300;400;500;600&amp;display=swap
+    </div>
+
+    <div class="font-block-row">
+      <div class="font-block">
+        <span class="font-block-name">Playfair Display</span>
+        <div class="font-block-sample-serif">Aa Bb Cc Dd</div>
+        <div style="font-family: var(--font-serif); font-style: italic; color: var(--blush); font-size: 1.75rem; margin-bottom: 8px;">The pathway back to you</div>
+        <div class="font-block-usage">Headings (H1-H3), script accents in italic, blockquotes, pull quotes, wordmark. Weights: 400, 500, 600 - regular and italic.</div>
+      </div>
+      <div class="font-block">
+        <span class="font-block-name">Work Sans</span>
+        <div class="font-block-sample-body">Aa Bb Cc Dd Ee Ff</div>
+        <div style="font-family: var(--font-body); font-size: 1rem; color: var(--charcoal-soft); margin-bottom: 8px; line-height: 1.7;">Evidence-informed guidance woven with spiritual wisdom. Trauma-informed coaching for women ready to stop performing and start living.</div>
+        <div class="font-block-usage">All body copy, navigation, labels, buttons, captions, small print. Weights: 300 (light), 400 (regular), 500 (medium), 600 (semibold).</div>
+      </div>
+    </div>
+
+    <div class="type-stack">
+      <div class="type-row">
+        <div class="type-meta">
+          <span class="type-role">H1 - Hero heading</span>
+          <span class="type-spec">Playfair Display 500<br>clamp(2.2rem, 4.5vw, 3.5rem)<br>line-height 1.2</span>
+        </div>
+        <div class="type-sample">
+          <span class="type-h1">You did everything right.</span>
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <span class="type-role">H2 - Section heading</span>
+          <span class="type-spec">Playfair Display 500<br>clamp(1.75rem, 3vw, 2.5rem)<br>line-height 1.25</span>
+        </div>
+        <div class="type-sample">
+          <span class="type-h2">The Space Between Method</span>
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <span class="type-role">H3 - Card heading</span>
+          <span class="type-spec">Playfair Display 500<br>1.25rem<br>line-height 1.3</span>
+        </div>
+        <div class="type-sample">
+          <span class="type-h3">Recognise</span>
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <span class="type-role">Script accent</span>
+          <span class="type-spec">Playfair Display italic 400<br>1.75rem - 3rem context<br>colour: --blush or --earth</span>
+        </div>
+        <div class="type-sample">
+          <span class="type-script">The pathway back to you</span>
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <span class="type-role">Body copy</span>
+          <span class="type-spec">Work Sans 400<br>1rem - 1.0625rem<br>line-height 1.8-1.9</span>
+        </div>
+        <div class="type-sample">
+          <span class="type-body">Emily is an expert at identifying the patterns keeping your nervous system held captive to what you 'should' be doing.</span>
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <span class="type-role">Eyebrow / label</span>
+          <span class="type-spec">Work Sans 500<br>0.75rem - 0.8125rem<br>letter-spacing 0.12-0.18em<br>UPPERCASE</span>
+        </div>
+        <div class="type-sample">
+          <span class="type-small">Space Between Wellness</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SECTION 6 — THE SPACE BETWEEN METHOD
+     ============================================================ -->
+<section class="guide-section">
+  <div class="container">
+    <span class="section-eyebrow">05 — The Method</span>
+    <span class="section-script">Four stages</span>
+    <h2 class="section-heading">The Space Between Method</h2>
+    <p class="section-intro">A four-stage framework rooted in nervous system science, psychological research, and the wisdom of your own lived experience. The stages always flow in order: Recognise leads to Restore leads to Realign leads to Reclaim.</p>
+
+    <div class="method-flow">
+      <div class="method-card" style="margin: 0;">
+        <span class="method-stage-badge">Stage 1</span>
+        <span class="method-number">One</span>
+        <h3 class="method-name">Recognise</h3>
+        <p class="method-desc">Name what's actually happening beneath the surface. Identify the patterns, the nervous system responses, the beliefs that have been running the show.</p>
+      </div>
+      <div class="method-arrow-icon" aria-hidden="true">&#x2192;</div>
+      <div class="method-card" style="margin: 0;">
+        <span class="method-stage-badge">Stage 2</span>
+        <span class="method-number">Two</span>
+        <h3 class="method-name">Restore</h3>
+        <p class="method-desc">Create safety in the body before trying to change anything. Rest, regulation, and rebuilding the foundations that support sustainable wellbeing.</p>
+      </div>
+      <div class="method-arrow-icon" aria-hidden="true">&#x2192;</div>
+      <div class="method-card" style="margin: 0;">
+        <span class="method-stage-badge">Stage 3</span>
+        <span class="method-number">Three</span>
+        <h3 class="method-name">Realign</h3>
+        <p class="method-desc">Reconnect with your actual values, not the ones you inherited or performed. Clarify what success means to you on your own terms.</p>
+      </div>
+      <div class="method-arrow-icon" aria-hidden="true">&#x2192;</div>
+      <div class="method-card" style="margin: 0;">
+        <span class="method-stage-badge">Stage 4</span>
+        <span class="method-number">Four</span>
+        <h3 class="method-name">Reclaim</h3>
+        <p class="method-desc">Step back into your life with intention. Build from desire, not from wound. Move forward in a way that actually feels like you.</p>
+      </div>
+    </div>
+
+    <div class="ornament" style="margin: 48px 0 0;">
+      <span class="ornament-script">Recognise &middot; Restore &middot; Realign &middot; Reclaim</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SECTION 7 — NERVOUS SYSTEM STATES
+     ============================================================ -->
+<section class="guide-section" style="background: var(--warm-white);">
+  <div class="container-wide">
+    <span class="section-eyebrow">06 — Nervous System States</span>
+    <span class="section-script">Naming what's real</span>
+    <h2 class="section-heading">Activation / Over Giving / Shut Down / Regulated</h2>
+    <p class="section-intro">These are Emily's translations of clinical nervous system terminology into language that actually lands with the women she works with. These four terms are brand-locked. Never use fight/flight/fawn/freeze in client-facing copy.</p>
+
+    <div class="ns-grid">
+      <div class="ns-card activation">
+        <img class="ns-img" src="assets/nature-states/activation-lava.jpg" alt="Glowing molten lava - the urgent quality of Activation">
+        <div class="ns-body">
+          <h3 class="ns-name">Activation</h3>
+          <span class="ns-clinical">Fight response</span>
+          <p class="ns-desc">Driven, restless, reactive. Running on adrenaline and mistaking it for motivation. Everything feels urgent. Rest feels impossible.</p>
+        </div>
+      </div>
+
+      <div class="ns-card overgiving">
+        <img class="ns-img" src="assets/nature-states/overgiving-dunes.jpg" alt="Soft flowing dunes - the yielding quality of Over Giving">
+        <div class="ns-body">
+          <h3 class="ns-name">Over Giving</h3>
+          <span class="ns-clinical">Fawn response</span>
+          <p class="ns-desc">People-pleasing, saying yes when your body is screaming no. Made yourself so agreeable you've lost track of what you actually want.</p>
+        </div>
+      </div>
+
+      <div class="ns-card shutdown">
+        <img class="ns-img" src="assets/nature-states/shutdown-fog.jpg" alt="Sunrise through heavy fog - the behind-glass quality of Shut Down">
+        <div class="ns-body">
+          <h3 class="ns-name">Shut Down</h3>
+          <span class="ns-clinical">Freeze response</span>
+          <p class="ns-desc">Numb, foggy, disconnected. The emotional dial turned down so low you feel like you're watching your life from behind glass.</p>
+        </div>
+      </div>
+
+      <div class="ns-card regulated">
+        <img class="ns-img" src="assets/nature-states/regulated-water.jpg" alt="Calm water at golden hour - the grounded quality of Regulation">
+        <div class="ns-body">
+          <h3 class="ns-name">Regulated</h3>
+          <span class="ns-clinical">Safety response</span>
+          <p class="ns-desc">Present, grounded, clear. Feel the full range of emotions without being controlled by them. This is where growth, connection, and creativity live.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ns-note">
+      Most high-achieving women cycle between three of these. Very few are living in the fourth. The clinical terms (fight/flight/fawn/freeze) appear only in the smaller sub-labels on cards - never as the primary terminology in copy, emails, or social content.
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SECTION 8 — IMAGERY DIRECTION
+     ============================================================ -->
+<section class="guide-section">
+  <div class="container-wide">
+    <span class="section-eyebrow">07 — Imagery Direction</span>
+    <span class="section-script">What the brand looks like</span>
+    <h2 class="section-heading">Photography and visual tone</h2>
+    <p class="section-intro">All imagery should feel warm, textured, and intimate. The palette carries into the photos - warm walls, brown tones, honey light. No green foliage. No clinical white spaces. No stock-photo perfection.</p>
+
+    <p class="imagery-section-label">Emily - Portraits (warm walls, brown tops, intimate framing)</p>
+    <div class="photo-grid">
+      <div class="photo-item">
+        <img src="assets/emily-photos/emily-09.jpg" alt="Emily seated on bench, warm wall" loading="lazy">
+        <div class="photo-caption">Warm textured wall, seated direct gaze. Use for hero and about sections.</div>
+      </div>
+      <div class="photo-item">
+        <img src="assets/emily-photos/emily-14.jpg" alt="Emily seated, hand on chin" loading="lazy">
+        <div class="photo-caption">Hand on chin, contemplative. Good for about + intro split layouts.</div>
+      </div>
+      <div class="photo-item">
+        <img src="assets/emily-photos/emily-08.jpg" alt="Emily against textured curtain" loading="lazy">
+        <div class="photo-caption">Curtain backdrop, full body. Versatile for editorial features.</div>
+      </div>
+      <div class="photo-item">
+        <img src="assets/emily-photos/emily-10.jpg" alt="Emily standing, brown top, mauve wall" loading="lazy">
+        <div class="photo-caption">Standing portrait, direct. Works for social headers and email hero.</div>
+      </div>
+      <div class="photo-item">
+        <img src="assets/emily-photos/emily-13.jpg" alt="Emily side profile against curtain" loading="lazy">
+        <div class="photo-caption">Side profile, editorial. Used on Breakthrough Session card on live site.</div>
+      </div>
+      <div class="photo-item">
+        <img src="assets/emily-photos/emily-01.jpg" alt="Emily standing against linen drape" loading="lazy">
+        <div class="photo-caption">Linen drape, professional warmth. Used on 6-week intensive page.</div>
+      </div>
+    </div>
+
+    <p class="imagery-section-label">Emily - Sound Bath / working with bowls</p>
+    <div class="photo-grid-2">
+      <div class="photo-item photo-item-wide">
+        <img src="assets/emily-photos/emily-12.jpg" alt="Emily facilitating sound bath with brass singing bowls" loading="lazy" style="object-position: center;">
+        <div class="photo-caption">Sound bath - brass singing bowls in session. The in-person offering. Used on Sound Bath card.</div>
+      </div>
+      <div class="photo-item photo-item-wide">
+        <img src="assets/emily-photos/emily-04.jpg" alt="Emily holding gold singing bowl" loading="lazy" style="object-position: center;">
+        <div class="photo-caption">Close-up with gold bowl. Intimate, focused. Good for service detail pages.</div>
+      </div>
+      <div class="photo-item photo-item-wide">
+        <img src="assets/emily-photos/emily-03.jpg" alt="Emily in blue dress with sound bowls in studio" loading="lazy" style="object-position: center;">
+        <div class="photo-caption">Studio environment, full context. Good for about-the-practice or sound bath landing.</div>
+      </div>
+      <div class="photo-item photo-item-wide">
+        <img src="assets/emily-photos/emily-06.jpg" alt="Emily working with bowls, top-down view" loading="lazy" style="object-position: center;">
+        <div class="photo-caption">Top-down working shot. Hands-on, present. Process imagery.</div>
+      </div>
+    </div>
+
+    <p class="imagery-section-label">Nature states - warm-toned, no green, no green foliage</p>
+    <div class="nature-states-grid">
+      <div class="photo-item" style="border-top: 4px solid var(--earth);">
+        <img src="assets/nature-states/activation-lava.jpg" alt="Activation - glowing lava" loading="lazy" style="height: 160px; object-position: center;">
+        <span class="ns-photo-label">Activation</span>
+        <div class="photo-caption">Molten lava. Urgent, burning, relentless. Earth tones throughout.</div>
+      </div>
+      <div class="photo-item" style="border-top: 4px solid var(--blush);">
+        <img src="assets/nature-states/overgiving-dunes.jpg" alt="Over Giving - flowing dunes" loading="lazy" style="height: 160px; object-position: center;">
+        <span class="ns-photo-label">Over Giving</span>
+        <div class="photo-caption">Red dunes, pink sky. Yielding, shape-shifting, soft-edged.</div>
+      </div>
+      <div class="photo-item" style="border-top: 4px solid var(--sand);">
+        <img src="assets/nature-states/shutdown-fog.jpg" alt="Shut Down - heavy fog" loading="lazy" style="height: 160px; object-position: center;">
+        <span class="ns-photo-label">Shut Down</span>
+        <div class="photo-caption">Fog and silhouettes. Warm sunrise behind grey. Watching from behind glass.</div>
+      </div>
+      <div class="photo-item" style="border-top: 4px solid var(--accent-yellow);">
+        <img src="assets/nature-states/regulated-water.jpg" alt="Regulated - calm golden water" loading="lazy" style="height: 160px; object-position: center;">
+        <span class="ns-photo-label">Regulated</span>
+        <div class="photo-caption">Golden hour water. Still, reflective, grounded. The aspiration.</div>
+      </div>
+    </div>
+
+    <div class="imagery-rules">
+      <div class="imagery-rule-block">
+        <div class="imagery-rule-heading">Photo direction - always</div>
+        <ul class="imagery-rule-list">
+          <li>Warm, earthy tones in backgrounds and lighting</li>
+          <li>Object-position: center top for portrait shots</li>
+          <li>Brown walls, terracotta, honey light, cream - any of these work</li>
+          <li>Intimate framing - feels like a real person, not a photoshoot</li>
+          <li>Nature imagery should feel raw, textured, elemental</li>
+          <li>Check mobile and desktop rendering for all images</li>
+        </ul>
+      </div>
+      <div class="imagery-rule-block">
+        <div class="imagery-rule-heading">What to avoid</div>
+        <ul class="imagery-rule-list">
+          <li>No green or green foliage - this is not in the palette</li>
+          <li>No clinical white or sterile studio backgrounds</li>
+          <li>No stock-photo perfection or overly posed shots</li>
+          <li>No blue-toned or cool lighting</li>
+          <li>No office or corporate settings</li>
+          <li>No graphics or overlays that compete with Emily's face</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SECTION 9 — LOGO / WORDMARK
+     ============================================================ -->
+<section class="guide-section" style="background: var(--warm-white);">
+  <div class="container">
+    <span class="section-eyebrow">08 — Logo &amp; Wordmark</span>
+    <span class="section-script">In progress</span>
+    <h2 class="section-heading">Current state and direction</h2>
+    <p class="section-intro">A formal logo has not yet been designed. Emily currently uses "Space Between Wellness" as a text wordmark set in Playfair Display italic. This is the active brand mark used across the website, footer, and all touchpoints.</p>
+
+    <div class="logo-placeholder">
+      <span class="logo-wordmark">Space Between Wellness</span>
+      <div class="logo-sub">Playfair Display Italic &nbsp;&middot;&nbsp; --earth (#522C1F)</div>
+      <p class="logo-placeholder-label">Logo design is a future deliverable. Until then, the Playfair Display italic wordmark is the official brand mark.</p>
+    </div>
+
+    <div class="logo-vars">
+      <div class="logo-var-block">
+        <span class="logo-var-sample">Space Between Wellness</span>
+        <div class="logo-var-note">Light background variant - Playfair italic in --earth (#522C1F)</div>
+      </div>
+      <div class="logo-var-block dark">
+        <span class="logo-var-sample" style="color: var(--blush-light);">Space Between Wellness</span>
+        <div class="logo-var-note">Dark background variant - Playfair italic in --blush-light (#EDD0D7)</div>
+      </div>
+    </div>
+
+    <div style="background: #fff; border: 1px solid var(--sand-light); border-radius: var(--radius); padding: 28px 32px; margin-top: 24px;">
+      <div style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--earth); margin-bottom: 12px;">Logo design brief notes</div>
+      <p style="font-size: 0.9rem; color: var(--charcoal-soft); line-height: 1.75; margin-bottom: 12px;">When a logo is designed, it should work in two forms: wordmark only (Playfair italic "Space Between Wellness") and a combined mark with a minimal icon or monogram. The icon should reference the concept of "between" or "threshold" - not a leaf, lotus, or wellness cliche. Think negative space, a gap, stillness between two elements.</p>
+      <p style="font-size: 0.9rem; color: var(--charcoal-soft); line-height: 1.75;">Colour: primary in --earth on light, --blush-light on dark. Lockup options: horizontal, stacked, icon-only for social profile. Must work at 32px (favicon) up to full-width print.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SECTION 10 — SAMPLE APPLICATIONS
+     ============================================================ -->
+<section class="guide-section">
+  <div class="container-wide">
+    <span class="section-eyebrow">09 — Applications</span>
+    <span class="section-script">The brand in the world</span>
+    <h2 class="section-heading">How the brand shows up</h2>
+    <p class="section-intro">Direction for four key touchpoints. These are not final designs - they show the brand logic and hierarchy applied to each format.</p>
+
+    <div class="applications-grid">
+
+      <!-- Website Hero -->
+      <div class="app-card">
+        <div class="app-preview hero-preview">
+          <div class="hp-eyebrow">Space Between Wellness</div>
+          <span class="hp-script">The pathway back to you</span>
+          <div class="hp-h1">You did everything right. So why does it feel like something's missing?</div>
+          <p class="hp-sub">For women who built the success they were told to want and somehow lost themselves along the way.</p>
+          <span class="hp-btn">What's Really Going On?</span>
+        </div>
+        <div class="app-info">
+          <span class="app-label">Website Hero</span>
+          <span class="app-desc">Script tagline above the H1. Dark cream overlay on the hero image. Left-aligned text block with CTA button in --blush. Scroll hint at base. Full-width, full-viewport-height.</span>
+        </div>
+      </div>
+
+      <!-- Instagram Post -->
+      <div class="app-card">
+        <div class="app-preview instagram-preview">
+          <div class="ig-frame">
+            <div class="ig-script">"Your fire didn't go out. It's buried."</div>
+            <div class="ig-body">Nervous system coaching for high-achieving women. Evidence-informed. Spiritually grounded.</div>
+            <div class="ig-handle">@space.between.wellness</div>
+          </div>
+        </div>
+        <div class="app-info">
+          <span class="app-label">Instagram Post Template</span>
+          <span class="app-desc">Dark earth background, Playfair italic quote in --blush-light, Work Sans body in --sand-light. 1:1 format. Always Emily's words, never corporate copy. Handle in --blush, always present.</span>
+        </div>
+      </div>
+
+      <!-- Email Signature -->
+      <div class="app-card">
+        <div class="app-preview email-preview" style="min-height: 220px;">
+          <div style="width: 100%;">
+            <div class="ep-header">
+              <div class="ep-brand">Emily Witt</div>
+              <div class="ep-from">Founder, Space Between Wellness</div>
+            </div>
+            <div class="ep-body">
+              <p>Nervous system coaching for women ready to stop performing and start living.</p>
+              <p style="color: var(--earth); font-size: 0.7rem;">space.between.wellness@gmail.com<br>spacebetweenwellness.com<br>Hobart, Tasmania</p>
+            </div>
+            <div class="ep-sig">You are safe with me.</div>
+            <div class="ep-sig-note">@space.between.wellness &nbsp;|&nbsp; @emilywitt</div>
+          </div>
+        </div>
+        <div class="app-info">
+          <span class="app-label">Email Signature</span>
+          <span class="app-desc">Name in Playfair italic, title in Work Sans. The brand promise "You are safe with me." as the close. Earth tones throughout. Simple, no logo image needed until formal mark exists.</span>
+        </div>
+      </div>
+
+      <!-- Business Card -->
+      <div class="app-card">
+        <div class="app-preview card-preview">
+          <div class="bc-front">
+            <div class="bc-name">Emily Witt</div>
+            <div class="bc-title">Nervous System Coach</div>
+            <div class="bc-divider"></div>
+            <div class="bc-brand">Space Between Wellness</div>
+            <div style="font-size: 0.6rem; color: rgba(232,221,208,0.4); font-family: var(--font-body); margin-top: 6px; letter-spacing: 0.06em;">spacebetweenwellness.com</div>
+          </div>
+        </div>
+        <div class="app-info">
+          <span class="app-label">Business Card Concept</span>
+          <span class="app-desc">Front: --earth-deep background, name in Playfair italic --blush-light, title in Work Sans --sand. Back: cream with the brand promise "The pathway back to you" in Playfair italic, contact details in Work Sans. Standard 90 x 55mm.</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="ornament" style="margin: 56px 0 0;">
+      <span class="ornament-script">evidence-informed, spiritually grounded</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     GUIDE FOOTER
+     ============================================================ -->
+<footer id="guide-footer">
+  <div class="container" style="text-align: center;">
+    <span class="guide-footer-brand">Space Between Wellness</span>
+    <p style="font-family: var(--font-serif); font-style: italic; color: var(--blush); font-size: 1.125rem; margin-bottom: 24px;">The pathway back to you</p>
+    <p class="guide-footer-meta">Brand Guide v1 &nbsp;&middot;&nbsp; Emily Witt &nbsp;&middot;&nbsp; Prepared 4 June 2026</p>
+    <p class="guide-footer-meta" style="margin-top: 8px;">spacebetweenwellness.com &nbsp;&middot;&nbsp; space.between.wellness@gmail.com &nbsp;&middot;&nbsp; Hobart, Tasmania</p>
+    <p style="margin-top: 32px; font-size: 0.75rem; color: rgba(232,221,208,0.25); font-family: var(--font-body);">This document is for internal and partner reference only. Not for public distribution without Emily's approval.</p>
+  </div>
+</footer>
+
+</body>
+</html>
