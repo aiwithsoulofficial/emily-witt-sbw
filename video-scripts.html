@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Face-to-camera video scripts - Space Between Wellness</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blush: #E4B5C1;
+  --blush-pale: #F7E6D3;
+  --earth: #522C1F;
+  --earth-deep: #2B1E1E;
+  --cream: #F5F1ED;
+  --warm-white: #F7F3EF;
+  --charcoal: #2B1E1E;
+  --charcoal-soft: #5C4033;
+  --sand: #C4B19E;
+  --sand-light: #E2D6CA;
+  --accent-yellow: #D4A24A;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Work Sans', sans-serif;
+  background: var(--cream);
+  color: var(--charcoal);
+  line-height: 1.75;
+  font-size: 16px;
+}
+.topbar {
+  background: var(--warm-white);
+  border-bottom: 1px solid var(--sand-light);
+  padding: 18px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+}
+.topbar a {
+  color: var(--earth);
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+.topbar a:hover { color: var(--blush); }
+.topbar .brand {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--earth-deep);
+}
+.review-banner {
+  background: var(--accent-yellow);
+  color: var(--earth-deep);
+  text-align: center;
+  padding: 14px 24px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.review-banner em {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+}
+.header-block {
+  background:
+    linear-gradient(180deg, rgba(245, 241, 237, 0.85) 0%, rgba(245, 241, 237, 0.95) 100%);
+  padding: 72px 40px 56px;
+  border-bottom: 1px solid var(--sand-light);
+}
+.header-inner {
+  max-width: 780px;
+  margin: 0 auto;
+}
+.header-eyebrow {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--earth);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.header-eyebrow::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: var(--blush);
+  display: block;
+}
+.header-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--earth-deep);
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+}
+.content {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 56px 40px 96px;
+}
+.content h1 {
+  display: none;
+}
+.content h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: 1.75rem;
+  color: var(--earth-deep);
+  margin: 56px 0 18px;
+  line-height: 1.3;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--sand-light);
+}
+.content h2:first-child { margin-top: 0; }
+.content h3 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.375rem;
+  color: var(--earth);
+  margin: 40px 0 14px;
+}
+.content h4 {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--earth);
+  margin: 28px 0 10px;
+}
+.content p {
+  margin-bottom: 18px;
+  color: var(--charcoal-soft);
+}
+.content strong {
+  color: var(--earth-deep);
+  font-weight: 600;
+}
+.content em {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: var(--earth);
+  font-size: 1.05em;
+}
+.content ul, .content ol {
+  margin: 0 0 22px 26px;
+  color: var(--charcoal-soft);
+}
+.content li {
+  margin-bottom: 8px;
+  padding-left: 6px;
+}
+.content blockquote {
+  margin: 28px 0;
+  padding: 24px 28px;
+  background: var(--warm-white);
+  border-left: 3px solid var(--blush);
+  border-radius: 4px;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: var(--earth);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+.content blockquote p { margin-bottom: 12px; color: inherit; }
+.content blockquote p:last-child { margin-bottom: 0; }
+.content code {
+  background: var(--blush-pale);
+  color: var(--earth-deep);
+  padding: 2px 7px;
+  border-radius: 3px;
+  font-family: 'SF Mono', Menlo, monospace;
+  font-size: 0.875em;
+}
+.content pre {
+  background: var(--earth-deep);
+  color: var(--warm-white);
+  padding: 22px 24px;
+  border-radius: 8px;
+  margin: 22px 0;
+  overflow-x: auto;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+.content pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+}
+.content hr {
+  border: 0;
+  height: 1px;
+  background: var(--sand-light);
+  margin: 44px 0;
+}
+.content a {
+  color: var(--earth);
+  text-decoration: underline;
+  text-decoration-color: var(--blush);
+  text-underline-offset: 3px;
+}
+.content a:hover { color: var(--blush); }
+.feedback-block {
+  background: var(--earth-deep);
+  color: var(--warm-white);
+  padding: 48px 40px;
+  text-align: center;
+}
+.feedback-block .script {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  color: var(--blush);
+  margin-bottom: 12px;
+}
+.feedback-block p {
+  font-size: 0.9375rem;
+  color: rgba(247, 243, 239, 0.85);
+  max-width: 540px;
+  margin: 0 auto;
+}
+.feedback-block a {
+  color: var(--accent-yellow);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+@media (max-width: 720px) {
+  .header-block { padding: 48px 24px 40px; }
+  .content { padding: 40px 24px 64px; }
+  .topbar { padding: 14px 20px; flex-direction: column; gap: 8px; }
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="brand">Space Between Wellness</span>
+  <a href="em-hub.html">← back to the hub</a>
+</div>
+
+<div class="review-banner">
+  <em>For your review.</em> Nothing here is final until you say so - reply to Kelly with anything to change or approve.
+</div>
+
+<div class="header-block">
+  <div class="header-inner">
+    <div class="header-eyebrow">5 Reel scripts · Draft v1 · For review</div>
+    <h1 class="header-title">Face-to-camera video scripts</h1>
+  </div>
+</div>
+
+<div class="content">
+<h1>Video Scripts - Space Between Wellness</h1>
+<h1>Emily Witt | Face-to-Camera | Instagram + TikTok</h1>
+<h1>Version 1 - June 2026</h1>
+<p><em>5 scripts. Each 30-45 seconds read aloud. Written to be internalised, not performed.</em></p>
+<hr>
+<h2>Script 1: You&#39;re Not Burnt Out</h2>
+<p><strong>Hook:</strong> &quot;You&#39;re not burnt out. And that&#39;s the problem.&quot;</p>
+<p><strong>Length:</strong> ~35s</p>
+<p><strong>Tone notes:</strong> Calm, direct, slightly conspiratorial - like she&#39;s saying the thing nobody else will say. Slow down on the hook. Let it land.</p>
+<p><strong>Script:</strong></p>
+<p>You&#39;re not burnt out.
+And that&#39;s the problem.</p>
+<p>Because everyone around you keeps using that word.
+And every time they do, it doesn&#39;t quite fit.
+You&#39;re still showing up. Still functioning.
+Still capable of doing the thing.</p>
+<p>But underneath all of it, you&#39;re just... fed up.</p>
+<p>Fed up with building something that doesn&#39;t feel like yours.
+Fed up with smiling through it.
+Fed up with the quiet ache that says
+this can&#39;t be all there is.</p>
+<p>That&#39;s not burnout.
+That&#39;s your nervous system telling you
+it&#39;s been running someone else&#39;s programme for a very long time.</p>
+<p>And the first step isn&#39;t rest.
+It&#39;s recognising what&#39;s actually happening.</p>
+<hr>
+<p><strong>B-roll suggestions:</strong> Hands around a warm mug. Window light. A stillness shot - no movement, just Emily breathing slowly before speaking.</p>
+<p><strong>Caption (for IG/TikTok):</strong>
+Fed up is different to burnt out.
+And your nervous system knows the difference.
+(Link in bio if you want to find out which state you&#39;re actually in.)</p>
+<p><strong>Hashtag set:</strong>
+#NervousSystemHealing #WomenWhoFeel #SpaceBetweenWellness #CycleBreaker #RegulatedNotReactive #TraumaInformedCoaching #FedUpNotBurntOut</p>
+<hr>
+<h2>Script 2: The Over Giving State</h2>
+<p><strong>Hook:</strong> &quot;Your body has been saying no for months. You just haven&#39;t been listening.&quot;</p>
+<p><strong>Length:</strong> ~40s</p>
+<p><strong>Tone notes:</strong> Warm, not accusatory. This is recognition, not lecture. Pause after the opening line. The middle section should feel like she&#39;s describing someone she knows well - gentle and precise.</p>
+<p><strong>Script:</strong></p>
+<p>Your body has been saying no for months.
+You just haven&#39;t been listening.</p>
+<p>In nervous system work, we call it Over Giving.
+Not a character flaw.
+Not weakness.
+A pattern.</p>
+<p>You learned at some point - probably young -
+that keeping the peace was safer than speaking up.
+That making yourself agreeable kept things okay.</p>
+<p>So you said yes when your body screamed no.
+You took on more.
+You shrunk.
+You smoothed things over.</p>
+<p>And you got really, really good at it.</p>
+<p>The trouble is, when you do that for long enough,
+you stop knowing what you actually want.
+You&#39;ve made yourself so agreeable
+you&#39;ve lost track of yourself inside it.</p>
+<p>This is workable.
+You can find your way back.
+But it starts with recognising the pattern.</p>
+<p>Not judging it.
+Just seeing it.</p>
+<hr>
+<p><strong>B-roll suggestions:</strong> Soft outdoor footage - walking slowly, looking at something in nature. No phone. No desk. Unhurried.</p>
+<p><strong>Caption (for IG/TikTok):</strong>
+Saying yes when your whole body means no isn&#39;t kindness.
+It&#39;s a nervous system pattern that has a name.
+And it&#39;s workable.</p>
+<p><strong>Hashtag set:</strong>
+#OverGiving #NervousSystemCoach #PeoplePleasingRecovery #FawnResponse #WomensWellness #RegulationNotPerformance #SpaceBetweenWellness</p>
+<hr>
+<h2>Script 3: She Didn&#39;t Strip My Ideas Back</h2>
+<p><strong>Hook:</strong> &quot;Every coach I&#39;d seen before handed me back a smaller version of myself.&quot;</p>
+<p><strong>Length:</strong> ~40s</p>
+<p><strong>Tone notes:</strong> This one has a little more edge to it - honest frustration, then relief. The opening line carries weight. Let the pause after &quot;smaller version of myself&quot; breathe. The pivot should feel genuine, not like a pitch.</p>
+<p><strong>Script:</strong></p>
+<p>Every coach I&#39;d seen before
+handed me back a smaller version of myself.</p>
+<p>They&#39;d take whatever I brought -
+whatever felt alive, whatever felt true -
+and they&#39;d strip it back.
+Make it more palatable.
+More marketable.
+More... safe.</p>
+<p>And I&#39;d leave with something that made sense on paper
+and felt like nothing in my chest.</p>
+<p>That experience - that stripping back -
+it&#39;s one of the reasons I work the way I do.</p>
+<p>I&#39;m not here to make you smaller.
+I&#39;m not here to help you build something
+that looks better from the outside
+while something in you goes quiet.</p>
+<p>My work isn&#39;t about strategy.
+It&#39;s about helping you get clear enough on who you actually are
+that what you build from there
+actually feels like yours.</p>
+<p>If your last coach made you smaller,
+you haven&#39;t had the right kind of help yet.</p>
+<hr>
+<p><strong>B-roll suggestions:</strong> Emily walking into a room and sitting down unhurriedly. Books on a shelf. Hands open, not clasped. A sense of spaciousness.</p>
+<p><strong>Caption (for IG/TikTok):</strong>
+The right kind of support makes you more yourself, not less.
+If you&#39;ve been made smaller, that&#39;s not a you problem.</p>
+<p><strong>Hashtag set:</strong>
+#NervousSystemCoach #WomenLeadership #NotABusinessCoach #SpaceBetweenWellness #ComeBackToYourself #WholesomeCoaching #EvidenceInformedWellness</p>
+<hr>
+<h2>Script 4: I Did Everything Right</h2>
+<p><strong>Hook:</strong> &quot;You ticked every box. And it still doesn&#39;t feel like enough.&quot;</p>
+<p><strong>Length:</strong> ~38s</p>
+<p><strong>Tone notes:</strong> Slow and close. This is the most tender of the five. Emily can sit very still for this one. No energy, no enthusiasm - just presence. The woman watching should feel deeply seen.</p>
+<p><strong>Script:</strong></p>
+<p>You ticked every box.
+The career. The relationship. The house.
+Maybe the kids.
+Definitely the competence.</p>
+<p>You did it all.
+You did it right.</p>
+<p>And there&#39;s this thing
+that sits in your chest at nine o&#39;clock at night
+that you can&#39;t quite name.</p>
+<p>This low hum.
+This ache.
+This sense that you&#39;re living someone else&#39;s version of a good life
+and you have absolutely no idea
+how to find your own.</p>
+<p>You&#39;re not ungrateful.
+You&#39;re not broken.
+You&#39;re not failing to see the good in what you have.</p>
+<p>You&#39;re just carrying a question
+that nobody around you seems to be able to hear.</p>
+<p>And I want you to know -
+that question is real.
+The gap between what you have and what you feel
+is real.</p>
+<p>You&#39;re not making it up.</p>
+<hr>
+<p><strong>B-roll suggestions:</strong> Late afternoon window light. Something unhurried - a plant, a candle, Emily looking out a window. The visual should feel like stillness, not emptiness.</p>
+<p><strong>Caption (for IG/TikTok):</strong>
+The gap between what you have and what you feel is real.
+You&#39;re not making it up.
+And you&#39;re not alone in it.</p>
+<p><strong>Hashtag set:</strong>
+#HighAchievingWomen #DisconnectionHealing #NervousSystemHealth #SomethingsMissing #SpaceBetweenWellness #WomensHealing #ComeBackToYourself</p>
+<hr>
+<h2>Script 5: Where Spirituality Fits</h2>
+<p><strong>Hook:</strong> &quot;I have a psychology degree. And I also believe there&#39;s something beyond what the research can measure.&quot;</p>
+<p><strong>Length:</strong> ~42s</p>
+<p><strong>Tone notes:</strong> Grounded and unapologetic. Emily is claiming something here - she shouldn&#39;t rush it. Warm but precise. This is her differentiator and she knows it. Confident, not defensive.</p>
+<p><strong>Script:</strong></p>
+<p>I have a psychology degree.
+Eight years working in complex trauma.
+I understand the neuroscience.
+I can show you the research.</p>
+<p>And I also believe there&#39;s something beyond what that research can measure.</p>
+<p>The thing is, most of the women I work with
+have a spiritual side they&#39;ve been hiding.
+Because someone - a boss, a coach, a partner - told them it wasn&#39;t professional.
+Or wasn&#39;t rational.
+Or made them seem less credible.</p>
+<p>So they put it in a box.
+And that box sat in the corner
+while they tried to do all the healing work
+with only half of themselves present.</p>
+<p>My work brings both.
+The science - nervous system states, psychological patterns, the research on trauma and regulation.
+And the spirit - the wisdom that lives in your body,
+in your intuition,
+in the parts of you that go deeper than any framework.</p>
+<p>You don&#39;t have to choose.
+You were never supposed to.</p>
+<p>If you&#39;ve been told to hide that part of you,
+you can bring it here.</p>
+<hr>
+<p><strong>B-roll suggestions:</strong> Something from nature - water, light through trees, a slow pan across a grounded, textured space. Nothing clinical. Nothing corporate.</p>
+<p><strong>Caption (for IG/TikTok):</strong>
+You don&#39;t have to choose between evidence and intuition.
+You were never supposed to.
+Both have always belonged in the room.</p>
+<p><strong>Hashtag set:</strong>
+#ScienceAndSpirit #TraumaInformedCoaching #NervousSystemHealing #EvidenceInformed #SpiritualWellbeing #SpaceBetweenWellness #WholenessNotHalves</p>
+<hr>
+<h2>Filming Tips for Emily</h2>
+<p><em>These notes are just for you - not a performance checklist, just practical things that help the content land.</em></p>
+<p><strong>Lighting</strong>
+Film facing a natural light source - a window is ideal. Avoid overhead lighting which flattens features and feels harsh on camera. Golden hour (morning or late afternoon) gives warmth that suits the brand palette. If you&#39;re filming inside without great natural light, a simple ring light or softbox at eye level pointed toward your face will do it.</p>
+<p><strong>Framing - vertical 9:16</strong>
+Your face and chest should fill roughly the top two-thirds of the frame. Eyes approximately one-third from the top. Leave a little room above your head - not much. Check that the background is uncluttered; a warm, textured wall, bookshelf, or window behind you all work well. The brand is earthy and grounded, so avoid anything too clinical or sterile behind you.</p>
+<p><strong>Pace</strong>
+Slower than you think. When you watch yourself back and it feels almost too slow, that&#39;s usually just right. High-achieving women in your audience are moving fast all day - a slower pace creates regulation in the viewer before they&#39;ve processed a single word. Pause after the hook. Let it sit.</p>
+<p><strong>Reading without sounding scripted</strong>
+Internalise the feeling of each script, not the exact words. Read it five or six times until you know the shape of the thought. Then film it. If you stumble on a word, keep going - a natural stumble is more trustworthy than a polished read. The goal is that it sounds like you thought of it just now, not that you memorised it.</p>
+<p>Give yourself permission to look away briefly mid-thought - that&#39;s how people actually speak. Eye contact on the hook and the final line carries the most weight.</p>
+<p><strong>One practical thing</strong>
+Film several takes per script without stopping to review. Choose later. First takes often have a freshness that later takes lose.</p>
+
+</div>
+
+<div class="feedback-block">
+  <div class="script">Sit with it. Let me know.</div>
+  <p>Email <a href="mailto:kwotherspoon1982@gmail.com">kwotherspoon1982@gmail.com</a> with edits, vibes, or just a green light. Nothing here goes anywhere external without your sign-off.</p>
+</div>
+
+</body>
+</html>
