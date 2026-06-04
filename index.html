@@ -287,7 +287,11 @@ h1, h2, h3, h4 {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 4px;
+  padding: 10px;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
 }
 
 .hamburger span {
@@ -968,6 +972,7 @@ h1, h2, h3, h4 {
 
 .breakthrough-content {
   padding: 64px 56px;
+  min-width: 0;
 }
 
 .breakthrough-badge {
@@ -1399,7 +1404,7 @@ h1, h2, h3, h4 {
 
 .about-grid {
   display: grid;
-  grid-template-columns: 480px 1fr;
+  grid-template-columns: minmax(0, 480px) 1fr;
   gap: 80px;
   align-items: start;
 }
@@ -2127,6 +2132,7 @@ h1, h2, h3, h4 {
   .section-pad-lg { padding: 88px 0; }
 
   .nav-links { display: none; }
+  .nav-cta { display: none; }
   .hamburger { display: flex; }
   .mobile-menu.open { display: flex; }
 
@@ -2255,6 +2261,81 @@ h1, h2, h3, h4 {
   .about-img-wrap img { height: 400px; }
   .ity-img-wrap img { height: 360px; }
   .split-img-wrap img { height: 360px; }
+}
+
+/* ============================================================
+   RESPONSIVE - 430px (iPhone 14 Pro / Plus max width)
+   ============================================================ */
+@media (max-width: 430px) {
+  /* Nav brand shrinks so hamburger doesn't crowd it */
+  .nav-brand { font-size: 1.5rem; }
+
+  /* Hero - ensure no horizontal overflow from padding */
+  .hero-content { padding: 48px 16px; }
+  .hero-h1 { font-size: clamp(1.75rem, 8vw, 2.5rem); }
+  .hero-script { font-size: 2.25rem; }
+  .hero-sub { font-size: 1rem; margin-bottom: 32px; }
+
+  /* Section padding reduced to 24px on very small screens */
+  .section-pad { padding: 48px 0; }
+  .section-pad-lg { padding: 56px 0; }
+  .container { padding: 0 16px; }
+
+  /* Split grid - image height more compact */
+  .split-img-wrap img { height: 280px; }
+
+  /* Quote banner stacked */
+  #quote-banner .quote-content { padding: 36px 16px; }
+  .quote-text { font-size: 1.1rem; }
+
+  /* Method cards full width already, just tighten padding */
+  .method-card { padding: 28px 20px; }
+  .method-number { font-size: 2.25rem; }
+
+  /* NS grid - cards full width */
+  .ns-card { width: 100%; }
+  .ns-cta-block { padding: 32px 20px; }
+
+  /* Is This You - image shorter on small screens */
+  .ity-img-wrap img { height: 260px; }
+  /* Stack the ity-grid (already 1-col at 900px) - reduce gap */
+  .ity-grid { gap: 32px; }
+
+  /* Breakthrough card inner padding */
+  .breakthrough-content { padding: 28px 20px; }
+  .breakthrough-bonus { padding: 16px 18px; }
+
+  /* Community cards */
+  .community-card { padding: 32px 24px; }
+
+  /* About */
+  .about-img-wrap img { height: 320px; }
+  .about-grid { gap: 32px; }
+  .brand-promise { font-size: 2rem; }
+
+  /* CTA section padding */
+  #cta-section { padding: 72px 20px; }
+  .cta-script { font-size: clamp(2rem, 10vw, 3rem); }
+
+  /* Footer */
+  #footer { padding: 56px 0 32px; }
+  .footer-grid { gap: 28px; }
+
+  /* Quiz modal full-viewport friendly */
+  #quiz-overlay { padding: 12px; }
+  .quiz-modal { border-radius: 12px; max-height: 95vh; }
+  .quiz-screen { padding: 28px 16px; }
+  .quiz-options { grid-template-columns: 1fr; gap: 10px; }
+  .quiz-option { min-height: 44px; }
+  .quiz-intro h2 { font-size: 1.5rem; }
+  .results-state-name { font-size: 2.5rem; }
+
+  /* Testimonials */
+  .testimonial-card { padding: 32px 20px 24px; }
+
+  /* Corporate sectors */
+  .sector-tags { gap: 6px; }
+  .sector-tag { font-size: 0.75rem; padding: 5px 10px; }
 }
 </style>
 </head>

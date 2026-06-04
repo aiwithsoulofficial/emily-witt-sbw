@@ -867,11 +867,88 @@
       .cta-block {
         padding: 24px 18px;
       }
+
+      /* Ensure buttons meet 44px tap target */
+      .btn-primary,
+      .btn-cta {
+        min-height: 52px;
+      }
+
+      .btn-secondary {
+        min-height: 48px;
+      }
+
+      /* Form inputs - 16px to prevent iOS auto-zoom */
+      .form-input {
+        font-size: 1rem;
+      }
+
+      /* CTA heading scale */
+      .cta-heading {
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (max-width: 430px) {
+      /* Fix iOS: background-attachment:fixed causes rendering issues */
+      .bg-canvas {
+        background-attachment: scroll;
+      }
+
+      .app {
+        padding: 16px 12px 40px;
+      }
+
+      .screen {
+        padding: 32px 20px;
+        border-radius: 16px;
+      }
+
+      #screen-results {
+        padding: 32px 20px 40px;
+      }
+
+      .heading-xl {
+        font-size: 1.6rem;
+      }
+
+      .heading-lg {
+        font-size: 1.3rem;
+      }
+
+      .state-name {
+        font-size: 2.5rem;
+      }
+
+      .answer-card {
+        padding: 14px 12px;
+        min-height: 44px;
+      }
+
+      .answer-letter {
+        width: 28px;
+        height: 28px;
+        flex-shrink: 0;
+      }
+
+      .strategy-item {
+        padding: 14px 14px;
+      }
+
+      .strategy-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+      }
+
+      .cta-block {
+        padding: 20px 16px;
+      }
     }
 
     @media (max-width: 380px) {
       .screen {
-        padding: 28px 18px;
+        padding: 28px 16px;
       }
     }
 

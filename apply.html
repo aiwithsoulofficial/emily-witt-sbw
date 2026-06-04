@@ -593,7 +593,7 @@ select {
   border: 1.5px solid var(--sand-light);
   border-radius: var(--radius-sm);
   font-family: var(--font-body);
-  font-size: 0.9375rem;
+  font-size: 1rem;
   color: var(--charcoal);
   background: var(--cream);
   transition: border-color var(--transition), background var(--transition), box-shadow var(--transition);
@@ -633,7 +633,7 @@ textarea {
   border: 1.5px solid var(--sand-light);
   border-radius: var(--radius-sm);
   font-family: var(--font-body);
-  font-size: 0.9375rem;
+  font-size: 1rem;
   color: var(--charcoal);
   background: var(--cream);
   resize: vertical;
@@ -962,6 +962,62 @@ textarea::placeholder {
   .form-section-heading {
     font-size: 1.25rem;
   }
+}
+
+/* ============================================================
+   RESPONSIVE - 430px
+   ============================================================ */
+@media (max-width: 430px) {
+  .container { padding: 0 16px; }
+  .nav-inner { padding: 0 16px; }
+  .nav-brand { font-size: 1.5rem; }
+
+  /* Hero */
+  .page-hero-inner { padding: 52px 16px 40px; }
+  .page-hero-script { font-size: 1.75rem; }
+  .page-hero-h1 { font-size: clamp(1.5rem, 7vw, 2rem); }
+  .page-hero-intro { font-size: 1rem; }
+
+  /* Emily card */
+  #emily-card { padding: 48px 16px 56px; }
+  .emily-card-script { font-size: 1.5rem; }
+
+  /* Form sections - tighten padding */
+  .form-section { padding: 32px 16px; }
+
+  /* Submit section */
+  .submit-section { padding: 32px 16px 40px; }
+  .submit-promise { font-size: 1.5rem; }
+  .submit-btn {
+    width: 100%;
+    padding: 18px 24px;
+    min-height: 54px;
+    font-size: 0.9375rem;
+  }
+
+  /* Option grids always single col */
+  .option-grid { grid-template-columns: 1fr; }
+  .option-grid.three-col { grid-template-columns: 1fr; }
+
+  /* Radio/checkbox labels - ensure 44px tap target */
+  .radio-option label,
+  .checkbox-option label {
+    padding: 14px 16px;
+    min-height: 44px;
+  }
+
+  /* Form inputs full width already, just ensure font stays 16px to prevent iOS zoom */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select,
+  textarea {
+    font-size: 1rem;
+  }
+
+  /* Footer mini */
+  #footer-mini { padding: 32px 16px; }
+  .footer-mini-brand { font-size: 1.5rem; }
 }
 </style>
 </head>

@@ -340,6 +340,41 @@ section.block {
   section.block { padding: 64px 24px; }
   .cover-meta { flex-direction: column; gap: 8px; }
 }
+
+@media (max-width: 430px) {
+  /* Cover */
+  .cover { padding: 48px 16px; }
+  .cover-eyebrow { font-size: 0.75rem; gap: 10px; }
+  .cover-script { font-size: 1.625rem; }
+  .cover-h1 { font-size: clamp(1.75rem, 9vw, 2.75rem); }
+  .cover-sub { font-size: 1rem; margin-bottom: 28px; }
+  .cover-meta { gap: 6px; font-size: 0.8125rem; }
+
+  /* Sections */
+  section.block { padding: 48px 16px; }
+  .section-h2 { font-size: clamp(1.5rem, 7vw, 2rem); }
+  .section-intro { font-size: 1rem; margin-bottom: 32px; }
+
+  /* Link cards */
+  .link-card { padding: 20px 20px 18px; }
+  .link-title { font-size: 1.2rem; }
+  .link-desc { font-size: 0.9rem; }
+  .link-url { font-size: 0.75rem; padding-top: 10px; word-break: break-all; }
+
+  /* Agenda */
+  .agenda-item { gap: 16px; padding: 20px; }
+  .agenda-num { font-size: 1.5rem; min-width: 36px; }
+  .agenda-content h4 { font-size: 1rem; }
+
+  /* Homework */
+  .homework-bucket { padding: 20px 16px; }
+  .homework-bucket h3 { font-size: 1.1rem; }
+  .homework-bucket li { font-size: 0.875rem; padding-left: 18px; }
+
+  /* Signoff */
+  .signoff { padding: 64px 16px 80px; }
+  .signoff-script { font-size: 1.5rem; }
+}
 </style>
 </head>
 <body>

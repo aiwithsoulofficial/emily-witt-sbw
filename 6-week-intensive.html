@@ -1393,6 +1393,78 @@ h1, h2, h3, h4 {
   }
 }
 
+/* ============================================================
+   RESPONSIVE - 430px
+   ============================================================ */
+@media (max-width: 430px) {
+  .container { padding: 0 16px; }
+  .container-narrow { padding: 0 16px; }
+  .section-pad { padding: 48px 0; }
+  .section-pad-lg { padding: 56px 0; }
+
+  .nav-inner { padding: 0 16px; }
+  .nav-brand { font-size: 1.5rem; }
+
+  /* Hero left text zone */
+  .hero-left { padding: 48px 16px; min-height: auto; }
+  .hero-invitation { font-size: 1.75rem; }
+  .hero-h1 { font-size: clamp(1.75rem, 8vw, 2.5rem); }
+  .hero-sub { font-size: 1rem; margin-bottom: 32px; }
+  .hero-right { height: 280px; }
+
+  /* CTA buttons full-width on small screens */
+  .hero-cta-group .btn {
+    width: 100%;
+    text-align: center;
+    min-height: 52px;
+  }
+
+  /* Threshold quote */
+  #threshold { padding: 56px 0; }
+  .threshold-quote { font-size: 1.1rem; }
+
+  /* Framework steps */
+  .framework-step { padding: 32px 0; gap: 8px; }
+  .step-numeral { font-size: 2.5rem; }
+
+  /* Included grid cards */
+  .included-card { padding: 28px 20px; }
+
+  /* Credit section */
+  .credit-content .script-accent { font-size: 1.75rem; }
+  .credit-img-wrap img { height: 300px; }
+  .credit-callout { padding: 18px 20px; }
+
+  /* Honest section */
+  .honest-block { padding: 24px 20px; }
+
+  /* Apply CTA band */
+  #apply { padding: 72px 0; }
+  .apply-invitation { font-size: clamp(1.75rem, 9vw, 2.5rem); }
+
+  /* Apply form */
+  .apply-form { padding: 28px 16px; }
+  .apply-form-header .script-accent { font-size: 1.5rem; }
+
+  /* Form inputs - 16px to prevent iOS auto-zoom */
+  .form-group input,
+  .form-group textarea {
+    font-size: 1rem;
+  }
+
+  /* Submit button - full width, proper tap target */
+  .form-submit {
+    min-height: 54px;
+    font-size: 1rem;
+  }
+
+  /* Footer */
+  #footer { padding: 40px 0 24px; }
+  .footer-brand { font-size: 1.5rem; }
+  .footer-bottom { flex-direction: column; gap: 12px; }
+  .footer-disclaimer { max-width: 100%; }
+}
+
 </style>
 </head>
 <body>
