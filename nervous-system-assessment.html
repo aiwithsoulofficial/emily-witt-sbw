@@ -1361,8 +1361,28 @@
       userName = nameInput.value.trim().split(' ')[0];
       userEmail = emailInput.value.trim();
       const userPhone = phoneInput ? phoneInput.value.trim() : '';
+      const topState = getTopState(answers);
 
-      console.log('Lead captured:', { name: userName, email: userEmail, phone: userPhone, answers, topState: getTopState(answers) });
+      // Format the full answer set for the email
+      const answersFormatted = answers.map((a, i) => `Q${i+1}: ${a}`).join('\n');
+
+      // Send to Emily via FormSubmit (no account needed - first submission triggers confirmation email)
+      fetch('https://formsubmit.co/ajax/space.between.wellness@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          _subject: `New nervous system assessment from ${userName}`,
+          _template: 'table',
+          _captcha: 'false',
+          name: nameInput.value.trim(),
+          email: userEmail,
+          phone: userPhone || '(not provided)',
+          dominant_state: topState,
+          full_answers: answersFormatted,
+          submitted_at: new Date().toISOString(),
+          source: 'nervous-system-assessment'
+        })
+      }).catch(err => console.log('FormSubmit send error (non-blocking):', err));
 
       renderResults();
       showScreen('results');
