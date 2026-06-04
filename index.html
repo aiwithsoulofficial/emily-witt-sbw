@@ -396,13 +396,13 @@ h1, h2, h3, h4 {
 .hero-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 24px;
+  gap: 14px;
+  margin-bottom: 32px;
   font-family: var(--font-body);
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.16em;
   color: var(--earth);
 }
 
@@ -413,6 +413,14 @@ h1, h2, h3, h4 {
   width: 32px;
   height: 1px;
   background: var(--blush);
+}
+
+.hero-eyebrow-divider {
+  color: var(--blush);
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: 0;
+  margin: 0 4px;
 }
 
 .hero-script {
@@ -2296,9 +2304,7 @@ h1, h2, h3, h4 {
   <div class="hero-texture" aria-hidden="true"></div>
   <div class="hero-noise" aria-hidden="true"></div>
   <div class="hero-content">
-    <div class="hero-eyebrow reveal" aria-hidden="true">Space Between Wellness</div>
-
-    <span class="hero-script script reveal reveal-delay-1" aria-hidden="true">The pathway back to you</span>
+    <div class="hero-eyebrow reveal" aria-hidden="true">Space Between Wellness <span class="hero-eyebrow-divider">·</span> The pathway back to you</div>
 
     <h1 class="hero-h1 reveal reveal-delay-2">
       You did everything right. So why does it feel like something's missing?
