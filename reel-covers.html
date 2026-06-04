@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instagram Reel Covers - Space Between Wellness v1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── BRAND TOKENS ─────────────────────────────────────────────────── */
+    :root {
+      --blush:        #E4B5C1;
+      --blush-light:  #EDD0D7;
+      --blush-pale:   #F7E6D3;
+      --earth:        #522C1F;
+      --earth-deep:   #2B1E1E;
+      --cream:        #F5F1ED;
+      --warm-white:   #F7F3EF;
+      --sand:         #C4B19E;
+      --sand-light:   #E2D6CA;
+      --accent-yellow:#D4A24A;
+    }
+
+    /* ─── PAGE CHROME ──────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #4a4543;
+      font-family: 'Work Sans', sans-serif;
+      padding: 3rem 2rem 6rem;
+      min-height: 100vh;
+    }
+
+    .page-header {
+      max-width: 1200px;
+      margin: 0 auto 3rem;
+      color: #e8e0d8;
+    }
+
+    .page-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+      color: #f5f0ea;
+    }
+
+    .page-header p {
+      font-size: 0.875rem;
+      font-weight: 300;
+      line-height: 1.6;
+      color: #c8bfb5;
+      max-width: 680px;
+    }
+
+    .export-instructions {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-top: 1.25rem;
+      font-size: 0.8rem;
+      line-height: 1.7;
+      color: #d4cbc1;
+    }
+
+    .export-instructions strong {
+      color: #f0e8df;
+      font-weight: 600;
+    }
+
+    .cover-section {
+      max-width: 1200px;
+      margin: 0 auto 5rem;
+    }
+
+    /* ─── TEMPLATE LABEL BLOCK ─────────────────────────────────────────── */
+    .template-label {
+      background: rgba(255,255,255,0.06);
+      border-left: 3px solid var(--blush);
+      border-radius: 0 6px 6px 0;
+      padding: 1rem 1.25rem 1rem 1.25rem;
+      margin-bottom: 1.25rem;
+      color: #ddd5cc;
+      font-size: 0.8rem;
+      line-height: 1.65;
+      max-width: 520px;
+    }
+
+    .template-label .tpl-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #f5efe8;
+      margin-bottom: 0.35rem;
+      letter-spacing: 0.01em;
+    }
+
+    .template-label .tpl-meta {
+      display: grid;
+      gap: 0.3rem;
+      margin-top: 0.6rem;
+    }
+
+    .template-label .tpl-meta span {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .template-label .tpl-meta .label-key {
+      font-weight: 600;
+      color: var(--blush-light);
+      min-width: 90px;
+      flex-shrink: 0;
+    }
+
+    /* ─── COVER WRAPPER ─────────────────────────────────────────────────── */
+    /* Each cover is the native 1080x1920. We scale down for preview only.
+       When screenshotting for export, use Chrome DevTools device mode
+       set to 1080x1920 @ 1x DPR, then screenshot just this element. */
+    .cover-wrapper {
+      display: inline-block;
+      transform-origin: top left;
+    }
+
+    /* Scale preview so covers sit comfortably on screen */
+    .cover-scale {
+      transform: scale(0.35);
+      display: inline-block;
+      transform-origin: top left;
+    }
+
+    .cover-outer {
+      /* Native Instagram Reel / Story spec */
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.55);
+    }
+
+    /* Reserve layout space after scale so elements don't collapse */
+    .cover-scale-spacer {
+      display: block;
+      width: calc(1080px * 0.35);
+      height: calc(1920px * 0.35);
+    }
+
+
+    /* ══════════════════════════════════════════════════════════════════════
+       TEMPLATE 1 - HOOK QUOTE COVER
+       Full warm gradient, large Playfair italic quote, no photo
+    ══════════════════════════════════════════════════════════════════════ */
+    .t1 {
+      background:
+        /* subtle noise grain via SVG data URI */
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E") repeat,
+        linear-gradient(
+          168deg,
+          #F5F1ED 0%,
+          #F2E8DC 28%,
+          #EDD5C8 58%,
+          #F7E6D3 80%,
+          #EDD0D7 100%
+        );
+    }
+
+    .t1-inner {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 110px;
+    }
+
+    /* Warm layered tint ring behind text for depth */
+    .t1-halo {
+      position: absolute;
+      width: 860px;
+      height: 860px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(228,181,193,0.22) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .t1-eyebrow {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      color: var(--earth);
+      text-transform: uppercase;
+      opacity: 0.65;
+      margin-bottom: 90px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .t1-eyebrow::before,
+    .t1-eyebrow::after {
+      content: '';
+      display: inline-block;
+      width: 60px;
+      height: 1px;
+      background: var(--earth);
+      opacity: 0.4;
+      vertical-align: middle;
+      margin: 0 22px;
+    }
+
+    .t1-quote {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 108px;
+      font-weight: 500;
+      line-height: 1.18;
+      color: var(--earth-deep);
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      /* swap: the quote text */
+    }
+
+    .t1-quote em {
+      /* optional emphasis within the quote - colour the key phrase */
+      color: var(--earth);
+      font-style: italic;
+    }
+
+    /* Decorative large open-quote glyph behind text */
+    .t1-deco-quote {
+      position: absolute;
+      font-family: 'Playfair Display', serif;
+      font-size: 600px;
+      color: rgba(228,181,193,0.18);
+      line-height: 1;
+      top: 260px;
+      left: 50px;
+      z-index: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .t1-divider {
+      width: 80px;
+      height: 2px;
+      background: linear-gradient(to right, transparent, var(--blush), transparent);
+      margin: 80px auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .t1-sub {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 34px;
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      color: var(--earth);
+      text-align: center;
+      opacity: 0.7;
+      position: relative;
+      z-index: 2;
+      /* swap: optional supporting line */
+    }
+
+    .t1-handle {
+      position: absolute;
+      bottom: 80px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-family: 'Work Sans', sans-serif;
+      font-size: 26px;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      color: var(--earth);
+      opacity: 0.45;
+      z-index: 2;
+    }
+
+    /* Corner accent marks */
+    .t1-corner {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      opacity: 0.25;
+    }
+    .t1-corner.tl { top: 60px; left: 60px; border-top: 2px solid var(--earth); border-left: 2px solid var(--earth); }
+    .t1-corner.tr { top: 60px; right: 60px; border-top: 2px solid var(--earth); border-right: 2px solid var(--earth); }
+    .t1-corner.bl { bottom: 60px; left: 60px; border-bottom: 2px solid var(--earth); border-left: 2px solid var(--earth); }
+    .t1-corner.br { bottom: 60px; right: 60px; border-bottom: 2px solid var(--earth); border-right: 2px solid var(--earth); }
+
+
+    /* ══════════════════════════════════════════════════════════════════════
+       TEMPLATE 2 - PORTRAIT WITH OVERLAY
+       Full-bleed Emily portrait, warm vignette, lower-third text
+    ══════════════════════════════════════════════════════════════════════ */
+    .t2 {
+      background: var(--earth-deep);
+    }
+
+    .t2-photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      /* swap: change src to emily-08.jpg, emily-12.jpg, or emily-15.jpg */
+    }
+
+    /* Multi-layer vignette for legibility */
+    .t2-vignette {
+      position: absolute;
+      inset: 0;
+      /* bottom-heavy gradient for text zone */
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(43,30,30,0.02) 0%,
+          rgba(43,30,30,0.05) 35%,
+          rgba(43,30,30,0.45) 55%,
+          rgba(43,30,30,0.82) 72%,
+          rgba(43,30,30,0.96) 88%,
+          rgba(43,30,30,1)    100%
+        );
+    }
+
+    /* Subtle warm tone wash over whole image to blend with brand palette */
+    .t2-tone-wash {
+      position: absolute;
+      inset: 0;
+      background: rgba(228,181,193,0.08);
+      mix-blend-mode: multiply;
+    }
+
+    .t2-text-zone {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 0 90px 110px;
+      z-index: 3;
+    }
+
+    .t2-eyebrow {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      color: var(--blush-light);
+      text-transform: uppercase;
+      margin-bottom: 36px;
+      opacity: 0.85;
+    }
+
+    .t2-headline {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 96px;
+      font-weight: 500;
+      line-height: 1.15;
+      color: var(--warm-white);
+      margin-bottom: 40px;
+      /* swap: the italic headline */
+    }
+
+    .t2-subtitle {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 36px;
+      font-weight: 300;
+      line-height: 1.5;
+      color: var(--sand-light);
+      padding-top: 40px;
+      border-top: 1px solid rgba(228,181,193,0.3);
+      /* swap: supporting subtitle text */
+    }
+
+    .t2-handle {
+      position: absolute;
+      top: 72px;
+      right: 80px;
+      font-family: 'Work Sans', sans-serif;
+      font-size: 24px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      color: rgba(247,243,239,0.7);
+      z-index: 4;
+    }
+
+
+    /* ══════════════════════════════════════════════════════════════════════
+       TEMPLATE 3 - NERVOUS SYSTEM STATE CARD
+       Top 55% photo, bottom 45% cream block with state name
+    ══════════════════════════════════════════════════════════════════════ */
+    .t3 {
+      background: var(--cream);
+    }
+
+    .t3-photo-zone {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 55%;       /* swap height % if you want more/less photo */
+      overflow: hidden;
+    }
+
+    .t3-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      /* swap: src = activation-lava.jpg / overgiving-dunes.jpg /
+               shutdown-fog.jpg / regulated-water.jpg */
+    }
+
+    /* Feather at the photo bottom edge into cream */
+    .t3-photo-fade {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 200px;
+      background: linear-gradient(to bottom, transparent, var(--cream));
+    }
+
+    /* Warm grain overlay on photo for texture */
+    .t3-photo-grain {
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E") repeat;
+    }
+
+    /* State dot / pill at top of photo */
+    .t3-state-pill {
+      position: absolute;
+      top: 52px;
+      left: 72px;
+      background: rgba(245,241,237,0.88);
+      border-radius: 100px;
+      padding: 16px 40px;
+      font-family: 'Work Sans', sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--earth);
+      z-index: 5;
+      /* swap: label = ACTIVATION / OVER GIVING / SHUT DOWN / REGULATED */
+    }
+
+    .t3-text-zone {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 47%;
+      padding: 60px 80px 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      /* Noise texture on cream block */
+      background:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E") repeat,
+        var(--cream);
+    }
+
+    .t3-sub-label {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 26px;
+      font-weight: 600;
+      letter-spacing: 0.30em;
+      text-transform: uppercase;
+      color: var(--blush);
+      margin-bottom: 36px;
+      /* swap: SAFETY RESPONSE / THREAT RESPONSE / COLLAPSE RESPONSE / MOBILISATION */
+    }
+
+    .t3-state-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 148px;
+      font-weight: 600;
+      line-height: 0.95;
+      color: var(--earth-deep);
+      margin-bottom: 48px;
+      letter-spacing: -0.01em;
+      /* swap: state name */
+    }
+
+    .t3-divider {
+      width: 60px;
+      height: 2px;
+      background: var(--blush);
+      margin-bottom: 44px;
+    }
+
+    .t3-description {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 42px;
+      font-weight: 400;
+      line-height: 1.4;
+      color: var(--earth);
+      /* swap: one-line description */
+    }
+
+    .t3-handle {
+      position: absolute;
+      bottom: 52px;
+      right: 80px;
+      font-family: 'Work Sans', sans-serif;
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      color: var(--earth);
+      opacity: 0.38;
+      z-index: 6;
+    }
+
+
+    /* ══════════════════════════════════════════════════════════════════════
+       TEMPLATE 4 - TESTIMONIAL PULL QUOTE
+       Warm gradient bg, oversized quote mark, blockquote in Playfair italic
+    ══════════════════════════════════════════════════════════════════════ */
+    .t4 {
+      background:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E") repeat,
+        linear-gradient(
+          155deg,
+          #F5F1ED 0%,
+          #F0E6D8 22%,
+          #EDD0D7 55%,
+          #F7E6D3 78%,
+          #F5F1ED 100%
+        );
+    }
+
+    /* Top bar - thin blush stripe */
+    .t4-top-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 8px;
+      background: linear-gradient(to right, var(--blush-light), var(--blush), var(--blush-light));
+    }
+
+    /* Bottom bar */
+    .t4-bottom-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 8px;
+      background: linear-gradient(to right, var(--blush-light), var(--blush), var(--blush-light));
+    }
+
+    .t4-inner {
+      position: absolute;
+      inset: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 100px 110px;
+    }
+
+    /* Massive open-quote watermark */
+    .t4-open-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: 520px;
+      line-height: 0.7;
+      color: rgba(228,181,193,0.35);
+      margin-bottom: 20px;
+      user-select: none;
+      pointer-events: none;
+      position: absolute;
+      top: 120px;
+      left: 70px;
+      z-index: 1;
+    }
+
+    .t4-eyebrow {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--earth);
+      opacity: 0.5;
+      margin-bottom: 64px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .t4-quote-text {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 86px;
+      font-weight: 500;
+      line-height: 1.25;
+      color: var(--earth-deep);
+      position: relative;
+      z-index: 2;
+      margin-bottom: 72px;
+      /* swap: the testimonial quote text */
+    }
+
+    .t4-attribution-wrap {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .t4-attribution-line {
+      width: 50px;
+      height: 1.5px;
+      background: var(--blush);
+      flex-shrink: 0;
+    }
+
+    .t4-attribution {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 28px;
+      font-weight: 400;
+      font-style: italic;
+      letter-spacing: 0.06em;
+      color: var(--earth);
+      opacity: 0.65;
+      /* swap: attribution e.g. "Sound bath client" "1:1 client" */
+    }
+
+    .t4-handle {
+      position: absolute;
+      bottom: 76px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-family: 'Work Sans', sans-serif;
+      font-size: 24px;
+      font-weight: 400;
+      letter-spacing: 0.16em;
+      color: var(--earth);
+      opacity: 0.38;
+      z-index: 2;
+    }
+
+    /* Decorative sand circle in lower right quadrant */
+    .t4-deco-circle {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(196,177,158,0.25);
+      bottom: -100px;
+      right: -100px;
+      z-index: 1;
+    }
+
+    .t4-deco-circle-inner {
+      position: absolute;
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      border: 1px solid rgba(196,177,158,0.15);
+      bottom: 20px;
+      right: 20px;
+      z-index: 1;
+    }
+
+
+    /* ══════════════════════════════════════════════════════════════════════
+       TEMPLATE 5 - TEACHING / FRAMEWORK CARD
+       Cream bg, eyebrow tag, Playfair headline, 4 numbered pillars
+    ══════════════════════════════════════════════════════════════════════ */
+    .t5 {
+      background:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='350' height='350'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='350' height='350' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E") repeat,
+        var(--warm-white);
+    }
+
+    /* Blush side accent bar */
+    .t5-left-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 14px;
+      background: linear-gradient(to bottom, var(--blush-light), var(--blush), var(--sand), var(--blush-light));
+    }
+
+    .t5-inner {
+      position: absolute;
+      inset: 0;
+      padding: 110px 90px 100px 116px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .t5-eyebrow {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: 0.30em;
+      text-transform: uppercase;
+      color: var(--blush);
+      margin-bottom: 48px;
+      /* swap: eyebrow tag text */
+    }
+
+    .t5-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: 86px;
+      font-weight: 500;
+      line-height: 1.18;
+      color: var(--earth-deep);
+      margin-bottom: 90px;
+      /* swap: headline */
+    }
+
+    .t5-headline em {
+      font-style: italic;
+      color: var(--earth);
+    }
+
+    /* Divider before pillars */
+    .t5-rule {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, var(--blush), var(--sand-light), transparent);
+      margin-bottom: 76px;
+    }
+
+    .t5-pillars {
+      display: flex;
+      flex-direction: column;
+      gap: 62px;
+      /* swap: the 4 pillar rows below */
+    }
+
+    .t5-pillar {
+      display: flex;
+      align-items: baseline;
+      gap: 44px;
+    }
+
+    .t5-pillar-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 72px;
+      font-weight: 400;
+      color: var(--blush);
+      line-height: 1;
+      min-width: 80px;
+      flex-shrink: 0;
+      /* swap: numeral 01 / 02 / 03 / 04 */
+    }
+
+    .t5-pillar-content {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .t5-pillar-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 68px;
+      font-weight: 600;
+      line-height: 1;
+      color: var(--earth-deep);
+      /* swap: pillar name */
+    }
+
+    .t5-pillar-desc {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 28px;
+      font-weight: 300;
+      color: var(--earth);
+      opacity: 0.65;
+      line-height: 1.3;
+      /* swap: short descriptor (optional) */
+    }
+
+    .t5-bottom {
+      position: absolute;
+      bottom: 72px;
+      left: 116px;
+      right: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .t5-brand-mark {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-style: italic;
+      color: var(--earth);
+      opacity: 0.35;
+      letter-spacing: 0.04em;
+    }
+
+    .t5-handle {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      color: var(--earth);
+      opacity: 0.35;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       PAGE HEADER
+  ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="page-header">
+    <h1>Instagram Reel Covers - Space Between Wellness</h1>
+    <p>
+      5 branded templates at native 1080 x 1920px (Instagram Reel / Story spec).
+      Each cover is pre-scaled to 35% for preview. The actual pixel values inside each cover are native - so screenshots at 100% zoom or Chrome DevTools device emulation at 1080x1920 will produce a true 1:1 export.
+    </p>
+    <div class="export-instructions">
+      <strong>How to export as PNG</strong><br />
+      Option A - Chrome DevTools screenshot (recommended for full resolution):<br />
+      1. Open this file in Chrome. Open DevTools (F12). Toggle device toolbar (Ctrl+Shift+M / Cmd+Shift+M).<br />
+      2. Set device dimensions to 1080 x 1920, DPR = 1. Scroll to the cover you want.<br />
+      3. Run in console: <code>document.querySelector('.cover-outer.t1').scrollIntoView()</code> (change selector per template).<br />
+      4. In DevTools, use "Capture node screenshot" (right-click element in inspector &gt; Capture node screenshot).<br /><br />
+      Option B - Right-click on the scaled preview &gt; "Save image as" (lower resolution, suitable for Canva reference).<br /><br />
+      Option C - Recreate in Canva using these files as the visual reference. All font names, hex codes, and px sizes are annotated in the source HTML.
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       TEMPLATE 1 - HOOK QUOTE COVER
+  ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="cover-section">
+
+    <div class="template-label">
+      <div class="tpl-name">Template 1 - Hook Quote Cover</div>
+      <div class="tpl-meta">
+        <span><span class="label-key">Use when:</span> Text-led hook, pattern-interrupt, opinion or provocation reel</span>
+        <span><span class="label-key">Swap:</span> Eyebrow tag (top) + quote text + optional sub-line</span>
+        <span><span class="label-key">Eyebrow ideas:</span> "FOR THE EXHAUSTED" / "TRUTH" / "HEARD THIS?" / "FOR THE FED UP"</span>
+        <span><span class="label-key">Caption eg:</span> "You don't have a productivity problem. You have a nervous system problem. Watch this."</span>
+      </div>
+    </div>
+
+    <div class="cover-wrapper">
+      <div class="cover-scale">
+        <div class="cover-outer t1">
+          <!-- CORNERS -->
+          <div class="t1-corner tl"></div>
+          <div class="t1-corner tr"></div>
+          <div class="t1-corner bl"></div>
+          <div class="t1-corner br"></div>
+
+          <!-- DECORATIVE QUOTE GLYPH -->
+          <div class="t1-deco-quote" aria-hidden="true">"</div>
+
+          <!-- WARM HALO -->
+          <div class="t1-halo"></div>
+
+          <!-- CONTENT -->
+          <div class="t1-inner">
+            <!-- SWAP: eyebrow tag -->
+            <div class="t1-eyebrow">For the fed up</div>
+
+            <!-- SWAP: main quote text -->
+            <div class="t1-quote">
+              You're not<br />burnt out.<br />
+              You're<br /><em>fed up.</em>
+            </div>
+
+            <div class="t1-divider"></div>
+
+            <!-- SWAP: optional sub-line or leave blank -->
+            <div class="t1-sub">There is a difference.</div>
+          </div>
+
+          <!-- HANDLE - always stays -->
+          <div class="t1-handle">@space.between.wellness</div>
+        </div>
+      </div>
+      <span class="cover-scale-spacer"></span>
+    </div>
+
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       TEMPLATE 2 - PORTRAIT WITH OVERLAY
+  ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="cover-section">
+
+    <div class="template-label">
+      <div class="tpl-name">Template 2 - Portrait with Overlay</div>
+      <div class="tpl-meta">
+        <span><span class="label-key">Use when:</span> Face-to-camera reel, Emily's presence is the draw</span>
+        <span><span class="label-key">Swap:</span> Photo src (use emily-08.jpg, emily-12.jpg, or emily-15.jpg for portrait crops) + headline italic + subtitle line</span>
+        <span><span class="label-key">Eyebrow:</span> Match to content theme e.g. "NERVOUS SYSTEM" / "SOUND HEALING" / "HONEST TALK"</span>
+        <span><span class="label-key">Caption eg:</span> "Your fire didn't go out. It's just waiting for you to stop running long enough to feel it."</span>
+      </div>
+    </div>
+
+    <div class="cover-wrapper">
+      <div class="cover-scale">
+        <div class="cover-outer t2">
+          <!-- SWAP: photo - portrait orientation preferred. emily-08, emily-12, emily-15 -->
+          <img
+            class="t2-photo"
+            src="assets/emily-photos/emily-15.jpg"
+            alt="Emily Witt portrait"
+          />
+          <div class="t2-tone-wash"></div>
+          <div class="t2-vignette"></div>
+
+          <!-- HANDLE top right -->
+          <div class="t2-handle">@space.between.wellness</div>
+
+          <!-- TEXT ZONE -->
+          <div class="t2-text-zone">
+            <!-- SWAP: eyebrow -->
+            <div class="t2-eyebrow">Honest talk</div>
+
+            <!-- SWAP: italic headline -->
+            <div class="t2-headline">Your fire<br />didn't go out.</div>
+
+            <!-- SWAP: subtitle -->
+            <div class="t2-subtitle">It's just buried under<br />everything you've been holding.</div>
+          </div>
+        </div>
+      </div>
+      <span class="cover-scale-spacer"></span>
+    </div>
+
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       TEMPLATE 3 - NERVOUS SYSTEM STATE CARD
+  ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="cover-section">
+
+    <div class="template-label">
+      <div class="tpl-name">Template 3 - Nervous System State Card</div>
+      <div class="tpl-meta">
+        <span><span class="label-key">Use when:</span> Educational content on one of Emily's 4 nervous system states</span>
+        <span><span class="label-key">Swap:</span> Photo (activation-lava / overgiving-dunes / shutdown-fog / regulated-water) + state pill label + sub-label + state name + description line</span>
+        <span><span class="label-key">State pill:</span> ACTIVATION / OVER GIVING / SHUT DOWN / REGULATED</span>
+        <span><span class="label-key">Sub-label:</span> MOBILISATION / FAWN RESPONSE / COLLAPSE RESPONSE / SAFETY RESPONSE</span>
+        <span><span class="label-key">Caption eg:</span> "Regulated does not mean calm 24/7. It means you can move through big feelings without getting stuck."</span>
+      </div>
+    </div>
+
+    <div class="cover-wrapper">
+      <div class="cover-scale">
+        <div class="cover-outer t3">
+
+          <!-- PHOTO ZONE -->
+          <div class="t3-photo-zone">
+            <!-- SWAP: src to matching nature state photo -->
+            <img
+              class="t3-photo"
+              src="assets/nature-states/regulated-water.jpg"
+              alt="Regulated state - still water"
+            />
+            <div class="t3-photo-grain"></div>
+            <div class="t3-photo-fade"></div>
+
+            <!-- SWAP: state pill - sits top-left of photo -->
+            <div class="t3-state-pill">Regulated</div>
+          </div>
+
+          <!-- TEXT ZONE - bottom 45% -->
+          <div class="t3-text-zone">
+            <!-- SWAP: clinical sub-label -->
+            <div class="t3-sub-label">Safety response</div>
+
+            <!-- SWAP: state name (large) -->
+            <div class="t3-state-name">Regulated</div>
+
+            <div class="t3-divider"></div>
+
+            <!-- SWAP: one-line description in Playfair italic -->
+            <div class="t3-description">Present. Grounded. Where life happens.</div>
+          </div>
+
+          <!-- Handle -->
+          <div class="t3-handle">@space.between.wellness</div>
+
+        </div>
+      </div>
+      <span class="cover-scale-spacer"></span>
+    </div>
+
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       TEMPLATE 4 - TESTIMONIAL PULL QUOTE
+  ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="cover-section">
+
+    <div class="template-label">
+      <div class="tpl-name">Template 4 - Testimonial Pull Quote</div>
+      <div class="tpl-meta">
+        <span><span class="label-key">Use when:</span> Social proof reel - real client words as the hook</span>
+        <span><span class="label-key">Swap:</span> Eyebrow tag + quote text + attribution (keep concise: "Sound bath client" / "1:1 client" / "Retreat participant")</span>
+        <span><span class="label-key">Rule:</span> Verbatim quotes only - never paraphrase or fabricate</span>
+        <span><span class="label-key">Caption eg:</span> "When your body tells you before your brain does. Sound bath bookings open now - link in bio."</span>
+      </div>
+    </div>
+
+    <div class="cover-wrapper">
+      <div class="cover-scale">
+        <div class="cover-outer t4">
+
+          <div class="t4-top-bar"></div>
+          <div class="t4-bottom-bar"></div>
+
+          <!-- Decorative circles -->
+          <div class="t4-deco-circle"></div>
+          <div class="t4-deco-circle-inner"></div>
+
+          <!-- Oversized open quote watermark -->
+          <div class="t4-open-quote" aria-hidden="true">"</div>
+
+          <div class="t4-inner">
+            <!-- SWAP: eyebrow tag -->
+            <div class="t4-eyebrow">Client words</div>
+
+            <!-- SWAP: quote text -->
+            <div class="t4-quote-text">
+              Like a reset my body<br />truly needed.<br />I'll be back.
+            </div>
+
+            <div class="t4-attribution-wrap">
+              <div class="t4-attribution-line"></div>
+              <!-- SWAP: attribution -->
+              <div class="t4-attribution">Sound bath client</div>
+            </div>
+          </div>
+
+          <div class="t4-handle">@space.between.wellness</div>
+
+        </div>
+      </div>
+      <span class="cover-scale-spacer"></span>
+    </div>
+
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       TEMPLATE 5 - TEACHING / FRAMEWORK CARD
+  ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="cover-section">
+
+    <div class="template-label">
+      <div class="tpl-name">Template 5 - Teaching / Framework Card</div>
+      <div class="tpl-meta">
+        <span><span class="label-key">Use when:</span> 4-step method, framework breakdown, structured teaching reel</span>
+        <span><span class="label-key">Swap:</span> Eyebrow tag + headline + 4 pillar names + optional short descriptor per pillar</span>
+        <span><span class="label-key">Headline tip:</span> End with a period, not a question. Confident, not seeking approval.</span>
+        <span><span class="label-key">Caption eg:</span> "Four moves. No willpower required. Save this for when you feel stuck in the same loop."</span>
+      </div>
+    </div>
+
+    <div class="cover-wrapper">
+      <div class="cover-scale">
+        <div class="cover-outer t5">
+
+          <!-- Left accent bar -->
+          <div class="t5-left-bar"></div>
+
+          <div class="t5-inner">
+
+            <!-- SWAP: eyebrow tag -->
+            <div class="t5-eyebrow">The Space Between Method</div>
+
+            <!-- SWAP: headline -->
+            <div class="t5-headline">How we move from<br /><em>coping</em> to coming home.</div>
+
+            <div class="t5-rule"></div>
+
+            <!-- SWAP: 4 pillars - numeral + name + optional descriptor -->
+            <div class="t5-pillars">
+
+              <div class="t5-pillar">
+                <div class="t5-pillar-num">01</div>
+                <div class="t5-pillar-content">
+                  <div class="t5-pillar-name">Recognise</div>
+                  <div class="t5-pillar-desc">Name the state you are in</div>
+                </div>
+              </div>
+
+              <div class="t5-pillar">
+                <div class="t5-pillar-num">02</div>
+                <div class="t5-pillar-content">
+                  <div class="t5-pillar-name">Restore</div>
+                  <div class="t5-pillar-desc">Give your nervous system what it needs</div>
+                </div>
+              </div>
+
+              <div class="t5-pillar">
+                <div class="t5-pillar-num">03</div>
+                <div class="t5-pillar-content">
+                  <div class="t5-pillar-name">Realign</div>
+                  <div class="t5-pillar-desc">Reconnect to what actually matters</div>
+                </div>
+              </div>
+
+              <div class="t5-pillar">
+                <div class="t5-pillar-num">04</div>
+                <div class="t5-pillar-content">
+                  <div class="t5-pillar-name">Reclaim</div>
+                  <div class="t5-pillar-desc">Build a life that does not require recovery</div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Bottom brand mark + handle -->
+          <div class="t5-bottom">
+            <div class="t5-brand-mark">Space Between Wellness</div>
+            <div class="t5-handle">@space.between.wellness</div>
+          </div>
+
+        </div>
+      </div>
+      <span class="cover-scale-spacer"></span>
+    </div>
+
+  </div>
+
+</body>
+</html>

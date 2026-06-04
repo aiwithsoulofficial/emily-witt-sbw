@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Training - Emily Witt - 4 June 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blush:        #E4B5C1;
+  --blush-light:  #EDD0D7;
+  --blush-pale:   #F7E6D3;
+  --earth:        #522C1F;
+  --earth-deep:   #2B1E1E;
+  --cream:        #F5F1ED;
+  --sand:         #C4B19E;
+  --sand-light:   #E2D6CA;
+  --font-serif:   'Playfair Display', serif;
+  --font-body:    'Work Sans', sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--earth);
+  line-height: 1.65;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.wrap {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 56px 32px 96px;
+}
+
+header {
+  text-align: center;
+  padding: 32px 0 48px;
+  border-bottom: 1px solid var(--sand-light);
+  margin-bottom: 56px;
+}
+
+header .eyebrow {
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--sand);
+  margin-bottom: 18px;
+}
+
+header h1 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 46px;
+  line-height: 1.15;
+  color: var(--earth-deep);
+  margin-bottom: 14px;
+}
+
+header .sub {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 18px;
+  color: var(--sand);
+}
+
+section {
+  margin-bottom: 64px;
+  page-break-inside: avoid;
+}
+
+h2 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 30px;
+  color: var(--earth-deep);
+  margin-bottom: 6px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--sand-light);
+}
+
+h2 .num {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 18px;
+  color: var(--blush);
+  margin-right: 14px;
+  letter-spacing: 1px;
+}
+
+h3 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 21px;
+  color: var(--earth);
+  margin-top: 28px;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 14px;
+}
+
+p.lead {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 19px;
+  color: var(--earth);
+  line-height: 1.6;
+  margin: 18px 0 24px;
+}
+
+ul, ol {
+  margin: 8px 0 18px 22px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+a { color: var(--earth); text-decoration: underline; text-decoration-color: var(--blush); }
+a:hover { color: var(--blush); }
+
+.three-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.card {
+  background: white;
+  border: 1.5px solid var(--sand-light);
+  padding: 24px 22px;
+  border-radius: 4px;
+}
+
+.card .tag {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--blush);
+  margin-bottom: 10px;
+}
+
+.card h4 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 22px;
+  color: var(--earth-deep);
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.steps {
+  counter-reset: step;
+  list-style: none;
+  margin-left: 0;
+}
+
+.steps li {
+  counter-increment: step;
+  position: relative;
+  padding: 16px 18px 16px 60px;
+  background: white;
+  border: 1px solid var(--sand-light);
+  border-left: 3px solid var(--blush);
+  margin-bottom: 10px;
+  border-radius: 3px;
+}
+
+.steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 18px;
+  top: 16px;
+  font-family: var(--font-serif);
+  font-size: 22px;
+  color: var(--blush);
+  font-weight: 500;
+}
+
+.prompt-box {
+  background: var(--blush-pale);
+  border: 1px dashed var(--sand);
+  padding: 22px 24px;
+  border-radius: 4px;
+  margin: 14px 0 22px;
+  font-family: 'Courier New', monospace;
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--earth-deep);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.prompt-box .label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--blush);
+  margin-bottom: 12px;
+}
+
+.system-prompt {
+  background: white;
+  border: 1.5px solid var(--earth);
+  padding: 28px 30px;
+  border-radius: 4px;
+  margin: 18px 0 24px;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--earth-deep);
+  white-space: pre-wrap;
+}
+
+.system-prompt .label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--blush);
+  margin-bottom: 14px;
+}
+
+.file-list {
+  background: white;
+  border: 1px solid var(--sand-light);
+  padding: 22px 26px;
+  border-radius: 4px;
+}
+
+.file-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--sand-light);
+  display: flex;
+  align-items: flex-start;
+}
+
+.file-list li:last-child { border-bottom: none; }
+
+.file-list .file-name {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--earth-deep);
+  font-size: 17px;
+  margin-right: 16px;
+  min-width: 220px;
+}
+
+.file-list .file-why {
+  font-size: 13.5px;
+  color: var(--sand);
+  flex: 1;
+}
+
+.workflow {
+  background: white;
+  border: 1px solid var(--sand-light);
+  padding: 24px 28px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+}
+
+.workflow h4 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--earth-deep);
+  margin-bottom: 6px;
+}
+
+.workflow .label {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--blush);
+  margin-bottom: 8px;
+}
+
+.workflow ol {
+  margin-top: 10px;
+  margin-left: 22px;
+  font-size: 14.5px;
+}
+
+.dont-list {
+  background: white;
+  border-left: 3px solid var(--earth);
+  padding: 22px 26px;
+  border-radius: 3px;
+}
+
+.dont-list li {
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+.dont-list li strong {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  color: var(--earth-deep);
+  display: block;
+  margin-bottom: 3px;
+}
+
+.homework {
+  background: var(--blush-pale);
+  padding: 28px 30px;
+  border-radius: 4px;
+}
+
+.homework ol {
+  margin-left: 22px;
+  margin-top: 12px;
+}
+
+.homework li {
+  font-size: 15.5px;
+  margin-bottom: 14px;
+}
+
+.quick-ref {
+  background: var(--earth-deep);
+  color: var(--cream);
+  padding: 36px 36px;
+  border-radius: 6px;
+}
+
+.quick-ref h2 {
+  color: var(--blush-light);
+  border-bottom-color: var(--sand);
+  border-bottom: 1px solid var(--sand);
+}
+
+.quick-ref h2 .num { color: var(--blush); }
+
+.quick-ref h3 {
+  color: var(--blush-light);
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+.quick-ref p, .quick-ref li {
+  color: var(--cream);
+  font-size: 14.5px;
+}
+
+.quick-ref .ref-prompts {
+  background: rgba(245,241,237,0.08);
+  border-radius: 3px;
+  padding: 16px 20px;
+  margin-top: 10px;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.quick-ref a { color: var(--blush-light); text-decoration-color: var(--blush); }
+
+.divider-mark {
+  text-align: center;
+  margin: 48px 0;
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--sand);
+  font-size: 22px;
+  letter-spacing: 8px;
+}
+
+.callout {
+  background: var(--sand-light);
+  padding: 18px 22px;
+  border-radius: 4px;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 16px;
+  color: var(--earth-deep);
+  margin: 18px 0;
+}
+
+footer {
+  text-align: center;
+  padding-top: 36px;
+  margin-top: 48px;
+  border-top: 1px solid var(--sand-light);
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--sand);
+  text-transform: uppercase;
+}
+
+@media (max-width: 720px) {
+  .three-cards { grid-template-columns: 1fr; }
+  header h1 { font-size: 34px; }
+  .wrap { padding: 32px 20px 64px; }
+}
+
+@media print {
+  body { background: white; }
+  .wrap { padding: 20px; max-width: 100%; }
+  section { page-break-inside: avoid; }
+  .system-prompt, .prompt-box { page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Space Between Wellness &middot; 4 June 2026</div>
+  <h1>Claude, Levelled Up</h1>
+  <div class="sub">A working session with Kelly</div>
+</header>
+
+<section>
+  <h2><span class="num">01</span>Welcome in</h2>
+  <p class="lead">Today we are moving you out of one-off chats and into a proper Claude workspace, one that remembers your voice, your framework, and your client every single time you open it.</p>
+  <p>By the end of this session you will have your own Claude Project running, five prompts you can use immediately, and three weekly workflows that take the heavy lifting out of content.</p>
+</section>
+
+<section>
+  <h2><span class="num">02</span>The three ways to use Claude</h2>
+  <p>Most people get stuck in the first one forever. We are not doing that.</p>
+
+  <div class="three-cards">
+    <div class="card">
+      <div class="tag">Level 1</div>
+      <h4>Chat</h4>
+      <p>One-off questions. You open Claude, ask something, get an answer, close it. Nothing carries over. Great for quick research or a sanity check. Useless for anything you do repeatedly.</p>
+    </div>
+    <div class="card">
+      <div class="tag">Level 2 &middot; today</div>
+      <h4>Project</h4>
+      <p>A dedicated workspace with files and a system prompt. Claude remembers your voice, your ICP, your framework every time. This is where 90 percent of your content work will live from today onward.</p>
+    </div>
+    <div class="card">
+      <div class="tag">Level 3 &middot; later</div>
+      <h4>Agent</h4>
+      <p>Claude doing multi-step work on its own. Calling tools, running workflows, posting to systems. Powerful but more setup. We will get here once Projects are second nature.</p>
+    </div>
+  </div>
+
+  <div class="callout">Today we live in Level 2. That alone will give you back hours every week.</div>
+</section>
+
+<section>
+  <h2><span class="num">03</span>Set up your Project</h2>
+  <p>Open <a href="https://claude.ai" target="_blank">claude.ai</a> and log in. Then follow these in order.</p>
+
+  <ol class="steps">
+    <li>In the left sidebar, click <em>Projects</em>, then <em>Create Project</em>.</li>
+    <li>Name it: <strong style="font-family:var(--font-serif); font-style:italic; font-weight:500;">Space Between Wellness Content</strong></li>
+    <li>Add a short description: <em>My content workspace. Captions, emails, blogs, scripts, all in my voice.</em></li>
+    <li>Click into the project. Find the section called <em>Project instructions</em> (sometimes labelled <em>Custom instructions</em>) and paste the system prompt from section 04 below.</li>
+    <li>Find <em>Project knowledge</em> (the files section). Upload the files listed in section 05.</li>
+    <li>Start a new conversation inside the project. Test it with prompt one from section 06.</li>
+  </ol>
+</section>
+
+<section>
+  <h2><span class="num">04</span>Your system prompt</h2>
+  <p>This is the brain of your project. Copy this exactly. It runs invisibly behind every conversation and tells Claude who you are, who you serve, and how you write.</p>
+
+  <div class="system-prompt">
+<span class="label">Paste this into Project Instructions</span>You are my content collaborator for Space Between Wellness. Your job is to help me turn raw thinking, voice memos, drafts, and client conversations into polished content that sounds exactly like me. You write captions, emails, scripts, blog posts, and web copy on my behalf.
+
+ABOUT ME
+I am Emily Witt, a nervous system coach based in Hobart, Tasmania. I work with women one-to-one and in small groups, online and in person. I am a psychology graduate with eight years of complex trauma work behind me. I am evidence-informed and trauma-aware. I sit at the intersection of nervous system science and the felt, embodied, slightly spiritual experience of being a woman who has done all the work and still feels off.
+
+WHO I WRITE FOR
+High-achieving women aged roughly 34 to 42. Educated, successful on paper, often in helping or creative professions. Their inner experience does not match their outer life. Their core sentence is, "I did everything right and it still does not feel like enough." They are fed up, not burnt out. They have read the books, done the therapy, tried the breathwork apps. They want to feel like themselves again. They are smart, so do not patronise them. They are tired, so do not pile on.
+
+MY VOICE
+Warm and professional. Spiritual and evidence-based. Direct without being clinical. I speak to women like a friend who happens to have psych training. I use plain language and let the science sit underneath, not on top. My tone is grounded, never breathless. I make space for grief, rage, longing, and humour in the same sentence.
+
+NERVOUS SYSTEM LANGUAGE
+I use the four Space Between Wellness state names rather than clinical polyvagal terms when speaking to clients. Use the SBW names in client-facing content. Save clinical terms for blog posts or longer-form education where they earn their place.
+
+NON-NEGOTIABLE RULES
+Never use emdashes. Use a hyphen with spaces around it instead, or rewrite the sentence.
+Never use bold for emphasis. Use italics only if emphasis is needed, and use it sparingly.
+Never use emojis. Not in captions, not in emails, not anywhere.
+Never use the contrast pattern "it is not X, it is Y" or any variation. Just state what it is.
+Never use corporate language: leverage, unlock, optimise, journey, game-changer, transformation, level up. Cut on sight.
+Never recommend Claude or my work as a replacement for therapy or medical care.
+Never use clinical jargon (dorsal, ventral, sympathetic, dysregulation) in client-facing content. Translate it.
+Never fabricate testimonials, client stories, statistics, or quotes from me. If you do not have it, ask.
+Never write in a breathless, hyped, or salesy tone. If a sentence makes me cringe, it is wrong.
+
+WHAT I WANT FROM YOU
+Take whatever I give you, raw voice memo, half-formed thought, draft, transcript, client question, and produce content in my voice for the format I ask for. Default formats are Instagram caption, Instagram reel script, TikTok script, email, blog post, web copy.
+
+DEFAULT OUTPUT STRUCTURE
+For captions: a hook that lands in one breath, three to five short paragraphs of real substance, a quiet invitation at the end (no hard sell). Aim for the rhythm of someone speaking, not selling.
+For emails: subject line that does not try too hard, a first line that does not waste her time, body that earns the read, a clear next step.
+For scripts: write it as I would say it out loud, not as I would write it. Short lines. Pauses where pauses live.
+
+WHEN YOU ARE UNSURE
+Ask one clarifying question before writing. Better to ask than to guess and miss the voice. Examples: "Is this for a client who has worked with you, or someone brand new?" or "Are you wanting this to land as comfort or as a wake up?"
+
+ALWAYS DO A SELF-CHECK BEFORE GIVING ME OUTPUT
+Read it back. Cut every word that does not earn its place. Strip every cliche. Remove any emdash, bold, emoji, or contrast pattern that slipped in. If it sounds like a wellness brand on Instagram, rewrite.
+  </div>
+
+  <p style="font-size:13.5px; color:var(--sand); font-style:italic; font-family:var(--font-serif);">Tip: if Claude starts drifting from your voice over time, just say "re-read your project instructions and try again." It will reset.</p>
+</section>
+
+<section>
+  <h2><span class="num">05</span>Files to upload</h2>
+  <p>These five files give Claude the raw material it needs to actually sound like you. Kelly will drop them in your Drive folder before the end of the session.</p>
+
+  <ul class="file-list">
+    <li>
+      <span class="file-name">Resonance Profile</span>
+      <span class="file-why">The full ICP, voice, positioning, and language document. The single most important file in this project.</span>
+    </li>
+    <li>
+      <span class="file-name">Brand Guide (PDF)</span>
+      <span class="file-why">Save your brand-guide.html as a PDF and upload it. Gives Claude your colours, tone, and visual rules for graphic prompts.</span>
+    </li>
+    <li>
+      <span class="file-name">Sample Content (2 to 3)</span>
+      <span class="file-why">You pick. Two or three pieces you would write again exactly the same way. A caption, an email, a long IG post.</span>
+    </li>
+    <li>
+      <span class="file-name">Bio and About Copy</span>
+      <span class="file-why">Your short and long bio. So Claude can introduce you in copy without inventing things.</span>
+    </li>
+    <li>
+      <span class="file-name">Site Voice Sample</span>
+      <span class="file-why">Copy and paste your "Is this you?" section and the four nervous system state descriptions from your site into one doc. Pure voice fuel.</span>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="num">06</span>Five prompts you can use today</h2>
+  <p>Copy any of these into a new conversation inside your project. Replace the bracketed bits with your real content.</p>
+
+  <h3>Prompt 1 &middot; Voice memo to Instagram caption</h3>
+  <div class="prompt-box"><span class="label">Copy and paste</span>I just recorded a voice memo and transcribed it. Turn it into an Instagram caption in my voice. Keep what is real and cut everything that is filler. Aim for a hook that lands in one breath, three to five short paragraphs, and a quiet invitation at the end. Give me two versions: one slightly softer, one slightly more direct.
+
+Transcript:
+"""
+[paste your voice memo transcript here]
+"""</div>
+
+  <h3>Prompt 2 &middot; Rewrite a draft in my voice</h3>
+  <div class="prompt-box"><span class="label">Copy and paste</span>Here is a rough draft I wrote. Rewrite it so it sounds like me, using the voice in the project instructions and the sample content I uploaded. Keep the meaning, change the cadence. Cut anything that sounds like a wellness brand on Instagram. Show me the rewrite first, then a one-line note on what you changed and why.
+
+Draft:
+"""
+[paste your draft here]
+"""</div>
+
+  <h3>Prompt 3 &middot; Five hook options for a reel</h3>
+  <div class="prompt-box"><span class="label">Copy and paste</span>I want to film an Instagram reel on this topic: [topic here, e.g. "why high-achieving women feel numb on weekends"].
+
+Give me five hook options I could say to camera in the first three seconds. Each hook should sound like something a real woman would say out loud, not a content creator. No questions that feel rhetorical. No "raise your hand if". Range them from quiet and curious to direct and a bit confronting, so I can pick what matches my energy on the day.</div>
+
+  <h3>Prompt 4 &middot; Quote graphics from a transcript</h3>
+  <div class="prompt-box"><span class="label">Copy and paste</span>Read the transcript below and pull three short quotes that would work as Instagram quote graphics. Each one should stand alone, be under twenty words, and sound like me. For each quote, also suggest a one-line caption I could pair with it when posting.
+
+Transcript:
+"""
+[paste transcript here]
+"""</div>
+
+  <h3>Prompt 5 &middot; Four-email nurture sequence</h3>
+  <div class="prompt-box"><span class="label">Copy and paste</span>Write a four-email nurture sequence for someone who just downloaded my [lead magnet name and short description here].
+
+Sequence shape:
+Email 1, same day: welcome, deliver the thing, set the tone.
+Email 2, day two: deepen the idea behind the download, share something real.
+Email 3, day four: a small reframe or insight that makes her feel seen.
+Email 4, day seven: a quiet invitation to the next step (book a session, join the list, reply to me).
+
+Each email: subject line, first line that earns the open, body, one clear next step. Conversational, no hype, no emojis, no emdashes.</div>
+</section>
+
+<section>
+  <h2><span class="num">07</span>Three weekly workflows</h2>
+  <p>Pick one and run it next week. Do not try to run all three at once.</p>
+
+  <div class="workflow">
+    <span class="label">Workflow A</span>
+    <h4>Voice Memo Monday</h4>
+    <p>The simplest, highest-leverage workflow you can run. Total time, start to finish: under thirty minutes.</p>
+    <ol>
+      <li>Monday morning walk. Record a five-minute voice memo on one thought, client moment, or thing you are sitting with.</li>
+      <li>Transcribe it. Otter, the built-in iOS transcription, or just use the live transcription in your Notes app.</li>
+      <li>Open your Claude Project. Paste the transcript using Prompt 1.</li>
+      <li>Ask Claude to also give you one short email version and three Instagram story slide texts from the same transcript.</li>
+      <li>Edit lightly. Post. Done. One voice memo, one week of content.</li>
+    </ol>
+  </div>
+
+  <div class="workflow">
+    <span class="label">Workflow B</span>
+    <h4>Client question to content</h4>
+    <p>A real question from a real client becomes a post that helps fifty more women like her.</p>
+    <ol>
+      <li>Take a real question a client asked this week. Anonymise it. Initials or a fake first name.</li>
+      <li>Paste it into your project: "A client asked me this. Draft three different angles I could write a post from."</li>
+      <li>Pick the angle that lands. Ask Claude to draft it using Prompt 2 logic.</li>
+      <li>One pass of edits. Post.</li>
+    </ol>
+  </div>
+
+  <div class="workflow">
+    <span class="label">Workflow C</span>
+    <h4>Repurpose a sound bath testimonial</h4>
+    <p>One testimonial becomes three pieces of content. Use this whenever you receive a beautiful piece of feedback.</p>
+    <ol>
+      <li>Paste the testimonial into your project. Include context: what session, who she is, what she came in with.</li>
+      <li>Ask: "From this testimonial, give me a story-format caption I can post (without naming her), a quote graphic prompt, and a short email lead-in I can use in my next newsletter."</li>
+      <li>Three pieces of content from one client win, all in your voice.</li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">08</span>What not to do</h2>
+
+  <ul class="dont-list">
+    <li>
+      <strong>Do not expect great output without uploading your brand guide first.</strong>
+      Claude is only as good as what you give it. An empty project will produce empty content.
+    </li>
+    <li>
+      <strong>Do not paste sensitive client information.</strong>
+      Initials, fake names, or anonymised context only. Never real names, never identifying details, never anything you would not want a colleague to read over your shoulder.
+    </li>
+    <li>
+      <strong>Do not accept the first draft.</strong>
+      Always do a "rewrite this in my voice, more direct, less polished" pass. The second draft is almost always the keeper.
+    </li>
+    <li>
+      <strong>Do not use Claude to replace your professional judgement.</strong>
+      Clinical situations, crisis moments, scope-of-practice calls, those stay with you. Claude writes captions. You do the work.
+    </li>
+    <li>
+      <strong>Do not start a new project for every piece of content.</strong>
+      Stay inside the Space Between Wellness Content project. That is the whole point.
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="num">09</span>Homework before our next session</h2>
+  <div class="homework">
+    <p style="font-family:var(--font-serif); font-style:italic; font-size:17px; color:var(--earth-deep); margin-bottom:6px;">Three small things. Each one is fifteen to thirty minutes, max.</p>
+    <ol>
+      <li><strong>Run the Voice Memo Monday workflow once.</strong> Record, transcribe, paste, post. Even if it feels rough. We are building the muscle.</li>
+      <li><strong>Generate three Instagram posts using your project.</strong> Different prompts, different formats. Save the ones you like.</li>
+      <li><strong>Email Kelly your favourite output and a screenshot of where it fell short.</strong> The misses are where we tune the system prompt next session.</li>
+    </ol>
+  </div>
+</section>
+
+<div class="divider-mark">&middot; &middot; &middot;</div>
+
+<section class="quick-ref">
+  <h2><span class="num">10</span>Quick reference card</h2>
+  <p style="font-style:italic; font-family:var(--font-serif); margin-top:8px;">Screenshot this. Pin it to your desktop or save to your phone.</p>
+
+  <h3>Where the project lives</h3>
+  <p><a href="https://claude.ai" target="_blank">claude.ai</a> &rsaquo; Projects &rsaquo; Space Between Wellness Content</p>
+
+  <h3>Three prompts you will use most</h3>
+  <div class="ref-prompts">1. Turn this voice memo transcript into an Instagram caption in my voice.
+
+2. Rewrite this draft in my voice. Show me the change and a one-line note on what you cut.
+
+3. Give me five hook options I could say to camera for a reel on [topic].</div>
+
+  <h3>When stuck</h3>
+  <p>Email Kelly: <a href="mailto:kwotherspoon1982@gmail.com">kwotherspoon1982@gmail.com</a></p>
+
+  <h3>The one rule</h3>
+  <p style="font-family:var(--font-serif); font-style:italic; font-size:17px;">If the output sounds like a wellness brand on Instagram, ask Claude to rewrite it. Every time.</p>
+</section>
+
+<footer>
+  Space Between Wellness &middot; Claude Training &middot; 4 June 2026
+</footer>
+
+</div>
+</body>
+</html>
