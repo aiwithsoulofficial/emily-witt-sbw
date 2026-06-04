@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>60-Day Social Campaign - Space Between Wellness</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blush: #E4B5C1;
+  --blush-pale: #F7E6D3;
+  --earth: #522C1F;
+  --earth-deep: #2B1E1E;
+  --cream: #F5F1ED;
+  --warm-white: #F7F3EF;
+  --sand: #C4B19E;
+  --sand-light: #E2D6CA;
+  --accent-yellow: #D4A24A;
+  --charcoal: #2B1E1E;
+  --charcoal-soft: #5C4033;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Work Sans', sans-serif;
+  background: var(--cream);
+  color: var(--charcoal);
+  line-height: 1.75;
+  font-size: 16px;
+}
+.topbar {
+  background: var(--warm-white);
+  border-bottom: 1px solid var(--sand-light);
+  padding: 18px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+}
+.topbar a {
+  color: var(--earth);
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+.topbar a:hover { color: var(--blush); }
+.topbar .brand {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--earth-deep);
+}
+.review-banner {
+  background: var(--accent-yellow);
+  color: var(--earth-deep);
+  text-align: center;
+  padding: 14px 24px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.review-banner em {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+}
+.header-block {
+  background: linear-gradient(180deg, rgba(245, 241, 237, 0.85) 0%, rgba(245, 241, 237, 0.95) 100%);
+  padding: 72px 40px 56px;
+  border-bottom: 1px solid var(--sand-light);
+}
+.header-inner {
+  max-width: 780px;
+  margin: 0 auto;
+}
+.header-eyebrow {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--earth);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.header-eyebrow::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: var(--blush);
+  display: block;
+}
+.header-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--earth-deep);
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+}
+.content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 56px 40px 96px;
+}
+.content h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: 1.75rem;
+  color: var(--earth-deep);
+  margin: 56px 0 18px;
+  line-height: 1.3;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--sand-light);
+}
+.content h2:first-child { margin-top: 0; }
+.content h3 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.375rem;
+  color: var(--earth);
+  margin: 40px 0 14px;
+}
+.content h4 {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--earth);
+  margin: 28px 0 10px;
+}
+.content p {
+  margin-bottom: 18px;
+  color: var(--charcoal-soft);
+}
+.content em {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: var(--earth);
+  font-size: 1.05em;
+}
+.content ul, .content ol {
+  margin: 0 0 22px 26px;
+  color: var(--charcoal-soft);
+}
+.content li {
+  margin-bottom: 8px;
+  padding-left: 6px;
+}
+.content blockquote {
+  margin: 28px 0;
+  padding: 24px 28px;
+  background: var(--warm-white);
+  border-left: 3px solid var(--blush);
+  border-radius: 4px;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: var(--earth);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+.content blockquote p { margin-bottom: 12px; color: inherit; }
+.content blockquote p:last-child { margin-bottom: 0; }
+.content hr {
+  border: 0;
+  height: 1px;
+  background: var(--sand-light);
+  margin: 44px 0;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0 36px;
+  font-size: 0.9rem;
+}
+th {
+  background: var(--earth-deep);
+  color: var(--warm-white);
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 12px 14px;
+  text-align: left;
+}
+td {
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--sand-light);
+  color: var(--charcoal-soft);
+  vertical-align: top;
+  line-height: 1.55;
+}
+tr:nth-child(even) td { background: var(--warm-white); }
+tr:hover td { background: var(--blush-pale); }
+
+/* Phase blocks */
+.phase-block {
+  background: var(--warm-white);
+  border-radius: 12px;
+  padding: 36px 40px;
+  margin: 32px 0;
+  border-left: 4px solid var(--blush);
+}
+.phase-block.phase-0 { border-left-color: var(--sand); }
+.phase-block.phase-1 { border-left-color: var(--blush); }
+.phase-block.phase-2 { border-left-color: var(--earth); }
+.phase-block.phase-3 { border-left-color: var(--accent-yellow); }
+.phase-block.phase-4 { border-left-color: var(--earth-deep); }
+
+.phase-label {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--sand);
+  margin-bottom: 6px;
+}
+.phase-block.phase-1 .phase-label { color: var(--blush); }
+.phase-block.phase-2 .phase-label { color: var(--earth); }
+.phase-block.phase-3 .phase-label { color: var(--accent-yellow); }
+.phase-block.phase-4 .phase-label { color: var(--charcoal-soft); }
+
+.phase-block h3 {
+  margin-top: 6px;
+  font-style: normal;
+  color: var(--earth-deep);
+}
+.phase-block p, .phase-block li {
+  color: var(--charcoal-soft);
+}
+
+/* Hook cards */
+.hook-group {
+  margin: 24px 0 36px;
+}
+.hook-label {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--earth);
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--sand-light);
+}
+.hook-card {
+  background: var(--warm-white);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 10px;
+  border-left: 3px solid var(--blush-pale);
+  font-size: 0.9375rem;
+  color: var(--charcoal-soft);
+  line-height: 1.6;
+}
+.hook-card span {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--sand);
+  display: block;
+  margin-bottom: 5px;
+}
+.hook-card.edu { border-left-color: var(--blush); }
+.hook-card.personal { border-left-color: var(--earth); }
+.hook-card.client { border-left-color: var(--accent-yellow); }
+.hook-card.bts { border-left-color: var(--sand); }
+.hook-card.convert { border-left-color: var(--earth-deep); }
+
+/* Ops grid */
+.ops-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 0;
+  border-bottom: 1px solid var(--sand-light);
+  padding: 14px 0;
+  align-items: baseline;
+}
+.ops-row:last-child { border-bottom: none; }
+.ops-day {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--earth);
+}
+.ops-task {
+  font-size: 0.9375rem;
+  color: var(--charcoal-soft);
+}
+
+/* Metrics */
+.metric-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--sand-light);
+}
+.metric-row:last-child { border-bottom: none; }
+.metric-name {
+  font-weight: 600;
+  color: var(--earth-deep);
+  min-width: 200px;
+  font-size: 0.9375rem;
+}
+.metric-detail {
+  color: var(--charcoal-soft);
+  font-size: 0.9375rem;
+}
+
+/* Callout box */
+.callout {
+  background: var(--blush-pale);
+  border-radius: 10px;
+  padding: 24px 28px;
+  margin: 24px 0;
+  color: var(--earth-deep);
+  font-size: 0.9375rem;
+}
+.callout.warning {
+  background: #FFF8EC;
+  border-left: 3px solid var(--accent-yellow);
+}
+.callout.dark {
+  background: var(--earth-deep);
+  color: var(--warm-white);
+}
+.callout.dark p { color: rgba(247, 243, 239, 0.85); }
+
+/* Pillar pattern box */
+.pattern-box {
+  background: var(--earth-deep);
+  border-radius: 10px;
+  padding: 28px 32px;
+  margin: 20px 0;
+  color: var(--warm-white);
+}
+.pattern-box h4 {
+  color: var(--blush);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.pattern-box p {
+  color: rgba(247, 243, 239, 0.85);
+  font-size: 0.9375rem;
+  margin-bottom: 10px;
+}
+.pattern-box p:last-child { margin-bottom: 0; }
+
+.feedback-block {
+  background: var(--earth-deep);
+  color: var(--warm-white);
+  padding: 48px 40px;
+  text-align: center;
+}
+.feedback-block .script {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  color: var(--blush);
+  margin-bottom: 12px;
+}
+.feedback-block p {
+  font-size: 0.9375rem;
+  color: rgba(247, 243, 239, 0.85);
+  max-width: 540px;
+  margin: 0 auto;
+}
+.feedback-block a {
+  color: var(--accent-yellow);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+@media (max-width: 720px) {
+  .header-block { padding: 48px 24px 40px; }
+  .content { padding: 40px 24px 64px; }
+  .topbar { padding: 14px 20px; flex-direction: column; gap: 8px; }
+  table { font-size: 0.8rem; }
+  td, th { padding: 9px 10px; }
+  .ops-row { grid-template-columns: 1fr; gap: 4px; }
+  .metric-row { flex-direction: column; gap: 4px; }
+  .metric-name { min-width: unset; }
+  .phase-block { padding: 24px 24px; }
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="brand">Space Between Wellness</span>
+  <a href="em-hub.html">&#8592; back to the hub</a>
+</div>
+
+<div class="review-banner">
+  <em>For your review.</em> Nothing here is final until you say so - reply to Kelly with anything to change or approve.
+</div>
+
+<div class="header-block">
+  <div class="header-inner">
+    <div class="header-eyebrow">Social marketing campaign &middot; 60 days &middot; For your review</div>
+    <h1 class="header-title">From quiet to consistent.<br>Your first 60 days of showing up.</h1>
+  </div>
+</div>
+
+<div class="content">
+
+  <p>This is the whole picture, Em. Every day, every post, every hook - mapped out so you can stop thinking about what to make and just make it. It is designed around real constraints: solo operator, phone in hand, 30 minutes max per post, face-to-camera only when you feel ready for it. Voiceover-first where it counts. Your 16 photos and 5 existing scripts are already woven through this so nothing starts from zero.</p>
+
+  <p>Read Phase 0 first. Do not skip it. The campaign only works if the foundation is solid underneath it.</p>
+
+  <hr>
+
+  <!-- ============================================================ -->
+  <h2>Phase 0 - The Foundation Week (Week 1, pre-launch)</h2>
+  <!-- ============================================================ -->
+
+  <div class="phase-block phase-0">
+    <div class="phase-label">Before you post a single thing</div>
+    <h3>What needs to be in place</h3>
+    <p>This is not busywork. If your bio is unclear or your highlights are a mess, every piece of content you post sends people to a profile that does not convert. One week of setup means 60 days of content actually landing somewhere.</p>
+  </div>
+
+  <h3>Instagram bio - lock it this week</h3>
+  <p>Your bio has one job: make the right person immediately feel seen and know what to do next. Here is the structure to work with:</p>
+  <div class="pattern-box">
+    <h4>Bio formula</h4>
+    <p>Line 1: Who you help, in their language (not your job title)</p>
+    <p>Line 2: What you do / the method (one short phrase)</p>
+    <p>Line 3: Your differentiator (the science + spirit line)</p>
+    <p>Line 4: Where to go next (the action)</p>
+    <p style="margin-top: 12px; font-style: italic; color: rgba(247,243,239,0.6);">Draft option: "For women who did everything right and still feel fed up / Nervous system coaching grounded in psychological science / Hobart, Tasmania + online / Take the free quiz (link in bio)"</p>
+  </div>
+
+  <h3>Highlights to create or rename</h3>
+  <p>Five covers, five clear functions. Emily already has reel cover templates built - use those to create matching highlight covers in the same palette.</p>
+  <ul>
+    <li>Start here - your intro reel, what you do, who it is for</li>
+    <li>The 4 states - one story per nervous system state (build this as you go)</li>
+    <li>The work - process, session snapshots, behind-application stories</li>
+    <li>Real stories - anonymised client wins and testimonials</li>
+    <li>Sound bath - your in-person Hobart offering, what it feels like in the room (secondary to 1:1)</li>
+  </ul>
+
+  <h3>Pinned posts - what goes up before Day 1</h3>
+  <p>You want three pinned posts sitting at the top of your grid before the campaign starts. These do the heavy lifting for anyone who finds you mid-campaign and scrolls back to understand who you are.</p>
+  <ol>
+    <li>Your intro / "this is what I actually do" reel (this becomes Day 2 content if you have not filmed it yet)</li>
+    <li>Your most resonant quote graphic from the 16 photos - something with "fed up is different to burnt out" or "the fire didn't go out" as overlay text</li>
+    <li>The nervous system states explainer - a simple carousel or text post naming Activation, Over Giving, Shut Down, Regulated with one line each</li>
+  </ol>
+
+  <h3>The 30-post audit</h3>
+  <p>Go back through your last 30 posts on Instagram. For each one, ask two questions: does this show what I actually do, and does it sound like me at my most grounded? Anything that feels like a different era, a different voice, or a different version of what you are offering - archive it. You are not deleting it, just moving it out of the way. The goal is that someone landing on your profile for the first time sees a coherent, confident practitioner from post one.</p>
+
+  <p>What to keep: anything that uses your nervous system language, shows the sound bath in its full beauty, or captures a genuine moment. What to archive: anything written in hustle-culture language, anything that mentions burnout, any post that feels like you were performing confidence rather than having it.</p>
+
+  <h3>TikTok account - set up this week if you have not already</h3>
+  <p>Username: @spacebetweenwellness (or closest available). Bio mirrors your Instagram bio. Link goes to the website. You will not post here until Week 5 at the earliest - but have it ready so you are not scrambling later.</p>
+
+  <h3>LinkedIn - a note before you start</h3>
+  <p>Your LinkedIn profile needs one update before Week 4 when you post there: your headline should name nervous system coaching, not just "wellness practitioner." Something like "Nervous System Coach for Women in Leadership | Psychological Science | Space Between Wellness" gives the algorithm and the reader enough to know they are in the right place.</p>
+
+  <hr>
+
+  <!-- ============================================================ -->
+  <h2>Phase 1 - Days 1-14: Establish Presence (Weeks 2-3)</h2>
+  <!-- ============================================================ -->
+
+  <div class="phase-block phase-1">
+    <div class="phase-label">Phase 1 theme</div>
+    <h3>"I'm here. And this is what I actually do."</h3>
+    <p>The goal this phase is simple: make the right people feel immediately seen and give them a reason to follow. No selling. No CTA beyond "follow for more of this." You are planting the flag and letting the content do the positioning work for you.</p>
+  </div>
+
+  <h3>Cadence</h3>
+  <ul>
+    <li>Monday to Friday: 1 reel or carousel per day</li>
+    <li>Daily: 1-3 stories (behind-the-scenes, polls, question stickers)</li>
+    <li>Sunday: 1 carousel (this is your quieter, more reflective post - good for personal story or framework content)</li>
+  </ul>
+
+  <h3>Pillar pattern - weeks 2 and 3</h3>
+  <p>Each week rotates through four content pillars. Here is the split and the pattern for each.</p>
+
+  <div class="pattern-box">
+    <h4>Education (2x per week) - hook + reframe + name the thing</h4>
+    <p>Hook: Something she has been thinking but has not heard named out loud.</p>
+    <p>Body: One piece of nervous system science or a framework reframe. Keep it to one idea. Three sentences max.</p>
+    <p>CTA: "Save this. Share it with someone who needs to hear it." No link needed this phase.</p>
+  </div>
+
+  <div class="pattern-box">
+    <h4>Personal story (1x per week) - your journey, not your credentials</h4>
+    <p>Hook: Start mid-story, not at the beginning. Drop us in at the moment of tension.</p>
+    <p>Body: One specific moment. What you felt, what shifted, what you understand now that you did not then.</p>
+    <p>CTA: "Tell me if this lands for you." Invite conversation, not clicks.</p>
+  </div>
+
+  <div class="pattern-box">
+    <h4>Client moment (1x per week) - let her story do the work</h4>
+    <p>Hook: A direct quote (anonymised) or a moment from a session - the shift, the realisation, the thing she said on her way out the door.</p>
+    <p>Body: Brief context. What was happening in the nervous system. What changed.</p>
+    <p>CTA: "She is not the only one. This is what the work looks like." No application link yet.</p>
+  </div>
+
+  <div class="pattern-box">
+    <h4>Behind the scenes (1x per week) - let them in</h4>
+    <p>Hook: Something quiet and real. A stillness shot from the studio. The sound bath setup. A walk by the water before a session day.</p>
+    <p>Body: One or two lines of voiceover about what this space holds or what this practice means to you.</p>
+    <p>CTA: "This is where the work happens." No action required.</p>
+  </div>
+
+  <hr>
+
+  <!-- ============================================================ -->
+  <h2>Phase 2 - Days 15-30: Build Trust (Weeks 4-5)</h2>
+  <!-- ============================================================ -->
+
+  <div class="phase-block phase-2">
+    <div class="phase-label">Phase 2 theme</div>
+    <h3>"This is the work. Here is what it looks like."</h3>
+    <p>You have shown up consistently for two weeks. Your audience is warmer. Now you go one layer deeper into the framework, introduce the four states as a mini-series, and make your first soft ask - the quiz. Still no direct session pitch. That comes in Phase 3.</p>
+  </div>
+
+  <h3>The 4 States mini-series</h3>
+  <p>One reel per week for four weeks (runs across Phases 2 and 3). Name each state, describe what it feels like in the body, remove the shame from it, and leave the door open. These four pieces of content will become some of your most-saved and most-shared. They are the backbone of your intellectual property on social.</p>
+
+  <ul>
+    <li>Week 4: Activation - "driven, restless, always on. Rest feels like failure."</li>
+    <li>Week 5: Over Giving - "agreeable on the outside, screaming on the inside." This is Script 2 - film it or voiceover it over a walk.</li>
+    <li>Week 6: Shut Down - "foggy, flat, going through the motions. Not broken. Just depleted."</li>
+    <li>Week 7: Regulated - "this is the state where actual choices get made. Here is what it feels like."</li>
+  </ul>
+
+  <h3>First soft CTA - end of Week 4</h3>
+  <p>On Day 26 or 27 (Thursday or Friday of Week 4), for the first time, direct people to the quiz in your bio. Caption: "If you read that and felt something, the quiz in my bio will tell you which state you have been living in. It takes two minutes and it might give you the clearest language you have had for this in a while."</p>
+
+  <h3>LinkedIn starts in Week 4</h3>
+  <p>One post per week, Thursday. Your LinkedIn audience is executives and leaders - they respond to evidence-informed frameworks, not emotional hooks alone. Lead with the science, follow with the human truth. Target 600-900 words. No lists of dot points - write in paragraphs. Sign off with a question to the comments.</p>
+
+  <p>Week 4 LinkedIn topic: "What your team's presenteeism is actually telling you" - introduce the Activation state through a workplace lens. This is the post that seeds the corporate offering without pitching it.</p>
+
+  <h3>First testimonial reel - Week 5</h3>
+  <p>Use the sound bath testimonial already in the welcome email sequence: "It was like something drew me toward you, knowing I was in for a bad day. It was truly something special - like a reset and rest my body truly needed." Film a voiceover reel with sound bath footage as the visual. Let the quote breathe. Do not add explanation - the quote is the content.</p>
+
+  <hr>
+
+  <!-- ============================================================ -->
+  <h2>Phase 3 - Days 31-45: Convert to Action (Weeks 6-7)</h2>
+  <!-- ============================================================ -->
+
+  <div class="phase-block phase-3">
+    <div class="phase-label">Phase 3 theme</div>
+    <h3>"If you are ready for a doorway in."</h3>
+    <p>This is where you introduce the Clarity and Capacity Reset. Two reels position the offer. The rest of the content does not change - you are still running all four pillars. The offer sits inside the content rhythm, not on top of it. If she has been watching you for five weeks, the offer will feel like a natural next step, not a sales pitch.</p>
+  </div>
+
+  <h3>Offer positioning - two reels, different angles</h3>
+
+  <p>Reel 1 (Day 32): "What actually happens in a Clarity and Capacity Reset." Walk through the four things that happen inside the 90 minutes. Use Script 4 energy ("you ticked every box") as the opening context, then pivot to: here is what we do about it. Voiceover over the studio or sound bath visual is fine here. Face-to-camera if you are ready.</p>
+
+  <p>Reel 2 (Day 39): A client moment reel - anonymised, specific. "She came in running on Activation. She left knowing exactly which pattern was driving it, and with two tools she could use that afternoon." No before-and-after language. Just the reality of what shifts in 90 minutes of real work.</p>
+
+  <h3>Soft urgency play</h3>
+  <p>Do not manufacture urgency. Use what is real: you are solo, you are in Hobart, and you have a finite number of 1:1 slots available each month. From Day 38 onwards, your story CTAs can include: "I have four 1:1 slots available this month. If you have been thinking about it, the application is in my bio." That is the whole sentence. No countdown timers, no "last chance," no artificial scarcity.</p>
+
+  <h3>Stories - the Behind the Application series (Days 38-45)</h3>
+  <p>Three to five stories across this period showing what the application process actually looks like. Not a tutorial - a normalisation. "The application has six questions. They are not hard questions but they are honest ones. Most people tell me filling it out gives them clarity before we have even spoken."</p>
+
+  <h3>TikTok - starts in Week 5</h3>
+  <p>From Day 35, start repurposing your strongest three Instagram reels to TikTok. Same video, same caption, same hashtags. The extra time cost is posting. Aim for three times per week on TikTok maximum. If it starts to feel like work, drop to twice. Your nervous system awareness is the product - do not run your own in deficit to prove a point.</p>
+
+  <h3>LinkedIn - Weeks 6 and 7</h3>
+  <ul>
+    <li>Week 6: "Why 'resilience training' is the wrong frame for high-performing teams" - introduce Over Giving through an organisational lens. No pitch. End with a question.</li>
+    <li>Week 7: Your personal story - depression at 12, the generational pattern, what you built from it. This is the post that converts LinkedIn followers into people who trust you enough to apply. Write it as a narrative, not a listicle. 800-1000 words. Sign off "Em x."</li>
+  </ul>
+
+  <hr>
+
+  <!-- ============================================================ -->
+  <h2>Phase 4 - Days 46-60: Optimise and Amplify (Week 8+)</h2>
+  <!-- ============================================================ -->
+
+  <div class="phase-block phase-4">
+    <div class="phase-label">Phase 4 theme</div>
+    <h3>Read the room. Double down on what worked.</h3>
+    <p>By Day 46 you have six weeks of data. Look at your top three reels by saves and profile visits (not likes - those are vanity, saves and visits are signals of actual intent). What are they about? That is your content priority for the next 60 days. Everything else informs but does not override.</p>
+  </div>
+
+  <h3>What to do with your strongest content</h3>
+  <ul>
+    <li>Top reel by saves - pin it if it is not already pinned. Turn it into a carousel (pull the 3-4 key lines, make each one a slide). Boost it with $100 in Meta ads (see the Meta Ad plan below).</li>
+    <li>Top reel by profile visits - this is your acquisition content. It is making people curious enough to find out more. Turn it into a TikTok stitch or duet prompt if the topic allows.</li>
+    <li>Top carousel by shares - this one is being sent to people. It is your most relatable, most "this is my friend" content. Write a LinkedIn long-form version of the same idea.</li>
+  </ul>
+
+  <h3>LinkedIn long-form article - Week 8</h3>
+  <p>Write a proper LinkedIn article using the Space Between Method as the framework. Title suggestion: "The Four Nervous System States That Are Running Your Leadership Team (And What To Do About Each One)." Structure: brief intro on nervous system science, one section per state, one practical application per state for leaders. 1200-1500 words. This is the article you send to corporate contacts and use as the basis for any speaking pitches.</p>
+
+  <h3>Email nurture goes live - Week 8</h3>
+  <p>The four-email welcome sequence is already written and ready in /welcome-emails.html. Week 8 is when you wire it into Flodesk and attach it to the bio link opt-in. From this point, anyone who clicks the quiz or signs up to your list enters the sequence automatically. Social drives people to the list. The list converts them to applications.</p>
+
+  <hr>
+
+  <!-- ============================================================ -->
+  <h2>The First Meta Ad Campaign (Days 45-60)</h2>
+  <!-- ============================================================ -->
+
+  <h3>What to boost and when</h3>
+  <p>Wait until you have six weeks of organic data before spending a cent on ads. By Day 45 you will know which reel is your strongest by saves and profile visits. That is the one you boost. Do not guess. Let the algorithm show you first.</p>
+
+  <h4>Campaign setup</h4>
+
+  <table>
+    <tr><th>Field</th><th>Setting</th></tr>
+    <tr><td>Objective</td><td>Traffic - link clicks to /apply.html</td></tr>
+    <tr><td>Budget</td><td>$100-200 total, run over 14 days ($7-14/day)</td></tr>
+    <tr><td>Ad type</td><td>Boost your strongest reel + 1 carousel as a second ad set</td></tr>
+    <tr><td>Placement</td><td>Instagram feed + Instagram Reels only. No Facebook, no Audience Network.</td></tr>
+    <tr><td>Geographic target</td><td>Start: Australia-wide. Week 2: if you are getting applications from Hobart or wider Tasmania, layer in a Tasmanian-specific ad set with the local urgency angle ("limited 1:1 slots in Hobart available").</td></tr>
+    <tr><td>Age</td><td>30-48</td></tr>
+    <tr><td>Gender</td><td>Women</td></tr>
+    <tr><td>Interests</td><td>Wellness, personal development, yoga, meditation, somatic therapy, women's coaching, trauma-informed care</td></tr>
+    <tr><td>Exclude</td><td>People who have already visited your website (retargeting is a later-stage play)</td></tr>
+  </table>
+
+  <h4>What to measure</h4>
+
+  <div class="metric-row">
+    <span class="metric-name">Cost per link click</span>
+    <span class="metric-detail">Target under $2.50 AUD. If it is above $4, pause the ad and check whether the creative matches the audience or whether the landing page has a friction issue.</span>
+  </div>
+  <div class="metric-row">
+    <span class="metric-name">Application form submissions</span>
+    <span class="metric-detail">The actual conversion metric. If you spend $150 and get 2-3 qualified applications, that is a strong result for a first campaign. One converted session ($200) already covers the ad spend.</span>
+  </div>
+  <div class="metric-row">
+    <span class="metric-name">Video view rate</span>
+    <span class="metric-detail">For reel ads: what percentage watch past 3 seconds and past 15 seconds? If 3-second rate is under 40%, the hook is not working. Recut the opening 2 seconds.</span>
+  </div>
+  <div class="metric-row">
+    <span class="metric-name">Audience signal</span>
+    <span class="metric-detail">After 7 days, Meta will show you which interest categories are converting at the lowest cost. Let that reshape your Phase 5 targeting.</span>
+  </div>
+
+  <div class="callout warning">
+    <p>Do not run ads to a profile that is under 60 posts deep. The ad drives people to your profile and your link - if the profile does not convert them on arrival, you are paying for traffic that immediately leaves. Ads only go live in Week 8, after six weeks of content has built the container they are landing in.</p>
+  </div>
+
+  <hr>
+
+  <!-- ============================================================ -->
+  <h2>60-Day Content Calendar</h2>
+  <!-- ============================================================ -->
+
+  <p>Each row is one piece of content. Stories are not listed individually - assume 1-3 stories every day you post, behind-the-scenes or question sticker. The "hook" column is the first line of the reel or the opening line of the caption.</p>
+
+  <table>
+    <tr>
+      <th>Day</th>
+      <th>Platform</th>
+      <th>Type</th>
+      <th>Pillar</th>
+      <th>Hook (first line)</th>
+      <th>CTA</th>
+    </tr>
+    <!-- PHASE 1 - WEEK 2 -->
+    <tr><td colspan="6" style="background: var(--earth-deep); color: var(--blush); font-family: 'Playfair Display', serif; font-style: italic; font-weight: 500; padding: 10px 14px;">Phase 1 - Week 2 (Days 1-7) - Establish presence</td></tr>
+    <tr><td>1</td><td>IG</td><td>Reel - voiceover</td><td>Education</td><td>"You're not burnt out. And that's the problem." (Script 1)</td><td>Follow for more of this</td></tr>
+    <tr><td>2</td><td>IG</td><td>Reel - face-to-cam or voiceover</td><td>Personal story</td><td>"Every coach I'd seen before handed me back a smaller version of myself." (Script 3)</td><td>Tell me if this lands for you</td></tr>
+    <tr><td>3</td><td>IG</td><td>Photo carousel (2-3 slides)</td><td>Education</td><td>"Your nervous system has four states. Which one are you living in?"</td><td>Save this and come back to it</td></tr>
+    <tr><td>4</td><td>IG</td><td>Reel - voiceover</td><td>Behind the scenes</td><td>"This is where the work happens. Hobart. Tuesday mornings."</td><td>No action needed - just let it land</td></tr>
+    <tr><td>5</td><td>IG</td><td>Reel - face-to-cam or voiceover</td><td>Education</td><td>"You ticked every box. And it still doesn't feel like enough." (Script 4)</td><td>Share this with someone who needs to hear it</td></tr>
+    <tr><td>6</td><td>IG</td><td>Reel - voiceover</td><td>Client moment</td><td>"She came in thinking she needed a strategy. She left knowing it was never about strategy."</td><td>This is what the work looks like</td></tr>
+    <tr><td>7</td><td>IG</td><td>Sunday carousel (3-4 slides)</td><td>Personal story</td><td>"Why I stopped trying to be a traditional psychologist."</td><td>Follow if you want the longer version of this story</td></tr>
+
+    <!-- PHASE 1 - WEEK 3 -->
+    <tr><td colspan="6" style="background: var(--earth-deep); color: var(--blush); font-family: 'Playfair Display', serif; font-style: italic; font-weight: 500; padding: 10px 14px;">Phase 1 - Week 3 (Days 8-14) - Deepen the presence</td></tr>
+    <tr><td>8</td><td>IG</td><td>Reel - voiceover</td><td>Education</td><td>"Your body has been saying no for months. You just haven't been listening." (Script 2)</td><td>Save this. Share it. This is the one.</td></tr>
+    <tr><td>9</td><td>IG</td><td>Reel - face-to-cam</td><td>Personal story</td><td>"I have a psychology degree. And I also believe there's something beyond what the research can measure." (Script 5)</td><td>Tell me which part landed hardest for you</td></tr>
+    <tr><td>10</td><td>IG</td><td>Photo carousel (3 slides)</td><td>Education</td><td>"Fed up is different to burnt out. Here's how to tell the difference."</td><td>Save this for the next time someone tells you you're burnt out</td></tr>
+    <tr><td>11</td><td>IG</td><td>Reel - voiceover</td><td>Behind the scenes</td><td>"What I do on a sound bath morning before anyone else arrives."</td><td>Nothing. Just breathe it in.</td></tr>
+    <tr><td>12</td><td>IG</td><td>Reel - voiceover</td><td>Education</td><td>"Activation isn't ambition. It's your nervous system stuck in drive with no off switch."</td><td>Follow for the full mini-series on the four states</td></tr>
+    <tr><td>13</td><td>IG</td><td>Reel - voiceover</td><td>Client moment</td><td>"Three words she said at the end of her session that I keep thinking about."</td><td>The application is in my bio when you're ready</td></tr>
+    <tr><td>14</td><td>IG</td><td>Sunday carousel (4 slides)</td><td>Education</td><td>"The difference between someone else's programme and your own. A quick framework."</td><td>Save this. The framework is the thing.</td></tr>
+
+    <!-- PHASE 2 - WEEK 4 -->
+    <tr><td colspan="6" style="background: var(--earth-deep); color: var(--blush); font-family: 'Playfair Display', serif; font-style: italic; font-weight: 500; padding: 10px 14px;">Phase 2 - Week 4 (Days 15-21) - Build trust + first soft ask</td></tr>
+    <tr><td>15</td><td>IG</td><td>Reel - face-to-cam</td><td>Education</td><td>"This week I want to talk about Activation. Because most of the women I work with are in it without knowing it."</td><td>Follow - Shut Down comes next week</td></tr>
+    <tr><td>16</td><td>IG</td><td>Reel - voiceover</td><td>Personal story</td><td>"The moment I realised I was running on someone else's definition of enough."</td><td>Tell me if this sounds familiar</td></tr>
+    <tr><td>17</td><td>IG</td><td>Photo carousel (3 slides)</td><td>Education</td><td>"Recognise. Restore. Realign. Reclaim. The four stages of finding your way back."</td><td>Save this - it's the whole framework in four words</td></tr>
+    <tr><td>18</td><td>IG</td><td>Reel - voiceover</td><td>Behind the scenes</td><td>"Why I work from a studio in Hobart and not from a laptop in a coffee shop."</td><td>No action - just context</td></tr>
+    <tr><td>19</td><td>IG</td><td>Reel - voiceover</td><td>Education</td><td>"The Activation state looks like success from the outside. Here's what it feels like from the inside."</td><td>Which state feels most familiar? Drop it below.</td></tr>
+    <tr><td>20</td><td>IG</td><td>Reel - voiceover</td><td>Client moment</td><td>"She described Activation perfectly without knowing the word for it."</td><td>Take the quiz in my bio - it names which state you're in</td></tr>
+    <tr><td>21</td><td>IG + LI</td><td>IG: Sunday carousel / LI: long-form post</td><td>Education</td><td>IG: "The quiz is live. Here's what it tells you and why it matters." LI: "What your team's presenteeism is actually telling you (a nervous system view)"</td><td>IG: Quiz link in bio / LI: Question for comments</td></tr>
+
+    <!-- PHASE 2 - WEEK 5 -->
+    <tr><td colspan="6" style="background: var(--earth-deep); color: var(--blush); font-family: 'Playfair Display', serif; font-style: italic; font-weight: 500; padding: 10px 14px;">Phase 2 - Week 5 (Days 22-30) - The Over Giving state + first testimonial reel</td></tr>
+    <tr><td>22</td><td>IG</td><td>Reel - face-to-cam or voiceover</td><td>Education</td><td>"Over Giving. Not a character flaw. A pattern." (Script 2)</td><td>Save this - it's the one people send to their friends</td></tr>
+    <tr><td>23</td><td>IG</td><td>Reel - voiceover</td><td>Personal story</td><td>"I said yes to things my whole nervous system was screaming no to. For years."</td><td>Tell me - are you a yes-when-you-mean-no person?</td></tr>
+    <tr><td>24</td><td>IG</td><td>Photo carousel (3 slides)</td><td>Education</td><td>"What Over Giving actually costs you. It's not what you think."</td><td>Share this with someone who gives too much</td></tr>
+    <tr><td>25</td><td>IG</td><td>Reel - voiceover</td><td>Behind the scenes</td><td>"What I do between sessions to stay regulated. It's less glamorous than you'd expect."</td><td>Follow for the reality version of wellness</td></tr>
+    <tr><td>26</td><td>IG</td><td>Reel - voiceover</td><td>Client moment / Testimonial</td><td>"She said it was like something drew her toward me, knowing she was in for a bad day."</td><td>The quiz in my bio tells you which state you've been running in</td></tr>
+    <tr><td>27</td><td>IG + LI</td><td>IG: Reel / LI: long-form post</td><td>Education</td><td>IG: "You've been agreeable for so long you've lost track of what you actually want." LI: "Why resilience training is the wrong frame for high-performing teams"</td><td>IG: Quiz link in bio / LI: Question for comments</td></tr>
+    <tr><td>28</td><td>IG + TikTok</td><td>Reel - repurpose Day 1 or Day 8</td><td>Education</td><td>Repurpose strongest reel from Weeks 2-3 to TikTok</td><td>Follow for more of this</td></tr>
+    <tr><td>29</td><td>IG</td><td>Reel - voiceover</td><td>Education</td><td>"Over Giving ends when you get curious about it, not when you force yourself to stop."</td><td>Application in bio for 1:1 work</td></tr>
+    <tr><td>30</td><td>IG</td><td>Sunday carousel (4 slides)</td><td>Personal story</td><td>"Why I believe spirituality belongs in the same room as psychology. The honest version."</td><td>Tell me which part of this surprised you</td></tr>
+
+    <!-- PHASE 3 - WEEK 6 -->
+    <tr><td colspan="6" style="background: var(--earth-deep); color: var(--blush); font-family: 'Playfair Display', serif; font-style: italic; font-weight: 500; padding: 10px 14px;">Phase 3 - Week 6 (Days 31-37) - Introduce the offer</td></tr>
+    <tr><td>31</td><td>IG + TikTok</td><td>Reel - voiceover</td><td>Education</td><td>"Shut Down. The state nobody talks about because it doesn't look like a crisis."</td><td>Follow - this is week 3 of the 4 states series</td></tr>
+    <tr><td>32</td><td>IG</td><td>Reel - face-to-cam</td><td>Conversion</td><td>"Here's what actually happens in a Clarity and Capacity Reset."</td><td>Apply via link in bio - I review every application personally</td></tr>
+    <tr><td>33</td><td>IG + TikTok</td><td>Reel - voiceover</td><td>Education</td><td>"Foggy. Flat. Going through the motions. This is Shut Down."</td><td>Quiz in bio names which state you're in</td></tr>
+    <tr><td>34</td><td>IG</td><td>Reel - voiceover</td><td>Behind the scenes</td><td>"The inside of a session day in Hobart. From my end."</td><td>No action - just presence</td></tr>
+    <tr><td>35</td><td>IG + LI + TikTok</td><td>IG: carousel / LI: long-form / TikTok: repurpose</td><td>Personal story</td><td>IG: "The cycle I was born into. And the one I decided to break." LI: Emily's personal story post</td><td>IG: Follow / LI: Comments open</td></tr>
+    <tr><td>36</td><td>IG + TikTok</td><td>Reel - voiceover</td><td>Client moment</td><td>"She came in running on Shut Down. She left with the name for what had been happening for three years."</td><td>Application in bio - 4 slots left this month</td></tr>
+    <tr><td>37</td><td>IG</td><td>Sunday carousel</td><td>Education</td><td>"Shut Down isn't weakness. It's what happens when your system runs out of capacity."</td><td>Save this for the next time you call yourself lazy</td></tr>
+
+    <!-- PHASE 3 - WEEK 7 -->
+    <tr><td colspan="6" style="background: var(--earth-deep); color: var(--blush); font-family: 'Playfair Display', serif; font-style: italic; font-weight: 500; padding: 10px 14px;">Phase 3 - Week 7 (Days 38-45) - Convert to action</td></tr>
+    <tr><td>38</td><td>IG + TikTok</td><td>Reel - voiceover</td><td>Education</td><td>"Regulated. This is the one. Here's what it actually feels like."</td><td>The goal of every session. The quiz tells you where you're starting from.</td></tr>
+    <tr><td>39</td><td>IG</td><td>Reel - face-to-cam</td><td>Conversion</td><td>"She came in knowing something was off. She left knowing exactly what it was."</td><td>Application link in bio - I have four slots left this month</td></tr>
+    <tr><td>40</td><td>IG + TikTok</td><td>Reel - voiceover</td><td>Education</td><td>"Regulated doesn't mean calm. It means you can feel it all without being run by it."</td><td>Save this - it's the most important reframe in the whole mini-series</td></tr>
+    <tr><td>41</td><td>IG</td><td>Photo carousel</td><td>Behind the scenes</td><td>"What the application asks you. And why each question matters."</td><td>Apply via link in bio</td></tr>
+    <tr><td>42</td><td>IG + LI</td><td>IG: Reel / LI: long-form post</td><td>Conversion</td><td>IG: "90 minutes to get to the root of it." LI: "The Framework article - the 4 states for leaders"</td><td>IG: Apply link in bio / LI: Share with your network</td></tr>
+    <tr><td>43</td><td>IG + TikTok</td><td>Reel - voiceover</td><td>Client moment</td><td>"The question she asked herself on the way to her session that changed everything."</td><td>Application in bio - this month's slots are almost full</td></tr>
+    <tr><td>44</td><td>IG</td><td>Reel - voiceover</td><td>Conversion</td><td>"If you have been thinking about it, this is your sign to stop thinking."</td><td>Apply at the link in my bio. I'll be honest if it's not the right fit.</td></tr>
+    <tr><td>45</td><td>IG</td><td>Sunday carousel</td><td>Personal story</td><td>"What I learned the first time I actually let myself be held by someone else's work."</td><td>This is what I want for you too</td></tr>
+
+    <!-- PHASE 4 - WEEK 8 -->
+    <tr><td colspan="6" style="background: var(--earth-deep); color: var(--blush); font-family: 'Playfair Display', serif; font-style: italic; font-weight: 500; padding: 10px 14px;">Phase 4 - Week 8 (Days 46-60) - Optimise, amplify, go again</td></tr>
+    <tr><td>46</td><td>IG + TikTok</td><td>Reel - repurpose top performer</td><td>Education</td><td>Reshare or recutyour highest-save reel from Weeks 2-5</td><td>Same CTA as original</td></tr>
+    <tr><td>47</td><td>IG</td><td>Reel - voiceover</td><td>Client moment</td><td>"Three things that shifted for her in the session. In her words."</td><td>Application in bio</td></tr>
+    <tr><td>48</td><td>IG + TikTok</td><td>Reel - new</td><td>Education</td><td>"The thing that nobody tells you about nervous system work."</td><td>Quiz in bio if you want to know your state</td></tr>
+    <tr><td>49</td><td>IG</td><td>Photo carousel</td><td>Behind the scenes</td><td>"Six weeks in. What I've noticed about showing up consistently."</td><td>No action - just honesty</td></tr>
+    <tr><td>50</td><td>IG + LI</td><td>IG: Reel / LI: Article publish</td><td>Conversion</td><td>IG: "Still a few spots left before I close the month." LI: LinkedIn long-form article live</td><td>IG: Apply link / LI: Share to network</td></tr>
+    <tr><td>51</td><td>IG + TikTok</td><td>Reel - voiceover</td><td>Education</td><td>"The pattern underneath Over Giving that most people miss."</td><td>Save this - it is the thing</td></tr>
+    <tr><td>52</td><td>IG</td><td>Sunday carousel</td><td>Personal story</td><td>"What eight weeks of consistent content has taught me about my own nervous system."</td><td>Tell me - what has landed most for you?</td></tr>
+    <tr><td>53</td><td>IG + TikTok</td><td>Reel - voiceover</td><td>Education</td><td>"Why grounding works. The actual neuroscience in under 60 seconds."</td><td>Follow for evidence-informed wellness content</td></tr>
+    <tr><td>54</td><td>IG</td><td>Reel - face-to-cam</td><td>Personal story</td><td>"The question I ask every woman before we start working together."</td><td>Apply via link in bio</td></tr>
+    <tr><td>55</td><td>IG + TikTok</td><td>Reel - voiceover</td><td>Client moment</td><td>"She said she'd tried everything. She hadn't tried this."</td><td>Application in bio - July slots now open</td></tr>
+    <tr><td>56</td><td>IG + LI</td><td>IG: Carousel / LI: Post</td><td>Conversion</td><td>IG: "What the Clarity and Capacity Reset is. And what it isn't." LI: "What nervous system awareness unlocks for leaders in complex roles"</td><td>IG: Apply link / LI: Comments</td></tr>
+    <tr><td>57</td><td>IG</td><td>Sunday carousel</td><td>Education</td><td>"The Recognise, Restore, Realign, Reclaim framework. An honest walkthrough."</td><td>Save this - refer back when you need to orient yourself</td></tr>
+    <tr><td>58</td><td>IG + TikTok</td><td>Reel - voiceover</td><td>Education</td><td>"The moment your body tells you something before your brain has caught up."</td><td>This is the work. Application in bio.</td></tr>
+    <tr><td>59</td><td>IG</td><td>Reel - face-to-cam</td><td>Personal story</td><td>"What I want for you at the end of your 60 days."</td><td>Apply if you are ready - I am here</td></tr>
+    <tr><td>60</td><td>IG + LI</td><td>IG: Photo + caption / LI: Post</td><td>Conversion</td><td>IG: "60 days of showing up. Here's what I know now that I didn't know then." LI: Same post, professional framing</td><td>IG: Apply or quiz / LI: Follow for more</td></tr>
+  </table>
+
+  <hr>
+
+  <!-- ============================================================ -->
+  <h2>30 Ready-to-Post Hooks</h2>
+  <!-- ============================================================ -->
+
+  <p>These are written in your voice, pulled directly from your resonance profile, your video scripts, and your "Is this you?" copy. Drop any of them straight into a reel or a caption. The number after each one is the script it draws from, where relevant.</p>
+
+  <div class="hook-group">
+    <div class="hook-label">Education (10 hooks)</div>
+    <div class="hook-card edu"><span>Edu-01</span>You're not burnt out. And that's the problem. Because every time someone uses that word, it doesn't quite fit. (Script 1)</div>
+    <div class="hook-card edu"><span>Edu-02</span>Your body has been saying no for months. You just haven't been listening. (Script 2)</div>
+    <div class="hook-card edu"><span>Edu-03</span>Activation isn't ambition. It's your nervous system stuck in drive with no off switch.</div>
+    <div class="hook-card edu"><span>Edu-04</span>Over Giving is not a character flaw. It's a pattern your nervous system learned when keeping the peace felt safer than speaking up.</div>
+    <div class="hook-card edu"><span>Edu-05</span>Shut Down doesn't look like a breakdown. It looks like functioning. Going through the motions. Watching your own life from a slight distance.</div>
+    <div class="hook-card edu"><span>Edu-06</span>Regulated doesn't mean calm. It means you can feel it all without being run by it.</div>
+    <div class="hook-card edu"><span>Edu-07</span>Fed up is different to burnt out. One is about your nervous system running someone else's programme. The other is about depletion. Only one of them names what's actually happening for you.</div>
+    <div class="hook-card edu"><span>Edu-08</span>The gap between what you have and what you feel is real. You are not making it up. And it is not ingratitude. (Script 4)</div>
+    <div class="hook-card edu"><span>Edu-09</span>When you have said yes so many times that you have lost track of what you actually want, that's Over Giving. And it's workable.</div>
+    <div class="hook-card edu"><span>Edu-10</span>Recognise. Restore. Realign. Reclaim. Four words. One path back to yourself.</div>
+  </div>
+
+  <div class="hook-group">
+    <div class="hook-label">Personal story (6 hooks)</div>
+    <div class="hook-card personal"><span>Personal-01</span>Every coach I'd seen before handed me back a smaller version of myself. I'm not here to do that to you. (Script 3)</div>
+    <div class="hook-card personal"><span>Personal-02</span>I have a psychology degree. Eight years in complex trauma. And I also believe there is something beyond what any research can measure. (Script 5)</div>
+    <div class="hook-card personal"><span>Personal-03</span>The spiritual part of me that previous coaches told me to hide? I brought it back in. And everything changed.</div>
+    <div class="hook-card personal"><span>Personal-04</span>I know what it is to run someone else's programme and call it your life. I did it for years before I understood what was happening.</div>
+    <div class="hook-card personal"><span>Personal-05</span>The most powerful thing I ever did for my own nervous system was stop trying to earn my way to rest.</div>
+    <div class="hook-card personal"><span>Personal-06</span>I stopped pursuing traditional psychology training because it kept asking me to leave the most important parts at the door.</div>
+  </div>
+
+  <div class="hook-group">
+    <div class="hook-label">Client moment (6 hooks)</div>
+    <div class="hook-card client"><span>Client-01</span>She came in thinking she needed a strategy. She left knowing it was never about strategy.</div>
+    <div class="hook-card client"><span>Client-02</span>"It was like something drew me toward you, knowing I was in for a bad day. It was truly something special - like a reset and rest my body truly needed."</div>
+    <div class="hook-card client"><span>Client-03</span>She had been in therapy for three years. Not because therapy wasn't helping - because she hadn't had both things in the same room at once.</div>
+    <div class="hook-card client"><span>Client-04</span>She described her nervous system state perfectly without knowing the word for it. That's how real this is - the body already knows. It's just waiting for language.</div>
+    <div class="hook-card client"><span>Client-05</span>She said yes to the session in a whisper. Like she wasn't sure she was allowed. By the end, she wasn't whispering anymore.</div>
+    <div class="hook-card client"><span>Client-06</span>She called it a doorway. Not a solution, not a fix. A doorway. That is the most accurate thing anyone has ever said about this work.</div>
+  </div>
+
+  <div class="hook-group">
+    <div class="hook-label">Behind the scenes (4 hooks)</div>
+    <div class="hook-card bts"><span>BTS-01</span>This is where the work happens. Hobart. Tuesday mornings. Before anyone else arrives.</div>
+    <div class="hook-card bts"><span>BTS-02</span>What I do between sessions to stay regulated. It's less glamorous than you'd expect. But it's the thing.</div>
+    <div class="hook-card bts"><span>BTS-03</span>Setting up the sound bath this morning. There is something about arranging a space for someone to fully arrive in that never gets old.</div>
+    <div class="hook-card bts"><span>BTS-04</span>The walk I take before every session day. Not because it's a ritual. Because Hobart water in the morning is the best regulation tool I have found.</div>
+  </div>
+
+  <div class="hook-group">
+    <div class="hook-label">Conversion (4 hooks)</div>
+    <div class="hook-card convert"><span>Conv-01</span>90 minutes. One-on-one. We do a full nervous system mapping, identify the pattern underneath, and build two or three tools around your actual life. $200. Application in my bio.</div>
+    <div class="hook-card convert"><span>Conv-02</span>If you have been quietly thinking "something needs to change" for longer than a year, this session was made for that thought.</div>
+    <div class="hook-card convert"><span>Conv-03</span>This isn't a discovery call. I'm not going to spend 90 minutes telling you what I offer. We're going to do actual work from the moment we start.</div>
+    <div class="hook-card convert"><span>Conv-04</span>I review every application personally. If it's not the right fit, I'll tell you. That honesty is the foundation of everything I do.</div>
+  </div>
+
+  <hr>
+
+  <!-- ============================================================ -->
+  <h2>Weekly Operations Plan</h2>
+  <!-- ============================================================ -->
+
+  <p>Everything below assumes you are working solo, from your phone or laptop, and you want to protect your own nervous system regulation while running a content schedule. This structure is designed to keep the time cost under 2 hours on heavy days and 20 minutes on light ones.</p>
+
+  <div style="background: var(--warm-white); border-radius: 10px; padding: 28px 32px; margin: 20px 0;">
+    <div class="ops-row">
+      <span class="ops-day">Sunday (1 hr)</span>
+      <span class="ops-task">Review the week ahead in this document. Choose which hook you will use for each day. Open Notes on your phone and draft your five captions in one sitting. Schedule or pre-write them in Meta Business Suite or Later. Batch script the Sunday carousel for the following week while you're in creative mode.</span>
+    </div>
+    <div class="ops-row">
+      <span class="ops-day">Monday (1.5 hrs)</span>
+      <span class="ops-task">Film day. Set up your filming spot (window light, clear background, phone on tripod or propped stable). Film three to five takes of each reel you need for the week. Choose your best take in playback. Open Canva or CapCut and drop your reel cover from the pre-built template set. Export and post Monday's reel. Schedule Tuesday's reel if you have it ready.</span>
+    </div>
+    <div class="ops-row">
+      <span class="ops-day">Tue - Fri (20 min/day)</span>
+      <span class="ops-task">Post the day's reel or carousel (already edited from Monday). Add 2-3 stories - one can be a re-share of yesterday's post, one can be a question sticker or poll related to the week's theme. Reply to comments and DMs within the day. This is not optional - replies from early followers are some of your warmest future clients.</span>
+    </div>
+    <div class="ops-row">
+      <span class="ops-day">Saturday (optional, 30 min)</span>
+      <span class="ops-task">TikTok repurposing only - from Week 5 onwards. Download your top three reels from Instagram (save from your own profile), re-upload to TikTok with the same caption. No re-editing required. This is a bonus, not a requirement. If your energy is low, rest. Your content will keep running without Saturday.</span>
+    </div>
+    <div class="ops-row">
+      <span class="ops-day">LinkedIn days (Thu, 45 min)</span>
+      <span class="ops-task">From Week 4 only. Open the LinkedIn post draft you wrote on Sunday. Read it once, adjust the tone to be slightly more formal than your Instagram voice. Add a closing question. Post. Reply to any comments within 24 hours - LinkedIn rewards early engagement.</span>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>One practical note: if you batch-film on Monday and the footage is off - bad light, you were in Activation and it reads in your body - do not push through and use bad footage. Reschedule the film to Tuesday and post a strong photo from your existing 16 on Monday instead. A clean still image with a great caption always outperforms a reel you filmed under duress.</p>
+  </div>
+
+  <hr>
+
+  <!-- ============================================================ -->
+  <h2>Metrics That Actually Matter</h2>
+  <!-- ============================================================ -->
+
+  <p>You are a solopreneur with one offer, a finite number of monthly slots, and zero interest in chasing vanity numbers. Here is what to track, what it means, and what to do with the information.</p>
+
+  <div class="metric-row">
+    <span class="metric-name">Saves (priority one)</span>
+    <span class="metric-detail">Someone saving a post means they thought "I want to come back to this." It is the strongest single signal of resonance on Instagram. Check weekly: which post this week had the most saves? Make more content on that theme.</span>
+  </div>
+  <div class="metric-row">
+    <span class="metric-name">Profile visits</span>
+    <span class="metric-detail">Someone watching a reel and then going to your profile to find out who you are. This is the moment between "interested" and "considering." Track it per reel to know which content is driving discovery.</span>
+  </div>
+  <div class="metric-row">
+    <span class="metric-name">Link clicks from bio</span>
+    <span class="metric-detail">The number of people clicking through to your website, quiz, or application. This is your awareness-to-consideration metric. If profile visits are high but link clicks are low, the bio is not converting. Review it.</span>
+  </div>
+  <div class="metric-row">
+    <span class="metric-name">Application form submissions</span>
+    <span class="metric-detail">The actual conversion. Not traffic to the apply page - completed submissions. This is the number that matters. Track weekly in your GHL dashboard. Target: 2-4 qualified applications per week by the end of Phase 3.</span>
+  </div>
+  <div class="metric-row">
+    <span class="metric-name">Story replies (DM quality)</span>
+    <span class="metric-detail">When someone replies to a story, they are having a private conversation with you. These are warm leads. Every story reply deserves a genuine, personal response - not a template. Keep a note of anyone who engages here more than once. They are close to ready.</span>
+  </div>
+  <div class="metric-row">
+    <span class="metric-name">Reach (secondary)</span>
+    <span class="metric-detail">How many unique accounts your content reached. Useful for understanding growth trend, not for judging individual posts. A piece of content with 200 reach and 40 saves is more valuable than one with 2000 reach and 3 saves.</span>
+  </div>
+
+  <div class="callout warning">
+    <p>Likes are not a metric to optimise for. They feel good. They tell you almost nothing. A post with 12 likes and 8 saves from the right women is a better business result than a post with 300 likes from people who scrolled on.</p>
+  </div>
+
+  <hr>
+
+  <!-- ============================================================ -->
+  <h2>The TikTok Question</h2>
+  <!-- ============================================================ -->
+
+  <p>Here is the honest call: TikTok is a bonus channel for Emily, not a priority. Here is why.</p>
+
+  <p>Her ideal client, the 34-42 high-achieving woman who is fed up and quietly carrying everything, does live on TikTok. The platform's algorithm is genuinely powerful for discovery content, and nervous system education performs exceptionally well there. In theory, TikTok should be a strong play.</p>
+
+  <p>In practice, repurposing is the only realistic TikTok strategy for a solo practitioner. Creating TikTok-native content (trending audio, direct-to-camera casual style, comment-reply format) is a different creative muscle than what works for Emily's brand on Instagram. The risk is that chasing TikTok native trends dilutes the brand voice she is working hard to establish on Instagram.</p>
+
+  <p>The recommendation: repurpose from Instagram from Week 5 onwards, maximum three times per week. Do not change the audio, do not add trending sounds, do not adapt the caption. Just re-upload exactly. If it picks up traction organically, great - then invest more. If after 30 days of repurposing it is not driving profile visits or follows, treat TikTok as a long-game presence play, not an active acquisition channel, and redirect that energy to deepening Instagram engagement.</p>
+
+  <p>The one scenario where TikTok becomes a serious investment: if one of Emily's repurposed reels gets picked up and crosses 10,000 views. At that point, create three TikTok-first versions of her strongest content themes (the fed-up reframe, the four states introduction, the science meets spirit positioning) and test whether the algorithm sustains reach at that level. Until then, do not optimise for a channel that has not yet proven itself for this audience.</p>
+
+  <hr>
+
+  <!-- ============================================================ -->
+  <h2>The Riskiest Week in the Campaign</h2>
+  <!-- ============================================================ -->
+
+  <div class="callout warning">
+    <p>Week 6 (Days 31-37) is the riskiest week for Emily's energy. Here is why, and what to do about it.</p>
+  </div>
+
+  <p>Week 6 is where the campaign pivots from "showing up" to "asking." The first conversion reel goes live on Day 32. The application link starts appearing in captions. The soft urgency language ("four slots left this month") begins. For most practitioners, this is where the self-doubt arrives: Am I being too much? Is it too soon? What if nobody applies?</p>
+
+  <p>The practical risk is that Emily pulls back on content quality or frequency right at the moment the campaign needs to push through. The emotional risk is that she checks the application form obsessively and interprets zero immediate applications as evidence that the whole approach is wrong.</p>
+
+  <p>Two things to hold going into Week 6. First: the conversion content does not replace the education and personal content - it sits alongside it at a ratio of 2 conversion reels to 8 other pieces. Nobody is being sold to relentlessly. Second: the lag between someone seeing conversion content and someone applying is usually 7-14 days. Applications from Week 6 content are likely to arrive in Week 7 or 8. The calendar is working even when it does not look like it.</p>
+
+  <p>If Week 6 feels hard, the only adjustment worth making is to swap one face-to-camera conversion reel for a voiceover version over sound bath footage. Same words, same offer, lower exposure cost for Emily that day. The content still does the work.</p>
+
+  <hr>
+
+  <p style="color: var(--charcoal-soft); font-size: 0.9375rem; font-style: italic;">Hooks count: 30 hooks delivered above - 10 Education, 6 Personal, 6 Client, 4 Behind the scenes, 4 Conversion.</p>
+
+</div>
+
+<div class="feedback-block">
+  <div class="script">How does this feel?</div>
+  <p>Nothing is final until you say so. Reply to Kelly with anything to change, anything that does not sound like you, any day in the calendar you want to swap. The hooks especially - read them out loud. If they don't feel like something you'd say, flag it and we'll rewrite them in five minutes.</p>
+  <p style="margin-top: 12px;"><a href="mailto:kwotherspoon1982@gmail.com">Reply to Kelly</a></p>
+</div>
+
+</body>
+</html>

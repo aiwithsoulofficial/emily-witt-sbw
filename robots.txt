@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+Allow: /apply.html
+Allow: /nervous-system-assessment.html
+Allow: /nervous-system-tracker.html
+
+# Internal review / client-only pages - don't index
+Disallow: /em-hub.html
+Disallow: /6-week-intensive.html
+Disallow: /brand-guide.html
+Disallow: /claude-training.html
+Disallow: /reel-covers.html
+Disallow: /video-scripts.html
+Disallow: /welcome-emails.html
+Disallow: /bio-options.html
+Disallow: /testimonials-source.html
+Disallow: /marketing-tracking-setup.html
+Disallow: /marketing-geo-seo-roadmap.html
+Disallow: /marketing-social-campaign.html
+Disallow: /index-v2.html
+Disallow: /emily-astro-hd-transits.html
+
+Sitemap: https://aiwithsoulofficial.github.io/emily-witt-sbw/sitemap.xml

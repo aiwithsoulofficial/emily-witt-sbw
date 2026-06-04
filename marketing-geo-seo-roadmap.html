@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>90-Day GEO + SEO Roadmap - Space Between Wellness</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blush: #E4B5C1;
+  --blush-light: #EDD0D7;
+  --blush-pale: #F7E6D3;
+  --earth: #522C1F;
+  --earth-deep: #2B1E1E;
+  --cream: #F5F1ED;
+  --warm-white: #F7F3EF;
+  --charcoal: #2B1E1E;
+  --charcoal-soft: #5C4033;
+  --sand: #C4B19E;
+  --sand-light: #E2D6CA;
+  --accent-yellow: #D4A24A;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Work Sans', sans-serif;
+  background: var(--cream);
+  color: var(--charcoal);
+  line-height: 1.75;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* TOPBAR */
+.topbar {
+  background: var(--warm-white);
+  border-bottom: 1px solid var(--sand-light);
+  padding: 18px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+}
+.topbar a {
+  color: var(--earth);
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+.topbar a:hover { color: var(--blush); }
+.topbar .brand {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--earth-deep);
+}
+
+/* REVIEW BANNER */
+.review-banner {
+  background: var(--accent-yellow);
+  color: var(--earth-deep);
+  text-align: center;
+  padding: 14px 24px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.review-banner em {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+}
+
+/* HEADER */
+.header-block {
+  background: linear-gradient(180deg, rgba(245, 241, 237, 0.85) 0%, rgba(245, 241, 237, 0.95) 100%);
+  padding: 72px 40px 56px;
+  border-bottom: 1px solid var(--sand-light);
+}
+.header-inner {
+  max-width: 880px;
+  margin: 0 auto;
+}
+.header-eyebrow {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--earth);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.header-eyebrow::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: var(--blush);
+  display: block;
+}
+.header-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--earth-deep);
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+  margin-bottom: 24px;
+}
+.header-sub {
+  font-size: 1.0625rem;
+  color: var(--charcoal-soft);
+  line-height: 1.8;
+  max-width: 720px;
+}
+
+/* CONTENT LAYOUT - main + sidebar */
+.layout {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 56px 40px 96px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 56px;
+  align-items: start;
+}
+.content { min-width: 0; }
+.sidebar { position: sticky; top: 24px; }
+
+/* CONTENT */
+.content h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: 1.875rem;
+  color: var(--earth-deep);
+  margin: 64px 0 20px;
+  line-height: 1.25;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--sand-light);
+}
+.content h2:first-child { margin-top: 0; }
+.content h3 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: var(--earth);
+  margin: 44px 0 14px;
+}
+.content h4 {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--earth);
+  margin: 32px 0 12px;
+}
+.content p {
+  margin-bottom: 18px;
+  color: var(--charcoal-soft);
+}
+.content strong {
+  color: var(--earth-deep);
+  font-weight: 600;
+}
+.content em {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: var(--earth);
+  font-size: 1.05em;
+}
+.content ul, .content ol {
+  margin: 0 0 22px 0;
+  padding-left: 0;
+  list-style: none;
+  color: var(--charcoal-soft);
+}
+.content ul li, .content ol li {
+  margin-bottom: 10px;
+  padding-left: 22px;
+  position: relative;
+}
+.content ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--blush);
+}
+.content ol {
+  counter-reset: olcount;
+}
+.content ol li {
+  counter-increment: olcount;
+  padding-left: 32px;
+}
+.content ol li::before {
+  content: counter(olcount) '.';
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--blush);
+}
+.content blockquote {
+  margin: 28px 0;
+  padding: 24px 28px;
+  background: var(--warm-white);
+  border-left: 3px solid var(--blush);
+  border-radius: 4px;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: var(--earth);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+.content code {
+  background: var(--blush-pale);
+  color: var(--earth-deep);
+  padding: 2px 7px;
+  border-radius: 3px;
+  font-family: 'SF Mono', Menlo, monospace;
+  font-size: 0.875em;
+}
+.content hr {
+  border: 0;
+  height: 1px;
+  background: var(--sand-light);
+  margin: 56px 0;
+}
+
+/* PHASE BLOCK */
+.phase-block {
+  background: #fff;
+  border: 1px solid var(--sand-light);
+  border-radius: 16px;
+  padding: 40px 36px;
+  margin: 32px 0 48px;
+  box-shadow: 0 4px 24px rgba(74, 55, 40, 0.06);
+}
+.phase-block.dark {
+  background: var(--earth-deep);
+  border-color: transparent;
+}
+.phase-block.dark h3,
+.phase-block.dark h4 { color: var(--blush-light); }
+.phase-block.dark p,
+.phase-block.dark li { color: rgba(247, 243, 239, 0.82); }
+.phase-block.dark strong { color: #fff; }
+.phase-block.dark ul li::before { background: var(--blush); }
+.phase-tag {
+  display: inline-block;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  background: var(--blush-pale);
+  color: var(--earth);
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+.phase-block.dark .phase-tag {
+  background: rgba(228, 181, 193, 0.18);
+  color: var(--blush-light);
+}
+
+/* AUDIT TABLE */
+.audit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 24px 0 32px;
+}
+.audit-card {
+  background: var(--warm-white);
+  border: 1px solid var(--sand-light);
+  border-radius: 12px;
+  padding: 22px 24px;
+  border-left: 3px solid var(--accent-yellow);
+}
+.audit-card.strong { border-left-color: #6b8e6b; }
+.audit-card.weak { border-left-color: var(--blush); }
+.audit-card-label {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--earth);
+  margin-bottom: 8px;
+  display: block;
+}
+.audit-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.0625rem;
+  color: var(--earth-deep);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.audit-card p {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+  line-height: 1.7;
+}
+
+/* QUERY EXAMPLE BLOCK */
+.query-block {
+  background: var(--earth-deep);
+  color: var(--warm-white);
+  padding: 24px 28px;
+  border-radius: 12px;
+  margin: 22px 0;
+  font-family: 'Work Sans', sans-serif;
+}
+.query-block-label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--blush-light);
+  margin-bottom: 12px;
+  display: block;
+}
+.query-block ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.query-block li {
+  font-family: 'SF Mono', Menlo, monospace;
+  font-size: 0.875rem;
+  color: var(--warm-white);
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.query-block li::before { display: none; }
+.query-block li:last-child { border-bottom: none; }
+.query-block li::before { content: '"'; color: var(--blush); margin-right: 4px; }
+.query-block li::after { content: '"'; color: var(--blush); margin-left: 4px; }
+
+/* SIDEBAR */
+.sidebar-card {
+  background: #fff;
+  border: 1px solid var(--sand-light);
+  border-radius: 16px;
+  padding: 28px 26px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 24px rgba(74, 55, 40, 0.06);
+}
+.sidebar-card.accent {
+  background: var(--blush-pale);
+  border-color: var(--blush-light);
+}
+.sidebar-eyebrow {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--earth);
+  margin-bottom: 6px;
+  display: block;
+}
+.sidebar-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--earth-deep);
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+.sidebar-card ol {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  counter-reset: qcount;
+}
+.sidebar-card ol li {
+  counter-increment: qcount;
+  position: relative;
+  padding: 12px 0 12px 36px;
+  font-size: 0.875rem;
+  color: var(--charcoal-soft);
+  line-height: 1.55;
+  border-bottom: 1px solid rgba(212, 196, 176, 0.4);
+}
+.sidebar-card ol li:last-child { border-bottom: none; }
+.sidebar-card ol li::before {
+  content: counter(qcount);
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 24px;
+  height: 24px;
+  background: var(--blush);
+  color: #fff;
+  border-radius: 50%;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sidebar-card ol li strong {
+  display: block;
+  color: var(--earth-deep);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.sidebar-mini {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 0.9375rem;
+  color: var(--earth);
+  text-align: center;
+  padding: 12px 0;
+}
+
+/* FEEDBACK */
+.feedback-block {
+  background: var(--earth-deep);
+  color: var(--warm-white);
+  padding: 56px 40px;
+  text-align: center;
+}
+.feedback-block .script {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.75rem;
+  color: var(--blush);
+  margin-bottom: 14px;
+}
+.feedback-block p {
+  font-size: 0.9375rem;
+  color: rgba(247, 243, 239, 0.85);
+  max-width: 540px;
+  margin: 0 auto;
+}
+.feedback-block a {
+  color: var(--accent-yellow);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 960px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 40px 24px 64px;
+  }
+  .sidebar { position: static; }
+  .audit-grid { grid-template-columns: 1fr; }
+  .header-block { padding: 48px 24px 40px; }
+  .topbar { padding: 14px 20px; flex-direction: column; gap: 8px; }
+  .feedback-block { padding: 40px 24px; }
+  .phase-block { padding: 28px 22px; }
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="brand">Space Between Wellness</span>
+  <a href="em-hub.html">&larr; back to the hub</a>
+</div>
+
+<div class="review-banner">
+  <em>For your review.</em> A 90-day plan to get found by the right women. Reply to Kelly with anything to change or approve.
+</div>
+
+<div class="header-block">
+  <div class="header-inner">
+    <div class="header-eyebrow">GEO + SEO roadmap &middot; 90 days to get found</div>
+    <h1 class="header-title">How women searching for what you do actually find you.</h1>
+    <p class="header-sub">A practical, prioritised 90-day plan to make sure the right women find Space Between Wellness when they search Google, ask ChatGPT, or query Perplexity. We&rsquo;ll audit what&rsquo;s already strong (more than you think), fix what&rsquo;s missing, and build the authority signals that make AI engines cite you as the answer.</p>
+  </div>
+</div>
+
+<div class="layout">
+
+<div class="content">
+
+<h2>Quick orientation: GEO vs SEO, in plain language</h2>
+
+<p><strong>SEO</strong> (Search Engine Optimisation) is the old game: getting your site to rank on Google when someone types <em>&ldquo;nervous system coach Hobart&rdquo;</em>. It&rsquo;s a list of blue links and you want to be near the top.</p>
+
+<p><strong>GEO</strong> (Generative Engine Optimisation) is the new game: getting AI engines like ChatGPT, Perplexity, Claude and Gemini to <em>cite you by name</em> when someone asks <em>&ldquo;who&rsquo;s a trauma-informed coach for women in Tasmania?&rdquo;</em>. The user often never clicks through. They just get an answer with your name attached.</p>
+
+<p>This roadmap covers both. The good news: a lot of what works for one helps the other. The better news: your site is already 70% of the way there on the technical side. The work in the next 90 days is content, authority, and a few specific structural fixes.</p>
+
+<p>One quick term that&rsquo;ll come up: <strong>E-E-A-T</strong> stands for Experience, Expertise, Authoritativeness, and Trust. It&rsquo;s how Google (and increasingly AI engines) decide whether to trust your content. Real credentials, real testimonials, external mentions, and depth of content all build it. You have most of the raw material - we just need to make it visible.</p>
+
+<hr>
+
+<h2>Phase 0: The foundation audit (this week)</h2>
+
+<p>Before we build, an honest look at where you are. The headline: <em>your foundation is stronger than most coaches at your stage.</em> The site loads fast, the structured data is genuinely good, the copy actually answers what your ICP is asking. The gaps are specific and fixable - not a teardown, just a tidy-up.</p>
+
+<div class="audit-grid">
+
+  <div class="audit-card strong">
+    <span class="audit-card-label">Strong &middot; keep</span>
+    <div class="audit-card-title">Technical SEO basics</div>
+    <p>Title tag, meta description, canonical URL, mobile-friendly responsive design, fast loading via GitHub Pages, geo meta tags for Tasmania - all locked in. No technical fires.</p>
+  </div>
+
+  <div class="audit-card strong">
+    <span class="audit-card-label">Strong &middot; keep</span>
+    <div class="audit-card-title">Structured data (schema)</div>
+    <p>WebSite, ProfessionalService, Person, FAQPage with 10 questions, and Review markup all present. This is what AI engines read first. You&rsquo;re ahead of 90% of wellness sites here.</p>
+  </div>
+
+  <div class="audit-card strong">
+    <span class="audit-card-label">Strong &middot; keep</span>
+    <div class="audit-card-title">On-page keyword placement</div>
+    <p>&ldquo;Nervous system coaching for women&rdquo;, &ldquo;trauma-informed&rdquo;, &ldquo;Hobart, Tasmania&rdquo; and your method names appear naturally in the right places (H1, intro, FAQ, body). No keyword stuffing - just clear language.</p>
+  </div>
+
+  <div class="audit-card strong">
+    <span class="audit-card-label">Strong &middot; keep</span>
+    <div class="audit-card-title">Voice &amp; positioning</div>
+    <p>The copy doesn&rsquo;t sound like every other coach. AI engines reward distinctive, opinionated content over generic. Your &ldquo;fed up not burnt out&rdquo; framing and named nervous system states are IP gold - search-wise and ICP-wise.</p>
+  </div>
+
+  <div class="audit-card weak">
+    <span class="audit-card-label">Missing &middot; fix</span>
+    <div class="audit-card-title">No sitemap.xml or robots.txt</div>
+    <p>Google needs a map of your site to crawl it efficiently. We haven&rsquo;t given it one. Quick fix (15 minutes) - lifts indexation speed and depth immediately.</p>
+  </div>
+
+  <div class="audit-card weak">
+    <span class="audit-card-label">Missing &middot; fix</span>
+    <div class="audit-card-title">No blog or article system</div>
+    <p>One-page sites are beautiful but search engines crave depth. AI engines especially cite long-form, question-based content. We need 3 pillar pages + a small article engine to give you something to be found <em>for</em>.</p>
+  </div>
+
+  <div class="audit-card weak">
+    <span class="audit-card-label">Missing &middot; fix</span>
+    <div class="audit-card-title">No lead magnet or email capture funnel</div>
+    <p>Every visitor who isn&rsquo;t ready to apply right now leaves with nothing. A simple opt-in (the nervous system state assessment, an audio reset guide) captures their email and starts the relationship. Right now, organic visitors arrive once and disappear.</p>
+  </div>
+
+  <div class="audit-card weak">
+    <span class="audit-card-label">Missing &middot; fix</span>
+    <div class="audit-card-title">Thin external authority</div>
+    <p>Your psych degree and 8 years of trauma work are mentioned on the site but not <em>verified</em> by external links - no Psychology Today profile, no directory listings, no guest articles. E-E-A-T needs outside witnesses.</p>
+  </div>
+
+  <div class="audit-card weak">
+    <span class="audit-card-label">Missing &middot; fix</span>
+    <div class="audit-card-title">Image alt text inconsistent</div>
+    <p>Some images have great descriptive alt text. Others say &ldquo;Emily portrait&rdquo; or nothing. AI engines &ldquo;read&rdquo; images via alt text - 16 portraits is a missed opportunity to reinforce your expertise and location.</p>
+  </div>
+
+  <div class="audit-card weak">
+    <span class="audit-card-label">Missing &middot; fix</span>
+    <div class="audit-card-title">Testimonials lack attribution</div>
+    <p>Three real testimonials are live but only one has a first name. For trust signals (and the Review schema to fully count), each needs a real name and ideally location or context. Email permission required.</p>
+  </div>
+
+</div>
+
+<h3>What this means in practical terms</h3>
+
+<p>You have the equivalent of a beautifully-built, freshly-painted house with no street number on the letterbox and no listing on Google Maps. People who already know your address can find you. Everyone else can&rsquo;t. The next 90 days is about getting the right people - high-achieving women across Australia who are quietly fed up - to find you without having to be told you exist, and giving them an obvious path into your 1:1 work.</p>
+
+<hr>
+
+<h2>Phase 1 (days 1-30): Foundation &amp; low-hanging fruit</h2>
+
+<div class="phase-block">
+  <span class="phase-tag">Phase 1 &middot; days 1 to 30</span>
+  <h3>Get found for what you already have authority for</h3>
+  <p>Goal: be findable when someone searches the exact terms that lead to your 1:1 pathway - nervous system coaching, trauma-informed coaching for women, coaching for high-achieving women who feel disconnected. The Clarity &amp; Capacity Reset is the doorway in. Everything we do here drives toward that page. We&rsquo;re not creating new authority yet, just making sure existing authority gets <em>indexed and surfaced</em>.</p>
+
+  <h4>Tactic 1 &middot; Set up the technical infrastructure (week 1)</h4>
+  <ul>
+    <li>Create and submit a <code>sitemap.xml</code> listing every page on the site (homepage + future pillar pages + future articles). This is a 15-minute job.</li>
+    <li>Add a <code>robots.txt</code> file telling search engines what to crawl. Standard, brief, important.</li>
+    <li>Set up Google Search Console (free) and submit the sitemap. This is where you&rsquo;ll watch impressions and queries grow each month.</li>
+    <li>Set up Google Analytics 4 (free) so we can see what traffic does once it arrives - top pages, conversion to the apply form, time on site.</li>
+  </ul>
+
+  <h4>Tactic 2 &middot; Build the email capture funnel (week 1)</h4>
+  <p>Right now, anyone who finds your site and isn&rsquo;t ready to apply leaves with nothing. We need one simple, high-value lead magnet on the homepage and at the bottom of every article. Captures the email, drops them into your welcome sequence, and starts the relationship months before they&rsquo;re ready to book.</p>
+  <ul>
+    <li>Build out one of the two lead magnets from Phase 3 immediately (the nervous system state self-assessment PDF, or the &ldquo;first 5 minutes of fed up&rdquo; audio guide). Don&rsquo;t wait.</li>
+    <li>Wire to Flodesk so the welcome sequence triggers automatically (we have the 4-email sequence drafted - see /welcome-emails.html).</li>
+    <li>Place the opt-in: homepage hero secondary CTA, sticky bar after first scroll, end of every article and pillar page.</li>
+    <li>Track conversion rate to the lead magnet weekly. Target 2-4% of total visitors.</li>
+  </ul>
+
+  <h4>Tactic 3 &middot; Publish 3 pillar pages (weeks 2 to 4)</h4>
+  <p>A &ldquo;pillar page&rdquo; is a long, in-depth answer to one big question. These become the foundation everything else links to. For Space Between Wellness, the three highest-leverage pillars are:</p>
+  <ol>
+    <li><strong>&ldquo;What is nervous system coaching? (And how it&rsquo;s different from therapy)&rdquo;</strong> &mdash; ~1500 words. Answers the #1 question your ICP types into Google and ChatGPT. Currently no clear authority owns this answer in Australia.</li>
+    <li><strong>&ldquo;The 4 nervous system states: Activation, Over Giving, Shut Down, Regulated&rdquo;</strong> &mdash; ~1800 words. This is YOUR framework. Every woman who lands on this page and recognises herself in one of the states is a future client. Also: nobody else owns these names. You can.</li>
+    <li><strong>&ldquo;What happens in a 90-minute Clarity &amp; Capacity Reset&rdquo;</strong> &mdash; ~1200 words. Walks through the structure of the session, what you&rsquo;ll feel, what you&rsquo;ll leave with. Captures search intent from women who&rsquo;ve been told they need &ldquo;nervous system work&rdquo; but don&rsquo;t know what that looks like in practice. Direct application driver.</li>
+  </ol>
+  <p>Each pillar follows the same structure: an H1 that matches the search query, a 100-word direct answer in the first paragraph (AI engines extract from here), then deeper context with H2s for each sub-question, then internal links to your offerings and FAQ, then a CTA to apply or book.</p>
+
+  <h4>Tactic 4 &middot; Image alt text audit (week 2)</h4>
+  <p>You have ~16 portraits, plus method illustrations, plus sound bath photos. Every single one should have descriptive alt text that includes (where natural): who, what, where, context. Examples:</p>
+  <ul>
+    <li><strong>Weak:</strong> <code>alt=&quot;Emily portrait&quot;</code></li>
+    <li><strong>Strong:</strong> <code>alt=&quot;Emily Witt, nervous system coach for high-achieving women, seated portrait in warm natural light&quot;</code></li>
+    <li><strong>Strong:</strong> <code>alt=&quot;Trauma-informed coach Emily Witt in session - 1:1 nervous system coaching for women across Australia&quot;</code></li>
+  </ul>
+  <p>Image alt text is doing two jobs now: accessibility (screen readers) and AI legibility (ChatGPT and Google Lens read alt text to understand what an image shows). Both matter.</p>
+
+  <h4>Tactic 5 &middot; Add 5 more FAQ entries tuned to AI search (week 3)</h4>
+  <p>You have 10 FAQ entries already in schema - great. AI engines love FAQ markup because each Q&amp;A is a self-contained, citable unit. Add 5 more, each one written specifically to match how a woman would <em>actually type her question into ChatGPT</em>:</p>
+  <ul>
+    <li>&ldquo;Is nervous system coaching the same as therapy?&rdquo;</li>
+    <li>&ldquo;How do I know if I&rsquo;m in fight-or-flight mode all the time?&rdquo;</li>
+    <li>&ldquo;Can I do nervous system coaching online if I&rsquo;m not in Hobart?&rdquo;</li>
+    <li>&ldquo;What actually happens in a nervous system coaching session?&rdquo;</li>
+    <li>&ldquo;Why am I so exhausted even though my life looks fine?&rdquo;</li>
+  </ul>
+  <p>Each answer: 40-80 words. Direct. No fluff. Written like Emily would say it to a friend. Schema markup updated to include the new ones.</p>
+
+  <h4>Tactic 6 &middot; Internal linking strategy (week 4)</h4>
+  <p>Every new pillar page should link to the relevant offerings page, the FAQ section, and the apply page. Every blog post (once they exist) should link to at least one pillar page. This signals to search engines that the pillar pages are the most important pages on the site - and it keeps visitors moving through the funnel toward applying.</p>
+
+  <h4>Expected Phase 1 outcome</h4>
+  <ul>
+    <li>Site fully indexed by Google within 7-14 days of sitemap submission.</li>
+    <li>Lead magnet live, generating 5-15 email captures per week from existing organic traffic.</li>
+    <li>3 pillar pages live, each ranking for at least 2-3 long-tail keywords by day 60.</li>
+    <li>Foundation in place for AI engines to start citing the site (typically takes 30-60 days from first publication).</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>Phase 2 (days 31-60): Content engine &amp; AI citation play</h2>
+
+<div class="phase-block">
+  <span class="phase-tag">Phase 2 &middot; days 31 to 60</span>
+  <h3>Become the answer when your ICP asks an AI engine</h3>
+  <p>Goal: when a 38-year-old woman lying on her couch at 9pm opens ChatGPT and asks <em>&ldquo;am I burnt out or just fed up?&rdquo;</em>, your name comes back. This is where GEO gets specific. AI engines cite content that directly answers questions, is structured cleanly, and shows evidence of expertise. We&rsquo;re going to give them all three.</p>
+
+  <h4>Tactic 1 &middot; Publish 4 short articles tuned to AI search intent (one per week)</h4>
+  <p>These are not pillar pages. They&rsquo;re 600-900 word articles, each answering one specific question your ICP would ask out loud. Each one is engineered for AI citation: clear H1 matching the query, 100-word direct answer in the first paragraph, longer context after, H2 sub-questions throughout.</p>
+
+  <ol>
+    <li><strong>Am I burnt out or just fed up? (Here&rsquo;s the difference)</strong> &mdash; Directly takes Emily&rsquo;s &ldquo;fed up vs burnt out&rdquo; framing into search territory. Owns a phrase nobody else owns.</li>
+    <li><strong>Why high-achieving women keep ending up in nervous system coaching</strong> &mdash; ICP recognition. Search intent: <em>&ldquo;why do successful women feel disconnected&rdquo;</em>, <em>&ldquo;nervous system coaching for executives&rdquo;</em>.</li>
+    <li><strong>What actually happens in a nervous system coaching session</strong> &mdash; The article that demystifies the offer. Pre-qualifies applicants by showing exactly what the work looks like. Reduces &ldquo;is this for me?&rdquo; friction.</li>
+    <li><strong>Trauma-informed coaching vs therapy: which is right for me?</strong> &mdash; High-intent search. People asking this are pre-qualified buyers trying to decide which lane they&rsquo;re in. Owning this answer = owning their decision.</li>
+  </ol>
+
+  <h4>Tactic 2 &middot; The 100-word AI answer rule</h4>
+  <p>For every new piece of content, the first 100 words must answer the headline question in plain language. AI engines extract this exact section when they cite. If you bury the answer or open with a story, the engine grabs someone else&rsquo;s content instead.</p>
+  <blockquote>
+    Example. Headline: &ldquo;Am I burnt out or just fed up?&rdquo; Opening: <em>&ldquo;Burnout is a measurable physiological state: exhaustion that doesn&rsquo;t lift with rest, cognitive fog, emotional numbness. Being fed up is different. You&rsquo;re still functioning. Still capable. But you&rsquo;re carrying a quiet ache that says this life isn&rsquo;t yours. Fed up is a nervous system pattern - it shows up when you&rsquo;ve been running someone else&rsquo;s programme for too long. Both are real. They need different responses.&rdquo;</em> That paragraph is what ChatGPT will quote.
+  </blockquote>
+
+  <h4>Tactic 3 &middot; Add an Articles section to site navigation</h4>
+  <p>The articles need a home. A simple <code>/articles/</code> hub page with each post listed, linked from main nav. Doesn&rsquo;t need to be complex - clean cards, publish date, 1-line summary. This signals to Google that you&rsquo;re actively publishing, which lifts the whole site&rsquo;s authority.</p>
+
+  <h4>Tactic 4 &middot; Manual indexing in Search Console</h4>
+  <p>Don&rsquo;t wait for Google to find new articles. In Search Console, paste each new URL into the &ldquo;URL Inspection&rdquo; tool and request indexing. Typically live in search results within 24-72 hours instead of 2-3 weeks.</p>
+
+  <h4>Tactic 5 &middot; Weekly AI citation testing</h4>
+  <p>Every Monday morning, run a small test - takes 10 minutes. Type these exact queries into ChatGPT, Perplexity, Claude, and Gemini, and log what comes back:</p>
+
+  <div class="query-block">
+    <span class="query-block-label">Weekly test queries</span>
+    <ul>
+      <li>nervous system coach Hobart</li>
+      <li>trauma-informed coach for women in Tasmania</li>
+      <li>nervous system coaching session what to expect</li>
+      <li>nervous system coaching vs therapy</li>
+      <li>am I burnt out or fed up</li>
+      <li>coach for high-achieving women who feel disconnected</li>
+    </ul>
+  </div>
+
+  <p>Track: does Emily appear at all? Cited by name? Linked? Mentioned by competitor name instead? This weekly check tells you whether the content engine is working and where to push next. Keep a simple Google Sheet with date, query, engine, result.</p>
+
+  <h4>Tactic 6 &middot; Repurpose pillar content into Instagram carousels</h4>
+  <p>Every pillar page and article becomes 2-3 Instagram carousels. This drives traffic back to the site (Instagram bio link to the article), which signals to Google that the content is being shared and read. The traffic loop reinforces the SEO. Slot this into existing content workflow.</p>
+
+  <h4>Expected Phase 2 outcome</h4>
+  <ul>
+    <li>4 new articles live, indexed, starting to rank for long-tail queries.</li>
+    <li>First AI citations beginning to appear in Perplexity (fastest to update) and ChatGPT (next).</li>
+    <li>Search Console showing 10-20x increase in total impressions vs day 1 baseline.</li>
+    <li>Apply form submissions starting to include &ldquo;found you on Google&rdquo; / &ldquo;ChatGPT suggested you&rdquo; in source.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>Phase 3 (days 61-90): Authority &amp; external signals</h2>
+
+<div class="phase-block dark">
+  <span class="phase-tag">Phase 3 &middot; days 61 to 90</span>
+  <h3>Build the outside witnesses that make AI engines trust you</h3>
+  <p>Goal: stop being a site that says it&rsquo;s an authority and start being one that other respected places confirm. AI engines weight external mentions heavily - they see a quote in a wellness publication or a directory listing as a vote of confidence. This phase is slower and chunkier than Phase 1 or 2, but every win here compounds for years.</p>
+
+  <h4>Tactic 1 &middot; Get listed in 5 high-quality directories</h4>
+  <ul>
+    <li><strong>Psychology Today</strong> &mdash; the gold standard. Australian listings available. Verifies your psych science background and gets you a backlink + monthly directory traffic.</li>
+    <li><strong>Australian Psychological Society (APS)</strong> &mdash; you&rsquo;re an affiliate member; make sure your listing is complete with site link and bio.</li>
+    <li><strong>Find a Coach Australia / Life Coach Directory Australia</strong> &mdash; regional coach directories. Free or low cost.</li>
+    <li><strong>Trauma-Informed Care Directory</strong> &mdash; smaller but high-quality niche directory. Tasmanian listings are sparse - you&rsquo;ll stand out.</li>
+    <li><strong>Hobart-specific business directories</strong> &mdash; Discover Tasmania, Hobart Wellness, local Chamber of Commerce. Geo authority signals.</li>
+  </ul>
+
+  <h4>Tactic 2 &middot; Guest articles on 2 to 3 aligned platforms</h4>
+  <p>One published guest article on a respected wellness or women&rsquo;s business platform is worth more than 50 of your own social posts in authority terms. Target:</p>
+  <ul>
+    <li>An Australian wellness publication (Body+Soul, Wellness Daily, or similar) - pitch one of your pillar topics.</li>
+    <li>A women&rsquo;s business network publication (League of Extraordinary Women, BSchool, Business Chicks blog) - pitch &ldquo;why high-achieving women keep ending up in nervous system coaching&rdquo;.</li>
+    <li>An online publication targeting professional women (Mamamia, Collective Hub, Womankind) - pitch &ldquo;the nervous system pattern behind quiet exhaustion&rdquo; or similar.</li>
+  </ul>
+  <p>Each guest post gets a byline with a link back to your site. That backlink is the prize. Pitch by email with one paragraph: who you are, what you&rsquo;d write, why their readers would care.</p>
+
+  <h4>Tactic 3 &middot; Build out testimonials with proper attribution</h4>
+  <p>Three real testimonials are live but light on attribution. By day 75, every testimonial should have: first name, last initial, location (or context like &ldquo;executive, Melbourne&rdquo;), and ideally permission for a small headshot. Email past clients with a short, warm note - <em>&ldquo;Your testimonial is up on the site and helping other women take the first step. Would you be open to letting me add your first name (and maybe a photo)? It builds the trust signal a lot.&rdquo;</em></p>
+  <p>Once permission is in: update the Review schema with full attribution. This activates the star rating display in search results.</p>
+
+  <h4>Tactic 4 &middot; Create one downloadable lead magnet</h4>
+  <p>One simple PDF or audio that captures email addresses and gives Google a reason to send traffic. Two strong options:</p>
+  <ul>
+    <li><em>&ldquo;Which nervous system state are you living in?&rdquo;</em> &mdash; a 6-page PDF self-assessment based on Activation / Over Giving / Shut Down / Regulated. Branded, beautiful, useful in itself.</li>
+    <li><em>&ldquo;The first 5 minutes of fed up&rdquo;</em> &mdash; a 5-7 minute audio guide for the moment her body says no. Voiceover format suits Emily perfectly. Captures emails of warmer leads.</li>
+  </ul>
+  <p>Promote the lead magnet from the homepage hero, every article, and Instagram bio. Every download adds an email to nurture and signals engagement to Google.</p>
+
+  <h4>Tactic 5 &middot; Earn (not buy) 5-10 quality backlinks</h4>
+  <p>Backlinks from real sites to yours are still the strongest authority signal in both SEO and GEO. We never buy them - Google penalises that. We earn them through directories (Tactic 1), guest articles (Tactic 2), being quoted by other coaches/journalists, and creating content worth linking to (the pillars and the lead magnet). 5-10 quality links in 30 days is realistic and meaningful.</p>
+
+  <h4>Tactic 6 &middot; LinkedIn presence to reinforce E-E-A-T</h4>
+  <p>You don&rsquo;t have to become a LinkedIn influencer. But a complete LinkedIn profile - same headshot, same headline language as the site, link to spacebetweenwellness.com in the bio, 2-3 posts a month - tells Google and AI engines that there&rsquo;s a real, professional human behind the brand. Quietly powerful for E-E-A-T.</p>
+
+  <h4>Expected Phase 3 outcome</h4>
+  <ul>
+    <li>Listed in 5+ directories with consistent name, address, phone (NAP) signals.</li>
+    <li>1-2 guest articles published with backlinks.</li>
+    <li>Star ratings appearing in Google search results for your homepage.</li>
+    <li>Lead magnet generating 20-50 email captures per month organically.</li>
+    <li>AI engines citing you as a named expert in nervous system coaching for women in Australia.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>What to measure and where</h2>
+
+<p>Four dashboards, all free, checked once a fortnight. If you can&rsquo;t measure it, you can&rsquo;t tell if it&rsquo;s working - and the worst SEO mistake is doing six months of work in the dark.</p>
+
+<h3>1. Google Search Console</h3>
+<p>The single most important dashboard. Tells you what people are typing into Google to find you, how often you appear, how often they click, what page they land on. Watch:</p>
+<ul>
+  <li><strong>Impressions</strong> - how often your site appeared in search results. This should climb steadily.</li>
+  <li><strong>Clicks</strong> - how often someone clicked through. Click rate of 3-5% is healthy.</li>
+  <li><strong>Average position</strong> - where you rank for each query. Page 1 (positions 1-10) is the goal.</li>
+  <li><strong>Top queries</strong> - what people are actually typing. Often reveals content opportunities you hadn&rsquo;t thought of.</li>
+</ul>
+
+<h3>2. Google Analytics 4</h3>
+<p>What people do once they arrive. Watch:</p>
+<ul>
+  <li><strong>Organic traffic</strong> - sessions from search engines (not ads, not social). The baseline metric.</li>
+  <li><strong>Top pages</strong> - which articles/pillars get the most traffic. Doubles as a guide for what to write more of.</li>
+  <li><strong>Conversion rate</strong> - what % of visitors submit the apply form. Around 1-3% is healthy for a high-trust offer.</li>
+</ul>
+
+<h3>3. AI citation log (monthly)</h3>
+<p>A small Google Sheet. Once a month, run the 6 weekly test queries through ChatGPT, Perplexity, Claude, and Gemini. Log: did Emily appear? cited by name? linked? competitor cited instead? This is the GEO scorecard - nobody else will give it to you.</p>
+
+<h3>4. Flodesk dashboard</h3>
+<p>Once the lead magnet and welcome sequence are wired, this is the engagement engine. Watch:</p>
+<ul>
+  <li><strong>New subscribers per week</strong> - direct measure of lead magnet conversion.</li>
+  <li><strong>Open rates on welcome sequence</strong> - signals whether the subject lines + content are landing. Target 40%+ for the first email, 30%+ for the rest.</li>
+  <li><strong>Click-through to apply form</strong> - email 4 of the welcome sequence is the first ask. This is the conversion checkpoint.</li>
+</ul>
+
+<hr>
+
+<h2>One last thing on patience</h2>
+
+<p>SEO is slow. The first 30 days will feel like nothing&rsquo;s happening - and technically it isn&rsquo;t, because Google is still crawling and indexing. Days 30-60 is when impressions start climbing. Days 60-90 is when the first real organic leads show up.</p>
+
+<p>GEO is faster on Perplexity (which updates daily) and slower on ChatGPT (which updates more sporadically). You&rsquo;ll start seeing citations in Perplexity within 30-45 days of consistent publishing. ChatGPT often takes 60-90 days. Both compound for years once they start.</p>
+
+<p>The work in this roadmap won&rsquo;t make 100,000 people find you. It will make the <em>right hundred women</em> find you over the next 6 months - and that&rsquo;s what fills a curated practice. The other coaches chasing volume will burn themselves out doing it. You&rsquo;re building the kind of presence that holds for a decade.</p>
+
+</div>
+
+<aside class="sidebar">
+
+  <div class="sidebar-card accent">
+    <span class="sidebar-eyebrow">Quick wins</span>
+    <h3 class="sidebar-title">7 things you can do today (each under 30 mins)</h3>
+    <ol>
+      <li><strong>Submit site to Google Search Console</strong>Free tool, 10 minutes. Triggers indexing immediately.</li>
+      <li><strong>Build the lead magnet</strong>Self-assessment PDF or audio guide. Wire to Flodesk. Unlocks the email engine.</li>
+      <li><strong>Rewrite alt text on 16 portraits</strong>Lead with &ldquo;Emily Witt, nervous system coach for high-achieving women&rdquo; - the 1:1 keyword.</li>
+      <li><strong>Update LinkedIn bio + headline</strong>Same keywords as the site. Link to spacebetweenwellness.com.</li>
+      <li><strong>Submit to Psychology Today directory</strong>Affiliate member status helps. Backlink + ongoing traffic.</li>
+      <li><strong>Email 3 past clients for testimonial permission</strong>First names and ideally a photo. Warmest 3 first.</li>
+      <li><strong>Pin &ldquo;Take the nervous system quiz&rdquo; reel to top of Instagram</strong>Funnel social discovery to the site.</li>
+    </ol>
+  </div>
+
+  <div class="sidebar-card">
+    <span class="sidebar-eyebrow">Where to focus first</span>
+    <h3 class="sidebar-title">The 3 Phase 1 tactics that&rsquo;ll move the needle most for you</h3>
+    <ol>
+      <li><strong>Lead magnet + email capture</strong>Right now every visitor leaves with nothing. A simple opt-in turns one visit into months of relationship. Highest leverage for a 1:1 coaching practice with a long consideration cycle.</li>
+      <li><strong>The 4 nervous system states pillar page</strong>This is your IP. Nobody else can write it. Once it ranks, it becomes the page everyone in Australia who&rsquo;s curious about nervous system coaching lands on first.</li>
+      <li><strong>Sitemap + Search Console setup</strong>Without this, none of the rest of the work compounds. 15 minutes of admin that unlocks the next 90 days.</li>
+    </ol>
+  </div>
+
+  <div class="sidebar-card">
+    <span class="sidebar-eyebrow">Reality check</span>
+    <p class="sidebar-mini">&ldquo;Day 1 of SEO feels like nothing is happening. By month 6, you wonder how you ever ran a business without it.&rdquo;</p>
+  </div>
+
+</aside>
+
+</div>
+
+<div class="feedback-block">
+  <div class="script">Sit with it. Let me know.</div>
+  <p>Reply to Kelly with anything to change, questions about any of the tactics, or a green light to start Phase 1. Nothing here gets actioned without your sign-off. Email <a href="mailto:kwotherspoon1982@gmail.com">kwotherspoon1982@gmail.com</a>.</p>
+</div>
+
+</body>
+</html>

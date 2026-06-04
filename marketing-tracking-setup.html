@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Marketing tracking setup - Space Between Wellness</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blush: #E4B5C1;
+  --blush-pale: #F7E6D3;
+  --earth: #522C1F;
+  --earth-deep: #2B1E1E;
+  --cream: #F5F1ED;
+  --warm-white: #F7F3EF;
+  --charcoal: #2B1E1E;
+  --charcoal-soft: #5C4033;
+  --sand: #C4B19E;
+  --sand-light: #E2D6CA;
+  --accent-yellow: #D4A24A;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Work Sans', sans-serif;
+  background: var(--cream);
+  color: var(--charcoal);
+  line-height: 1.75;
+  font-size: 16px;
+}
+.topbar {
+  background: var(--warm-white);
+  border-bottom: 1px solid var(--sand-light);
+  padding: 18px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+}
+.topbar a {
+  color: var(--earth);
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+.topbar a:hover { color: var(--blush); }
+.topbar .brand {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--earth-deep);
+}
+.review-banner {
+  background: var(--accent-yellow);
+  color: var(--earth-deep);
+  text-align: center;
+  padding: 14px 24px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.review-banner em {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+}
+.header-block {
+  background:
+    linear-gradient(180deg, rgba(245, 241, 237, 0.85) 0%, rgba(245, 241, 237, 0.95) 100%);
+  padding: 72px 40px 56px;
+  border-bottom: 1px solid var(--sand-light);
+}
+.header-inner {
+  max-width: 780px;
+  margin: 0 auto;
+}
+.header-eyebrow {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--earth);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.header-eyebrow::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: var(--blush);
+  display: block;
+}
+.header-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--earth-deep);
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+}
+.content {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 56px 40px 96px;
+}
+.content h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: 1.75rem;
+  color: var(--earth-deep);
+  margin: 56px 0 18px;
+  line-height: 1.3;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--sand-light);
+}
+.content h2:first-child { margin-top: 0; }
+.content h3 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.375rem;
+  color: var(--earth);
+  margin: 40px 0 14px;
+}
+.content h4 {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--earth);
+  margin: 28px 0 10px;
+}
+.content p {
+  margin-bottom: 18px;
+  color: var(--charcoal-soft);
+}
+.content strong {
+  color: var(--earth-deep);
+  font-weight: 600;
+}
+.content em {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: var(--earth);
+  font-size: 1.05em;
+}
+.content ul, .content ol {
+  margin: 0 0 22px 26px;
+  color: var(--charcoal-soft);
+}
+.content li {
+  margin-bottom: 8px;
+  padding-left: 6px;
+}
+.content blockquote {
+  margin: 28px 0;
+  padding: 24px 28px;
+  background: var(--warm-white);
+  border-left: 3px solid var(--blush);
+  border-radius: 4px;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: var(--earth);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+.content blockquote p { margin-bottom: 12px; color: inherit; }
+.content blockquote p:last-child { margin-bottom: 0; }
+.content code {
+  background: var(--blush-pale);
+  color: var(--earth-deep);
+  padding: 2px 7px;
+  border-radius: 3px;
+  font-family: 'SF Mono', Menlo, monospace;
+  font-size: 0.875em;
+}
+.content pre {
+  background: var(--earth-deep);
+  color: var(--warm-white);
+  padding: 22px 24px;
+  border-radius: 8px;
+  margin: 22px 0;
+  overflow-x: auto;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  font-family: 'SF Mono', Menlo, monospace;
+}
+.content pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  font-size: inherit;
+}
+.content pre .comment {
+  color: var(--sand);
+  font-style: italic;
+}
+.content hr {
+  border: 0;
+  height: 1px;
+  background: var(--sand-light);
+  margin: 44px 0;
+}
+.content a {
+  color: var(--earth);
+  text-decoration: underline;
+  text-decoration-color: var(--blush);
+  text-underline-offset: 3px;
+}
+.content a:hover { color: var(--blush); }
+
+/* Tool card */
+.tool-card {
+  background: var(--warm-white);
+  border: 1px solid var(--sand-light);
+  border-radius: 10px;
+  padding: 28px 30px;
+  margin: 24px 0;
+}
+.tool-card-header {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+.tool-badge {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: var(--blush-pale);
+  color: var(--earth);
+  white-space: nowrap;
+}
+.tool-badge.free {
+  background: #e8f4e8;
+  color: #2d6a2d;
+}
+.tool-badge.optional {
+  background: var(--sand-light);
+  color: var(--charcoal-soft);
+}
+.tool-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+}
+.tool-card p {
+  margin-bottom: 10px;
+  font-size: 0.9375rem;
+}
+.tool-card p:last-child { margin-bottom: 0; }
+
+/* Step list */
+.step-list {
+  list-style: none;
+  margin: 0 0 22px 0;
+  padding: 0;
+  counter-reset: steps;
+}
+.step-list li {
+  counter-increment: steps;
+  padding: 14px 16px 14px 54px;
+  position: relative;
+  border-bottom: 1px solid var(--sand-light);
+  color: var(--charcoal-soft);
+  margin-bottom: 0;
+  padding-left: 54px;
+}
+.step-list li:last-child { border-bottom: none; }
+.step-list li::before {
+  content: counter(steps);
+  position: absolute;
+  left: 16px;
+  top: 14px;
+  width: 26px;
+  height: 26px;
+  background: var(--blush);
+  color: var(--earth-deep);
+  border-radius: 50%;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+/* Checklist */
+.checklist {
+  list-style: none;
+  margin: 0 0 22px 0;
+  padding: 0;
+  background: var(--warm-white);
+  border: 1px solid var(--sand-light);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.checklist li {
+  padding: 14px 18px 14px 50px;
+  position: relative;
+  border-bottom: 1px solid var(--sand-light);
+  color: var(--charcoal-soft);
+  margin-bottom: 0;
+}
+.checklist li:last-child { border-bottom: none; }
+.checklist li::before {
+  content: '☐';
+  position: absolute;
+  left: 18px;
+  top: 14px;
+  font-size: 1rem;
+  color: var(--blush);
+  line-height: 1.4;
+}
+.checklist li strong {
+  display: block;
+  margin-bottom: 2px;
+}
+.checklist li .detail {
+  font-size: 0.875rem;
+  color: var(--sand);
+  font-family: 'SF Mono', Menlo, monospace;
+}
+
+/* Event table */
+.event-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 22px 0;
+  font-size: 0.9375rem;
+}
+.event-table th {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--earth);
+  background: var(--sand-light);
+  padding: 10px 16px;
+  text-align: left;
+}
+.event-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--sand-light);
+  color: var(--charcoal-soft);
+  vertical-align: top;
+}
+.event-table tr:last-child td { border-bottom: none; }
+.event-table td:first-child {
+  font-family: 'SF Mono', Menlo, monospace;
+  font-size: 0.8125rem;
+  color: var(--earth);
+  white-space: nowrap;
+}
+
+/* Homework timeline */
+.timeline {
+  margin: 24px 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 17px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: var(--blush);
+}
+.timeline li {
+  padding: 0 0 28px 52px;
+  position: relative;
+  margin-bottom: 0;
+}
+.timeline li:last-child { padding-bottom: 0; }
+.timeline-dot {
+  position: absolute;
+  left: 8px;
+  top: 3px;
+  width: 20px;
+  height: 20px;
+  background: var(--blush);
+  border-radius: 50%;
+  border: 3px solid var(--cream);
+}
+.timeline-label {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--earth);
+  margin-bottom: 4px;
+}
+.timeline-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: var(--earth-deep);
+  margin-bottom: 6px;
+}
+.timeline-body {
+  color: var(--charcoal-soft);
+  font-size: 0.9375rem;
+}
+
+/* Callout box */
+.callout {
+  background: var(--blush-pale);
+  border-left: 3px solid var(--blush);
+  border-radius: 4px;
+  padding: 20px 24px;
+  margin: 28px 0;
+}
+.callout p {
+  margin-bottom: 10px;
+  font-size: 0.9375rem;
+  color: var(--earth-deep);
+}
+.callout p:last-child { margin-bottom: 0; }
+.callout-label {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--earth);
+  margin-bottom: 10px;
+}
+
+/* Send to Kelly box */
+.send-box {
+  background: var(--earth-deep);
+  color: var(--warm-white);
+  border-radius: 10px;
+  padding: 32px 32px 28px;
+  margin: 32px 0;
+}
+.send-box h4 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: var(--blush);
+  text-transform: none;
+  letter-spacing: 0;
+  margin-bottom: 18px;
+}
+.send-box ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: var(--warm-white);
+}
+.send-box li {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(196, 177, 158, 0.2);
+  font-size: 0.9375rem;
+  margin-bottom: 0;
+}
+.send-box li:last-child { border-bottom: none; padding-bottom: 0; }
+.send-box li strong {
+  display: block;
+  color: var(--accent-yellow);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 3px;
+}
+.send-box .example {
+  font-family: 'SF Mono', Menlo, monospace;
+  font-size: 0.8125rem;
+  color: var(--sand);
+  margin-top: 4px;
+}
+
+.feedback-block {
+  background: var(--earth-deep);
+  color: var(--warm-white);
+  padding: 48px 40px;
+  text-align: center;
+}
+.feedback-block .script {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  color: var(--blush);
+  margin-bottom: 12px;
+}
+.feedback-block p {
+  font-size: 0.9375rem;
+  color: rgba(247, 243, 239, 0.85);
+  max-width: 540px;
+  margin: 0 auto 8px;
+}
+.feedback-block a {
+  color: var(--accent-yellow);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+@media (max-width: 720px) {
+  .header-block { padding: 48px 24px 40px; }
+  .content { padding: 40px 24px 64px; }
+  .topbar { padding: 14px 20px; flex-direction: column; gap: 8px; }
+  .tool-card { padding: 22px 20px; }
+  .send-box { padding: 24px 20px 20px; }
+  .event-table { font-size: 0.875rem; }
+  .event-table td, .event-table th { padding: 10px 12px; }
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="brand">Space Between Wellness</span>
+  <a href="em-hub.html">&#8592; back to the hub</a>
+</div>
+
+<div class="review-banner">
+  <em>For your review.</em> Nothing here is final until you say so - reply to Kelly with anything to change or approve.
+</div>
+
+<div class="header-block">
+  <div class="header-inner">
+    <div class="header-eyebrow">Pixel + analytics setup &middot; For Emily to action</div>
+    <h1 class="header-title">How we see what's working - and what isn't.</h1>
+  </div>
+</div>
+
+<div class="content">
+
+  <h2>First, why bother tracking anything?</h2>
+
+  <p>Right now, your website is live and getting visitors - but it's a black box. You post on Instagram, someone taps the link in your bio, lands on your site... and then what? Did they read the whole page? Did they click the application button? Did they leave immediately? Without any tracking in place, there's no way to know.</p>
+
+  <p>Tracking gives you a feedback loop. It's the difference between guessing which content is working and actually knowing. That matters when you're deciding what to post next, whether to run ads, and where to put your energy.</p>
+
+  <blockquote>
+    <p>Think of it like a nervous system - without signals, you can't respond. Tracking is the signal that tells you what your audience is actually doing, so you can respond with intention rather than reaction.</p>
+  </blockquote>
+
+  <h3>A note on the privacy question</h3>
+
+  <p>This is worth addressing directly, because you're someone who thinks about ethics and you should feel clean about what's on your site.</p>
+
+  <p>The tools we're installing track <em>actions</em>, not people. They register things like: "someone viewed the 6-week programme page" or "someone clicked the apply button." They don't capture names, email addresses, or any information that identifies a specific person. The data is anonymous and aggregate.</p>
+
+  <p>The <em>Meta Pixel</em> (explained below) gets the most scrutiny because Meta is Meta - but the pixel itself is industry standard. Every business you've ever bought from uses one. We'll add a proper privacy policy page that discloses everything, and if it ever becomes relevant, we can add a cookie consent banner too.</p>
+
+  <p>The short version: this is basic business feedback, not surveillance. And you'll have full ownership and control of all of it.</p>
+
+  <hr>
+
+  <h2>Three tools we're setting up</h2>
+
+  <p>Each one has a different job. Together they give you a complete picture.</p>
+
+  <div class="tool-card">
+    <div class="tool-card-header">
+      <h3>Meta Pixel + Conversions API</h3>
+      <span class="tool-badge">Essential for ads</span>
+    </div>
+    <p>The <em>Meta Pixel</em> is a tiny piece of code that connects your website to your Meta Business account (the same account that runs your Instagram and Facebook). When someone visits your site after seeing your Instagram content, the pixel can see that connection - matching the visit to an action like filling in your application form.</p>
+    <p>This is what makes Meta ads actually work. Without it, you can run ads but you can't track whether they lead to enquiries, and you can't build retargeting audiences (i.e. show ads specifically to people who visited your site but didn't apply). We set this up now so it's ready when you decide to run ads - it also just starts collecting audience data in the background from day one, which is valuable.</p>
+    <p>The <em>Conversions API</em> is an upgrade to the pixel - it sends event data server-side (directly from the website's backend to Meta) rather than just browser-side, which means more reliable tracking even when people use ad blockers. Kelly sets both up at the same time.</p>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-card-header">
+      <h3>Google Analytics 4 (GA4)</h3>
+      <span class="tool-badge">Essential for traffic</span>
+    </div>
+    <p><em>GA4</em> is Google's free analytics platform. It's the overall dashboard for your website - how many people visit, where they came from (Instagram, Google, direct), how long they stay, which pages they read, and which pages they leave from immediately.</p>
+    <p>If Meta Pixel tells you how your ads are performing, GA4 tells you everything else: is your organic Instagram driving traffic? Are people finding you on Google? Is the homepage holding attention or losing people in the first 10 seconds? It's the broadest view of your audience's behaviour.</p>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-card-header">
+      <h3>Google Search Console</h3>
+      <span class="tool-badge free">Free - must have</span>
+    </div>
+    <p><em>Search Console</em> is not an analytics tool - it's Google's direct communication channel with you about your website. It shows you what search terms people type into Google before landing on your site, how often your pages appear in search results, how many people click through, and whether Google has any issues indexing (reading) your pages.</p>
+    <p>This one costs nothing and requires almost no ongoing attention. We set it up, submit your sitemap (the list of all your pages), and let Google do its thing. Over time it becomes one of the most useful tools you have for understanding how strangers find you organically.</p>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-card-header">
+      <h3>TikTok Pixel</h3>
+      <span class="tool-badge optional">Optional - later</span>
+    </div>
+    <p>Only relevant when you start running TikTok ads. The setup is almost identical to the Meta Pixel process. We'll add it when the time comes - skip it for now.</p>
+  </div>
+
+  <hr>
+
+  <h2>How to set each one up - your part</h2>
+
+  <p>Your part is creating the accounts and sending Kelly three numbers. Kelly handles the actual code installation on the site. This whole section should take you about 15-20 minutes.</p>
+
+  <h3>Meta Pixel</h3>
+
+  <p>Before starting: confirm you have a <a href="https://business.facebook.com/" target="_blank" rel="noopener">Meta Business Suite</a> account connected to your Instagram. If you set up Instagram for business, you almost certainly do.</p>
+
+  <ol class="step-list">
+    <li>Go to <a href="https://business.facebook.com/" target="_blank" rel="noopener">business.facebook.com</a> and log in with the account connected to your Instagram.</li>
+    <li>In the left-hand menu, look for <strong>Events Manager</strong> (it might be under "All Tools" if you can't see it directly).</li>
+    <li>Click the green <strong>+ Connect Data Sources</strong> button, then choose <strong>Web</strong>.</li>
+    <li>Choose <strong>Meta Pixel</strong> and click <strong>Connect</strong>.</li>
+    <li>Name it <strong>Space Between Wellness Pixel</strong> and click <strong>Continue</strong>.</li>
+    <li>It will ask how you want to install it - choose <strong>Install code manually</strong>, but don't worry about doing anything with the code. Just proceed until you see your Pixel ID on screen.</li>
+    <li>Your <strong>Pixel ID</strong> is the 15-16 digit number shown in Events Manager (it looks like: <code>1234567890123456</code>). Copy it and send it to Kelly.</li>
+  </ol>
+
+  <div class="callout">
+    <div class="callout-label">Note</div>
+    <p>If you get prompted to set up the Conversions API as a separate step, skip it for now - Kelly will configure the full setup once the Pixel ID is installed and verified.</p>
+  </div>
+
+  <h3>Google Analytics 4</h3>
+
+  <ol class="step-list">
+    <li>Go to <a href="https://analytics.google.com/" target="_blank" rel="noopener">analytics.google.com</a> and sign in with your Google account (or create one if you don't have one - use your business email if possible).</li>
+    <li>Click <strong>Start measuring</strong> (or if you've used GA before, click the gear icon for <strong>Admin</strong> then <strong>Create Account</strong>).</li>
+    <li>Account name: <strong>Space Between Wellness</strong></li>
+    <li>Property name: <strong>Space Between Wellness - Website</strong></li>
+    <li>Set your timezone to <strong>Australia/Hobart</strong> and currency to <strong>AUD</strong>.</li>
+    <li>For business details, select whatever fits best - "Professional services" or "Health" both work.</li>
+    <li>Click through until you reach the <strong>Data Stream</strong> setup. Choose <strong>Web</strong>.</li>
+    <li>Enter your website URL: <code>https://aiwithsoulofficial.github.io/emily-witt-sbw/</code> and name it <strong>Space Between Wellness Website</strong>.</li>
+    <li>Click <strong>Create stream</strong>. You'll see your <strong>Measurement ID</strong> - it looks like <code>G-XXXXXXXXXX</code>. Copy it and send it to Kelly.</li>
+  </ol>
+
+  <h3>Google Search Console</h3>
+
+  <ol class="step-list">
+    <li>Go to <a href="https://search.google.com/search-console" target="_blank" rel="noopener">search.google.com/search-console</a> and sign in with the same Google account you used for GA4.</li>
+    <li>Click <strong>Add property</strong>.</li>
+    <li>Choose <strong>URL prefix</strong> and paste in: <code>https://aiwithsoulofficial.github.io/emily-witt-sbw/</code></li>
+    <li>When it asks how you want to verify ownership, select <strong>HTML tag</strong>. This gives you a short line of code that starts with <code>&lt;meta name="google-site-verification"...</code>.</li>
+    <li>Copy that full line and send it to Kelly. Kelly will add it to the site and tell you when to come back and click <strong>Verify</strong>.</li>
+    <li>Once verified, Kelly will also submit your sitemap: <code>https://aiwithsoulofficial.github.io/emily-witt-sbw/sitemap.xml</code></li>
+  </ol>
+
+  <hr>
+
+  <h2>What you send Kelly</h2>
+
+  <p>Once you've set up the three accounts, send these three things in a single message or email. Kelly will install everything at once and confirm when it's live.</p>
+
+  <div class="send-box">
+    <h4>Three things to send Kelly</h4>
+    <ul>
+      <li>
+        <strong>1 &middot; Meta Pixel ID</strong>
+        The 15-16 digit number from Events Manager
+        <div class="example">Example: 1234567890123456</div>
+      </li>
+      <li>
+        <strong>2 &middot; GA4 Measurement ID</strong>
+        From your Google Analytics data stream
+        <div class="example">Example: G-AB12CD34EF</div>
+      </li>
+      <li>
+        <strong>3 &middot; Google Search Console verification tag</strong>
+        The full HTML meta tag line
+        <div class="example">Example: &lt;meta name="google-site-verification" content="abc123XYZ..." /&gt;</div>
+      </li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <h2>What the code actually looks like</h2>
+
+  <p>You don't need to touch any of this - Kelly installs it. But here it is so it's not a mystery. Both snippets sit inside the <code>&lt;head&gt;</code> section of every page on your site, which loads before anything visible appears.</p>
+
+  <h4>Meta Pixel base code</h4>
+
+<pre><code><span class="comment">&lt;!-- Meta Pixel Code - Space Between Wellness --&gt;</span>
+&lt;script&gt;
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', 'YOUR_PIXEL_ID_HERE');
+fbq('track', 'PageView');
+&lt;/script&gt;
+&lt;noscript&gt;
+  &lt;img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID_HERE&amp;ev=PageView&amp;noscript=1"/&gt;
+&lt;/noscript&gt;
+<span class="comment">&lt;!-- End Meta Pixel Code --&gt;</span></code></pre>
+
+  <h4>Google Analytics 4 (gtag)</h4>
+
+<pre><code><span class="comment">&lt;!-- Google Analytics 4 - Space Between Wellness --&gt;</span>
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+&lt;/script&gt;
+<span class="comment">&lt;!-- End GA4 --&gt;</span></code></pre>
+
+  <p>When Kelly installs these, <code>YOUR_PIXEL_ID_HERE</code> becomes your actual Pixel ID, and <code>G-XXXXXXXXXX</code> becomes your actual Measurement ID.</p>
+
+  <hr>
+
+  <h2>What we'll track once it's live</h2>
+
+  <p>Installing the base code automatically captures <em>PageView</em> (someone loaded a page) on every visit. Beyond that, Kelly will set up specific <em>events</em> - that's the word for a tracked action - so you can see meaningful behaviour, not just raw traffic.</p>
+
+  <p>Here's what's planned for v1:</p>
+
+  <table class="event-table">
+    <thead>
+      <tr>
+        <th>Event name</th>
+        <th>What it means</th>
+        <th>Where it fires</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>PageView</td>
+        <td>Someone loaded a page - automatic, no extra setup needed</td>
+        <td>Every page</td>
+      </tr>
+      <tr>
+        <td>Lead</td>
+        <td>Someone submitted the application form</td>
+        <td>/apply.html (on form submit)</td>
+      </tr>
+      <tr>
+        <td>Lead</td>
+        <td>Someone signed up for your newsletter</td>
+        <td>Flodesk form (once wired up)</td>
+      </tr>
+      <tr>
+        <td>Contact</td>
+        <td>Someone clicked a booking or enquiry button</td>
+        <td>Any "book" or "apply" button</td>
+      </tr>
+      <tr>
+        <td>ViewContent</td>
+        <td>Someone viewed the 6-week intensive page - used to build a retargeting audience of warm leads</td>
+        <td>6-week programme page</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>These event names (<em>Lead</em>, <em>Contact</em>, <em>ViewContent</em>) are Meta's standard vocabulary. Using them correctly means Meta's algorithm can learn who your most likely clients are and show your ads to similar people over time.</p>
+
+  <hr>
+
+  <h2>What you'll be able to do once this is set up</h2>
+
+  <p>This is the part worth sitting with, because it's a genuine shift in how you can run your business.</p>
+
+  <ul>
+    <li><strong>Run Meta ads with real conversion tracking.</strong> Instead of guessing whether an ad campaign drove enquiries, you'll be able to see it directly. Cost per lead. Which creative performed. Which audience responded.</li>
+    <li><strong>Build retargeting audiences.</strong> Anyone who visited your 6-week intensive page but didn't apply can be grouped into an audience. You can then run a specific ad just for them - a gentle nudge to the people who were already interested enough to look.</li>
+    <li><strong>See which organic content actually drives action.</strong> Not just likes and reach - but whether the people who clicked through from a specific Instagram post went on to read your programme page or fill in your application.</li>
+    <li><strong>Track your content's real-world impact.</strong> When you post a Reel and your Instagram insights say 400 people tapped the link in bio, you'll be able to see in GA4 exactly what those 400 people did next.</li>
+    <li><strong>Know your funnel numbers.</strong> How many people visit the site in a month. How many view the 6-week programme page. How many click apply. How many complete the form. Once you know those numbers, you know exactly where to focus.</li>
+  </ul>
+
+  <hr>
+
+  <h2>Privacy and ethics - the honest version</h2>
+
+  <p>A few things worth knowing and being clear on with your audience:</p>
+
+  <h3>What a privacy policy needs to say</h3>
+
+  <p>Any website using Meta Pixel or Google Analytics needs a privacy policy page that discloses this. It doesn't need to be intimidating - it's a short page that says what data is collected, by whom, and why. <strong>This is a TODO for Kelly to write next.</strong> It will go at <code>/privacy.html</code> with a link in the footer.</p>
+
+  <h3>Australian Privacy Act</h3>
+
+  <p>For a Hobart-based service business with an Australian audience, the Australian Privacy Act 1988 is the main framework to be aware of. The tools we're using are standard and compliant. The privacy policy page covers your obligations.</p>
+
+  <h3>GDPR (EU visitors)</h3>
+
+  <p>If you had significant European website visitors, you'd need a cookie consent banner - the pop-up that asks permission before tracking runs. For a locally focused practice like yours, this is low priority. If you ever run international campaigns, we can add a lightweight consent tool at that point.</p>
+
+  <div class="callout">
+    <div class="callout-label">Coming next</div>
+    <p>Kelly will write a Privacy Policy page as a follow-up deliverable. It will be plain English, warm in tone (not legal boilerplate), and honest about exactly what tracking is in place and why. Flag this as approved if you'd like Kelly to write it.</p>
+  </div>
+
+  <hr>
+
+  <h2>Your homework - in order</h2>
+
+  <ul class="timeline">
+    <li>
+      <div class="timeline-dot"></div>
+      <div class="timeline-label">Step 1 &middot; 5 minutes</div>
+      <div class="timeline-title">Confirm you have Meta Business Suite</div>
+      <div class="timeline-body">Go to <a href="https://business.facebook.com/" target="_blank" rel="noopener">business.facebook.com</a> and make sure you can log in. If you've never set it up, you'll create a free account - just follow the prompts and connect your Instagram page.</div>
+    </li>
+    <li>
+      <div class="timeline-dot"></div>
+      <div class="timeline-label">Step 2 &middot; ~15 minutes</div>
+      <div class="timeline-title">Create the three accounts and collect your three IDs</div>
+      <div class="timeline-body">Follow the walkthrough above for Meta Pixel, GA4, and Search Console. You're not installing anything - just creating the accounts and copying the IDs. If anything is confusing, send Kelly a screenshot and she'll walk you through it.</div>
+    </li>
+    <li>
+      <div class="timeline-dot"></div>
+      <div class="timeline-label">Step 3 &middot; 2 minutes</div>
+      <div class="timeline-title">Send Kelly the three IDs</div>
+      <div class="timeline-body">One message with all three: your Meta Pixel ID, your GA4 Measurement ID, and your Search Console verification tag. Kelly will install everything in one go.</div>
+    </li>
+    <li>
+      <div class="timeline-dot"></div>
+      <div class="timeline-label">Step 4 &middot; Kelly-led, you verify</div>
+      <div class="timeline-title">Verify each platform is receiving data</div>
+      <div class="timeline-body">Once Kelly installs and deploys, she'll tell you to open your website in a browser. Then: check Events Manager in Meta Business Suite - you should see a live <code>PageView</code> event appear within a few minutes. Check GA4's Realtime report - it should show one active user (you). That's confirmation everything is wired correctly.</div>
+    </li>
+  </ul>
+
+  <hr>
+
+  <h2>Quick reference - the three IDs Emily sends Kelly</h2>
+
+  <ul class="checklist">
+    <li>
+      <strong>Meta Pixel ID</strong>
+      15-16 digit number from Events Manager in Meta Business Suite
+      <div class="detail">e.g. 1234567890123456</div>
+    </li>
+    <li>
+      <strong>GA4 Measurement ID</strong>
+      From your Google Analytics property's data stream
+      <div class="detail">e.g. G-AB12CD34EF</div>
+    </li>
+    <li>
+      <strong>Search Console verification HTML tag</strong>
+      The full meta tag line - copy/paste exactly as Google gives it to you
+      <div class="detail">e.g. &lt;meta name="google-site-verification" content="abc123..." /&gt;</div>
+    </li>
+  </ul>
+
+</div><!-- end .content -->
+
+<div class="feedback-block">
+  <div class="script">Questions or anything unclear?</div>
+  <p>Reply to Kelly with screenshots if any step doesn't match what you're seeing - platforms update their interfaces regularly and menus move.</p>
+  <p>Once all three IDs are in, Kelly installs everything in a single deployment. Tracking goes live that same day.</p>
+  <p style="margin-top:16px;"><a href="em-hub.html">&#8592; back to the hub</a></p>
+</div>
+
+</body>
+</html>
