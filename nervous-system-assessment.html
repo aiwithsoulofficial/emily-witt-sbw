@@ -1448,7 +1448,7 @@
       // Format the full answer set for the email
       const answersFormatted = answers.map((a, i) => `Q${i+1}: ${a}`).join('\n');
 
-      // Send to Emily via FormSubmit (no account needed - first submission triggers confirmation email)
+      // 1) Send to Emily via FormSubmit (email notification)
       fetch('https://formsubmit.co/ajax/space.between.wellness@gmail.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
@@ -1464,7 +1464,27 @@
           submitted_at: new Date().toISOString(),
           source: 'nervous-system-assessment'
         })
-      }).catch(err => console.log('FormSubmit send error (non-blocking):', err));
+      }).catch(err => console.log('FormSubmit error (non-blocking):', err));
+
+      // 2) Store in Supabase (sbw_assessments table)
+      fetch('https://jiquevvzrdavgqonvvug.supabase.co/rest/v1/sbw_assessments', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImppcXVldnZ6cmRhdmdxb252dnVnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE5NzIxNzIsImV4cCI6MjA4NzU0ODE3Mn0.e4mYjXj8TGTC0_UCm3QCKGSv8Cl-migIl7reYIKNcW4',
+          'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImppcXVldnZ6cmRhdmdxb252dnVnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE5NzIxNzIsImV4cCI6MjA4NzU0ODE3Mn0.e4mYjXj8TGTC0_UCm3QCKGSv8Cl-migIl7reYIKNcW4',
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify({
+          first_name: userName,
+          email: userEmail,
+          phone: userPhone || null,
+          dominant_state: topState,
+          answers: answers,
+          source: 'nervous-system-assessment',
+          user_agent: navigator.userAgent
+        })
+      }).catch(err => console.log('Supabase error (non-blocking):', err));
 
       renderResults();
       showScreen('results');
