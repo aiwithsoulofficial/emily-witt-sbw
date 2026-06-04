@@ -2337,10 +2337,49 @@ h1, h2, h3, h4 {
   .ns-card { width: 100%; }
   .ns-cta-block { padding: 32px 20px; }
 
-  /* Is This You - image shorter on small screens */
-  .ity-img-wrap img { height: 260px; }
-  /* Stack the ity-grid (already 1-col at 900px) - reduce gap */
-  .ity-grid { gap: 32px; }
+  /* Is This You - image becomes full-bleed background with text on top */
+  #is-this-you .container { padding: 0; max-width: 100%; }
+  .ity-grid {
+    position: relative;
+    grid-template-columns: 1fr;
+    gap: 0;
+    min-height: 640px;
+  }
+  .ity-img-wrap {
+    position: absolute;
+    inset: 0;
+    border-radius: 0;
+    box-shadow: none;
+    z-index: 0;
+  }
+  .ity-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .ity-img-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(43, 30, 30, 0.65) 0%,
+      rgba(43, 30, 30, 0.82) 50%,
+      rgba(43, 30, 30, 0.92) 100%
+    );
+    z-index: 1;
+  }
+  .ity-content {
+    position: relative;
+    z-index: 2;
+    padding: 64px 28px 80px;
+    color: #FFFFFF;
+  }
+  .ity-content .script-label { color: var(--blush); }
+  .ity-content h2 { color: #FFFFFF; }
+  .ity-item { border-bottom-color: rgba(255, 255, 255, 0.18); }
+  .ity-item p { color: rgba(255, 255, 255, 0.92); text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3); }
 
   /* Breakthrough card inner padding */
   .breakthrough-content { padding: 28px 20px; }
@@ -2452,44 +2491,6 @@ h1, h2, h3, h4 {
   </div>
 </section>
 
-<!-- ============================================================
-     INTRO - SPLIT
-     ============================================================ -->
-<section id="intro" class="section-pad-lg" aria-labelledby="intro-heading">
-  <div class="container">
-    <div class="split-grid">
-      <div class="split-img-wrap reveal">
-        <img
-          src="assets/emily-portrait-2.jpg"
-          alt="Emily Witt seated on a wooden bench, warm textured wall behind"
-          loading="lazy"
-        >
-        <div class="split-img-accent" aria-hidden="true"></div>
-        <div class="split-img-accent-2" aria-hidden="true"></div>
-      </div>
-
-      <div class="split-content reveal reveal-delay-2">
-        <span class="script-label" aria-hidden="true">A message for you</span>
-        <h2 id="intro-heading">Your fire didn't go out.</h2>
-        <p>
-          It's buried under years of doing everything for everyone else. Under the weight of being capable and competent and quietly, relentlessly exhausted.
-        </p>
-        <p>
-          You've probably tried to fix it - the courses, the coaches, the holidays that didn't quite do it. And still there's this low hum underneath everything. This sense that you're performing a version of your life rather than actually living it.
-        </p>
-        <p>
-          Your nervous system has been running on high alert with no permission to turn off for, probably, years. At this point you may not even know how to.
-        </p>
-        <p>
-          Emily is an expert at identifying the patterns keeping your nervous system held captive to what you 'should' be doing - so you can reconnect with who you are and what is important to you. Through her framework, she provides the tools to move you out of that state so you can not only enjoy your work again, but yourself within it too.
-        </p>
-        <button class="btn btn-primary open-quiz" aria-haspopup="dialog">
-          Find Out What's Underneath
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ============================================================
      QUOTE BANNER
@@ -2678,6 +2679,45 @@ h1, h2, h3, h4 {
 
       <div class="ity-img-wrap reveal">
         <img src="assets/nature-states/shutdown-fog.jpg" alt="Warm sunrise through soft fog - the quiet ache of recognition" loading="lazy" style="width:100%;height:680px;object-fit:cover;object-position:center;border-radius:var(--radius);">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     INTRO - SPLIT
+     ============================================================ -->
+<section id="intro" class="section-pad-lg" aria-labelledby="intro-heading">
+  <div class="container">
+    <div class="split-grid">
+      <div class="split-img-wrap reveal">
+        <img
+          src="assets/emily-portrait-2.jpg"
+          alt="Emily Witt seated on a wooden bench, warm textured wall behind"
+          loading="lazy"
+        >
+        <div class="split-img-accent" aria-hidden="true"></div>
+        <div class="split-img-accent-2" aria-hidden="true"></div>
+      </div>
+
+      <div class="split-content reveal reveal-delay-2">
+        <span class="script-label" aria-hidden="true">A message for you</span>
+        <h2 id="intro-heading">Your fire didn't go out.</h2>
+        <p>
+          It's buried under years of doing everything for everyone else. Under the weight of being capable and competent and quietly, relentlessly exhausted.
+        </p>
+        <p>
+          You've probably tried to fix it - the courses, the coaches, the holidays that didn't quite do it. And still there's this low hum underneath everything. This sense that you're performing a version of your life rather than actually living it.
+        </p>
+        <p>
+          Your nervous system has been running on high alert with no permission to turn off for, probably, years. At this point you may not even know how to.
+        </p>
+        <p>
+          Emily is an expert at identifying the patterns keeping your nervous system held captive to what you 'should' be doing - so you can reconnect with who you are and what is important to you. Through her framework, she provides the tools to move you out of that state so you can not only enjoy your work again, but yourself within it too.
+        </p>
+        <button class="btn btn-primary open-quiz" aria-haspopup="dialog">
+          Find Out What's Underneath
+        </button>
       </div>
     </div>
   </div>
