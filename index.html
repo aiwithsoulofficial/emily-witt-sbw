@@ -1013,6 +1013,34 @@ h1, h2, h3, h4 {
   margin-top: 8px;
 }
 
+.breakthrough-bonus {
+  background: var(--earth-deep);
+  border-radius: var(--radius-sm);
+  padding: 22px 26px;
+  margin: 8px 0 28px;
+  border-left: 4px solid var(--accent-yellow);
+  position: relative;
+}
+
+.bonus-label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent-yellow);
+  margin-bottom: 8px;
+}
+
+.bonus-text {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--warm-white);
+  line-height: 1.6;
+  margin: 0;
+}
+
 .breakthrough-meta {
   background: var(--blush-pale);
   border-radius: var(--radius-sm);
@@ -2548,8 +2576,12 @@ h1, h2, h3, h4 {
           <li>Identification of the limiting beliefs and stories that keep the cycle running</li>
           <li>2 to 3 personalised regulation strategies grounded in your actual life</li>
           <li>A grounded sense of direction and renewed self-trust to carry forward</li>
-          <li>A follow-up email with resources, reflections, and your personalised pathway</li>
         </ul>
+
+        <div class="breakthrough-bonus" aria-label="Bonus included with every session">
+          <span class="bonus-label">Plus - sent after our session</span>
+          <p class="bonus-text">A personalised follow-up email with resources, integration reflections, and your next-step pathway tailored to what came up for you.</p>
+        </div>
 
         <div class="breakthrough-meta">
           <div class="meta-item">
@@ -2600,15 +2632,22 @@ h1, h2, h3, h4 {
     </div>
 
     <div class="community-grid">
-      <div class="community-card primary reveal">
-        <span class="community-tag">Community</span>
-        <span class="community-icon" aria-hidden="true">&#x1F30F;</span>
-        <h3>The SBW Community</h3>
-        <p>
-          A space for women who are in the process of coming back to themselves. Nervous system education, honest conversation, shared growth - held in a container where you don't have to explain yourself or perform okayness.
-        </p>
-        <p>This is connection without the performance. Belonging without the hustle culture. A place to be in process, together.</p>
-        <a href="#" class="btn btn-ghost">Join the Waitlist</a>
+      <div class="community-card primary with-image reveal">
+        <img
+          src="assets/community-women-circle.jpg"
+          alt="A circle of diverse women sitting together in warm natural light - the SBW community"
+          loading="lazy"
+          class="community-card-img"
+        >
+        <div class="community-card-body">
+          <span class="community-tag">Community</span>
+          <h3>The SBW Community</h3>
+          <p>
+            A space for women who are in the process of coming back to themselves. Nervous system education, honest conversation, shared growth - held in a container where you don't have to explain yourself or perform okayness.
+          </p>
+          <p>This is connection without the performance. Belonging without the hustle culture. A place to be in process, together.</p>
+          <a href="#" class="btn btn-ghost" style="margin-top: auto;">Join the Waitlist</a>
+        </div>
       </div>
 
       <div class="community-card secondary with-image reveal reveal-delay-1">
