@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Workshop 2 - Emily Witt - 11 June 2026</title>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="manifest" href="site.webmanifest">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blush:        #E4B5C1;
+  --blush-light:  #EDD0D7;
+  --blush-pale:   #F7E6D3;
+  --earth:        #522C1F;
+  --earth-deep:   #2B1E1E;
+  --cream:        #F5F1ED;
+  --sand:         #C4B19E;
+  --sand-light:   #E2D6CA;
+  --font-serif:   'Playfair Display', serif;
+  --font-body:    'Work Sans', sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--earth);
+  line-height: 1.65;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.wrap {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 56px 32px 96px;
+}
+
+header {
+  text-align: center;
+  padding: 32px 0 48px;
+  border-bottom: 1px solid var(--sand-light);
+  margin-bottom: 56px;
+}
+
+header .eyebrow {
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--sand);
+  margin-bottom: 18px;
+}
+
+header h1 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 46px;
+  line-height: 1.15;
+  color: var(--earth-deep);
+  margin-bottom: 14px;
+}
+
+header .sub {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 18px;
+  color: var(--sand);
+}
+
+section {
+  margin-bottom: 64px;
+  page-break-inside: avoid;
+}
+
+h2 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 30px;
+  color: var(--earth-deep);
+  margin-bottom: 6px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--sand-light);
+}
+
+h2 .num {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 18px;
+  color: var(--blush);
+  margin-right: 14px;
+  letter-spacing: 1px;
+}
+
+h3 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 21px;
+  color: var(--earth);
+  margin-top: 28px;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 14px;
+}
+
+p.lead {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 19px;
+  color: var(--earth);
+  line-height: 1.6;
+  margin: 18px 0 24px;
+}
+
+ul, ol {
+  margin: 8px 0 18px 22px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+a { color: var(--earth); text-decoration: underline; text-decoration-color: var(--blush); }
+a:hover { color: var(--blush); }
+
+.timeline {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 0;
+  margin: 28px 0;
+}
+
+.timeline-item {
+  display: contents;
+}
+
+.timeline-time {
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--blush);
+  font-weight: 500;
+  padding: 14px 16px 14px 0;
+  border-right: 2px solid var(--sand-light);
+  text-align: right;
+}
+
+.timeline-content {
+  padding: 10px 0 14px 22px;
+  border-bottom: 1px solid var(--sand-light);
+  margin-bottom: 0;
+}
+
+.timeline-content strong {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  color: var(--earth-deep);
+  font-size: 17px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.timeline-content p {
+  font-size: 14px;
+  color: var(--sand);
+  margin-bottom: 0;
+}
+
+.steps {
+  counter-reset: step;
+  list-style: none;
+  margin-left: 0;
+}
+
+.steps li {
+  counter-increment: step;
+  position: relative;
+  padding: 16px 18px 16px 60px;
+  background: white;
+  border: 1px solid var(--sand-light);
+  border-left: 3px solid var(--blush);
+  margin-bottom: 10px;
+  border-radius: 3px;
+}
+
+.steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 18px;
+  top: 16px;
+  font-family: var(--font-serif);
+  font-size: 22px;
+  color: var(--blush);
+  font-weight: 500;
+}
+
+.prompt-box {
+  background: var(--blush-pale);
+  border: 1px dashed var(--sand);
+  padding: 22px 24px;
+  border-radius: 4px;
+  margin: 14px 0 22px;
+  font-family: 'Courier New', monospace;
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--earth-deep);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.prompt-box .label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--blush);
+  margin-bottom: 12px;
+}
+
+.system-prompt {
+  background: white;
+  border: 1.5px solid var(--earth);
+  padding: 28px 30px;
+  border-radius: 4px;
+  margin: 18px 0 24px;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--earth-deep);
+  white-space: pre-wrap;
+}
+
+.system-prompt .label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--blush);
+  margin-bottom: 14px;
+}
+
+.workflow {
+  background: white;
+  border: 1px solid var(--sand-light);
+  padding: 24px 28px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+}
+
+.workflow h4 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--earth-deep);
+  margin-bottom: 6px;
+}
+
+.workflow .label {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--blush);
+  margin-bottom: 8px;
+}
+
+.workflow ol, .workflow ul {
+  margin-top: 10px;
+  margin-left: 22px;
+  font-size: 14.5px;
+}
+
+.callout {
+  background: var(--sand-light);
+  padding: 18px 22px;
+  border-radius: 4px;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 16px;
+  color: var(--earth-deep);
+  margin: 18px 0;
+}
+
+.callout-dark {
+  background: var(--earth-deep);
+  color: var(--cream);
+  padding: 18px 22px;
+  border-radius: 4px;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 16px;
+  margin: 18px 0;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin: 24px 0;
+}
+
+.col-card {
+  background: white;
+  border: 1.5px solid var(--sand-light);
+  padding: 22px 20px;
+  border-radius: 4px;
+}
+
+.col-card .tag {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--blush);
+  margin-bottom: 10px;
+}
+
+.col-card h4 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 19px;
+  color: var(--earth-deep);
+  margin-bottom: 8px;
+}
+
+.col-card p, .col-card li {
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.homework {
+  background: var(--blush-pale);
+  padding: 28px 30px;
+  border-radius: 4px;
+}
+
+.homework ol {
+  margin-left: 22px;
+  margin-top: 12px;
+}
+
+.homework li {
+  font-size: 15.5px;
+  margin-bottom: 14px;
+}
+
+.quick-ref {
+  background: var(--earth-deep);
+  color: var(--cream);
+  padding: 36px 36px;
+  border-radius: 6px;
+}
+
+.quick-ref h2 {
+  color: var(--blush-light);
+  border-bottom: 1px solid var(--sand);
+}
+
+.quick-ref h2 .num { color: var(--blush); }
+
+.quick-ref h3 {
+  color: var(--blush-light);
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+.quick-ref p, .quick-ref li {
+  color: var(--cream);
+  font-size: 14.5px;
+}
+
+.quick-ref .ref-prompts {
+  background: rgba(245,241,237,0.08);
+  border-radius: 3px;
+  padding: 16px 20px;
+  margin-top: 10px;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.quick-ref a { color: var(--blush-light); text-decoration-color: var(--blush); }
+
+.divider-mark {
+  text-align: center;
+  margin: 48px 0;
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--sand);
+  font-size: 22px;
+  letter-spacing: 8px;
+}
+
+.tune-box {
+  background: white;
+  border: 1px solid var(--sand-light);
+  border-top: 3px solid var(--earth);
+  padding: 24px 28px;
+  border-radius: 3px;
+  margin: 18px 0;
+}
+
+.tune-box h4 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--earth-deep);
+  margin-bottom: 12px;
+}
+
+.tune-box .before {
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  background: #f8f8f8;
+  padding: 14px 16px;
+  border-radius: 3px;
+  color: #888;
+  margin-bottom: 10px;
+  text-decoration: line-through;
+  line-height: 1.6;
+}
+
+.tune-box .after {
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  background: var(--blush-pale);
+  padding: 14px 16px;
+  border-radius: 3px;
+  color: var(--earth-deep);
+  line-height: 1.6;
+}
+
+footer {
+  text-align: center;
+  padding-top: 36px;
+  margin-top: 48px;
+  border-top: 1px solid var(--sand-light);
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--sand);
+  text-transform: uppercase;
+}
+
+@media (max-width: 720px) {
+  .two-col { grid-template-columns: 1fr; }
+  .timeline { grid-template-columns: 60px 1fr; }
+  header h1 { font-size: 34px; }
+  .wrap { padding: 32px 20px 64px; }
+}
+
+@media print {
+  body { background: white; }
+  .wrap { padding: 20px; max-width: 100%; }
+  section { page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Space Between Wellness &middot; 11 June 2026</div>
+  <h1>Claude in the Room</h1>
+  <div class="sub">Workshop 2 - We build things today</div>
+</header>
+
+<section>
+  <h2><span class="num">01</span>What we are doing today</h2>
+  <p class="lead">Last session we set up the machinery. Today we run it. Every section of this page has something you will actually produce before we close the call.</p>
+  <p>We will tune your system prompt based on what fell short last week, run a live content stack from a real voice memo, make a Canva graphic without leaving Claude, and map two weeks of content so you have a backlog you can pull from any time.</p>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-time">10 min</div>
+      <div class="timeline-content">
+        <strong>Tune the system prompt</strong>
+        <p>Fix what is not working. Based on what Claude got wrong last week.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">25 min</div>
+      <div class="timeline-content">
+        <strong>Live content stack</strong>
+        <p>One voice memo becomes a caption, three story slides, and a short email - all in the room.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">15 min</div>
+      <div class="timeline-content">
+        <strong>Canva connector</strong>
+        <p>Connect it, make a reel cover with today's best line.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">10 min</div>
+      <div class="timeline-content">
+        <strong>Content map</strong>
+        <p>Map two weeks of posts from one topic. Leave with a backlog.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">02</span>Tune the system prompt</h2>
+  <p>Open your Claude Project. Click <em>Edit project</em> then <em>Project instructions</em>. We are going to add two things: what is still going wrong, and a cleaner guide on how to handle client stories.</p>
+
+  <p class="lead">The question: when Claude hands you something back, what makes you cringe first?</p>
+
+  <p>Common answers from nervous system coaches after their first week:</p>
+  <ul>
+    <li>Too much passive voice - "it can feel like" instead of "you feel"</li>
+    <li>Ending on a question when a quiet statement would land harder</li>
+    <li>Hedging too much - "this might resonate" and "perhaps" everywhere</li>
+    <li>Paragraphs that start with "And" trying to sound conversational but feeling lazy</li>
+    <li>Clinical words sneaking back in - "dysregulation", "activation" used loosely</li>
+  </ul>
+
+  <p>Whatever yours is, add it to the NON-NEGOTIABLE RULES block. One line. Specific. Like this:</p>
+
+  <div class="two-col">
+    <div class="tune-box">
+      <h4>Too vague</h4>
+      <div class="before">Do not be clinical.</div>
+      <div class="after">Never use "dysregulation", "activation", "dorsal", "ventral", or "sympathetic" in client-facing content. Translate them: "your body going into alarm" instead of "sympathetic activation."</div>
+    </div>
+    <div class="tune-box">
+      <h4>Too vague</h4>
+      <div class="before">Sound like me.</div>
+      <div class="after">Never end a caption with a question. End with a statement that lands like a full stop. Examples of mine: "That is the work." / "She already knows." / "We are allowed to stop here."</div>
+    </div>
+  </div>
+
+  <h3>Add this block to your system prompt now</h3>
+  <p>Scroll to the bottom of your project instructions and add the block below. Fill in the bracketed parts yourself based on the first week.</p>
+
+  <div class="system-prompt">
+<span class="label">Add to the bottom of your Project Instructions</span>VOICE CALIBRATION (updated [date])
+These are the specific errors I noticed in the first week. Add to this list as we go.
+
+[Your specific issue 1 here - e.g. "Never hedge with 'perhaps', 'might', or 'it can feel like'. State things directly. If I am uncertain whether something applies, I will say so in my prompt, not in the output."]
+
+[Your specific issue 2 here - e.g. "Never start a sentence with 'And' for emphasis. It reads as trying too hard."]
+
+[Your specific issue 3 here - e.g. "Captions end on a statement. Not a question. Not a call to action. A landing."]
+
+WHEN I SHARE CLIENT MOMENTS
+If I share something a client said or a moment from a session, assume I want to protect her completely. Never use any detail that could identify her. Default to: no name, no profession, no location, no specific life circumstances. Keep only the emotional truth.
+  </div>
+
+  <div class="callout">Once you have added this: test it. Paste a piece of content that went wrong last week and ask Claude to rewrite it. You will see the difference immediately.</div>
+</section>
+
+<section>
+  <h2><span class="num">03</span>Live content stack</h2>
+  <p>This is the one you will run every week. It takes a voice memo and produces everything you need to post for three to four days.</p>
+
+  <p>Pull up a voice memo from this week - anything you recorded walking, driving, or just sitting with a thought. It does not have to be polished. If you do not have one, describe a client moment from the past few days to Kelly now and she will help you build it.</p>
+
+  <h3>Step one - get the transcript</h3>
+  <p>On your phone, open the voice memo. If you use the iOS Voice Memos app, press the three-dot menu and tap <em>Transcribe</em>. Give it ninety seconds. Copy the full text.</p>
+  <p>Alternatively, paste the audio into <a href="https://otter.ai" target="_blank">Otter.ai</a> - the free plan does five hours per month.</p>
+
+  <h3>Step two - run the stack prompt</h3>
+  <p>Open your Claude Project. Start a new conversation. Paste this:</p>
+
+  <div class="prompt-box"><span class="label">The full stack prompt - replace the bracketed bits</span>I have a voice memo transcript below. I want you to turn it into a full content stack. Work through each format one at a time. Do not move to the next format until I give you a thumbs up on the current one.
+
+Format 1: Instagram caption. Hook that lands in one breath. Three to five short paragraphs of real substance. A quiet statement at the end - not a question. No call to action.
+
+Format 2: Three Instagram story slides. Each slide is one thought. Under twelve words per slide. Not a numbered list, not a sequence - three independent moments from the memo that each stand alone.
+
+Format 3: Short email to my list. Subject line that does not try too hard. First line earns the read. Body pulls one insight from the memo and deepens it slightly. Last line is a quiet invitation to reply, not to buy anything.
+
+Transcript:
+"""
+[paste your transcript here]
+"""
+
+Start with Format 1. Wait for my feedback before Format 2.</div>
+
+  <div class="callout">Work through it one format at a time. Give Claude a real edit note if something is off: "the third paragraph is trying too hard, strip it back" or "the ending is too soft, make it land harder." Keep the feedback specific and one thing at a time.</div>
+
+  <h3>If the first draft is close but not quite right</h3>
+  <p>Use this prompt. It is faster than trying to describe the problem:</p>
+
+  <div class="prompt-box"><span class="label">Refinement prompt</span>Read the draft back to yourself as if you are me. Identify the one line that sounds the least like me and tell me what it is. Then rewrite just that line three different ways - slightly softer, as written, slightly more direct - and let me pick.</div>
+
+  <h3>When you love a piece</h3>
+  <p>Save it as a sample. In your project instructions, add a section called <em>SAMPLE CONTENT I WOULD WRITE AGAIN</em> and paste it in. This trains Claude on your real voice over time, not just a description of it.</p>
+</section>
+
+<section>
+  <h2><span class="num">04</span>Canva connector</h2>
+  <p>Turn the best line from today's content into a real graphic - a reel cover or a quote card - without leaving Claude.</p>
+
+  <h3>Connect it once</h3>
+  <ol class="steps">
+    <li>In Claude, click your profile picture (top right), then <em>Settings</em>.</li>
+    <li>Click <em>Connectors</em> or <em>Integrations</em> in the left menu.</li>
+    <li>Find Canva. Click <em>Connect</em>. Log in to your Canva account when prompted.</li>
+    <li>Come back to your Project. Canva is now connected for all future conversations.</li>
+  </ol>
+
+  <h3>Create a reel cover now</h3>
+  <p>Take the strongest single line from the content you just made. Copy it. Then paste this prompt:</p>
+
+  <div class="prompt-box"><span class="label">Canva reel cover prompt</span>Create a new Canva design for me. I want an Instagram reel cover - 1080 x 1920 pixels.
+
+Brand: Space Between Wellness
+Palette: dusty pink #E4B5C1, espresso #522C1F, cream #F5F1ED
+Fonts: Playfair Display for headings, Work Sans for body
+
+Headline text: "[paste your best line here]"
+Sub-text: "Space Between Wellness"
+
+Layout: text-forward. Clean. Plenty of breathing room. No stock images. No busy background. The text should feel like it was placed with intention, not scattered.
+
+Generate the design and show me a preview link.</div>
+
+  <div class="callout">If Canva comes back with something that needs adjusting, just say what you want changed: "make the headline larger", "switch to a cream background", "move the sub-text to the bottom". It edits live.</div>
+
+  <h3>Create a quote card</h3>
+  <p>A square (1080 x 1080) with one of the story slide lines:</p>
+
+  <div class="prompt-box"><span class="label">Quote card prompt</span>Create a square Canva design, 1080 x 1080px, for a static Instagram post.
+
+Brand: Space Between Wellness. Dusty pink, espresso, cream.
+Single line of text: "[paste story slide text here]"
+Small footer text: "@spacebetweenwellness"
+
+Minimal. Generous white space. The kind of thing someone screenshots and saves.</div>
+</section>
+
+<section>
+  <h2><span class="num">05</span>Two-week content map</h2>
+  <p>One topic, mapped into two weeks of posts so you never open Instagram wondering what to say.</p>
+
+  <p>Give Claude a topic you are sitting with right now. Something you said to a client this week, or something you keep wanting to post about but have not quite cracked yet.</p>
+
+  <div class="prompt-box"><span class="label">Content map prompt</span>I want to build a two-week content map from a single topic. The topic is: [your topic here - e.g. "the difference between being fed up and being broken"].
+
+Map it out like this:
+- Week 1, five posts: go from surface-level observation to something more real. Start where she already is. End where she did not expect to go.
+- Week 2, five posts: responses, deepening, a different angle on the same truth.
+
+For each post: the format (caption, reel, story series, email), the angle, and the first line only. Not the full draft. Just the angle and the hook.
+
+Then pick the two strongest posts from the map and ask me which one to write first.</div>
+
+  <div class="callout">Save the map. Paste it into a note on your phone or a doc in your Drive folder. When you wake up on a Monday with nothing to say, open it and pick one.</div>
+
+  <h3>Building a content backlog</h3>
+  <p>Once you have done this twice you will have four weeks of posts planned. After six weeks you will have a rotating backlog. The goal is that you are always choosing what to post from a short list, never starting from nothing.</p>
+
+  <p>To refill the backlog at any time:</p>
+
+  <div class="prompt-box"><span class="label">Refill prompt - run monthly</span>Here are three topics I keep coming back to lately:
+1. [topic]
+2. [topic]
+3. [topic]
+
+For each one, give me three post angles I have not used yet. One reel hook, one caption angle, one story series concept. Do not write the full content. Just the angle and first line. I will schedule a batching session to write them.</div>
+</section>
+
+<section>
+  <h2><span class="num">06</span>The chaining technique</h2>
+  <p>Most people stop after one prompt. This is where the real leverage is. Chaining means taking Claude's output and immediately feeding it to a different task in the same conversation.</p>
+
+  <p>You never have to start fresh. Everything builds on the last thing.</p>
+
+  <div class="workflow">
+    <span class="label">Chain 1</span>
+    <h4>Caption to email</h4>
+    <p>After Claude writes you a caption you like, say this:</p>
+    <p style="font-family:'Courier New',monospace; font-size:13.5px; background:var(--blush-pale); padding:14px 16px; border-radius:3px; margin-top:12px; line-height:1.7;">"Take the core idea from that caption and expand it into a short email for my list. Keep the same emotional register. The email should feel like a longer, more private version of the same thought - not a repeat of it."</p>
+  </div>
+
+  <div class="workflow">
+    <span class="label">Chain 2</span>
+    <h4>Email to subject lines</h4>
+    <p>After the email is done:</p>
+    <p style="font-family:'Courier New',monospace; font-size:13.5px; background:var(--blush-pale); padding:14px 16px; border-radius:3px; margin-top:12px; line-height:1.7;">"Give me five subject line options for that email. Range them: one very plain, one slightly intriguing, one that starts mid-sentence, one that is just a fragment, one that sounds like something I would text a friend."</p>
+  </div>
+
+  <div class="workflow">
+    <span class="label">Chain 3</span>
+    <h4>Good output to system prompt improvement</h4>
+    <p>When Claude writes something you would genuinely post without changing a word:</p>
+    <p style="font-family:'Courier New',monospace; font-size:13.5px; background:var(--blush-pale); padding:14px 16px; border-radius:3px; margin-top:12px; line-height:1.7;">"That is exactly right. Read that output back and tell me what specific language choices made it work. Then add those as a note to the system prompt under VOICE CALIBRATION."</p>
+    <p style="font-size:14px; color:var(--sand); margin-top:12px;">This is how the system improves itself. You are training Claude on your real outputs, not just a description of them.</p>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">07</span>Prompts to keep forever</h2>
+  <p>These go alongside the five from last session. Save them in a note or your Drive folder.</p>
+
+  <h3>The voice check</h3>
+  <div class="prompt-box"><span class="label">Run this when something feels almost-right</span>Read this back as if you are me. Give me a score out of ten for how close it is to my voice. Then tell me the exact word or phrase that is the furthest from how I speak - and why. Rewrite just that part.</div>
+
+  <h3>The hard question</h3>
+  <div class="prompt-box"><span class="label">Run this when you are stuck on a topic</span>I want to write about [topic] but I keep going too surface-level or too clinical. Ask me three questions that would pull out the real thing I am trying to say - the version that is a bit more honest than what I usually post. Do not write the post yet. Just ask the questions.</div>
+
+  <h3>The brevity edit</h3>
+  <div class="prompt-box"><span class="label">Run this on anything that feels long</span>Cut this by thirty percent. Keep every idea. Remove every word that is not doing work. Do not summarise - compress. Show me the cuts in a second version.</div>
+
+  <h3>The reset</h3>
+  <div class="prompt-box"><span class="label">Run this if Claude starts drifting from your voice</span>Re-read your project instructions from the beginning. Then read the sample content I uploaded. Now rewrite the last output from scratch as if those are the only two documents you have ever seen.</div>
+
+  <h3>The client moment</h3>
+  <div class="prompt-box"><span class="label">Turn a session insight into content</span>Something happened in a session this week that I keep thinking about. I am going to describe it in general terms - no identifying details. I want you to help me find the piece of content hidden in it.
+
+Here is the moment: [describe it - what happened, what shifted, what she said, what you noticed]
+
+Give me three different angles I could write a post from. Do not write the posts yet. Just name the angles - what each one would be about at its core.</div>
+</section>
+
+<section>
+  <h2><span class="num">08</span>What is next</h2>
+  <p>You are two sessions in. Here is where the system goes from here.</p>
+
+  <div class="two-col">
+    <div class="col-card">
+      <div class="tag">Session 3</div>
+      <h4>The full funnel</h4>
+      <p>Wire Claude into your application form workflow. When someone submits an application, Claude drafts a personalised reply in your voice before you even open your inbox. We also build your welcome sequence properly - not just draft it, but get it sent automatically from day one.</p>
+    </div>
+    <div class="col-card">
+      <div class="tag">Session 4</div>
+      <h4>Content without you in it</h4>
+      <p>Schedule a monthly batching day. In three hours you produce six weeks of content. We use the map from today, batch the writing in one session, and set up a simple posting calendar so content goes out even when you are in back-to-back client days.</p>
+    </div>
+  </div>
+
+  <div class="callout-dark">The shift happens when Claude feels like a thinking partner, not a tool you have to manage. We are getting there.</div>
+</section>
+
+<section>
+  <h2><span class="num">09</span>Homework before next session</h2>
+  <div class="homework">
+    <p style="font-family:var(--font-serif); font-style:italic; font-size:17px; color:var(--earth-deep); margin-bottom:6px;">Two things this week. Both are under twenty minutes each.</p>
+    <ol>
+      <li><strong>Run the voice memo stack once.</strong> Transcript in, full stack out, post at least one piece. Screenshot the output - good or bad - and save it for next session.</li>
+      <li><strong>Add one line to VOICE CALIBRATION in your system prompt.</strong> Based on something you noticed this week. The more specific, the more useful. "Never use X" beats "sound more like me" every time.</li>
+    </ol>
+    <p style="margin-top:18px; font-size:14px; color:var(--earth); font-style:italic;">Optional: connect Gmail and reply to one inquiry using Claude as a drafting assistant. Notice how much faster it is once it knows your voice.</p>
+  </div>
+</section>
+
+<div class="divider-mark">&middot; &middot; &middot;</div>
+
+<section class="quick-ref">
+  <h2><span class="num">10</span>Quick reference - Session 2</h2>
+
+  <h3>The five prompts from today</h3>
+  <div class="ref-prompts">1. Full stack: "Turn this transcript into: caption, 3 story slides, short email. One at a time."
+
+2. Voice check: "Score this out of ten for my voice. Tell me the one word that is furthest from how I speak."
+
+3. Content map: "Map two weeks of posts from this one topic. Angle + first line only, not full drafts."
+
+4. Chain - caption to email: "Take that idea and expand it into a short email. Private version of the same thought."
+
+5. Reset: "Re-read your project instructions. Rewrite that output from scratch."</div>
+
+  <h3>The one habit that compounds</h3>
+  <p style="font-family:var(--font-serif); font-style:italic; font-size:17px;">Every time Claude writes something you love, add it to the system prompt under SAMPLE CONTENT. That is how the voice gets sharper over time.</p>
+
+  <h3>Session 1 resources</h3>
+  <p><a href="/claude-training.html">Claude Training Session 1</a> - system prompt, file setup, original five prompts, three workflows</p>
+
+  <h3>Need help between sessions</h3>
+  <p>Email Kelly: <a href="mailto:kwotherspoon1982@gmail.com">kwotherspoon1982@gmail.com</a></p>
+</section>
+
+<footer>
+  Space Between Wellness &middot; Claude Workshop 2 &middot; 11 June 2026
+</footer>
+
+</div>
+</body>
+</html>
