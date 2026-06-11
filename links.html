@@ -32,40 +32,72 @@ src="https://www.facebook.com/tr?id=834476722819618&ev=PageView&noscript=1"
 
 body {
   font-family: 'Work Sans', sans-serif;
-  background: #F5F1ED;
-  color: #522C1F;
+  background: #ffffff;
+  color: #1a1a1a;
   min-height: 100vh;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 48px 20px 64px;
 }
 
-.wrap {
-  width: 100%;
-  max-width: 420px;
+.page {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.header-brand {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: #522C1F;
+  letter-spacing: 0.02em;
+}
+
+.header-socials {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.header-socials a {
+  color: #522C1F;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  opacity: 0.7;
+  transition: opacity 0.15s;
+}
+
+.header-socials a:hover { opacity: 1; }
+
+/* PROFILE */
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+  text-align: center;
 }
 
 .avatar {
-  width: 96px;
-  height: 96px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  background: #E4B5C1;
   overflow: hidden;
-  margin-bottom: 18px;
-  border: 3px solid white;
-  box-shadow: 0 2px 16px rgba(82,44,31,0.10);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Playfair Display', serif;
-  font-size: 36px;
-  color: white;
-  font-style: italic;
+  margin-bottom: 20px;
+  border: 3px solid #F5F1ED;
+  box-shadow: 0 2px 20px rgba(82,44,31,0.12);
 }
 
 .avatar img {
@@ -75,145 +107,207 @@ body {
   object-position: center top;
 }
 
-.name {
+.profile-name {
   font-family: 'Playfair Display', serif;
   font-weight: 500;
-  font-size: 22px;
+  font-size: 24px;
   color: #2B1E1E;
-  margin-bottom: 6px;
-  text-align: center;
+  margin-bottom: 8px;
 }
 
-.tagline {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
+.profile-headline {
   font-size: 15px;
-  color: #C4B19E;
-  text-align: center;
-  margin-bottom: 36px;
+  font-weight: 400;
+  color: #666;
   line-height: 1.5;
+  max-width: 320px;
 }
 
+/* LINKS */
 .links {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
+  margin-bottom: 48px;
 }
 
 .link-btn {
   display: block;
   width: 100%;
-  padding: 18px 24px;
-  background: white;
-  border: 1.5px solid #E2D6CA;
-  border-radius: 6px;
+  padding: 17px 28px;
+  border-radius: 50px;
   text-decoration: none;
-  color: #2B1E1E;
-  font-family: 'Work Sans', sans-serif;
   font-size: 15px;
   font-weight: 500;
   text-align: center;
   line-height: 1.4;
-  transition: border-color 0.18s, background 0.18s, transform 0.12s;
+  transition: transform 0.12s, box-shadow 0.12s;
   cursor: pointer;
 }
 
 .link-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(82,44,31,0.12);
+}
+
+.link-btn:active { transform: translateY(0); }
+
+.link-btn.outlined {
+  background: white;
+  border: 1.5px solid #E2D6CA;
+  color: #2B1E1E;
+}
+
+.link-btn.outlined:hover {
   border-color: #E4B5C1;
-  background: #FBF7F5;
-  transform: translateY(-1px);
 }
 
-.link-btn:active {
-  transform: translateY(0);
-}
-
-.link-btn.primary {
+.link-btn.filled {
   background: #522C1F;
-  border-color: #522C1F;
+  border: 1.5px solid #522C1F;
   color: #F5F1ED;
 }
 
-.link-btn.primary:hover {
+.link-btn.filled:hover {
   background: #6B3A2A;
   border-color: #6B3A2A;
 }
 
-.link-btn .btn-label {
-  display: block;
+.link-btn.blush {
+  background: #E4B5C1;
+  border: 1.5px solid #E4B5C1;
+  color: #2B1E1E;
+}
+
+.link-btn.blush:hover {
+  background: #d9a5b3;
+  border-color: #d9a5b3;
+}
+
+/* TESTIMONIALS */
+.testimonials {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.testimonial {
+  background: #F5F1ED;
+  border-radius: 16px;
+  padding: 22px 24px;
+}
+
+.stars {
+  color: #D4A24A;
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.testimonial-text {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #522C1F;
   font-family: 'Playfair Display', serif;
   font-style: italic;
-  font-size: 14px;
+}
+
+.testimonial-author {
+  margin-top: 12px;
+  font-size: 12px;
+  font-weight: 500;
   color: #C4B19E;
-  font-weight: 400;
-  margin-bottom: 3px;
-}
-
-.link-btn.primary .btn-label {
-  color: #E4B5C1;
-}
-
-.divider {
-  width: 40px;
-  height: 1px;
-  background: #E2D6CA;
-  margin: 8px auto;
-}
-
-.footer {
-  margin-top: 40px;
-  text-align: center;
-  font-size: 11px;
-  letter-spacing: 2px;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #C4B19E;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  font-size: 12px;
+  color: #aaa;
 }
 
 .footer a {
-  color: #C4B19E;
+  color: #aaa;
   text-decoration: none;
 }
 
 .footer a:hover { color: #522C1F; }
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 8px;
+}
 </style>
 </head>
 <body>
-<div class="wrap">
+<div class="page">
 
-  <div class="avatar"><img src="assets/emily-portrait-1.jpg" alt="Emily Witt"></div>
-
-  <div class="name">Emily Witt</div>
-  <div class="tagline">Nervous System Coach<br>Space Between Wellness &middot; Hobart, Tasmania</div>
-
-  <div class="links">
-
-    <a href="https://spacebetweenwellness.com/nervous-system-assessment.html" class="link-btn primary">
-      <span class="btn-label">Free quiz</span>
-      You're already successful - so why do you feel so flat? Find out here
-    </a>
-
-    <a href="https://spacebetweenwellness.com/apply.html" class="link-btn">
-      <span class="btn-label">1:1 coaching</span>
-      Work with me
-    </a>
-
-    <a href="https://spacebetweenwellness.com" class="link-btn">
-      <span class="btn-label">Learn more</span>
-      Explore the work
-    </a>
-
-    <div class="divider"></div>
-
-    <a href="https://open.spotify.com/show/5HqPHPX6JELmnQeEqFQjp0" class="link-btn" target="_blank" rel="noopener">
-      <span class="btn-label">Podcast</span>
-      Tea Talk with Emily
-    </a>
-
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-brand">SBW</div>
+    <div class="header-socials">
+      <a href="https://www.instagram.com/spacebetweenwellness" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://spacebetweenwellness.com" target="_blank" rel="noopener">Website</a>
+    </div>
   </div>
 
+  <!-- PROFILE -->
+  <div class="profile">
+    <div class="avatar">
+      <img src="assets/emily-portrait-1.jpg" alt="Emily Witt">
+    </div>
+    <div class="profile-name">Emily Witt</div>
+    <div class="profile-headline">Nervous system coaching for women who are done feeling flat despite doing everything right.</div>
+  </div>
+
+  <!-- LINKS -->
+  <div class="links">
+    <a href="https://spacebetweenwellness.com/apply.html" class="link-btn filled">
+      Work with me
+    </a>
+    <a href="https://spacebetweenwellness.com/nervous-system-assessment.html" class="link-btn blush">
+      You're already successful - so why do you feel so flat? Find out here
+    </a>
+    <a href="https://spacebetweenwellness.com" class="link-btn outlined">
+      Explore the work
+    </a>
+    <a href="https://open.spotify.com/show/5HqPHPX6JELmnQeEqFQjp0" class="link-btn outlined" target="_blank" rel="noopener">
+      Tea Talk Podcast with Emily
+    </a>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <div class="testimonials">
+    <div class="testimonial">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="testimonial-text">The most wonderful experience for anyone looking to feel grounded, calmer, more energised and in a peaceful state of being. The space has beautiful energy, and Emily is incredible - with her ability to tune into one's energetic state being simply magical.</div>
+      <div class="testimonial-author">Sound bath client</div>
+    </div>
+    <div class="testimonial">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="testimonial-text">I just wanted to say how amazing and truly beautiful my sound bath was. Complete relaxation - like floating away into the clouds. It was like a reset and rest my body truly needed. I'll be back.</div>
+      <div class="testimonial-author">Sound bath client</div>
+    </div>
+    <div class="testimonial">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="testimonial-text">For something to bring me calmness and a sense of peace and safety - it is well worth taking the time and investing a small portion of your day to yourself and the benefits that follow.</div>
+      <div class="testimonial-author">Sound bath client</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
   <div class="footer">
     <a href="mailto:space.between.wellness@gmail.com">space.between.wellness@gmail.com</a>
+    <div class="footer-links">
+      <a href="https://spacebetweenwellness.com/privacy.html">Privacy Policy</a>
+    </div>
   </div>
 
 </div>
