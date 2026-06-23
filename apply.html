@@ -170,6 +170,7 @@ h1, h2, h3, h4 {
 .reveal-delay-1 { transition-delay: 0.1s; }
 .reveal-delay-2 { transition-delay: 0.2s; }
 
+
 /* ============================================================
    FIXED NAVIGATION
    ============================================================ */
@@ -1025,6 +1026,8 @@ textarea::placeholder {
   .footer-mini-brand { font-size: 1.5rem; }
 }
 </style>
+<!-- No-JS fallback: reveal animations are progressive enhancement; show all content if JS is off -->
+<noscript><style>.reveal{opacity:1 !important;transform:none !important;}</style></noscript>
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -1132,7 +1135,7 @@ src="https://www.facebook.com/tr?id=834476722819618&ev=PageView&noscript=1"
 <section id="form-section" aria-label="Application form">
   <div class="container">
 
-    <div class="form-wrap reveal" role="main" aria-label="Application form">
+    <div class="form-wrap" role="main" aria-label="Application form">
 
       <!-- ======================================================
            SUCCESS MESSAGE (shown after submit)
@@ -1657,9 +1660,15 @@ src="https://www.facebook.com/tr?id=834476722819618&ev=PageView&noscript=1"
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12 });
+  }, { threshold: 0, rootMargin: '0px 0px -10% 0px' });
 
   revealEls.forEach(function(el) { observer.observe(el); });
+
+  /* Safety net: if anything is still hidden after 2.5s (observer never fired,
+     reduced-motion, or a tall element), force it visible so content is never lost. */
+  setTimeout(function() {
+    revealEls.forEach(function(el) { el.classList.add('visible'); });
+  }, 2500);
 })();
 
 /* ============================================================
@@ -1856,9 +1865,9 @@ src="https://www.facebook.com/tr?id=834476722819618&ev=PageView&noscript=1"
     var SUPABASE_URL = 'https://jiquevvzrdavgqonvvug.supabase.co';
     var SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImppcXVldnZ6cmRhdmdxb252dnVnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE5NzIxNzIsImV4cCI6MjA4NzU0ODE3Mn0.e4mYjXj8TGTC0_UCm3QCKGSv8Cl-migIl7reYIKNcW4';
 
-    /* Collect format_preference as array (multi-select) */
+    /* Collect format_preference as array (multi-select) - field is named session_format */
     var formatPrefs = [];
-    formData.getAll('format_preference').forEach(function(v) { formatPrefs.push(v); });
+    formData.getAll('session_format').forEach(function(v) { formatPrefs.push(v); });
 
     /* Build full_submission object from all form data */
     var fullSub = {};
@@ -1869,17 +1878,20 @@ src="https://www.facebook.com/tr?id=834476722819618&ev=PageView&noscript=1"
       else fullSub[k] = [fullSub[k], v];
     });
 
+    /* Build full name from the first_name + last_name fields the form actually uses */
+    var fullName = ((formData.get('first_name') || '') + ' ' + (formData.get('last_name') || '')).trim();
+
     var supabasePayload = {
-      full_name: formData.get('name') || '',
+      full_name: fullName,
       email: formData.get('email') || '',
       phone: formData.get('phone') || null,
       location: formData.get('location') || null,
       age_range: formData.get('age_range') || null,
-      body_week: formData.get('body_week') || null,
-      default_response: formData.get('default_response') || null,
-      rest_response: formData.get('rest_response') || null,
-      self_relationship: formData.get('self_relationship') || null,
-      tried_before: formData.get('tried_before') || null,
+      body_week: formData.get('body_feel') || null,
+      default_response: formData.get('hard_response') || null,
+      rest_response: formData.get('rest_feel') || null,
+      self_relationship: formData.get('relationship_self') || null,
+      tried_before: formData.get('tried_already') || null,
       readiness: formData.get('readiness') || null,
       actual_ache: formData.get('actual_ache') || null,
       six_months: formData.get('six_months') || null,
