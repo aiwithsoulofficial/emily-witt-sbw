@@ -3204,7 +3204,7 @@ function closeQuiz() {
 document.querySelectorAll('.open-quiz').forEach(btn => {
   btn.addEventListener('click', (e) => {
     e.preventDefault();
-    openQuiz();
+    window.location.href = '/nervous-system-assessment.html';
   });
 });
 

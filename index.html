@@ -2778,6 +2778,14 @@ src="https://www.facebook.com/tr?id=834476722819618&ev=PageView&noscript=1"
         Find Out in 2 Minutes
       </button>
     </div>
+
+    <div class="ns-cta-block reveal">
+      <h3>What patterns are keeping you stuck?</h3>
+      <p>A different 2-minute quiz. Find the pattern quietly wearing you out, then go deeper with a personalised Pattern Audit.</p>
+      <a href="/quiz/" class="btn btn-sage">
+        Take the Patterns Quiz
+      </a>
+    </div>
   </div>
 </section>
 
@@ -3337,7 +3345,8 @@ src="https://www.facebook.com/tr?id=834476722819618&ev=PageView&noscript=1"
           <a href="#community">Community</a>
           <a href="for-organisations.html">Organisations</a>
           <a href="#faq">FAQ</a>
-          <a href="#" class="open-quiz">Take the Quiz</a>
+          <a href="#" class="open-quiz">Nervous System Quiz</a>
+          <a href="/quiz/">Patterns Quiz</a>
         </nav>
       </div>
 
@@ -3778,7 +3787,7 @@ function closeQuiz() {
 document.querySelectorAll('.open-quiz').forEach(btn => {
   btn.addEventListener('click', (e) => {
     e.preventDefault();
-    openQuiz();
+    window.location.href = '/nervous-system-assessment.html';
   });
 });
 
