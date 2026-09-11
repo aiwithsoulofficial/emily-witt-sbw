@@ -150,14 +150,8 @@
 
 <script>
 (function(){
-  // ---- Pattern Audit: paywall -> form --------------------------------------
-  // FLOW: button -> PAYWALL_URL (GHL $62 payment) -> after payment, GHL
-  // redirects the buyer to the Tally form (https://tally.so/r/PdJ7qB).
-  // Set PAYWALL_URL to the GHL payment link once created. Until then it points
-  // straight at the Tally form so the button is testable in this preview.
-  var PAYWALL_URL = "https://link.fastpaydirect.com/payment-link/6aa251c5ceb12d9fc1a8c177"; // GHL $62 payment link -> redirects to /pattern-audit/ after payment
-  var GHL_WEBHOOK = ""; // paste GHL inbound-webhook URL to send quiz leads into your CRM
-  var AUDIT_PRICE = "62"; // AUD - change this one value to reprice.
+  // ---- Lead capture: where quiz submissions are sent (set when email tool chosen) ---
+  var LEAD_WEBHOOK = ""; // endpoint to receive quiz leads (form service / Flodesk relay)
 
   // ---- Questions (each option maps to one pattern) --------------------------
   var Q = [
@@ -331,8 +325,8 @@
     name.oninput=check; email.oninput=check;
     rev.onclick=function(){
       lead.name=name.value.trim(); lead.email=email.value.trim();
-      if(GHL_WEBHOOK){
-        try{ fetch(GHL_WEBHOOK,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/json"},
+      if(LEAD_WEBHOOK){
+        try{ fetch(LEAD_WEBHOOK,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/json"},
           body:JSON.stringify({first_name:lead.name,email:lead.email,inner_pattern:R[tally()].name,quiz:"inner-patterns"})}); }catch(e){}
       }
       go(Q.length+1);
@@ -364,12 +358,9 @@
         '<p class="whisper">Growth starts with reconnecting with yourself.</p>'+
         '<div class="audit">'+
           '<div class="hair"></div>'+
-          '<h3>If this landed, the next step is getting specific.</h3>'+
-          '<p>The Pattern Audit is a personalised written review. You tell me what has actually been going on, what you have tried, where you keep getting stuck and what you want instead.</p>'+
-          '<p>I read your responses myself and send back a written audit - the patterns I am noticing, where your body may be sitting, and practical next steps you can start straight away.</p>'+
-          '<p class="price">Your Pattern Audit - <b>$'+AUDIT_PRICE+' AUD</b></p>'+
-          '<p class="turnaround">In your inbox within 24 - 48 hours</p>'+
-          '<a class="btn" href="'+PAYWALL_URL+'" target="_blank" rel="noopener">Get my Pattern Audit &rarr;</a>'+
+          '<h3>When you are ready to go deeper, we do it together.</h3>'+
+          '<p>The Deep Dive is a 60-minute 1:1 session to get to the root of the pattern you have just uncovered, and what to do about it.</p>'+
+          '<a class="btn" href="https://tidycal.com/spacebetweenwellness/1-1-deep-dive" target="_blank" rel="noopener">Book your Deep Dive &rarr;</a>'+
         '</div>'+
         '<p class="signoff">Em x</p>'+
         '<button class="restart" id="restart">Retake the quiz</button>'+
