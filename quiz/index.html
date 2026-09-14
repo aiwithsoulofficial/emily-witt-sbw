@@ -151,7 +151,7 @@
 <script>
 (function(){
   // ---- Lead capture: where quiz submissions are sent (set when email tool chosen) ---
-  var LEAD_WEBHOOK = ""; // endpoint to receive quiz leads (form service / Flodesk relay)
+  var LEAD_EMAIL = "space.between.wellness@gmail.com"; // quiz leads are emailed here
 
   // ---- Questions (each option maps to one pattern) --------------------------
   var Q = [
@@ -325,10 +325,11 @@
     name.oninput=check; email.oninput=check;
     rev.onclick=function(){
       lead.name=name.value.trim(); lead.email=email.value.trim();
-      if(LEAD_WEBHOOK){
-        try{ fetch(LEAD_WEBHOOK,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/json"},
-          body:JSON.stringify({first_name:lead.name,email:lead.email,inner_pattern:R[tally()].name,quiz:"inner-patterns"})}); }catch(e){}
-      }
+      try{
+        fetch("https://formsubmit.co/ajax/"+LEAD_EMAIL,{method:"POST",
+          headers:{"Content-Type":"application/json",Accept:"application/json"},
+          body:JSON.stringify({_subject:"New Patterns Quiz lead",name:lead.name,email:lead.email,result:R[tally()].name,quiz:"Patterns - what's keeping you stuck"})});
+      }catch(e){}
       go(Q.length+1);
     };
     document.getElementById('back').onclick=function(){go(Q.length-1)};

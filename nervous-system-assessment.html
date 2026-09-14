@@ -1497,6 +1497,15 @@ src="https://www.facebook.com/tr?id=834476722819618&ev=PageView&noscript=1"
         })
       }).catch(err => console.log('Supabase error (non-blocking):', err));
 
+      // also email the lead straight to Emily
+      try {
+        fetch('https://formsubmit.co/ajax/space.between.wellness@gmail.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({ _subject: 'New Nervous System Quiz lead', name: userName, email: userEmail, phone: userPhone || '', result: topState, quiz: 'Nervous System Assessment' })
+        });
+      } catch (e) {}
+
       renderResults();
       showScreen('results');
     });
