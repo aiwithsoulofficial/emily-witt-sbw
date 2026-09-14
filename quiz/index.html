@@ -151,7 +151,7 @@
 <script>
 (function(){
   // ---- Lead capture: where quiz submissions are sent (set when email tool chosen) ---
-  var LEAD_EMAIL = "space.between.wellness@gmail.com"; // quiz leads are emailed here
+  var LEAD_FORM = "78889e3285b732ad0e8de127401777dc"; // FormSubmit hashed endpoint -> space.between.wellness@gmail.com
 
   // ---- Questions (each option maps to one pattern) --------------------------
   var Q = [
@@ -312,7 +312,8 @@
         '<div style="max-width:400px;margin:0 auto">'+
           '<div class="field"><label for="q-name">First name</label><input id="q-name" type="text" autocomplete="given-name" placeholder="Your first name"></div>'+
           '<div class="field"><label for="q-email">Email</label><input id="q-email" type="email" autocomplete="email" placeholder="you@example.com"></div>'+
-          '<div class="btn-row" style="margin-top:24px"><button class="btn" id="reveal" disabled>Show me my pattern &rarr;</button></div>'+
+          '<label style="display:flex;gap:10px;align-items:flex-start;font-size:13.5px;text-align:left;color:var(--dark-2);cursor:pointer;line-height:1.45;margin-top:4px"><input type="checkbox" id="q-consent" style="margin-top:3px;flex:0 0 auto"><span>Yes, send me my result and the occasional email from Emily. I can unsubscribe anytime.</span></label>'+
+          '<div class="btn-row" style="margin-top:20px"><button class="btn" id="reveal" disabled>Show me my pattern &rarr;</button></div>'+
           '<p class="privacy">No spam. Just your result and the occasional note from me. Em x</p>'+
         '</div>'+
         '<div class="center"><button class="back" id="back">&larr; Back</button></div>'+
@@ -326,9 +327,9 @@
     rev.onclick=function(){
       lead.name=name.value.trim(); lead.email=email.value.trim();
       try{
-        fetch("https://formsubmit.co/ajax/"+LEAD_EMAIL,{method:"POST",
+        fetch("https://formsubmit.co/ajax/"+LEAD_FORM,{method:"POST",
           headers:{"Content-Type":"application/json",Accept:"application/json"},
-          body:JSON.stringify({_subject:"New Patterns Quiz lead",name:lead.name,email:lead.email,result:R[tally()].name,quiz:"Patterns - what's keeping you stuck"})});
+          body:JSON.stringify({_subject:"New Patterns Quiz lead",name:lead.name,email:lead.email,result:R[tally()].name,quiz:"Patterns - what's keeping you stuck",marketing_consent:(document.getElementById("q-consent")&&document.getElementById("q-consent").checked)?"Yes":"No"})});
       }catch(e){}
       go(Q.length+1);
     };

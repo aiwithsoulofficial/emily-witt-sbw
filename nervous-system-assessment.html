@@ -1148,6 +1148,13 @@ src="https://www.facebook.com/tr?id=834476722819618&ev=PageView&noscript=1"
           />
         </div>
 
+        <div class="form-group">
+          <label style="display:flex;gap:10px;align-items:flex-start;font-size:0.85rem;text-align:left;cursor:pointer;line-height:1.45;color:var(--charcoal-soft);">
+            <input type="checkbox" id="marketing-consent" style="margin-top:3px;flex:0 0 auto;" />
+            <span>Yes, send me my results and the occasional email from Emily. I can unsubscribe anytime.</span>
+          </label>
+        </div>
+
         <button type="submit" class="btn-primary" id="reveal-btn">
           Show My Results
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
@@ -1499,10 +1506,10 @@ src="https://www.facebook.com/tr?id=834476722819618&ev=PageView&noscript=1"
 
       // also email the lead straight to Emily
       try {
-        fetch('https://formsubmit.co/ajax/space.between.wellness@gmail.com', {
+        fetch('https://formsubmit.co/ajax/78889e3285b732ad0e8de127401777dc', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({ _subject: 'New Nervous System Quiz lead', name: userName, email: userEmail, phone: userPhone || '', result: topState, quiz: 'Nervous System Assessment' })
+          body: JSON.stringify({ _subject: 'New Nervous System Quiz lead', name: userName, email: userEmail, phone: userPhone || '', result: topState, quiz: 'Nervous System Assessment', marketing_consent: (document.getElementById('marketing-consent') && document.getElementById('marketing-consent').checked) ? 'Yes' : 'No' })
         });
       } catch (e) {}
 
