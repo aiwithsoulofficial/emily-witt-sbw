@@ -11,7 +11,7 @@
 | Email 1 | Day 0 - immediate | Welcome. Acknowledge the moment. Set the tone. | None - just presence |
 | Email 2 | Day 2 | You're not broken, you're patterned. Intro to the 4 states. | Soft - take the quiz |
 | Email 3 | Day 5 | Science meets spirit. Emily's story. Real client voice. | Softer - reply with where you are |
-| Email 4 | Day 9 | First real ask. Clarity & Capacity Reset session. | Direct - apply link |
+| Email 4 | Day 9 | First real ask. The Deep Dive session. | Direct - apply link |
 
 Voice rules locked for this sequence:
 - Sign-off is always "Em x"
@@ -152,7 +152,7 @@ P.S. If you missed the quiz from my last email, it's still there waiting: [What'
 ### Subject Lines
 
 A. (direct) If you're ready for a doorway in.
-B. (contemplative) 90 minutes to get to the root of what's actually keeping you here.
+B. (contemplative) 60 minutes to get to the root of what's actually keeping you here.
 C. (curious) What would change if you finally understood your nervous system?
 
 ### Preview Text
@@ -166,25 +166,25 @@ I've been in your inbox for a little while now, and I want to be honest with you
 
 I do have an offering. And I think it might be exactly what you're looking for - but only if you're ready for it, and only if the timing feels right for you.
 
-The Clarity & Capacity Reset is a 90-minute, one-on-one session. Online. $200 AUD.
+The Deep Dive is a 60-minute, one-on-one session. Online. $300 AUD.
 
 Here's what actually happens inside it.
 
 We do a full nervous system mapping - I help you identify your dominant state and what's driving it. We get clear on the core pattern underneath the exhaustion, the overwhelm, or that feeling of disconnection you can't quite name. We work through two or three personalised regulation strategies built around your actual life, not a generic template. And after our session, you receive a follow-up email from me with resources, reflections, and a personalised pathway forward.
 
-This is not a discovery call. I'm not going to spend 90 minutes selling you on my programme. We're going to do actual work together from the moment we start.
+This is not a discovery call. I'm not going to spend 60 minutes selling you on my programme. We're going to do actual work together from the moment we start.
 
 I review every application personally. If I don't think the timing is right or we're not the right fit, I'll tell you. That honesty is the foundation of how I work.
 
 If this feels like a doorway you've been looking for, here's the link to apply.
 
-[Apply for the Clarity & Capacity Reset](https://aiwithsoulofficial.github.io/emily-witt-sbw/apply.html)
+[Apply for The Deep Dive](https://aiwithsoulofficial.github.io/emily-witt-sbw/apply.html)
 
 And if it's not the right moment yet, that's genuinely okay. Stay in the inbox. There's more to come.
 
 Em x
 
-P.S. The session is designed to leave you with clarity you can use immediately - not a list of homework or a reason to buy more things. You'll know more about your nervous system in 90 minutes than most women learn in years of trying to figure out why they feel the way they feel.
+P.S. You'll leave with a clear picture of the pattern that matters most right now, and a personalised plan you can start using this week.
 
 ---
 
