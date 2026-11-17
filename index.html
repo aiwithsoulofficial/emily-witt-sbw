@@ -3441,7 +3441,14 @@ h2 em { font-style: italic; color: var(--earth); font-weight: inherit; }
 
 /* Free resources */
 #free { background: var(--blush-pale); }
-#free .free-card { grid-template-columns: 1.2fr 1fr; }
+@media (min-width: 861px) { #free .free-card { grid-template-columns: 1.2fr 1fr; } }
+@media (max-width: 860px) {
+  #free .free-card { grid-template-columns: 1fr; padding: 24px 20px; gap: 20px; }
+  #free .free-title { font-size: 1.7rem; }
+  #free .free-copy .btn { width: 100%; text-align: center; }
+  #free .free-mini { padding: 16px 18px; }
+  #free .state-strip img { height: 40px; }
+}
 .free-title { font-family: var(--font-serif); font-size: 2rem; color: var(--earth); margin-bottom: 6px; }
 .free-copy .btn { margin-top: 20px; }
 .free-side { display: flex; flex-direction: column; gap: 12px; }
