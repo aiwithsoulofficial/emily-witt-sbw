@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Emily Witt - Space Between Wellness</title>
+<title>Emily Witt - Links - Space Between Wellness</title>
 <meta name="robots" content="noindex">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -28,294 +28,174 @@ src="https://www.facebook.com/tr?id=834476722819618&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
 <style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-body {
-  font-family: 'Work Sans', sans-serif;
-  background: #ffffff;
-  color: #1a1a1a;
-  min-height: 100vh;
+/* Layout: one phone-width column; hello block, then numbered sections as cards; proof sits inside section 01 */
+:root{
+  --blush:#E4B5C1; --blush-light:#EDD0D7; --blush-pale:#EFE9E6; --earth:#3B2119; --earth-deep:#24130E;
+  --cream:#F4F1EE; --warm:#F6F4F2; --soft:#5C4033; --sand:#C4B19E; --sand-light:#E2D6CA; --rose:#b0707f;
+  --serif:'Playfair Display', Georgia, serif; --body:'Work Sans', system-ui, sans-serif;
 }
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--body);background:var(--warm);color:var(--earth-deep);-webkit-font-smoothing:antialiased;line-height:1.55}
+a{color:inherit;text-decoration:none}
+.page{max-width:480px;margin:0 auto;padding:0 0 48px}
+.top{display:flex;justify-content:space-between;align-items:center;padding:18px 22px;background:var(--earth);color:var(--cream)}
+.top .brand{font-family:var(--serif);font-size:1.1rem;letter-spacing:.02em}
+.top a.site{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;opacity:.85}
 
-.page {
-  max-width: 480px;
-  margin: 0 auto;
-  padding: 48px 24px 80px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+.hello{background:linear-gradient(180deg,#F1E4E6 0%,var(--warm) 100%);padding:32px 22px 28px;position:relative;overflow:hidden}
+.eyebrow{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--soft)}
+.hello h1{font-family:var(--serif);font-weight:600;color:var(--earth);font-size:3rem;line-height:1;margin-top:14px}
+.hello h1 em{display:block;font-weight:400;font-style:italic;font-size:2.1rem;color:var(--rose);margin-top:4px}
+.hello .lead{font-weight:600;color:var(--earth);margin-top:18px;font-size:1rem}
+.hello .sub{color:var(--soft);font-size:.92rem;margin-top:8px}
+.photos{position:relative;margin-top:24px;height:300px}
+.photos .main{position:absolute;left:0;top:0;width:68%;height:280px;object-fit:cover;object-position:center 25%;border-radius:14px;box-shadow:0 10px 30px rgba(82,44,31,.18)}
+.photos .polaroid{position:absolute;right:0;bottom:0;width:44%;background:#fff;padding:8px 8px 22px;border-radius:6px;transform:rotate(4deg);box-shadow:0 10px 24px rgba(82,44,31,.2)}
+.photos .polaroid img{width:100%;height:150px;object-fit:cover;object-position:center 45%;border-radius:3px;display:block}
+.photos .polaroid span{display:block;text-align:center;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin-top:7px}
 
-/* HEADER */
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  margin-bottom: 40px;
-}
+section.block{margin:18px 14px 0;border-radius:18px;padding:26px 20px}
+.num{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;opacity:.8}
+.block h2{font-family:var(--serif);font-weight:600;font-size:2rem;line-height:1.05;margin-top:10px}
+.block h2 em{font-weight:400;font-style:italic}
+.dark{background:var(--earth);color:var(--cream)}
+.dark h2 em{color:var(--blush)}
+.pink{background:var(--blush-light);color:var(--earth)}
+.light{background:#fff;color:var(--earth);border:1px solid var(--sand-light)}
 
-.header-brand {
-  font-family: 'Playfair Display', serif;
-  font-weight: 500;
-  font-size: 15px;
-  color: #522C1F;
-  letter-spacing: 0.02em;
-}
+.offer{background:var(--cream);color:var(--earth);border-radius:14px;padding:20px;margin-top:18px}
+.badges{display:flex;flex-wrap:wrap;gap:6px}
+.badge{font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;padding:5px 10px;border-radius:999px;background:var(--blush);color:var(--earth-deep)}
+.badge.alt{background:#fff;border:1px solid var(--sand-light)}
+.offer h3{font-family:var(--serif);font-size:1.45rem;margin-top:12px;line-height:1.2}
+.offer ul{list-style:none;margin-top:12px;display:flex;flex-direction:column;gap:7px}
+.offer li{font-size:.9rem;color:var(--soft);padding-left:20px;position:relative}
+.offer li::before{content:"";position:absolute;left:2px;top:.55em;width:8px;height:8px;border-radius:50%;background:var(--blush)}
+.btn{display:flex;justify-content:space-between;align-items:center;margin-top:16px;padding:14px 18px;border-radius:999px;font-weight:600;font-size:.92rem;letter-spacing:.02em}
+.btn.solid{background:var(--earth);color:var(--cream)}
+.btn.light{background:#fff;color:var(--earth);border:1.5px solid var(--earth)}
+.btn .arr{font-size:1.1rem}
 
-.header-socials {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-}
+.proof{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+.quote{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:14px 16px}
+.quote p{font-family:var(--serif);font-style:italic;font-size:.95rem;line-height:1.5}
+.quote span{display:block;margin-top:8px;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
 
-.header-socials a {
-  color: #522C1F;
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  opacity: 0.7;
-  transition: opacity 0.15s;
-}
+.free{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+.free a{display:block;background:#fff;border-radius:14px;padding:16px 18px;position:relative}
+.free a .badge{position:absolute;top:14px;right:14px}
+.free a h3{font-family:var(--serif);font-size:1.12rem;padding-right:70px;line-height:1.25}
+.free a p{font-size:.85rem;color:var(--soft);margin-top:6px;padding-right:20px}
+.free a .go{position:absolute;right:16px;bottom:14px;color:var(--rose);font-size:1.1rem}
 
-.header-socials a:hover { opacity: 1; }
+.row{display:flex;justify-content:space-between;align-items:center;padding:15px 2px;border-bottom:1px solid var(--sand-light)}
+.row:last-child{border-bottom:0}
+.row b{font-weight:600;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase}
+.row small{display:block;font-size:.8rem;color:var(--soft);letter-spacing:0;text-transform:none;font-weight:400}
+.row .go{color:var(--rose);font-size:1.1rem}
 
-/* PROFILE */
-.profile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 40px;
-  text-align: center;
-}
-
-.avatar {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-bottom: 20px;
-  border: 3px solid #F5F1ED;
-  box-shadow: 0 2px 20px rgba(82,44,31,0.12);
-}
-
-.avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-}
-
-.profile-name {
-  font-family: 'Playfair Display', serif;
-  font-weight: 500;
-  font-size: 24px;
-  color: #2B1E1E;
-  margin-bottom: 8px;
-}
-
-.profile-headline {
-  font-size: 15px;
-  font-weight: 400;
-  color: #666;
-  line-height: 1.5;
-  max-width: 320px;
-}
-
-/* LINKS */
-.links {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin-bottom: 48px;
-}
-
-.link-btn {
-  display: block;
-  width: 100%;
-  padding: 17px 28px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: 500;
-  text-align: center;
-  line-height: 1.4;
-  transition: transform 0.12s, box-shadow 0.12s;
-  cursor: pointer;
-}
-
-.link-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(82,44,31,0.12);
-}
-
-.link-btn:active { transform: translateY(0); }
-
-.link-btn.outlined {
-  background: white;
-  border: 1.5px solid #E2D6CA;
-  color: #2B1E1E;
-}
-
-.link-btn.outlined:hover {
-  border-color: #E4B5C1;
-}
-
-.link-btn.filled {
-  background: #522C1F;
-  border: 1.5px solid #522C1F;
-  color: #F5F1ED;
-}
-
-.link-btn.filled:hover {
-  background: #6B3A2A;
-  border-color: #6B3A2A;
-}
-
-.link-btn.blush {
-  background: #E4B5C1;
-  border: 1.5px solid #E4B5C1;
-  color: #2B1E1E;
-}
-
-.link-btn.blush:hover {
-  background: #d9a5b3;
-  border-color: #d9a5b3;
-}
-
-/* TESTIMONIALS */
-.testimonials {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-bottom: 48px;
-}
-
-.testimonial {
-  background: #F5F1ED;
-  border-radius: 16px;
-  padding: 22px 24px;
-}
-
-.stars {
-  color: #D4A24A;
-  font-size: 14px;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
-}
-
-.testimonial-text {
-  font-size: 14px;
-  line-height: 1.65;
-  color: #522C1F;
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-}
-
-.testimonial-author {
-  margin-top: 12px;
-  font-size: 12px;
-  font-weight: 500;
-  color: #C4B19E;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-/* FOOTER */
-.footer {
-  text-align: center;
-  font-size: 12px;
-  color: #aaa;
-}
-
-.footer a {
-  color: #aaa;
-  text-decoration: none;
-}
-
-.footer a:hover { color: #522C1F; }
-
-.footer-links {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 8px;
-}
+.mini-map{list-style:none;counter-reset:m;margin-top:14px;display:flex;flex-direction:column;gap:10px}
+.mini-map li{counter-increment:m;display:grid;grid-template-columns:34px 1fr;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--sand-light)}
+.mini-map li:last-child{border-bottom:0}
+.mini-map li::before{content:counter(m,decimal-leading-zero);font-family:var(--serif);color:var(--rose);font-size:1.05rem;grid-row:span 2}
+.mini-map b{font-family:var(--serif);font-size:1.15rem;font-weight:600}
+.mini-map span{font-size:.85rem;color:var(--soft)}
+.creds{font-size:.78rem;letter-spacing:.04em;color:var(--rose);margin-top:10px;font-weight:600}
+.text-link{display:block;text-align:center;margin-top:12px;font-size:.85rem;color:var(--soft);text-decoration:underline;text-underline-offset:3px}
+.light-offer{background:#fff}
+footer{text-align:center;margin-top:30px;padding:0 22px;font-size:.75rem;color:var(--sand)}
+footer .name{font-family:var(--serif);font-size:1.1rem;color:var(--earth)}
+footer p+p{margin-top:6px}
+footer a{color:var(--sand)}
 </style>
 </head>
 <body>
 <div class="page">
 
-  <!-- HEADER -->
-  <div class="header">
-    <div class="header-brand">SBW</div>
-    <div class="header-socials">
-      <a href="https://www.instagram.com/spacebetweenwellness" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://spacebetweenwellness.com" target="_blank" rel="noopener">Website</a>
-    </div>
+  <div class="top">
+    <span class="brand">Space Between Wellness</span>
+    <a class="site" href="https://spacebetweenwellness.com">Website</a>
   </div>
 
-  <!-- PROFILE -->
-  <div class="profile">
-    <div class="avatar">
-      <img src="assets/emily-portrait-1.jpg" alt="Emily Witt">
+  <!-- HELLO -->
+  <header class="hello">
+    <span class="eyebrow">Coach · Psychological Science graduate</span>
+    <h1>Hello, <em>I'm Em.</em></h1>
+    <p class="lead">For successful women who are tired of getting in their own way.</p>
+    <p class="sub">I help you understand and change the patterns behind overthinking, overworking and second-guessing yourself, so you can keep growing without losing yourself in the process.</p>
+    <p class="creds">Bachelor of Psychological Science · Almost a decade working with complex trauma and adversity</p>
+    <div class="photos">
+      <img class="main" src="assets/emily-photos/emily-seated-bench.jpg" alt="Emily Witt, seated portrait">
+      <div class="polaroid"><img src="assets/emily-photos/emily-curtain.jpg" alt="Emily Witt"><span>Gold Coast · Online</span></div>
     </div>
-    <div class="profile-name">Emily Witt</div>
-    <div class="profile-headline">Nervous system coaching for women who are done feeling flat despite doing everything right.</div>
-  </div>
+  </header>
 
-  <!-- LINKS -->
-  <div class="links">
-    <a href="https://spacebetweenwellness.com/quiz/" class="link-btn filled">
-      What patterns are keeping you stuck? Take the free quiz
-    </a>
-    <a href="https://tidycal.com/spacebetweenwellness/1-1-deep-dive" class="link-btn filled" target="_blank" rel="noopener">
-      Book a session
-    </a>
-    <a href="https://spacebetweenwellness.com/nervous-system-assessment.html" class="link-btn blush">
-      You're already successful - so why do you feel so flat? Find out here
-    </a>
-    <a href="https://spacebetweenwellness.com" class="link-btn outlined">
-      Explore the work
-    </a>
-    <a href="https://spacebetweenwellness.com/for-organisations.html" class="link-btn outlined">
-      Workplace wellbeing workshops
-    </a>
-    <a href="https://open.spotify.com/show/5HqPHPX6JELmnQeEqFQjp0" class="link-btn outlined" target="_blank" rel="noopener">
-      Tea Talk Podcast with Emily
-    </a>
-  </div>
+  <!-- 01 PRIVATE COACHING -->
+  <section class="block dark">
+    <span class="num">01 / Private coaching</span>
+    <h2>The <em>Deep Dive.</em></h2>
+    <div class="offer">
+      <div class="badges"><span class="badge">$300 AUD</span><span class="badge alt">60 min · online</span><span class="badge alt">Start here</span></div>
+      <h3>One focused session to understand what's keeping you stuck, and a plan to start doing things differently.</h3>
+      <ul>
+        <li>Uncover the patterns keeping you stuck</li>
+        <li>Look at how stress is showing up for you</li>
+        <li>Leave with your personalised action plan</li>
+        <li>Plus your own private Notion portal</li>
+      </ul>
+      <a class="btn solid" href="https://tidycal.com/spacebetweenwellness/1-1-deep-dive" target="_blank" rel="noopener"><span>Book The Deep Dive</span><span class="arr">&rarr;</span></a>
+      <a class="text-link" href="https://spacebetweenwellness.com/deep-dive.html">What's included in the session</a>
+    </div>
+    <div class="proof">
+      <div class="quote"><p>"The Notion plan you gave me absolutely blew me away! When I really felt like I didn't know what more to do and what my next steps would be, you really opened up that door for me."</p><span>Deep Dive client</span></div>
+      <div class="quote"><p>"I loved what you already had discovered about where I'm at, my nervous system habits etc."</p><span>Deep Dive client</span></div>
+    </div>
+  </section>
 
-  <!-- TESTIMONIALS -->
-  <div class="testimonials">
-    <div class="testimonial">
-      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div class="testimonial-text">The most wonderful experience for anyone looking to feel grounded, calmer, more energised and in a peaceful state of being. The space has beautiful energy, and Emily is incredible - with her ability to tune into one's energetic state being simply magical.</div>
-      <div class="testimonial-author">Sound bath client</div>
+  <!-- 02 THE BRIDGE -->
+  <section class="block pink">
+    <span class="num">02 / Private intensive</span>
+    <h2>The <em>Bridge.</em></h2>
+    <div class="offer light-offer">
+      <div class="badges"><span class="badge">Coming soon</span><span class="badge alt">Six weeks · 1:1</span></div>
+      <h3>Six weeks of personalised coaching to move beyond awareness and practise real change in your everyday life.</h3>
+      <a class="btn light" href="mailto:space.between.wellness@gmail.com?subject=The%20Bridge%20-%20register%20my%20interest"><span>Register your interest</span><span class="arr">&rarr;</span></a>
     </div>
-    <div class="testimonial">
-      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div class="testimonial-text">I just wanted to say how amazing and truly beautiful my sound bath was. Complete relaxation - like floating away into the clouds. It was like a reset and rest my body truly needed. I'll be back.</div>
-      <div class="testimonial-author">Sound bath client</div>
-    </div>
-    <div class="testimonial">
-      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div class="testimonial-text">For something to bring me calmness and a sense of peace and safety - it is well worth taking the time and investing a small portion of your day to yourself and the benefits that follow.</div>
-      <div class="testimonial-author">Sound bath client</div>
-    </div>
-  </div>
+  </section>
 
-  <!-- FOOTER -->
-  <div class="footer">
-    <a href="mailto:space.between.wellness@gmail.com">space.between.wellness@gmail.com</a>
-    <div class="footer-links">
-      <a href="https://spacebetweenwellness.com/privacy.html">Privacy Policy</a>
-      <a href="https://spacebetweenwellness.com/terms.html">Terms &amp; Conditions</a>
+  <!-- 03 START FOR FREE -->
+  <section class="block light">
+    <span class="num">03 / Start for free</span>
+    <h2>Not ready <em>for coaching?</em></h2>
+    <div class="free">
+      <a href="https://tally.so/r/4a7kEO" target="_blank" rel="noopener">
+        <span class="badge">Free</span>
+        <h3>The SHIFT Method</h3>
+        <p>A guided workbook for when you know why, and still do it.</p>
+        <span class="go">&rarr;</span>
+      </a>
     </div>
-  </div>
+  </section>
+
+  <!-- MORE -->
+  <section class="block light">
+    <span class="num">More from me</span>
+    <div style="margin-top:6px">
+      <a class="row" href="https://open.spotify.com/show/5HqPHPX6JELmnQeEqFQjp0" target="_blank" rel="noopener"><b>Tea Talk Podcast<small>Listen on Spotify</small></b><span class="go">&rarr;</span></a>
+      <a class="row" href="https://spacebetweenwellness.com"><b>Website<small>spacebetweenwellness.com</small></b><span class="go">&rarr;</span></a>
+      <a class="row" href="https://www.instagram.com/emilywitt" target="_blank" rel="noopener"><b>Instagram<small>@emilywitt</small></b><span class="go">&rarr;</span></a>
+      <a class="row" href="https://www.instagram.com/space.between.wellness" target="_blank" rel="noopener"><b>Instagram<small>@space.between.wellness</small></b><span class="go">&rarr;</span></a>
+      <a class="row" href="https://www.tiktok.com/@emily.witt.morrisby" target="_blank" rel="noopener"><b>TikTok<small>@emily.witt.morrisby</small></b><span class="go">&rarr;</span></a>
+      <a class="row" href="https://spacebetweenwellness.com/for-organisations.html"><b>Organisations, speaking + events<small>Workshops, podcasts, retreats, talks</small></b><span class="go">&rarr;</span></a>
+    </div>
+  </section>
+
+  <footer>
+    <p class="name">Emily Witt</p>
+    <p>Founder, Space Between Wellness</p>
+    <p><a href="mailto:space.between.wellness@gmail.com">space.between.wellness@gmail.com</a></p>
+    <p><a href="https://spacebetweenwellness.com/privacy.html">Privacy</a> · <a href="https://spacebetweenwellness.com/terms.html">Terms</a></p>
+  </footer>
 
 </div>
 </body>
